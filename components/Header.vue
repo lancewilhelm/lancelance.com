@@ -7,7 +7,7 @@ const props = defineProps<{
 
 <template>
   <header>
-    <div class="w-[300px]" id="logo">
+    <div :class="['sm:max-w-[300px]', route ? 'max-w-[150px]' : '']" id="logo">
       <NuxtLink to="/"><img class="w-full" src="assets/lancelancelogo.svg" alt="LanceLance logo"></NuxtLink>
     </div>
     <div class="flex gap-[10px] justify-center font-mono" id="links">
