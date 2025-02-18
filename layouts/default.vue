@@ -9,7 +9,7 @@
 <style scoped>
 .app-content {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   display: grid;
   grid-template-columns: [gutter-start] 40px [content-start] 1fr [content-end] 40px [gutter-end];
   grid-template-rows: [header-start] 40px [content-start] 1fr [content-end] 40px [footer-end];

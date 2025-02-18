@@ -16,7 +16,7 @@ const route = useRoute()
 <style scoped>
 .app-content {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   display: grid;
   grid-template-rows: [gutter-start] 40px [header-start] min-content [content-start] 1fr [content-end] 40px [gutter-end];
   grid-template-columns: [header-start] 40px [content-start] 1fr [content-end] 40px [footer-end];
