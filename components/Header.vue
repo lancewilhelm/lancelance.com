@@ -7,7 +7,7 @@ const props = defineProps<{
 
 <template>
   <header>
-    <div :class="['sm:w-[300px]', route ? 'max-w-[150px]' : '']" id="logo">
+    <div :class="[route ? 'w-[150px] sm:w-[300px]' : 'w-[300px]']" id="logo">
       <NuxtLink to="/"><img class="w-full" src="assets/lancelancelogo.svg" alt="LanceLance logo"></NuxtLink>
     </div>
     <div class="flex gap-[10px] justify-center font-mono" id="links">
@@ -19,7 +19,11 @@ const props = defineProps<{
 </template>
 
 <style scoped>
-header {
-  view-transition-name: header;
+#logo {
+  view-transition-name: logo;
+}
+
+#links {
+  view-transition-name: links;
 }
 </style>
