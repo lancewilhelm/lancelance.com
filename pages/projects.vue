@@ -5,5 +5,5 @@ definePageMeta({
 </script>
 
 <template>
-  <div>comming soon...</div>
+  <div>coming soon...</div>
 </template>
