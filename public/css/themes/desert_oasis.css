@@ -1,6 +1,6 @@
 :root {
   --bg-color: #fff2d5; /*Background*/
-  --fg-color: #d19d01; /*Color after typing, monkeytype logo, WPM Number acc number etc*/
+  --main-color: #d19d01; /*Color after typing, monkeytype logo, WPM Number acc number etc*/
   --caret-color: #3a87fe; /*Cursor Color*/
   --sub-color: #0061fe; /*WPM text color of scrollbar and general color, before typed color*/
   --sub-alt-color: #eddebc;

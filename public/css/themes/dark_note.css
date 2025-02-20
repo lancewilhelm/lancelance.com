@@ -1,6 +1,6 @@
 :root {
   --bg-color: #1f1f1f;
-  --fg-color: #f2c17b;
+  --main-color: #f2c17b;
   --caret-color: #e3dce0;
   --sub-color: #768f95;
   --sub-alt-color: #141414;
@@ -17,7 +17,7 @@
 }
 
 .colorfulMode {
-  --current-color: var(--fg-color);
+  --current-color: var(--main-color);
 }
 
 .button,
@@ -97,7 +97,7 @@ body::before {
 }
 
 .colorfulMode {
-  --c-dot: var(--fg-color);
+  --c-dot: var(--main-color);
   --c-dot--error: var(--colorful-error-color);
 }
 

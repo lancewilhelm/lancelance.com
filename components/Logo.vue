@@ -33,7 +33,7 @@
 <style scoped>
 .bg {
   fill: none;
-  stroke: var(--fg-color);
+  stroke: var(--main-color);
   stroke-width: 5.56px;
 }
 

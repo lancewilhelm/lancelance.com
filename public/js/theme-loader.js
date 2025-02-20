@@ -1,10 +1,10 @@
 function setFavIcon() {
   setTimeout(async () => {
-    let mainColor, subColor, fgColor, bgColor
+    let mainColor, subColor, textColor, bgColor
     const st = getComputedStyle(document.body)
     mainColor = st.getPropertyValue('--main-color').trim()
     subColor = st.getPropertyValue('--sub-color').trim()
-    fgColor = st.getPropertyValue('--fg-color').trim()
+    textColor = st.getPropertyValue('--text-color').trim()
     bgColor = st.getPropertyValue('--bg-color').trim()
 
     const svgPre = `
@@ -17,7 +17,7 @@ function setFavIcon() {
               }
               #fg {
                 fill: none;
-                stroke: ${fgColor};
+                stroke: ${mainColor};
                 stroke-width: 2.76px;
               }
             </style>
@@ -43,7 +43,7 @@ function setFavIcon() {
         'data:image/svg+xml;base64,' + btoa(svgPre)
       )
     }
-  }, 125)
+  }, 1)
 }
 
 function loadTheme() {

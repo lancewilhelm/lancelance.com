@@ -1,10 +1,10 @@
 export default function () {
   setTimeout(async () => {
-    let mainColor, subColor, fgColor, bgColor
+    let mainColor, subColor, textColor, bgColor
     const st = getComputedStyle(document.body)
     mainColor = st.getPropertyValue('--main-color').trim()
     subColor = st.getPropertyValue('--sub-color').trim()
-    fgColor = st.getPropertyValue('--fg-color').trim()
+    textColor = st.getPropertyValue('--text-color').trim()
     bgColor = st.getPropertyValue('--bg-color').trim()
 
     const svgPre = `
@@ -12,12 +12,12 @@ export default function () {
             <style>
               #bg {
                 fill: none;
-                stroke: ${bgColor};
+                stroke: ${mainColor};
                 stroke-width: 7.49px;
               }
               #fg {
                 fill: none;
-                stroke: ${fgColor};
+                stroke: ${bgColor};
                 stroke-width: 2.76px;
               }
             </style>

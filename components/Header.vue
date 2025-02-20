@@ -12,7 +12,7 @@ const props = defineProps<{
         <Logo />
       </NuxtLink>
     </div>
-    <div class="flex gap-[10px] justify-center font-mono text-md w-auto" id="links">
+    <div class="flex gap-[10px] justify-center font-mono text-md w-auto text-(--sub-color)" id="links">
       <NuxtLink to="/blog" :class="{ underline: (route?.name === 'blog') }">Blog</NuxtLink>
       <span>|</span>
       <NuxtLink to="/projects" :class="{ underline: (route?.name === 'projects') }">Projects</NuxtLink>

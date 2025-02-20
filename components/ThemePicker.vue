@@ -33,7 +33,7 @@ function handleChangeTheme(theme) {
     class="fixed grid items-center justify-center z-10 left-0 top-0 w-full h-full overflow-auto bg-black/60">
     <div id="theme-picker-scroll" class="grid items-center justify-center h-full">
       <div id="theme-picker-content"
-        class="grid bg-(--bg-color) border-5 border-(--fg-color) rounded-lg h-[75dvh] w-96 overflow-y-auto gap-1 py-2">
+        class="grid bg-(--bg-color) border-3 border-(--fg-color) rounded-lg h-[75dvh] w-72 sm:w-96 overflow-y-auto gap-1 py-2">
         <div v-for="theme in themes" :key="theme.name"
           :class="['grid grid-cols-[1fr_auto] justify-center cursor-pointer px-2', { 'border-y-3 border-(--fg-color)': config.theme && config.theme === theme.name }]"
           @click="handleChangeTheme(theme)">

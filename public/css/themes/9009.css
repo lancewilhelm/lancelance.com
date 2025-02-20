@@ -1,6 +1,6 @@
 :root {
   --bg-color: #eeebe2;
-  --fg-color: #080909;
+  --main-color: #080909;
   --caret-color: #7fa480;
   --sub-color: #99947f;
   --sub-alt-color: #d3cfc1;
@@ -25,11 +25,11 @@
 
 key {
   color: var(--sub-color);
-  background-color: var(--fg-color);
+  background-color: var(--main-color);
 }
 
 nav .textButton {
-  color: var(--fg-color);
+  color: var(--main-color);
 }
 
 nav .textButton:nth-child(1) {

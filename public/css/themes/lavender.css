@@ -1,6 +1,6 @@
 :root {
   --bg-color: #ada6c2;
-  --fg-color: #e4e3e9;
+  --main-color: #e4e3e9;
   --caret-color: #e4e3e9;
   --sub-color: #e4e3e9;
   --sub-alt-color: #a19bb9;
@@ -14,7 +14,7 @@
 nav .textButton {
   border-radius: 10rem !important;
   background: var(--text-color);
-  color: var(--fg-color);
+  color: var(--main-color);
 }
 
 nav .textButton:hover {

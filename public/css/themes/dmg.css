@@ -1,6 +1,6 @@
 :root {
   --bg-color: #dadbdc;
-  --fg-color: #ae185e;
+  --main-color: #ae185e;
   --caret-color: #384693;
   --sub-color: #3846b1;
   --sub-alt-color: #bec1d2;
@@ -32,7 +32,7 @@ header.focus nav:after {
 nav .textButton {
   border-radius: 10rem !important;
   color: var(--bg-color);
-  background: var(--fg-color);
+  background: var(--main-color);
 }
 
 body.crtmode nav .textButton {
