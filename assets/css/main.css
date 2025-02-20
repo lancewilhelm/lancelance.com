@@ -1,5 +1,15 @@
 @import 'tailwindcss';
 
+:root {
+  --gutter: 32px;
+  --content-max-width: 1500px;
+  --transition: all 0.3s ease;
+  --font-family: 'Roboto Mono', monospace;
+  --alt-font-family: 'Popins', sans-serif;
+}
+
 body {
   margin: 0;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
 }

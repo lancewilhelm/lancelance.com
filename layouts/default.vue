@@ -3,6 +3,7 @@
     <div class='content'>
       <slot />
     </div>
+    <Footer />
   </div>
 </template>
 

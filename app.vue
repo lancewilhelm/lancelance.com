@@ -1,4 +1,11 @@
 <script setup lang="ts">
+// const configStore = useConfigStore();
+// let themeSheet = { rel: 'stylesheet', type: 'text/css', id: 'currentTheme', href: '/css/themes/monochrome.css' };
+// if (configStore.config.theme) {
+//   console.log('theme set')
+//   themeSheet.href = `/css/themes/${configStore.config.theme}.css`;
+// }
+
 useHead({
   title: 'LanceLance',
   meta: [
@@ -7,12 +14,12 @@ useHead({
     { name: 'apple-mobile-web-app-title', content: 'LanceLance' },
   ],
   link: [
+    // themeSheet,
     { rel: 'icon', href: '/favicon.svg' },
     { rel: 'icon', href: '/favicon-96x96.png', sizes: '96x96' },
     { rel: 'shortcut icon', href: '/favicon.ico' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
     { rel: 'manifest', href: '/site.webmanifest' },
-
   ]
 })
 </script>

@@ -8,7 +8,9 @@ const props = defineProps<{
 <template>
   <header>
     <div :class="[route ? 'w-[150px] sm:w-[300px]' : 'w-[300px]']" id="logo">
-      <NuxtLink to="/"><img class="w-full" src="assets/lancelancelogo.svg" alt="LanceLance logo"></NuxtLink>
+      <NuxtLink to="/">
+        <Logo />
+      </NuxtLink>
     </div>
     <div class="flex gap-[10px] justify-center font-mono" id="links">
       <NuxtLink to="/blog" :class="{ underline: (route?.name === 'blog') }">Blog</NuxtLink>
