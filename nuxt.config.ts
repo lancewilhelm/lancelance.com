@@ -25,6 +25,14 @@ export default defineNuxtConfig({
           defer: false
         }
       ],
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/svg+xml',
+          id: 'favicon',
+          href: '/favicon.svg',
+        },
+      ]
     },
     // pageTransition: {
     //   name: 'page',

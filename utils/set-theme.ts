@@ -12,5 +12,5 @@ export default function (theme: String) {
     link.id = 'currentTheme'
   }
   document.head.appendChild(link)
-  // updateFavicon()
+  updateFavicon()
 }

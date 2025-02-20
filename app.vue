@@ -6,14 +6,13 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { name: 'apple-mobile-web-app-title', content: 'LanceLance' },
   ],
-  link: [
-    // themeSheet,
-    { rel: 'icon', href: '/favicon.svg' },
-    { rel: 'icon', href: '/favicon-96x96.png', sizes: '96x96' },
-    { rel: 'shortcut icon', href: '/favicon.ico' },
-    { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-    { rel: 'manifest', href: '/site.webmanifest' },
-  ]
+  // link: [
+  //   { rel: 'icon', id: 'favicon', href: '/favicon.svg' },
+  //   { rel: 'icon', href: '/favicon-96x96.png', sizes: '96x96' },
+  //   { rel: 'shortcut icon', href: '/favicon.ico' },
+  //   { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+  //   { rel: 'manifest', href: '/site.webmanifest' },
+  // ]
 })
 </script>
 
@@ -24,22 +23,22 @@ useHead({
 </template>
 
 <style>
-.layout-enter-active,
-.layout-leave-active,
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.3s;
-}
-
-.layout-enter-from,
-.layout-leave-to,
-.page-enter-from,
-.page-leave-to {
-  opacity: 0;
-}
+/* .layout-enter-active, */
+/* .layout-leave-active, */
+/* .page-enter-active, */
+/* .page-leave-active { */
+/*   transition: all 200ms; */
+/* } */
+/**/
+/* .layout-enter-from, */
+/* .layout-leave-to, */
+/* .page-enter-from, */
+/* .page-leave-to { */
+/*   opacity: 0; */
+/* } */
 
 ::view-transition-group(*) {
-  animation-duration: 500ms;
+  animation-duration: 300ms;
   animation-timing-function: cubic-bezier(.08, .34, .15, 1);
 }
 </style>

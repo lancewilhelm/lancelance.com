@@ -6,13 +6,13 @@ const props = defineProps<{
 </script>
 
 <template>
-  <header>
+  <header class='flex flex-col justify-center items-center'>
     <div :class="[route ? 'w-[150px] sm:w-[300px]' : 'w-[300px]']" id="logo">
       <NuxtLink to="/">
         <Logo />
       </NuxtLink>
     </div>
-    <div class="flex gap-[10px] justify-center font-mono" id="links">
+    <div class="flex gap-[10px] justify-center font-mono text-md w-auto" id="links">
       <NuxtLink to="/blog" :class="{ underline: (route?.name === 'blog') }">Blog</NuxtLink>
       <span>|</span>
       <NuxtLink to="/projects" :class="{ underline: (route?.name === 'projects') }">Projects</NuxtLink>
