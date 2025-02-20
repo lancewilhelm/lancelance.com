@@ -1,75 +1,12 @@
-# Nuxt Minimal Starter
+# lancelance.com
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+![Nuxt](https://img.shields.io/badge/Nuxt.js-%23010113?style=for-the-badge&logo=nuxt)
+![Vue](https://img.shields.io/badge/Vue.js-%23191A22?style=for-the-badge&logo=vuedotjs)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-%231a202c?style=for-the-badge&logo=tailwind-css)
+![Supabase](https://img.shields.io/badge/Supabase-%230E0E10?style=for-the-badge&logo=supabase)
 
-## Setup
+Personal blog and project website
 
-Make sure to install dependencies:
+### Credits
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [MonkeyType](https://github.com/monkeytypegame/monkeytype) for the theme picker
