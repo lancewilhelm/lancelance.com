@@ -20,13 +20,6 @@ function handleClickOutside(event) {
   }
 };
 
-function getThemeBtnClass(theme) {
-  return {
-    'theme-btn': true,
-    active: config.theme && config.theme === theme.name,
-  };
-};
-
 function handleChangeTheme(theme) {
   config.theme = theme.name;
   setTheme(theme.name);

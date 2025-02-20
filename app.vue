@@ -1,11 +1,4 @@
 <script setup lang="ts">
-const configStore = useConfigStore();
-// let themeSheet = { rel: 'stylesheet', type: 'text/css', id: 'currentTheme', href: '/css/themes/monochrome.css' };
-// if (configStore.config.theme) {
-//   console.log('theme set')
-//   themeSheet.href = `/css/themes/${configStore.config.theme}.css`;
-// }
-
 useHead({
   title: 'LanceLance',
   meta: [
