@@ -44,7 +44,7 @@ function setFavIcon() {
         'data:image/svg+xml;base64,' + btoa(svgPre)
       )
     }
-  }, 100)
+  }, 150)
 }
 
 function loadTheme() {

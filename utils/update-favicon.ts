@@ -44,5 +44,5 @@ export default function () {
         'data:image/svg+xml;base64,' + btoa(svgPre)
       )
     }
-  }, 125)
+  }, 150)
 }
