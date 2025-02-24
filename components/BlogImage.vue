@@ -23,7 +23,7 @@ const zoomed = ref(false)
 
 <template>
   <div class="flex flex-col justify-center items-center gap-2 my-[10px]">
-    <div :style="[width ? 'width:' + width : '', height ? 'height:' + height : '']">
+    <div :style="[width ? 'width:' + width : '', height ? 'height:' + height : '']" class='max-w-full'>
       <img :src="imagePath" class="w-full cursor-pointer" @click="zoomed = true">
     </div>
     <div class='italic max-w-[80vw]'>
