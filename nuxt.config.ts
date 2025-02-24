@@ -17,6 +17,11 @@ export default defineNuxtConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      rollupOptions: {
+        external: ['shiki/onig.wasm'],
+      }
+    },
   },
   nitro: {
     experimental: {
