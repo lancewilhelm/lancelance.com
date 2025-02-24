@@ -23,9 +23,7 @@
     "remark-math": "^6.0.0",
     "tailwindcss": "^4.0.6",
     "vue": "latest",
-    "vue-router": "latest"
-  },
-  "devDependencies": {
+    "vue-router": "latest",
     "shiki": "^3.0.0"
   }
 }
