@@ -3,9 +3,9 @@ import { defineNuxtConfig } from 'nuxt/config'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: false },
+  devtools: { enabled: false, timeline: { enabled: false } },
   css: ['~/assets/css/main.css'],
   modules: [
     '@nuxt/content',
@@ -17,17 +17,17 @@ export default defineNuxtConfig({
   ],
   vite: {
     plugins: [tailwindcss()],
-    build: {
-      rollupOptions: {
-        external: ['shiki/onig.wasm'],
-      }
-    },
+    // build: {
+    //   rollupOptions: {
+    //     external: ['shiki/onig.wasm'],
+    //   }
+    // },
   },
   nitro: {
-    preset: 'cloudflare-pages-static',
-    experimental: {
-      wasm: true
-    }
+    preset: 'cloudflare_pages',
+    // experimental: {
+    //   wasm: true
+    // }
   },
   app: {
     head: {
