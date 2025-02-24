@@ -3,17 +3,17 @@ import { defineNuxtConfig } from 'nuxt/config'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  ssr: true,
+  ssr: false,
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false, timeline: { enabled: false } },
   css: ['~/assets/css/main.css'],
   modules: [
+    '@nuxtjs/seo',
     '@nuxt/content',
     '@nuxt/icon',
     '@pinia/nuxt',
     '@vueuse/nuxt',
-    '@nuxt/fonts',
-    '@nuxtjs/seo'
+    '@nuxt/fonts'
   ],
   vite: {
     plugins: [tailwindcss()],
@@ -69,6 +69,12 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  ogImage: {
+    enabled: false,
+  },
+  schemaOrg: {
+    enabled: false,
   },
   experimental: {
     viewTransition: false
