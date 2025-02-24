@@ -3,7 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  ssr: false,
+  ssr: true,
   compatibilityDate: '2024-11-01',
   devtools: { enabled: false, timeline: { enabled: false } },
   css: ['~/assets/css/main.css'],
@@ -31,6 +31,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
       script: [
         {
           src: '/js/theme-loader.js',
