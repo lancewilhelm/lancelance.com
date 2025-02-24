@@ -256,3 +256,7 @@ header #logo .top,
     box-shadow: 0 0 7.5px 2.5px #dea2fa, 0 0 12.5px 2.5px #dea2fa;
   }
 }
+
+a {
+  text-decoration: underline;
+}

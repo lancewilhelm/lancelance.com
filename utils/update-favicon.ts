@@ -1,4 +1,5 @@
 export default function () {
+  console.log('updateFavicon')
   setTimeout(async () => {
     let mainColor, subColor, textColor, bgColor
     const st = getComputedStyle(document.body)

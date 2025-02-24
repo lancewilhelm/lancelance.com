@@ -11,3 +11,7 @@
   --colorful-error-extra-color: #2e7dde;
   --font: Roboto Mono;
 }
+
+a {
+  text-decoration: underline;
+}

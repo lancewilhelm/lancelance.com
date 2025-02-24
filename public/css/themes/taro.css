@@ -35,3 +35,7 @@ body.crtmode nav .textButton:nth-child(2) {
   box-shadow: 3px 0 1px var(--crt-error-color-glow),
     -3px 0 var(--crt-error-color-glow);
 }
+
+a {
+  text-decoration: underline;
+}

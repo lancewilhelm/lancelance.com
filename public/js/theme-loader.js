@@ -1,4 +1,5 @@
 function setFavIcon() {
+  console.log('setting favicon')
   setTimeout(async () => {
     let mainColor, subColor, textColor, bgColor
     const st = getComputedStyle(document.body)
@@ -43,7 +44,7 @@ function setFavIcon() {
         'data:image/svg+xml;base64,' + btoa(svgPre)
       )
     }
-  }, 1)
+  }, 100)
 }
 
 function loadTheme() {

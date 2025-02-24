@@ -11,15 +11,7 @@
   --colorful-error-extra-color: #f2ce83;
 }
 
-nav .textButton {
-  color: #f2ce83;
-}
-
-nav .textButton:hover {
-  color: #c6915e;
-}
-
-#logo {
+#logo .bg {
   background-color: #ffffff; /* fallback */
   background: -webkit-linear-gradient(
     #2d2076,
@@ -39,4 +31,8 @@ nav .textButton:hover {
 header #logo .text .top {
   /* prevent it from being transparent */
   -webkit-text-fill-color: #385eca;
+}
+
+a {
+  text-decoration: underline;
 }

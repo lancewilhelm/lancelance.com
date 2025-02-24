@@ -31,3 +31,7 @@ nav .textButton:nth-child(5),
 nav .textButton:nth-child(6) {
   color: #a266ed;
 }
+
+a {
+  text-decoration: underline;
+}

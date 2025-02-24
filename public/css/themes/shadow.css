@@ -11,14 +11,6 @@
   --colorful-error-extra-color: #d8d8d8;
 }
 
-header #logo .icon {
-  color: #8c3230;
-}
-
-#logo {
-  color: #557d8d;
-}
-
 @keyframes shadow {
   to {
     color: #111;
@@ -34,11 +26,7 @@ header #logo .icon {
   }
 }
 
-#liveWpm,
-#liveStatsTextTop {
-  color: white;
-}
-
+#liveWpm
 header .config .group .buttons .textButton.active,
 #result .stats .group,
 nav .textButton:hover,
@@ -50,4 +38,8 @@ a:hover {
 #logo,
 #typingTest .word letter.correct {
   animation: shadow 5s linear 1 forwards;
+}
+
+a {
+  text-decoration: underline;
 }

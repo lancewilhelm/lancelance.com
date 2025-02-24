@@ -39,3 +39,7 @@ nav .textButton:nth-child(1) {
 nav .textButton:nth-child(4) {
   color: var(--caret-color);
 }
+
+a {
+  text-decoration: underline;
+}

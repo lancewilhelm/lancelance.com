@@ -130,3 +130,7 @@ body.crtmode header.focus nav .textButton {
 body.crtmode header.focus nav .textButton.account {
   box-shadow: none;
 }
+
+a {
+  text-decoration: underline;
+}

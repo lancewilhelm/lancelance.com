@@ -5,13 +5,15 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   ssr: true,
   compatibilityDate: '2024-11-01',
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   modules: [
     '@nuxt/content',
     '@nuxt/icon',
     '@pinia/nuxt',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
+    '@nuxt/fonts',
+    '@nuxtjs/seo'
   ],
   vite: {
     plugins: [tailwindcss()],
@@ -43,7 +45,21 @@ export default defineNuxtConfig({
     //   mode: 'out-in'
     // }
   },
+  content: {
+    build: {
+      markdown: {
+        remarkPlugins: { 'remark-math': {} },
+        rehypePlugins: { 'rehype-katex': {} },
+        highlight: {
+          theme: 'one-dark-pro',
+          langs: [
+            'python'
+          ]
+        }
+      }
+    }
+  },
   experimental: {
-    viewTransition: true
+    viewTransition: false
   }
 })

@@ -15,52 +15,46 @@
   0% {
     color: #009fb4;
   }
+
   25% {
     color: #00e975;
   }
+
   50% {
     color: #00ffea;
   }
+
   75% {
     color: #00e975;
   }
+
   100% {
     color: #009fb4;
   }
 }
 
-@keyframes aurora-bg {
+@keyframes aurora-fill {
   0% {
-    background: #009fb4;
+    fill: #009fb4;
   }
+
   25% {
-    background: #00e975;
+    fill: #00e975;
   }
+
   50% {
-    background: #00ffea;
+    fill: #00ffea;
   }
+
   75% {
-    background: #00e975;
+    fill: #00e975;
   }
+
   100% {
-    background: #009fb4;
+    fill: #009fb4;
   }
 }
 
-.button.discord::after,
-#caret,
-.pageSettings .section .buttons .button.active,
-.pageSettings .section.languages .buttons .language.active,
-.pageAccount .group.filterButtons .buttons .button.active {
-  animation: aurora-bg 5s linear infinite;
-}
-
-header.focus .button.discord::after,
-header .button.discord.dotHidden::after {
-  animation-name: none !important;
-}
-
-#logo,
 header .config .group .buttons .textButton.active,
 #result .stats .group .bottom,
 nav .textButton:hover,
@@ -70,10 +64,6 @@ a:hover,
   animation: aurora 5s linear infinite;
 }
 
-#words.flipped .word letter.correct {
-  color: var(--sub-color);
-}
-
-#words:not(.flipped) .word letter.correct {
-  animation: aurora 5s linear infinite;
+#logo .bg {
+  animation: aurora-fill 5s linear infinite;
 }

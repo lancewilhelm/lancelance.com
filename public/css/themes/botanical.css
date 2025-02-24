@@ -10,3 +10,7 @@
   --colorful-error-color: #f6c9b4;
   --colorful-error-extra-color: #f59a71;
 }
+
+a {
+  text-decoration: underline;
+}

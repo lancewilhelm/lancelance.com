@@ -1,18 +1,12 @@
 <script setup lang="ts">
-useHead({
-  title: 'LanceLance',
-  meta: [
-    { name: 'charset', content: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { name: 'apple-mobile-web-app-title', content: 'LanceLance' },
-  ],
-  // link: [
-  //   { rel: 'icon', id: 'favicon', href: '/favicon.svg' },
-  //   { rel: 'icon', href: '/favicon-96x96.png', sizes: '96x96' },
-  //   { rel: 'shortcut icon', href: '/favicon.ico' },
-  //   { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
-  //   { rel: 'manifest', href: '/site.webmanifest' },
-  // ]
+useSeoMeta({
+  title: 'Home',
+  ogTitle: 'LanceLance',
+  author: 'Lance Wilhelm',
+  description: 'A personal blog and project collection for Lance Wilhelm',
+  charset: 'utf-8',
+  viewport: 'width=device-width, initial-scale=1',
+  appleMobileWebAppTitle: 'LanceLance',
 })
 </script>
 
