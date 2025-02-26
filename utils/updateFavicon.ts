@@ -2,7 +2,6 @@
  * Updates the favicon with the current theme colors
  */
 export default function updateFavicon() {
-  console.log('updateFavicon')
   setTimeout(async () => {
     let mainColor, subColor, textColor, bgColor
     const st = getComputedStyle(document.body)
