@@ -10,15 +10,15 @@ interface LayoutProps {
 }
 
 export default function DefaultLayout({ children }: LayoutProps) {
-  const [isThemeLoaded, setIsThemeLoaded] = useState(true)
+  const [isThemeLoaded, setIsThemeLoaded] = useState(false)
 
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     const storedTheme = localStorage.getItem('theme') || 'monochrome'
-  //     loadThemeCSS(storedTheme)
-  //     setIsThemeLoaded(true)
-  //   }
-  // }, [])
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const storedTheme = localStorage.getItem('theme') || 'monochrome'
+      loadThemeCSS(storedTheme)
+      setIsThemeLoaded(true)
+    }
+  }, [])
 
   return (
     <html lang="en">
