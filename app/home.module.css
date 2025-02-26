@@ -1,0 +1,7 @@
+.homeGrid {
+  width: 100vw;
+  height: 100dvh;
+  display: grid;
+  grid-template-columns: [full-page-start] 40px [content-start] 1fr [content-end] 40px [full-page-end];
+  grid-template-rows: [full-page-start] 40px [header-start] 1fr [footer-start] 40px [full-page-end];
+}

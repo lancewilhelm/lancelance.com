@@ -3,19 +3,136 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --gutter: 32px;
+  --content-max-width: 1500px;
+  --transition: all 1000ms ease;
+  --font-family: 'Roboto Mono', monospace;
+  --alt-font-family: 'Popins', sans-serif;
+  --border-radius: 8px;
+  --main-color: #000;
+  --bg-color: #fff;
+  --fg-color: #000;
+  --text-color: #000
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+a {
+  color: var(--main-color);
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--main-color);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--main-color);
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--main-color);
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--main-color);
+}
+
+h5 {
+  font-size: 0.875rem;
+  color: var(--main-color);
+}
+
+ul,
+ol {
+  display: table-row;
+  list-style: none;
+}
+
+li {
+  display: table-row;
+}
+
+li::before {
+  display: table-cell;
+  content: "⇝";
+  padding-right: 10px;
+  font-size: 1.25rem;
+  color: var(--main-color);
+}
+
+table {
+  border-collapse: separate;
+  /* Needed for border-radius */
+  border-spacing: 0;
+  border: 1px solid var(--main-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  /* Clips overflowing child borders */
+}
+
+thead {
+  background-color: var(--main-color);
+  color: var(--bg-color);
+}
+
+thead th {
+  border-right: 1px solid var(--bg-color);
+  padding: 8px;
+}
+
+thead th:last-child {
+  border-right: none;
+}
+
+tbody td {
+  border-top: 1px solid var(--main-color);
+  border-right: 1px solid var(--main-color);
+  padding: 8px;
+}
+
+tbody td:last-child {
+  border-right: none;
+}
+
+hr {
+  color: var(--main-color);
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--main-color);
+  border-radius: 3.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+
+.icon {
+  fill: var(--main-color);
 }

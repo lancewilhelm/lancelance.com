@@ -1,13 +1,31 @@
-export default function DefaultLayout({
-  children,
+'use client'
 
-}: {
-  children: React.ReactNode
-}) {
+import { ReactNode, useEffect, useState } from 'react'
+import { ThemeProvider } from '@/context/ThemeProvider'
+import loadThemeCSS from '@/utils/loadThemeCSS'
+import './globals.css'
+
+interface LayoutProps {
+  children: ReactNode
+}
+
+export default function DefaultLayout({ children }: LayoutProps) {
+  const [isThemeLoaded, setIsThemeLoaded] = useState(true)
+
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     const storedTheme = localStorage.getItem('theme') || 'monochrome'
+  //     loadThemeCSS(storedTheme)
+  //     setIsThemeLoaded(true)
+  //   }
+  // }, [])
+
   return (
     <html lang="en">
       <body>
-        <main>{children}</main>
+        <ThemeProvider>
+          {isThemeLoaded ? children : null}
+        </ThemeProvider>
       </body>
     </html>
   )

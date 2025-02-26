@@ -1,0 +1,7 @@
+.bg {
+  fill: var(--main-color)
+}
+
+.fg {
+  fill: var(--bg-color);
+}
