@@ -6,8 +6,6 @@ tags: retrieval-augmented generation chatbot AI NLP
 categories: Academic
 ---
 
-import BlogImage from "@/components/blogimage";
-
 AI chatbots are great. Especially those that have (proportedly) trillions of parameters and are essentially a giant compression of the entire internet. These chatbots all pretty much have the ability to ingest your own documents as knowledge for their responses. This is great, but they usually have some sort of limit on the number of documents that you can feed them and this is likely because they are simply exploiting the large input context length of today's models (e.g., 128k tokens or approximately 500 pages of text). However, if you have more documents then that, or, you are not interested in uploading your personal knowledge to some company's servers, than you have to look elsewhere.
 
 Now...this tutorial is nothing new. There are lots of tutorials out there on building very simple RAG-enabled chatbots like the one I am about to show you. So, this was more of an exercise on my part, but hopefully I can explain each of the basic components of RAG in a way that will help you grasp the concept. I will be using the LangChain API to facilitate the interaction with the documents, and the OpenAI GPT-4o-mini API as the generation model. But, after understanding the core concepts of the RAG architecture, you can use any other API to build your own chatbot.
@@ -16,10 +14,16 @@ Now...this tutorial is nothing new. There are lots of tutorials out there on bui
 
 ## Brief overview of RAG
 
-<BlogImage src="/img/rag_bot/rag_architecture.webp" width={600}>
-  Basic retrieval-augmented generation (RAG) architecture.
-  [source](https://truera.com/ai-quality-education/generative-ai-rags/what-is-retrieval-augmented-generation-rag-for-llms/)
-</BlogImage>
+## ::blog-image
+
+imagePath: /img/rag_bot/rag_architecture.webp
+width: 600px
+
+---
+
+#caption
+Basic retrieval-augmented generation (RAG) architecture. [source](https://truera.com/ai-quality-education/generative-ai-rags/what-is-retrieval-augmented-generation-rag-for-llms/)
+::
 
 RAG is a generative AI method that involves finding relevant knowledge or documents from some source and then including that information in the prompt to the model. RAG was first introduced by [Lewis et al.](https://arxiv.org/abs/2005.11401) in 2020. Most of the time this is exclusively text documents as this is where LLMs are strong. However, recent multi-modal breakthroughs are starting to change this.
 
@@ -33,10 +37,16 @@ In the figure, you can think of the left third as the retrieval step, and the ri
 
 ## Ingesting the knowledge
 
-<BlogImage src="/img/rag_bot/rag_ingest.png" width={600}>
-  Basic retrieval-augmented generation (RAG) ingestion scheme.
-  [source](https://python.langchain.com/docs/tutorials/rag/)
-</BlogImage>
+## ::blog-image
+
+imagePath: /img/rag_bot/rag_ingest.png
+width: 600px
+
+---
+
+#caption
+Basic retrieval-augmented generation (RAG) ingestion scheme. [source](https://python.langchain.com/docs/tutorials/rag/)
+::
 
 However, I would argue that the most important part of building any RAG application is how you ingest the knowledge that you want to search. This involves a few steps as highlighted by the figure above:
 

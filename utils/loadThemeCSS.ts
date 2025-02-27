@@ -6,9 +6,10 @@ import updateFavicon from './updateFavicon'
 export default function loadThemeCSS(themeName: string) {
   const exisistingThemeLink = document.querySelector('#currentTheme')
   const link = document.createElement('link')
+  const baseUrl = window.location.origin
   link.type = 'text/css'
   link.rel = 'stylesheet'
-  link.href = `css/themes/${themeName}.css`
+  link.href = `${baseUrl}/css/themes/${themeName}.css`
   link.id = 'nextTheme'
 
   link.onload = () => {

@@ -14,12 +14,14 @@ Now...this tutorial is nothing new. There are lots of tutorials out there on bui
 
 ---
 
-## Brief overview of RAG
+![this is an image](/img/rag_bot/rag_architecture.webp)
 
-<BlogImage src="/img/rag_bot/rag_architecture.webp" width={600}>
-  Basic retrieval-augmented generation (RAG) architecture.
-  [source](https://truera.com/ai-quality-education/generative-ai-rags/what-is-retrieval-augmented-generation-rag-for-llms/)
-</BlogImage>
+<!-- <BlogImage src="/img/rag_bot/rag_architecture.webp"> -->
+<!--   Basic retrieval-augmented generation (RAG) architecture. -->
+<!--   [source](https://truera.com/ai-quality-education/generative-ai-rags/what-is-retrieval-augmented-generation-rag-for-llms/) -->
+<!-- </BlogImage> -->
+
+## Brief overview of RAG
 
 RAG is a generative AI method that involves finding relevant knowledge or documents from some source and then including that information in the prompt to the model. RAG was first introduced by [Lewis et al.](https://arxiv.org/abs/2005.11401) in 2020. Most of the time this is exclusively text documents as this is where LLMs are strong. However, recent multi-modal breakthroughs are starting to change this.
 
@@ -33,10 +35,10 @@ In the figure, you can think of the left third as the retrieval step, and the ri
 
 ## Ingesting the knowledge
 
-<BlogImage src="/img/rag_bot/rag_ingest.png" width={600}>
-  Basic retrieval-augmented generation (RAG) ingestion scheme.
-  [source](https://python.langchain.com/docs/tutorials/rag/)
-</BlogImage>
+<!-- <BlogImage src="/img/rag_bot/rag_ingest.png" width={600}> -->
+<!--   Basic retrieval-augmented generation (RAG) ingestion scheme. -->
+<!--   [source](https://python.langchain.com/docs/tutorials/rag/) -->
+<!-- </BlogImage> -->
 
 However, I would argue that the most important part of building any RAG application is how you ingest the knowledge that you want to search. This involves a few steps as highlighted by the figure above:
 

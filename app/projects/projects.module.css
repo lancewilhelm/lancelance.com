@@ -1,4 +1,4 @@
-.blogGrid {
+.projectsGrid {
   grid-template-rows: [gutter-start] var(--gutter) [header-start] min-content [header-padding-start] var(--gutter) [content-start] 1fr [footer-start] 40px [gutter-end];
   grid-template-columns: [full-width-start] minmax(0, var(--gutter)) [full-width-padding-start] minmax(0, 1fr) [content-start] min(100% - var(--gutter)*2, var(--content-max-width)) [content-end] minmax(0, 1fr) [full-width-padding-end] minmax(0, var(--gutter)) [full-width-start];
 }

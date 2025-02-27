@@ -10,10 +10,10 @@ It can be daunting to get started on creating your own custom webapp, especially
 
 If you want to jump straight to the finished product, you can find it at the code repository here.
 
-::github-repo-card
----
-repo: lancewilhelm/vue-chatbot
----
+## ::github-repo-card
+
+## repo: lancewilhelm/vue-chatbot
+
 ::
 
 In this part we will be working up to [this commit.](https://github.com/lancewilhelm/vue-chatbot/tree/62d4a06683ae7a49781eb8358a15a84406c34706)
@@ -44,12 +44,14 @@ Navigate to the URL in the terminal and you should see your first webapp! Congra
 
 OK, maybe not a web developer, but you are on your way! Now that we have the Vue.js app created. Let's look at the structure.
 
-::blog-image
----
+## ::blog-image
+
 imagePath: /img/vue-chatbot/vuejsstructure.png
 caption: The basic Vue.js web app structure. All of the project files are located in the `app/` directory.
 width: 300px
+
 ---
+
 ::
 
 We can get rid of a lot of those files because we do not need them for our project. Delete everything inside the `components/` directory. From here we are going to build out components for the different pieces of our app. This is the power of things like Vue.js and React because we can reuse components with potentially different information in them. This will really come in handy later...
@@ -58,9 +60,9 @@ Within the `components/` directory, let's make our first component `ChatContent.
 
 ```html [ChatContent.vue]
 <script>
-  export default {
+  export default \{
     name: "ChatContent",
-    components: {},
+    components: \{},
   };
 </script>
 
@@ -71,7 +73,7 @@ Within the `components/` directory, let's make our first component `ChatContent.
 </template>
 
 <style scoped>
-  .chat-content {
+  .chat-content \{
     background-color: #eda9f9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -88,9 +90,9 @@ Next, let's create one more component which will be the container for the input 
 
 ```html[InputRow.vue]
 <script>
-  export default {
+  export default \{
     name: "InputRow",
-    components: {},
+    components: \{},
   };
 </script>
 
@@ -101,7 +103,7 @@ Next, let's create one more component which will be the container for the input 
 </template>
 
 <style scoped>
-  .input-row {
+  .input-row \{
     background-color: #f6db99;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -146,9 +148,9 @@ Remember when I said that components are handy because we can reuse them? This i
 
 ```html[ChatBubble.vue]
 <script>
-  export default {
+  export default \{
     name: "ChatBubble",
-    components: {},
+    components: \{},
   };
 </script>
 
@@ -159,7 +161,7 @@ Remember when I said that components are handy because we can reuse them? This i
 </template>
 
 <style scoped>
-  .chat-bubble {
+  .chat-bubble \{
     background-color: #f6f8d0;
     margin-bottom: 10px;
   }
@@ -172,9 +174,9 @@ This creates a simple box with the text "Test" in it. Now, going back to `ChatCo
 <script>
   import ChatBubble from "./ChatBubble.vue";
 
-  export default {
+  export default \{
     name: "ChatContent",
-    components: {
+    components: \{
       ChatBubble,
     },
   };
@@ -191,7 +193,7 @@ This creates a simple box with the text "Test" in it. Now, going back to `ChatCo
 </template>
 
 <style scoped>
-  .chat-content {
+  .chat-content \{
     background-color: #eda9f9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -210,8 +212,8 @@ Let's add a simple text box and button to our `InputRow.vue` component. Here is 
 
 ```html[InputRow.vue]
 <script>
-  export default {
-    components: {},
+  export default \{
+    components: \{},
   };
 </script>
 
@@ -223,7 +225,7 @@ Let's add a simple text box and button to our `InputRow.vue` component. Here is 
 </template>
 
 <style scoped>
-  .input-row {
+  .input-row \{
     display: flex;
     background-color: #f6db99;
     border-radius: 10px;
@@ -236,12 +238,14 @@ Let's add a simple text box and button to our `InputRow.vue` component. Here is 
 
 The chatbot is starting to look a little more familiar now! We have a chat content area, and an input row with appropriate features. Hopefully your app looks something like this!
 
-::blog-image
----
+## ::blog-image
+
 imagePath: /img/vue-chatbot/chatbot1.png
 caption: Our app is starting to look like an actual chatbot app! But is has no real functionality...
 width: 300px
+
 ---
+
 ::
 
 ## Props and List Rendering
@@ -250,10 +254,10 @@ One of the powerful features of Vue.js is the ability to pass data between compo
 
 ```html[ChatBubble.vue]
 <script>
-  export default {
+  export default \{
     name: "ChatBubble",
-    props: {
-      message: {
+    props: \{
+      message: \{
         type: Object,
         required: true,
       },
@@ -263,24 +267,24 @@ One of the powerful features of Vue.js is the ability to pass data between compo
 
 <template>
   <div :class="['chat-bubble', message.role]">
-    <div class="chat-bubble-avatar">{{ message.role[0].toUpperCase() }}</div>
-    <div class="chat-bubble-content">{{ message.content }}</div>
+    <div class="chat-bubble-avatar">\{\{ message.role[0].toUpperCase() }}</div>
+    <div class="chat-bubble-content">\{\{ message.content }}</div>
   </div>
 </template>
 
 <style scoped>
-  .chat-bubble {
+  .chat-bubble \{
     display: flex;
     align-items: center;
     flex-direction: row;
     margin-bottom: 10px;
   }
 
-  .chat-bubble.assistant {
+  .chat-bubble.assistant \{
     flex-direction: row-reverse;
   }
 
-  .chat-bubble-avatar {
+  .chat-bubble-avatar \{
     background-color: #e1e1e1;
     border-radius: 50%;
     color: #000;
@@ -293,41 +297,41 @@ One of the powerful features of Vue.js is the ability to pass data between compo
     margin: 0px 10px;
   }
 
-  .chat-bubble-content {
+  .chat-bubble-content \{
     border-radius: 10px;
     padding: 10px;
   }
 
-  .user .chat-bubble-content {
+  .user .chat-bubble-content \{
     background-color: #f6db99;
   }
 
-  .assistant .chat-bubble-content {
+  .assistant .chat-bubble-content \{
     background-color: #f6f8d0;
     text-align: right;
   }
 </style>
 ```
 
-Notice we actually style the bubble as well and give it some personality depending on if the bubble is for the user or the bot. The message object stores key information such as the "role" of the message (user or assistant), and the content of the message. These are then displayed within the appropriate portions of the component and accessed through the double curly brackets (e.g., {% raw %}`{{ message.content }}`{% endraw %}). Now, let's update our `ChatContent.vue` component to pass the message prop to the `ChatBubble.vue` component. Here is the updated `ChatContent.vue` component.
+Notice we actually style the bubble as well and give it some personality depending on if the bubble is for the user or the bot. The message object stores key information such as the "role" of the message (user or assistant), and the content of the message. These are then displayed within the appropriate portions of the component and accessed through the double curly brackets (e.g., \{% raw %}`\{\{ message.content }}`\{% endraw %}). Now, let's update our `ChatContent.vue` component to pass the message prop to the `ChatBubble.vue` component. Here is the updated `ChatContent.vue` component.
 
 ```html[ChatContent.vue]
 <script>
   import ChatBubble from "./ChatBubble.vue";
 
-  export default {
+  export default \{
     name: "ChatContent",
-    components: {
+    components: \{
       ChatBubble,
     },
-    data() {
-      return {
+    data() \{
+      return \{
         messages: [
-          { role: "user", content: "Hello" },
-          { role: "assistant", content: "Hi, how are you?" },
-          { role: "user", content: "I'm fine, thanks." },
-          { role: "assistant", content: "Good to hear." },
-          { role: "user", content: "Bye." },
+          \{ role: "user", content: "Hello" },
+          \{ role: "assistant", content: "Hi, how are you?" },
+          \{ role: "user", content: "I'm fine, thanks." },
+          \{ role: "assistant", content: "Good to hear." },
+          \{ role: "user", content: "Bye." },
         ],
       };
     },
@@ -345,7 +349,7 @@ Notice we actually style the bubble as well and give it some personality dependi
 </template>
 
 <style scoped>
-  .chat-content {
+  .chat-content \{
     background-color: #eda9f9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -358,12 +362,14 @@ Notice we actually style the bubble as well and give it some personality dependi
 
 Within the `data()` function, we created a fake array of messages which will eventually be replaced by a prop from the `App.vue` component. For now, this provides us with some test data to work with. Furthermore, if you notice where we call the `ChatBubble` component in the `<template>` we are using the `v-for` directive to loop through the messages array and display a `ChatBubble` component for each message. We are also passing the message object to the `ChatBubble` component using the `:message` prop. This is how we pass data between components. Now, our chatbot should look something like this!
 
-::blog-image
----
+## ::blog-image
+
 imagePath: /img/vue-chatbot/chatbot2.png
 caption: Our chatbot is starting to look like a real chatbot! But it still has no real functionality...
 width: 300px
+
 ---
+
 ::
 
 ## Make it look nice
@@ -375,7 +381,7 @@ OK, we need to make this app look a little nicer. Right now the colors are kind 
 ```
 
 ```css[App.vue]
-.app {
+.app \{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -385,7 +391,7 @@ OK, we need to make this app look a little nicer. Right now the colors are kind 
   padding: 0;
 }
 
-.app-content {
+.app-content \{
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -397,7 +403,7 @@ OK, we need to make this app look a little nicer. Right now the colors are kind 
 ```
 
 ```css[ChatContent.vue]
-.chat-content {
+.chat-content \{
   background-color: #f4f8ff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -410,18 +416,18 @@ OK, we need to make this app look a little nicer. Right now the colors are kind 
 ```
 
 ```css[ChatBubble.vue]
-.chat-bubble {
+.chat-bubble \{
   display: flex;
   align-items: center;
   flex-direction: row;
   margin-bottom: 10px;
 }
 
-.chat-bubble.assistant {
+.chat-bubble.assistant \{
   flex-direction: row-reverse;
 }
 
-.chat-bubble-avatar {
+.chat-bubble-avatar \{
   background-color: #e1e1e1;
   border-radius: 50%;
   color: #000;
@@ -435,24 +441,24 @@ OK, we need to make this app look a little nicer. Right now the colors are kind 
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.chat-bubble-content {
+.chat-bubble-content \{
   border-radius: 10px;
   padding: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
-.user .chat-bubble-content {
+.user .chat-bubble-content \{
   background-color: #f6db99;
 }
 
-.assistant .chat-bubble-content {
+.assistant .chat-bubble-content \{
   background-color: #f6f8d0;
   text-align: right;
 }
 ```
 
 ```css[InputRow.vue]
-.input-row {
+.input-row \{
   display: flex;
   align-items: stretch;
   background-color: #fdf0d7;
@@ -462,11 +468,11 @@ OK, we need to make this app look a little nicer. Right now the colors are kind 
   width: 100%;
 }
 
-textarea {
+textarea \{
   flex-grow: 1;
 }
 
-.input-row button {
+.input-row button \{
   background-color: #f0e6fb;
   border: none;
   border-radius: 5px;
@@ -480,11 +486,11 @@ textarea {
   margin-left: 10px;
 }
 
-button:hover {
+button:hover \{
   filter: brightness(0.9);
 }
 
-button:active {
+button:active \{
   box-shadow: none;
 }
 ```
@@ -493,12 +499,14 @@ button:active {
 
 Here is what our chatbot looks like now!
 
-::blog-image
----
+## ::blog-image
+
 imagePath: /img/vue-chatbot/chatbot3.png
 caption: Some style makes it feel so much nicer. I added a ton of messages to test the scrolling ability.
 width: 500px
+
 ---
+
 ::
 
 ## That's it for the front-end for now

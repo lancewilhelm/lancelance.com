@@ -1,5 +1,3 @@
-import fs from 'fs'
-import path from 'path'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import styles from './blog.module.css'
@@ -21,20 +19,20 @@ interface Post {
   categories: string[]
 }
 
-const BLOG_CONTENT_PATH = 'content/blog'
-
 export default function Blog() {
   const posts: Post[] = getBlogPosts('content/blog/', true)
 
   return (
-    <div className={styles.blogGrid}>
+    <div className={`w-screen min-h-dvh grid ${styles.blogGrid}`}>
       <Header />
-      <div className="flex flex-col col-start-[content-start] row-start-[content-start] max-w-[700px] gap-[20px]">
-        {posts.map((post: Post) => (
-          <Link key={post.slug} href={`/blog/${post.slug}`}>
-            <BlogCard title={post.metadata.title} description={post.metadata.description} date={post.metadata.date} />
-          </Link>
-        ))}
+      <div id="blog-list-container" className="flex flex-col w-full h-full col-start-[content-start] row-start-[content-start] text-wrap overflow-x-hidden items-center mb-2">
+        <div id="blog-list" className="flex flex-col max-w-[700px] gap-[20px]">
+          {posts.map((post: Post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className='no-underline'>
+              <BlogCard title={post.metadata.title} description={post.metadata.description} date={post.metadata.date} />
+            </Link>
+          ))}
+        </div>
       </div>
       <Footer />
     </div >
