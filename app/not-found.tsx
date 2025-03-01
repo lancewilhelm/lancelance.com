@@ -1,6 +1,6 @@
 import styles from './home.module.css'
 import Link from 'next/link'
-import Logo from '@/components/logo'
+import Logo from '@/components/Logo'
 
 export default function NotFound() {
   return (

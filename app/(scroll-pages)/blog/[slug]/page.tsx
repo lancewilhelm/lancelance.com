@@ -1,10 +1,6 @@
 import { Metadata } from 'next'
 import path from 'node:path'
 import fs from 'node:fs'
-//
-import Header from "@/components/header"
-import styles from './blog.module.css'
-import Footer from "@/components/footer"
 
 interface BlogPostProps {
   params: Promise<{
@@ -42,18 +38,14 @@ export default async function BlogPost({ params }: BlogPostProps) {
   const { metadata, default: Content } = mdxModule
 
   return (
-    <div className={`grid ${styles.blogGrid}`}>
-      <Header />
-      <div id='post-content' className='col-start-[content-start] row-start-[content-start] sm:px-4'>
-        <div id='post-title' className='text-4xl'>{metadata.title}</div>
-        <div id='post-date' className='pb-2 text-[--sub-color]'>
-          {new Date(metadata.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
-        </div>
-        <div className='flex flex-col gap-2'>
-          <Content />
-        </div>
+    <div id='post-content' className='w-full sm:px-4'>
+      <div id='post-title' className='text-4xl'>{metadata.title}</div>
+      <div id='post-date' className='pb-2 text-[--sub-color]'>
+        {new Date(metadata.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}
       </div>
-      <Footer />
+      <div className='flex flex-col gap-2'>
+        <Content />
+      </div>
     </div>
   )
 }

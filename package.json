@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "scan": "next dev & npx react-scan@latest localhost:3000"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
@@ -18,6 +19,7 @@
     "next-mdx-remote": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-scan": "^0.2.8",
     "rehype-katex": "^7.0.1",
     "rehype-mdx-code-props": "^3.0.1",
     "remark-frontmatter": "^5.0.0",

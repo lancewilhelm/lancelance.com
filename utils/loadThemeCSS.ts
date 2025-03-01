@@ -1,23 +1,19 @@
-import updateFavicon from './updateFavicon'
+import { updateFavicon } from './favicon'
 
 /**
  * Load the CSS file for the theme
  */
 export default function loadThemeCSS(themeName: string) {
-  const existingThemeLink = document.querySelector('#currentTheme')
-  const link = document.createElement('link')
-  const baseUrl = window.location.origin
-  link.type = 'text/css'
-  link.rel = 'stylesheet'
-  link.href = `${baseUrl}/css/themes/${themeName}.css`
-  link.id = 'nextTheme'
-
-  link.onload = () => {
-    if (existingThemeLink) {
-      existingThemeLink.remove()
-    }
-    link.id = "currentTheme"
+  const existingThemeLink: HTMLLinkElement | null = document.querySelector('#currentTheme')
+  if (existingThemeLink) {
+    existingThemeLink.href = '/css/themes/' + themeName + '.css'
+  } else {
+    const linkElement = document.createElement('link')
+    linkElement.type = 'text/css'
+    linkElement.rel = 'stylesheet'
+    linkElement.href = '/css/themes/' + themeName + '.css'
+    document.head.appendChild(linkElement)
   }
-  document.head.appendChild(link)
+
   updateFavicon(themeName)
 }

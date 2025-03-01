@@ -1,16 +1,20 @@
 'use client'
 
 import Link from "next/link";
-import Logo from "./logo";
+import Logo from "./Logo";
 import { robotoMono } from '@/utils/fonts'
 import { usePathname } from 'next/navigation'
+
+interface HeaderProps {
+  onHomePage?: boolean
+}
 
 interface NavItem {
   pathname: string
   text: string
 }
 
-export default function Header() {
+export default function Header({ onHomePage = false }: HeaderProps) {
   const navItems: NavItem[] = [
     { pathname: '/blog', text: 'Blog' },
     { pathname: '/projects', text: 'Projects' },
@@ -34,8 +38,8 @@ export default function Header() {
   }
 
   return (
-    <header className="flex flex-col justify-center items-center col-start-[content-start] row-start-[header-start]">
-      <div className="w-[300px]" id="logo">
+    <header className='flex flex-col justify-center items-center col-start-[content-start] row-start-[header-start]'>
+      <div className={onHomePage ? 'w-[300px]' : 'w-[150px] sm:w-[300px]'} id="logo">
         <Link href="/">
           <Logo />
         </Link>

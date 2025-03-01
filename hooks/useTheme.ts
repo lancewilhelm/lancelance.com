@@ -3,28 +3,32 @@ import loadThemeCSS from '@/utils/loadThemeCSS'
 
 const THEME_STORAGE_KEY = 'theme'
 
-/**
- * Custom hook to manage the current theme
- */
 export function useTheme() {
   const isFirstRender = useRef(true)
-  const [currentTheme, setCurrentTheme] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem(THEME_STORAGE_KEY) || 'monochrome'
+
+  const getCookieTheme = () => {
+    if (typeof document !== 'undefined') {
+      const match = document.cookie.match(new RegExp('(^| )' + THEME_STORAGE_KEY + '=([^;]+)'))
+      return match ? match[2] : 'monochrome'
     }
     return 'monochrome'
-  })
+  }
+
+  const [currentTheme, setCurrentTheme] = useState(getCookieTheme)
 
   useLayoutEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof document !== 'undefined') {
       if (isFirstRender.current) {
         isFirstRender.current = false
         return
       }
-      localStorage.setItem(THEME_STORAGE_KEY, currentTheme)
+
+      // Set theme cookie
       loadThemeCSS(currentTheme)
+      document.cookie = `${THEME_STORAGE_KEY}=${currentTheme}; path=/; max-age=31536000` // 1 year expiry
     }
   }, [currentTheme])
 
   return { currentTheme, setCurrentTheme }
 }
+

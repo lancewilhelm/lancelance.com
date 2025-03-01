@@ -3,8 +3,8 @@
 import { useState, useRef } from 'react';
 // import { ComponentPropsWithoutRef } from 'react';
 import type { PropsWithChildren } from 'react';
-import CopyIcon from '@/components/icons/copy';
-import ThumbsUpIcon from '@/components/icons/thumbsup';
+import CopyIcon from '@/components/icons/Copy';
+import ThumbsUpIcon from '@/components/icons/Thumbsup';
 
 // type PrePropsType = ComponentPropsWithoutRef<'pre'>;
 

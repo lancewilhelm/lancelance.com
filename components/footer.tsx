@@ -1,9 +1,9 @@
 'use client';
 
 import { useState } from 'react'
-import Modal from '@/components/modal'
-import ThemePicker from "./themepicker";
-import PaletteIcon from '@/components/icons/palette'
+import Modal from '@/components/Modal'
+import ThemePicker from "./ThemePicker";
+import PaletteIcon from '@/components/icons/Palette'
 
 export default function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false)

@@ -1,7 +1,7 @@
 import githubLanguageColors from '@/public/githubcolors.json'
-import GitHubIcon from '@/components/icons/github'
-import StarIcon from '@/components/icons/star'
-import ForkIcon from '@/components/icons/fork'
+import GitHubIcon from '@/components/icons/Github'
+import StarIcon from '@/components/icons/Star'
+import ForkIcon from '@/components/icons/Fork'
 
 type Languages = Record<string, { color: string | null, url: string }>
 const typedGithubColors: Languages = githubLanguageColors

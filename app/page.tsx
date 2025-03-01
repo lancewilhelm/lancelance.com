@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import styles from './home.module.css'
-import Header from '@/components/header'
-import Footer from '@/components/footer'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Home | LanceLance',
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className={styles.homeGrid}>
-      <Header />
+      <Header onHomePage={true} />
       <Footer />
     </div>
   )
