@@ -4,7 +4,7 @@ import updateFavicon from './updateFavicon'
  * Load the CSS file for the theme
  */
 export default function loadThemeCSS(themeName: string) {
-  const exisistingThemeLink = document.querySelector('#currentTheme')
+  const existingThemeLink = document.querySelector('#currentTheme')
   const link = document.createElement('link')
   const baseUrl = window.location.origin
   link.type = 'text/css'
@@ -13,11 +13,11 @@ export default function loadThemeCSS(themeName: string) {
   link.id = 'nextTheme'
 
   link.onload = () => {
-    if (exisistingThemeLink) {
-      exisistingThemeLink.remove()
+    if (existingThemeLink) {
+      existingThemeLink.remove()
     }
     link.id = "currentTheme"
   }
   document.head.appendChild(link)
-  updateFavicon()
+  updateFavicon(themeName)
 }

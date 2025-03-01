@@ -17,6 +17,7 @@ export default function DefaultLayout({ children }: LayoutProps) {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const storedTheme = localStorage.getItem('theme') || 'monochrome'
+      console.log('loading theme from layout', storedTheme)
       loadThemeCSS(storedTheme)
       setIsThemeLoaded(true)
     }

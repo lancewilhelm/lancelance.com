@@ -1,20 +1,28 @@
----
-title: "Vue.js Chatbot - Part 2: The Back-End"
-date: 2023-10-26 20:00:00
-description: In the second part we build the back-end for the chatbot using FastAPI
-tags: Vue.js, FastAPI, chatbot, backend-end, websocket, LLM, ChatGPT
-categories: Academic
----
+export const metadata = {
+  title: "Vue.js Chatbot - Part 2: The Back-End",
+  date: "2023-10-26 20:00:00",
+  description:
+    "In the second part we build the back-end for the chatbot using FastAPI",
+  tags: [
+    "Vue.js",
+    "FastAPI",
+    "chatbot",
+    "backend-end",
+    "websocket",
+    "LLM",
+    "ChatGPT",
+  ],
+  categories: ["Academic"],
+};
+
+import BlogImage from "@/components/blogimage";
+import RepoCard from "@/components/repocard";
 
 It can be daunting to get started on creating your own custom webapp, especially if you're not a web developer. There are lots of nice design tools out there, but you lose some of the granular control if you don't code it yourself. As someone who's not a web developer, I've found that Vue.js is a great framework to get started with. It's easy to learn, and has a lot of great documentation and community support. In this series, I'll be showing you how to build a chatbot using Vue.js, and how to integrate it with a back-end API that will be interacting with the GPT-3.5 model. As a cherry on top, we will look at how to store the messages in a MongoDB database, so that we can use them later for other uses.
 
 If you want to jump straight to the finished product, you can find it at the code repository here.
 
-## ::github-repo-card
-
-## repo: lancewilhelm/vue-chatbot
-
-::
+<RepoCard repo="lancewilhelm/vue-chatbot" />
 
 In this part we will be working up to [this commit.](https://github.com/lancewilhelm/vue-chatbot/tree/d27449b1b159f8c6488ef96d1f6671ea9f6b977b)
 
@@ -32,7 +40,7 @@ If you missed part 1, you can find it [here](/blog/2023-10-25-vue_chatbot1)
 
 First, we need to install two dependencies to get FastAPI running. Run `pip install fastapi uvicorn` to install them. Next, we need to create a file to contain our server/API code. At the very root of your project, which is outside the `app/` folder from [part 1](\{\{ site.baserul }}\{% link \_posts/2023-10-25-vue_chatbot1.md %}), create a file `main.py` and add the following code:
 
-```python[main.py]
+```python file="main.py"
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -52,7 +60,7 @@ Now, if you run `python main.py` in your terminal and following the link to the 
 
 OK, maybe not a back-end developer, but you are on your way! Now let's build our front-end and serve it up with the FastAPI backend server. First, navigate to your webapp directory, for me that is `app/`, and run `npm run build`. This will compile your website and place it in the `dist/` directory. Now, we can modify `main.py` to serve up our front-end. Replace the contents of `main.py` with the following:
 
-```python[main.py]
+```python file="main.py"
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -82,7 +90,7 @@ Now that our page is being served by FastAPI, let's take advantage of its true p
 
 We are going to modify `main.py` again to add a websocket connection. Replace the contents of `main.py` with the following:
 
-```python[main.py]
+```python file="main.py"
 from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -123,32 +131,32 @@ We added a new endpoint, `/ws`, which will be our websocket connection. We also 
 
 Now we need to modify our front end to establish the websocket connection with the back-end. First, let's modify `App.vue` in our `app/src/` directory. Replace the contents of `App.vue` with the following:
 
-```html[App.vue]
+```vue file="App.vue"
 <script>
-  import ChatContent from "./components/ChatContent.vue";
-  import InputRow from "./components/InputRow.vue";
-  import ReconnectingWebSocket from "reconnecting-websocket";
+import ChatContent from "./components/ChatContent.vue";
+import InputRow from "./components/InputRow.vue";
+import ReconnectingWebSocket from "reconnecting-websocket";
 
-  export default \{
-    name: "App",
-    components: \{
-      ChatContent,
-      InputRow,
-    },
-    data() \{
-      return \{
-        messages: [],
-        socket: null,
-      };
-    },
-    mounted() \{
-      this.socket = new ReconnectingWebSocket("ws://localhost:8000/ws");
-      this.getMessages();
-    },
-    methods: \{
-      getMessages() \{},
-    },
-  };
+export default \{
+  name: "App",
+  components: \{
+    ChatContent,
+    InputRow,
+  },
+  data() \{
+    return \{
+      messages: [],
+      socket: null,
+    };
+  },
+  mounted() \{
+    this.socket = new ReconnectingWebSocket("ws://localhost:8000/ws");
+    this.getMessages();
+  },
+  methods: \{
+    getMessages() \{},
+  },
+};
 </script>
 
 <template>
@@ -161,25 +169,25 @@ Now we need to modify our front end to establish the websocket connection with t
 </template>
 
 <style scoped>
-  .app \{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-  }
+.app \{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
 
-  .app-content \{
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 1rem;
-    width: 100%;
-    max-width: 1000px;
-    overflow: auto;
-  }
+.app-content \{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  overflow: auto;
+}
 </style>
 ```
 
@@ -189,51 +197,51 @@ Notice that the `<script>` tags changed from before as we are now adding the ful
 
 Now that we have a websocket connection, let's update the JavaScript in `App.vue` with the following:
 
-```html[App.vue]
+```vue file="App.vue"
 <script>
-  import ChatContent from "./components/ChatContent.vue";
-  import InputRow from "./components/InputRow.vue";
-  import ReconnectingWebSocket from "reconnecting-websocket";
+import ChatContent from "./components/ChatContent.vue";
+import InputRow from "./components/InputRow.vue";
+import ReconnectingWebSocket from "reconnecting-websocket";
 
-  export default \{
-    name: "App",
-    components: \{
-      ChatContent,
-      InputRow,
+export default \{
+  name: "App",
+  components: \{
+    ChatContent,
+    InputRow,
+  },
+  data() \{
+    return \{
+      messages: [],
+      socket: null,
+    };
+  },
+  mounted() \{
+    this.socket = new ReconnectingWebSocket("ws://localhost:8000/ws");
+    this.socket.onmessage = this.handleSocketMessage;
+    this.getMessages();
+  },
+  beforeDestroy() \{
+    this.socket.close();
+  },
+  methods: \{
+    handleSocketMessage(event) \{
+      const data = JSON.parse(event.data);
+      console.log(data);
+      if (data.type === "message_update") \{
+        this.messages = data.content;
+      }
     },
-    data() \{
-      return \{
-        messages: [],
-        socket: null,
+    getMessages() \{
+      const newMessage = \{
+        type: "get_messages",
       };
+      this.sendSocketmessage(newMessage);
     },
-    mounted() \{
-      this.socket = new ReconnectingWebSocket("ws://localhost:8000/ws");
-      this.socket.onmessage = this.handleSocketMessage;
-      this.getMessages();
+    sendSocketmessage(message) \{
+      this.socket.send(JSON.stringify(message));
     },
-    beforeDestroy() \{
-      this.socket.close();
-    },
-    methods: \{
-      handleSocketMessage(event) \{
-        const data = JSON.parse(event.data);
-        console.log(data);
-        if (data.type === "message_update") \{
-          this.messages = data.content;
-        }
-      },
-      getMessages() \{
-        const newMessage = \{
-          type: "get_messages",
-        };
-        this.sendSocketmessage(newMessage);
-      },
-      sendSocketmessage(message) \{
-        this.socket.send(JSON.stringify(message));
-      },
-    },
-  };
+  },
+};
 </script>
 
 <!-- Existing template and style -->
@@ -243,21 +251,15 @@ Here we added a few things. First, we added a handler in `mounted()`, which tell
 
 If you open up the console on your browser (right click, inspect, then find the console) and refresh the page, you should see that we now are receiving an empty message list from the back-end!
 
-## ::blog-image
-
-imagePath: /img/vue-chatbot/chatbot4.png
-caption: Console screenshot of the empty message list
-width: 600px
-
----
-
-::
+<BlogImage src="/img/vue-chatbot/chatbot4.png" width={600} height={0}>
+  Console screenshot of the empty message list
+</BlogImage>
 
 ## Mimic Bot
 
 Now that we have a websocket connection, let's add a "bot" that will mimic the user. This will allow us to test the websocket connection and see how the messages are being sent and received. First, let's modify `App.vue` to pass the `messages` as a prop into the `ChatContent` component and the `sendSocketMessage()` into the `InputRow` component.
 
-```html[InputRow.vue]
+```vue file="InputRow.vue"
 <!-- Existing script -->
 
 <template>
@@ -274,22 +276,22 @@ Now that we have a websocket connection, let's add a "bot" that will mimic the u
 
 Next, we need to modify `ChatContent.vue` to accept the `messages` prop and display them. Modify the contents of `ChatContent.vue` with the following:
 
-```html[ChatContent.vue]
+```vue file="ChatContent.vue"
 <script>
-  import ChatBubble from "./ChatBubble.vue";
+import ChatBubble from "./ChatBubble.vue";
 
-  export default \{
-    name: "ChatContent",
-    components: \{
-      ChatBubble,
+export default \{
+  name: "ChatContent",
+  components: \{
+    ChatBubble,
+  },
+  props: \{
+    messages: \{
+      type: Array,
+      required: true,
     },
-    props: \{
-      messages: \{
-        type: Array,
-        required: true,
-      },
-    },
-  };
+  },
+};
 </script>
 
 <!-- Existing template and style -->
@@ -297,34 +299,34 @@ Next, we need to modify `ChatContent.vue` to accept the `messages` prop and disp
 
 Notice that now our messages are coming from a prop rather than from the result of `data()`. Next, we need to heavily modify the script in `InputRow.vue` to handle the sending of messages. Modify the contents of `InputRow.vue` with the following:
 
-```html[InputRow.vue]
+```vue file="InputRow.vue"
 <script>
-  export default \{
-    name: "InputRow",
-    props: \{
-      sendSocketMessage: \{
-        type: Function,
-        required: true,
-      },
+export default \{
+  name: "InputRow",
+  props: \{
+    sendSocketMessage: \{
+      type: Function,
+      required: true,
     },
-    data() \{
-      return \{
-        messageContent: "",
-      };
+  },
+  data() \{
+    return \{
+      messageContent: "",
+    };
+  },
+  methods: \{
+    async sendMessage() \{
+      if (this.messageContent.trim() !== "") \{
+        const newMessage = \{
+          type: "new_message",
+          content: this.messageContent,
+        };
+        this.sendSocketMessage(newMessage);
+        this.messageContent = "";
+      }
     },
-    methods: \{
-      async sendMessage() \{
-        if (this.messageContent.trim() !== "") \{
-          const newMessage = \{
-            type: "new_message",
-            content: this.messageContent,
-          };
-          this.sendSocketMessage(newMessage);
-          this.messageContent = "";
-        }
-      },
-    },
-  };
+  },
+};
 </script>
 
 <template>
@@ -346,7 +348,7 @@ Here we added a `sendMessage()` function that will send a message to the back-en
 
 One last thing we need to do is modify `main.py` in order to handle receiving new messages from the front-end. Modify the contents of the `websocket_endpoint()` function with the following:
 
-```python[main.py]
+```python file="main.py"
 # Create a websocket connection
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
@@ -377,54 +379,48 @@ Here we added a new `if` statement that will handle receiving a new message from
 
 Now, if you rebuild your webapp with `npm run build` in the `app/` directory and then run `python main.py` in the root directory, you should be able to send messages to the back-end and receive them back! You have your own mimic bot!
 
-## ::blog-image
-
-imagePath: /img/vue-chatbot/chatbot5.png
-caption: Mimic bot, engage!
-width: 600px
-
----
-
-::
+<BlogImage src="/img/vue-chatbot/chatbot5.png" width={600} height={0}>
+  Mimic bot, engage!
+</BlogImage>
 
 ## One last thing before stop for now
 
 Let's create a "clear chat" button that will allow us to clear the chat. As our app stands, you have to restart the back-end for the messages to disappear. We will need to add the button and a new function to `InputRow.vue` as well as modify `main.py` to handle the new message type. First, replace the contents of `InputRow.vue` with the following:
 
-```html[InputRow.vue]
+```vue file="InputRow.vue"
 <script>
-  export default \{
-    name: "InputRow",
-    props: \{
-      sendSocketMessage: \{
-        type: Function,
-        required: true,
-      },
+export default \{
+  name: "InputRow",
+  props: \{
+    sendSocketMessage: \{
+      type: Function,
+      required: true,
     },
-    data() \{
-      return \{
-        messageContent: "",
-      };
-    },
-    methods: \{
-      async sendMessage() \{
-        if (this.messageContent.trim() !== "") \{
-          const newMessage = \{
-            type: "new_message",
-            content: this.messageContent,
-          };
-          this.sendSocketMessage(newMessage);
-          this.messageContent = "";
-        }
-      },
-      async clearMessages() \{
+  },
+  data() \{
+    return \{
+      messageContent: "",
+    };
+  },
+  methods: \{
+    async sendMessage() \{
+      if (this.messageContent.trim() !== "") \{
         const newMessage = \{
-          type: "clear_messages",
+          type: "new_message",
+          content: this.messageContent,
         };
         this.sendSocketMessage(newMessage);
-      },
+        this.messageContent = "";
+      }
     },
-  };
+    async clearMessages() \{
+      const newMessage = \{
+        type: "clear_messages",
+      };
+      this.sendSocketMessage(newMessage);
+    },
+  },
+};
 </script>
 
 <template>
@@ -441,51 +437,51 @@ Let's create a "clear chat" button that will allow us to clear the chat. As our 
 </template>
 
 <style scoped>
-  .input-row \{
-    display: flex;
-    align-items: stretch;
-    background-color: #fdf0d7;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    width: 100%;
-  }
+.input-row \{
+  display: flex;
+  align-items: stretch;
+  background-color: #fdf0d7;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  width: 100%;
+}
 
-  textarea \{
-    flex-grow: 1;
-    margin: 0 10px;
-  }
+textarea \{
+  flex-grow: 1;
+  margin: 0 10px;
+}
 
-  .input-row button \{
-    background-color: #f0e6fb;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    color: #00000089;
-    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
-    transition:
-      background-color 0.2s ease-in-out,
-      box-shadow 0.1s ease-in-out;
-  }
+.input-row button \{
+  background-color: #f0e6fb;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  color: #00000089;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color 0.2s ease-in-out,
+    box-shadow 0.1s ease-in-out;
+}
 
-  button:hover \{
-    filter: brightness(0.9);
-  }
+button:hover \{
+  filter: brightness(0.9);
+}
 
-  button:active \{
-    box-shadow: none;
-  }
+button:active \{
+  box-shadow: none;
+}
 
-  .input-row .btn-clear \{
-    background-color: #f17b7b;
-  }
+.input-row .btn-clear \{
+  background-color: #f17b7b;
+}
 </style>
 ```
 
 We added a button to clear the chat and a new function, `clearMessages()`, that will send a message to the back-end to clear the messages. We also added some styling to make the buttons look nice. Next, we need to modify `main.py` to handle the new message type. Replace the contents of the `websocket_endpoint()` function with the following:
 
-```python[main.py]
+```python file="main.py"
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()

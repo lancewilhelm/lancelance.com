@@ -1,10 +1,20 @@
----
-title: "Understanding Causal Attention"
-date: 2023-11-26 00:00:00
-description: Understanding how the causal attention mechanism works in transformer models
-tags: transformer, attention, deep learning, machine learning, AI, NLP
-categories: Academic
----
+export const metadata = {
+  title: "Understanding Causal Attention",
+  date: "2023-11-26 00:00:00",
+  description:
+    "Understanding how the causal attention mechanism works in transformer models",
+  tags: [
+    "transformer",
+    "attention",
+    "deep learning",
+    "machine learning",
+    "AI",
+    "NLP",
+  ],
+  categories: ["Academic"],
+};
+
+import BlogImage from "@/components/blogimage";
 
 I have recently been creating and training "small" transformer models for fun based on Andrej Karpathy's [awesome video tutorials](https://youtu.be/kCc8FmEb1nY?si=FyQzfy1j7aeBeog3). For me, coding these models from scratch is a great exercise that allows me to understand how each component works and how their purposes. But there was one aspect of the attention mechanism that I was having trouble grasping intuitively. Specifically, in a decoder-only transformer model, how does the attention mechanism know to only attend to the previous tokens in the sequence? Further, how does the triangular mask that is applied to the attention matrix make this work? I decided to do some research and write this post to help me understand this concept better.
 
@@ -22,14 +32,10 @@ In my research to understand this concept, I came across [this post](https://med
 
 ## What we are focusing on
 
-::blog-image
----
-imagePath: /img/causal_attn/attn_diagram.png
-width: 600px
----
-#caption
-A diagram of the multi-head attention mechanism and the scaled dot-product attention from [Vaswani et al. (2017)](https://arxiv.org/pdf/1706.03762.pdf).
-::
+<BlogImage src="/img/causal_attn/attn_diagram.png" width={600} height={0}>
+  A diagram of the multi-head attention mechanism and the scaled dot-product
+  attention from [Vaswani et al. (2017)](https://arxiv.org/pdf/1706.03762.pdf).
+</BlogImage>
 
 Specifically we are going to focus on taking an input, creating the keys, queries, and values, and then calculating the scaled dot-product attention. We will not be focusing on the multi-head attention mechanism for our simple example. If you are not familiar with some of these concepts, I recommend watching Andrej Karpathy's [video](https://youtu.be/kCc8FmEb1nY?si=FyQzfy1j7aeBeog3) where he builds a transformer model from scratch and explains the intuition behind each component.
 
@@ -70,13 +76,9 @@ et = tok_emb(torch.tensor(x))
 
 Visualizing the embeddings, we can see that they are 2 vectors of size 3.
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_et.png
-caption: Token embeding of Hello World. Each word is represented by a vector of size 3.
-width: 600px
----
-::
+<BlogImage src="/img/causal_attn/basic_et.png" width={600} height={0}>
+  Token embeding of Hello World. Each word is represented by a vector of size 3.
+</BlogImage>
 
 ### Position Embedding
 
@@ -90,13 +92,10 @@ ep = pos_emb(pos)
 
 This will similarly be a vector of size 3 for each token in the sequence. The y labels in the following image are the position index of each token in the sequence.
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_ep.png
-caption: Position embeding of Hello World. Each word is represented by a vector of size 3.
-width: 600px
----
-::
+<BlogImage src="/img/causal_attn/basic_ep.png" width={600} height={0}>
+  Position embeding of Hello World. Each word is represented by a vector of size
+  3.
+</BlogImage>
 
 ### Combined Embedding
 
@@ -106,13 +105,10 @@ Now we can combine the token and position embeddings to create the input embeddi
 ec = et + ep
 ```
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_ec.png
-caption: Combined embedding of Hello World. Each word is represented by a vector of size 3.
-width: 600px
----
-::
+<BlogImage src="/img/causal_attn/basic_ec.png" width={600} height={0}>
+  Combined embedding of Hello World. Each word is represented by a vector of
+  size 3.
+</BlogImage>
 
 ### Queries, Keys, and Values
 
@@ -129,13 +125,9 @@ v = v_wt(ec)
 
 Here is what they look like visualized. Right now, these are random values, but they will be trained later.
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_qkv.png
-caption: Queries, keys, and values for our sequence.
-width: 800px
----
-::
+<BlogImage src="/img/causal_attn/basic_qkv.png" width={800} height={0}>
+  Queries, keys, and values for our sequence.
+</BlogImage>
 
 ### Scaled Masked Causal Attention
 
@@ -145,13 +137,9 @@ Now we can calculate the attention for each word in the sequence using our queri
 attn = q @ k.transpose(-1, -2)
 ```
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_rawattn.png
-caption: Raw attention values after the dot product.
-width: 600px
----
-::
+<BlogImage src="/img/causal_attn/basic_rawattn.png" width={600} height={0}>
+  Raw attention values after the dot product.
+</BlogImage>
 
 Right now, these are essentially the logits for how important each input word (y-axis) is to the target word (x-axis) in the sequence.
 
@@ -162,13 +150,15 @@ mask = torch.tril(torch.ones_like(attn))
 attn_masked = attn.masked_fill(mask == 0, float('-inf'))
 ```
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_maskedrawattn.png
-caption: Masked raw attention values. Notice that we cannot attend to the target word of 'World' from the input word of 'Hello' because we haven't made it that far in the sentence yet.
-width: 600px
----
-::
+<BlogImage
+  src="/img/causal_attn/basic_maskedrawattn.png"
+  width={600}
+  height={0}
+>
+  Masked raw attention values. Notice that we cannot attend to the target word
+  of 'World' from the input word of 'Hello' because we haven't made it that far
+  in the sentence yet.
+</BlogImage>
 
 Lastly, we need to apply the softmax function. First, we will scale the attention values by the square root of the embedding size. This trick normalizes the variance which helps reduce the chance of exploding gradients. Then we apply the softmax function to get the attention weights.
 
@@ -176,24 +166,20 @@ Lastly, we need to apply the softmax function. First, we will scale the attentio
 attn_scaled_softmax = F.softmax(attn_masked / np.sqrt(3), dim=-1)
 ```
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_scaledattn.png
-caption: Scaled attention values. Now we can see a little intuition here as the softmax turns the logits into probabilities.
-width: 600px
----
-::
-
+<BlogImage src="/img/causal_attn/basic_scaledattn.png" width={600} height={0}>
+  Scaled attention values. Now we can see a little intuition here as the softmax
+</BlogImage>
 
 Finally, intuition takes hold here. Each cell represents with what probability the input word (y-axis) should attend to the target word (x-axis). We can see that the input word of "Hello" should attend to itself with a probability of 1.0. This is because it is the first word in the sequence and therefor cannot attend to any other word. However, given our randomly initialized parameters, we can see that "World" should attend to the values of "Hello" slightly more than itself.
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_scaledattnintuition.png
-caption: Intuition to the scaled attention attention probabilities. Credit to Jinoo Baek's blog post for this thought.
-width: 600px
----
-::
+<BlogImage
+  src="/img/causal_attn/basic_scaledattnintuition.png"
+  width={600}
+  height={0}
+>
+  Intuition to the scaled attention attention probabilities. Credit to Jinoo
+  Baek's blog post for this thought.
+</BlogImage>
 
 We can see that the mask ensures that the attention mechanism cannot apply any level of importance to future words. This is another key to the causal attention mechanism.
 
@@ -205,13 +191,15 @@ Now that we have the probabilities/attention weights, we can scale our values pr
 weighted_values = attn_scaled_softmax @ v
 ```
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_weightedvalues.png
-caption: Weighted values. We see that the value vector for 'Hello' did not change, but the value vector for 'World' did as it is a weighted combination of both value vectors.
-width: 600px
----
-::
+<BlogImage
+  src="/img/causal_attn/basic_weightedvalues.png"
+  width={600}
+  height={0}
+>
+  Weighted values. We see that the value vector for 'Hello' did not change, but
+  the value vector for 'World' did as it is a weighted combination of both value
+  vectors.
+</BlogImage>
 
 These weighted combinations of the values are important for the model to learn how to predict the next word in the sequence. It is the weighted combination that allows a model to pay attention to more than one word if needed. Also keep in mind that all the embeddings, and linear layers are learnable parameters that will be trained based on our dataset.
 
@@ -322,13 +310,9 @@ print(f'{max_iters}/{max_iters}: Loss: {loss.item()}')
 
 1000 steps is a bit overkill, however it is a simple model and it trains very quickly. Here is the loss curve.
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_loss.png
-caption: Loss curve for training the basic model.
-width: 600px
----
-::
+<BlogImage src="/img/causal_attn/basic_loss.png" width={600} height={0}>
+  Loss curve for training the basic model.
+</BlogImage>
 
 Now we can predict the next word in the sequence given "Hello".
 
@@ -343,23 +327,19 @@ Notice that our predicted word has a space in front of "World". This is because 
 
 The combined embeddings did not change too drastically during training, however the queries, keys, and values did.
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_trained_qkv.png
-caption: Trained queries, keys, and values.
-width: 800px
----
-::
+<BlogImage src="/img/causal_attn/basic_trained_qkv.png" width={800} height={0}>
+  Trained queries, keys, and values.
+</BlogImage>
 
 Compared to the untrained values, we can see that some learning happened. However, it is hard to make any insight from this because we are still dealing with embeddings, which are abstractions that are hard to interpret. Instead, let's look at the computed attention probabilities.
 
-::blog-image
----
-imagePath: /img/causal_attn/basic_trained_scaledattn.png
-caption: Trained attention probabilities.
-width: 600px
----
-::
+<BlogImage
+  src="/img/causal_attn/basic_trained_scaledattn.png"
+  width={600}
+  height={0}
+>
+  Trained raw attention probabilities.
+</BlogImage>
 
 OK, here is something. We can clearly see that the model believes that predicting the next word almost solely depends on the current word it is looking at. This makes sense because we trained the model to do one simple task, predict " World" if it is given "Hello". This shows a problem with our training data. We only gave the model one example of a sequence. If we gave it more examples, it would learn that the next word in the sequence is not always " World". Let's try that.
 
@@ -420,13 +400,9 @@ print(f'{max_iters}/{max_iters}: Loss: {loss.item()}')
 
 This training takes a bit longer because we increased our sequence length and we increased our embedding size. Here is the loss curve.
 
-::blog-image
----
-imagePath: /img/causal_attn/adv_loss.png
-caption: Training loss for the expanded dataset.
-width: 600px
----
-::
+<BlogImage src="/img/causal_attn/adv_loss.png" width={600} height={0}>
+  Loss curve for training the expanded dataset.
+</BlogImage>
 
 Now we can predict the next word in each of the training sequences given the first 4 words.
 
@@ -450,33 +426,29 @@ star
 
 Now let's see if there are any more meaningful insights that we can gain from visualizing the parameters.
 
-::blog-image
----
-imagePath: /img/causal_attn/adv_trained_qkv.png
-caption: Trained queries, keys, and values for the more complicated dataset.
-width: 800px
----
-::
+<BlogImage src="/img/causal_attn/adv_trained_qkv.png" width={800} height={0}>
+  Trained queries, keys, and values for the more complicated dataset.
+</BlogImage>
 
 Let's pay attention to the query vector for "a" as it is this vector that will be used to attend to the other words in the sequence to predict the last word. We see that that the magnitude for each of its elements are large in comparison to other query vectors. Furthermore, if you compare the query vector for "a" to the key vectors, we can see that the signs and magnitudes line up well for the key vector for "human". This makes sense because the model needs to attend to "human" in order to predict "person". When the queries are matrix multiplied with the keys we get the following attention matrix.
 
-::blog-image
----
-imagePath: /img/causal_attn/adv_trained_rawattn.png
-caption: Trained raw attention matrix for the more complicated dataset.
-width: 600px
----
-::
+<BlogImage
+  src="/img/causal_attn/adv_trained_rawattn.png"
+  width={600}
+  height={0}
+>
+  Trained raw attention matrix for the more complicated dataset.
+</BlogImage>
 
 Again, let's focus on the row for "a". We can see that the logits are heavily positive for "human". This supports our observation from the query and key matrices. The story is complete when we observe the resulting attention probabilities/weights.
 
-::blog-image
----
-imagePath: /img/causal_attn/adv_trained_scaledattn.png
-caption: Trained attention probabilities/weights for the more complicated dataset.
-width: 600px
----
-::
+<BlogImage
+  src="/img/causal_attn/adv_trained_scaledattn.png"
+  width={600}
+  height={0}
+>
+  Training attention probabilities/weights for the more complicated dataset.
+</BlogImage>
 
 Now it is clear that the model is paying attention to the second word in the sequence when predicting the last word. This is because for row "a", the model has a probability of 1.0 for the second word in the sequence. What this will translate to is that the model will pass 100% of the value information from the second word in the sequence to the full-feedforward network to make its prediction, which is what we wanted it to do.
 
@@ -490,4 +462,3 @@ _Interestingly, the model also learned to only pay attention to the first word, 
 - Furthermore, with multiple attention heads or multiple layers, the model can attend to more complicated relationship between these words as well.
 - Lastly, training the model on a more complicated dataset will allow the model to learn more complicated relationships between the words in the sequence.
 - Play around with this code! [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ANxfs1t-ECoQ96yxtUfiUFYIdiMiNK_h?usp=sharing)
-

@@ -1,10 +1,11 @@
----
-title: "Simple RAG-Based AI Chatbot"
-date: 2024-11-14 00:00:00
-description: Building a simple retrieval-augmented generation (RAG) based chatbot using the LangChain API to interact with a podcast transcript corpus.
-tags: retrieval-augmented generation chatbot AI NLP
-categories: Academic
----
+export const metadata = {
+  title: "Simple RAG-Based AI Chatbot",
+  date: "2024-11-14 00:00:00",
+  description:
+    "Building a simple retrieval-augmented generation (RAG) based chatbot using the LangChain API to interact with a podcast transcript corpus.",
+  tags: ["retrieval-augmented generation", "chatbot", "AI", "NLP"],
+  categories: ["Academic"],
+};
 
 import BlogImage from "@/components/blogimage";
 
@@ -16,7 +17,12 @@ Now...this tutorial is nothing new. There are lots of tutorials out there on bui
 
 ## Brief overview of RAG
 
-<BlogImage src="/img/rag_bot/rag_architecture.webp" width={600}>
+<BlogImage
+  src="/img/rag_bot/rag_architecture.webp"
+  width={600}
+  height={0}
+  priority={true}
+>
   Basic retrieval-augmented generation (RAG) architecture.
   [source](https://truera.com/ai-quality-education/generative-ai-rags/what-is-retrieval-augmented-generation-rag-for-llms/)
 </BlogImage>
@@ -33,7 +39,7 @@ In the figure, you can think of the left third as the retrieval step, and the ri
 
 ## Ingesting the knowledge
 
-<BlogImage src="/img/rag_bot/rag_ingest.png" width={600}>
+<BlogImage src="/img/rag_bot/rag_ingest.png" width={600} height={0}>
   Basic retrieval-augmented generation (RAG) ingestion scheme.
   [source](https://python.langchain.com/docs/tutorials/rag/)
 </BlogImage>

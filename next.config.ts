@@ -1,11 +1,14 @@
+import type { NextConfig } from "next";
+//
 import createMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
-import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
-import rehypePrettyCode from 'rehype-pretty-code';
-// import rehypeMdxImportMedia from 'rehype-mdx-import-media';
-
-import type { NextConfig } from "next";
+// import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
+// import rehypeMdxCodeProps, { type RehypeMdxCodePropsOptions } from 'rehype-mdx-code-props'
+import rehypeShiki from "@shikijs/rehype";
+import type { RehypeShikiOptions } from "@shikijs/rehype";
+import { visit } from 'unist-util-visit'
+import { processMeta } from '@/utils/shiki'
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -15,18 +18,17 @@ const nextConfig: NextConfig = {
   },
 };
 
-const remarkGFMOptions = {
-}
-
-const rehypePrettyPrintOptions = {
-  theme: 'one-dark-pro'
+const rehypeShikiOptions: RehypeShikiOptions = {
+  theme: 'one-dark-pro',
+  transformers: [processMeta()]
 }
 
 const withMDX = createMDX({
   extension: /\.mdx$/,
   options: {
-    remarkPlugins: [[remarkGfm, remarkGFMOptions], remarkFrontmatter, remarkMdxFrontmatter], // Remark plugins
-    rehypePlugins: [[rehypePrettyCode, rehypePrettyPrintOptions]], // Rehype plugins
+    elementAttributeNameCase: 'react',
+    remarkPlugins: [remarkGfm, remarkFrontmatter], // Remark plugins
+    rehypePlugins: [[rehypeShiki, rehypeShikiOptions]], // Rehype plugins
   },
 })
 

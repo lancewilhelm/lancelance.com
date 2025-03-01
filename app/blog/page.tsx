@@ -19,8 +19,8 @@ interface Post {
   categories: string[]
 }
 
-export default function Blog() {
-  const posts: Post[] = getBlogPosts('content/blog/', true)
+export default async function Blog() {
+  const posts: Post[] = await getBlogPosts('content/blog/', true)
 
   return (
     <div className={`w-screen min-h-dvh grid ${styles.blogGrid}`}>

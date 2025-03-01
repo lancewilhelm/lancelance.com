@@ -9,32 +9,6 @@ type Metadata = {
   categories: string[]
 }
 
-function parseFrontmatter(fileContent: string) {
-  let frontmatterRegex = /---\s*([\s\S]*?)\s*---/
-  let match = frontmatterRegex.exec(fileContent)
-  let frontMatterBlock = match![1]
-  let content = fileContent.replace(frontmatterRegex, '').trim()
-  let frontMatterLines = frontMatterBlock.trim().split('\n')
-  let metadata: Partial<Metadata> = {}
-
-  frontMatterLines.forEach((line) => {
-    let [key, ...valueArr] = line.split(': ')
-    let value = valueArr.join(': ').trim()
-    value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-
-    // ✅ Handle `tags` and `categories` as arrays
-    if (key.trim() === "tags" || key.trim() === "categories") {
-      metadata[key.trim() as keyof Metadata] = value
-        .split(',')
-        .map((tag) => tag.trim()) as any; // Cast as `string[]`
-    } else {
-      metadata[key.trim() as keyof Metadata] = value as any; // Keep other values as strings
-    }
-  })
-
-  return { metadata: metadata as Metadata, content }
-}
-
 function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === '.mdx')
 }
@@ -44,26 +18,18 @@ function readMDXFile(filePath: string) {
   return parseFrontmatter(rawContent)
 }
 
-function getMDXData(dir: string, metadataOnly: boolean = false) {
-  let mdxFiles = getMDXFiles(dir)
-  return mdxFiles.map((file) => {
-    let { metadata, content } = readMDXFile(path.join(dir, file))
-    let slug = path.basename(file, path.extname(file))
-
-    if (metadataOnly) {
-      return { metadata, slug }
-    } else {
-      return {
-        metadata,
-        slug,
-        content,
+export async function getBlogPosts(metadataOnly: boolean = false) {
+  let mdxFiles = getMDXFiles('content/blog/')
+  return await Promise.all(
+    mdxFiles.map(async (file) => {
+      if (metadataOnly) {
+        const mdxModule = await import(`@/content/blog/${file}`)
+        return { metadata: mdxModule.metadata, slug: file.replace('.mdx', '') }
+      } else {
+        return null
       }
-    }
-  })
-}
-
-export function getBlogPosts(dir: string, metadataOnly: boolean = false) {
-  return getMDXData(dir, metadataOnly)
+    })
+  )
 }
 
 export function formatDate(date: string, includeRelative = false) {
@@ -99,5 +65,5 @@ export function formatDate(date: string, includeRelative = false) {
     return fullDate
   }
 
-  return `${fullDate} (${formattedDate})`
+  return `${fullDate}(${formattedDate})`
 }

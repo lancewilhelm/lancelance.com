@@ -1,16 +1,15 @@
+import themesList from '@/public/themes.json'
 /**
  * Updates the favicon with the current theme colors
  */
-export default function updateFavicon() {
-  setTimeout(async () => {
-    let mainColor, subColor, textColor, bgColor
-    const st = getComputedStyle(document.body)
-    mainColor = st.getPropertyValue('--main-color').trim()
-    subColor = st.getPropertyValue('--sub-color').trim()
-    textColor = st.getPropertyValue('--text-color').trim()
-    bgColor = st.getPropertyValue('--bg-color').trim()
+export default function updateFavicon(themeName: string) {
+  const colors = themesList.find((theme) => theme.name === themeName)
+  const mainColor = colors.mainColor
+  const bgColor = colors.bgColor
+  const subColor = colors.subColor
+  const textColor = colors.textColor
 
-    const svgPre = `
+  const svgPre = `
         <svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
             <style>
               #bg {
@@ -39,12 +38,18 @@ export default function updateFavicon() {
         </svg>
         `
 
-    const faviconElement = document.getElementById('favicon')
-    if (faviconElement) {
-      faviconElement.setAttribute(
-        'href',
-        'data:image/svg+xml;base64,' + btoa(svgPre)
-      )
-    }
-  }, 150)
+  const faviconElement = document.getElementById('favicon')
+  if (faviconElement) {
+    faviconElement.setAttribute(
+      'href',
+      'data:image/svg+xml;base64,' + btoa(svgPre)
+    )
+  } else {
+    const newFaviconElement = document.createElement('link')
+    newFaviconElement.setAttribute('id', 'favicon')
+    newFaviconElement.setAttribute('rel', 'icon')
+    newFaviconElement.setAttribute('type', 'image/svg+xml')
+    newFaviconElement.setAttribute('href', 'data:image/svg+xml;base64,' + btoa(svgPre))
+    document.head.appendChild(newFaviconElement)
+  }
 }
