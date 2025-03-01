@@ -17,10 +17,10 @@ export default async function DefaultLayout({ children }: LayoutProps) {
   return (
     <html lang="en">
       <head>
-        <script
-          crossOrigin="anonymous"
-          src="//unpkg.com/react-scan/dist/auto.global.js"
-        />
+        {/* <script */}
+        {/*   crossOrigin="anonymous" */}
+        {/*   src="//unpkg.com/react-scan/dist/auto.global.js" */}
+        {/* /> */}
         <link id='currentTheme' rel='stylesheet' type='text/css' href={themeHref} />
         {/* Inject dynamically generated favicon */}
         <link id="favicon" rel="icon" type="image/svg+xml" href={faviconHref} />
