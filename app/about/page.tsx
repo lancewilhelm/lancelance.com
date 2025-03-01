@@ -10,17 +10,7 @@ export const metadata: Metadata = {
   description: 'Projects for Lance Wilhelm',
 }
 
-interface Post {
-  title: string
-  date: string
-  description: string
-  tags: string[]
-  categories: string[]
-}
-
 export default function Blog() {
-  // const posts: Post[] = getBlogPosts('content/blog/', true)
-
   return (
     <div className={`w-screen min-h-dvh grid ${styles.projectsGrid}`}>
       <Header />

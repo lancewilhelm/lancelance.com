@@ -4,10 +4,12 @@ import themesList from '@/public/themes.json'
  */
 export default function updateFavicon(themeName: string) {
   const colors = themesList.find((theme) => theme.name === themeName)
+  if (!colors) return;
+
   const mainColor = colors.mainColor
   const bgColor = colors.bgColor
-  const subColor = colors.subColor
-  const textColor = colors.textColor
+  // const subColor = colors.subColor
+  // const textColor = colors.textColor
 
   const svgPre = `
         <svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">

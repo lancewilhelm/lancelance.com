@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 import Footer from '@/components/footer';
 import Header from "@/components/header";
 import styles from './projects.module.css';
@@ -9,17 +8,7 @@ export const metadata: Metadata = {
   description: 'Projects for Lance Wilhelm',
 }
 
-interface Post {
-  title: string
-  date: string
-  description: string
-  tags: string[]
-  categories: string[]
-}
-
 export default function Blog() {
-  // const posts: Post[] = getBlogPosts('content/blog/', true)
-
   return (
     <div className={`w-screen min-h-dvh grid ${styles.projectsGrid}`}>
       <Header />

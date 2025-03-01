@@ -3,6 +3,9 @@ import GitHubIcon from '@/components/icons/github'
 import StarIcon from '@/components/icons/star'
 import ForkIcon from '@/components/icons/fork'
 
+type Languages = Record<string, { color: string | null, url: string }>
+const typedGithubColors: Languages = githubLanguageColors
+
 interface RepoCardProps {
   repo: string
 }
@@ -30,7 +33,7 @@ export default async function RepoCard({ repo }: RepoCardProps) {
       <div className="italic font-sans">{repoData.description}</div>
       <div className="flex gap-[15px]">
         <div className="flex items-center justify-center align-center gap-[3px]">
-          <div className="w-[15px] h-[15px] rounded-full" style={{ backgroundColor: githubLanguageColors[repoData.language].color }}></div>
+          <div className="w-[15px] h-[15px] rounded-full" style={{ backgroundColor: typedGithubColors[repoData.language]?.color ?? undefined }}></div>
           {repoData.language}
         </div>
         <div className="flex items-center justify-center align-center gap-[3px]">

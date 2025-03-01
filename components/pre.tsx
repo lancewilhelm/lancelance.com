@@ -1,21 +1,22 @@
 'use client'
 
-import { useState, useRef, type PropsWithChildren } from 'react';
-import { ComponentPropsWithoutRef } from 'react';
+import { useState, useRef } from 'react';
+// import { ComponentPropsWithoutRef } from 'react';
+import type { PropsWithChildren } from 'react';
 import CopyIcon from '@/components/icons/copy';
 import ThumbsUpIcon from '@/components/icons/thumbsup';
 
-type PrePropsType = ComponentPropsWithoutRef<'pre'>;
+// type PrePropsType = ComponentPropsWithoutRef<'pre'>;
 
-interface PropsType extends PrePropsType {
+export interface PrePropsType extends PropsWithChildren {
   file: string
   language: string
-  dataTheme: stringClappingIcon
+  dataTheme: string
   style: { backgroundColor: string, color: string }
   tabIndex: string
 }
 
-export default function Pre({ children, ...props }: PropsType) {
+export default function Pre({ children, ...props }: PrePropsType) {
   const [copied, setCopied] = useState(false);
   const preRef = useRef<HTMLPreElement>(null);
 
@@ -50,7 +51,7 @@ export default function Pre({ children, ...props }: PropsType) {
           </div>
         </div>
       </div>
-      <pre ref={preRef} {...props}>{children}</pre>
+      <pre ref={preRef} style={props.style}>{children}</pre>
     </div>
   );
 }

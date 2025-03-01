@@ -1,3 +1,4 @@
+import { Metadata } from 'next'
 import path from 'node:path'
 import fs from 'node:fs'
 //
@@ -22,6 +23,16 @@ async function loadMdxFile(slug: string) {
   } catch (error) {
     console.error('Failed to load MDX file:', error)
     return null
+  }
+}
+
+export async function generateMetadata({ params }: BlogPostProps): Promise<Metadata> {
+  const slug = (await params).slug
+  const mdxModule = await loadMdxFile(slug)
+  const { metadata } = mdxModule
+  return {
+    title: `${metadata.title} | LanceLance`,
+    description: metadata.description,
   }
 }
 

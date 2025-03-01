@@ -20,18 +20,20 @@ interface Post {
 }
 
 export default async function Blog() {
-  const posts: Post[] = await getBlogPosts('content/blog/', true)
+  const posts: ({ metadata: Post, slug: string } | null)[] = await getBlogPosts(true)
 
   return (
     <div className={`w-screen min-h-dvh grid ${styles.blogGrid}`}>
       <Header />
       <div id="blog-list-container" className="flex flex-col w-full h-full col-start-[content-start] row-start-[content-start] text-wrap overflow-x-hidden items-center mb-2">
         <div id="blog-list" className="flex flex-col max-w-[700px] gap-[20px]">
-          {posts.map((post: Post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className='no-underline'>
-              <BlogCard title={post.metadata.title} description={post.metadata.description} date={post.metadata.date} />
-            </Link>
-          ))}
+          {posts.map((post) => {
+            if (post) return (
+              <Link key={post.slug} href={`/blog/${post.slug}`} className='no-underline'>
+                <BlogCard title={post.metadata.title} description={post.metadata.description} date={post.metadata.date} />
+              </Link>
+            )
+          })}
         </div>
       </div>
       <Footer />
