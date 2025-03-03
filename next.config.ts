@@ -6,6 +6,7 @@ import remarkFrontmatter from 'remark-frontmatter'
 import remarkMath from 'remark-math'
 import rehypeShiki from "@shikijs/rehype";
 import rehypeKatex from "rehype-katex";
+import rehypeSlug from "rehype-slug";
 import type { RehypeShikiOptions } from "@shikijs/rehype";
 import { visit } from 'unist-util-visit'
 import { processMeta } from '@/utils/shiki'
@@ -28,7 +29,7 @@ const withMDX = createMDX({
   options: {
     elementAttributeNameCase: 'react',
     remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMath], // Remark plugins
-    rehypePlugins: [[rehypeShiki, rehypeShikiOptions], rehypeKatex], // Rehype plugins
+    rehypePlugins: [[rehypeShiki, rehypeShikiOptions], rehypeKatex, rehypeSlug], // Rehype plugins
   },
 })
 
