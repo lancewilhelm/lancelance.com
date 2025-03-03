@@ -134,3 +134,7 @@ pre {
 ::-webkit-scrollbar-track {
   background: var(--bg-color);
 }
+
+.katex-html {
+  display: none;
+}

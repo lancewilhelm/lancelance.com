@@ -3,9 +3,9 @@ import type { NextConfig } from "next";
 import createMDX from '@next/mdx'
 import remarkGfm from 'remark-gfm'
 import remarkFrontmatter from 'remark-frontmatter'
-// import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
-// import rehypeMdxCodeProps, { type RehypeMdxCodePropsOptions } from 'rehype-mdx-code-props'
+import remarkMath from 'remark-math'
 import rehypeShiki from "@shikijs/rehype";
+import rehypeKatex from "rehype-katex";
 import type { RehypeShikiOptions } from "@shikijs/rehype";
 import { visit } from 'unist-util-visit'
 import { processMeta } from '@/utils/shiki'
@@ -27,8 +27,8 @@ const withMDX = createMDX({
   extension: /\.mdx$/,
   options: {
     elementAttributeNameCase: 'react',
-    remarkPlugins: [remarkGfm, remarkFrontmatter], // Remark plugins
-    rehypePlugins: [[rehypeShiki, rehypeShikiOptions]], // Rehype plugins
+    remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMath], // Remark plugins
+    rehypePlugins: [[rehypeShiki, rehypeShikiOptions], rehypeKatex], // Rehype plugins
   },
 })
 
