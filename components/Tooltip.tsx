@@ -6,24 +6,39 @@ interface TootipProps extends PropsWithChildren {
   tooltipText: string;
   delay?: number;
   position?: 'top' | 'bottom' | 'left' | 'right';
+  disableOnMobile?: boolean;
 }
 
 export function Tooltip({
   children,
   tooltipText,
   delay = 700,
-  position = 'top'
+  position = 'top',
+  disableOnMobile = true
 }: TootipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isTouchDevice = useRef(false);
 
   const handleMouseEnter = () => {
+    // Don't show tooltip on touch devices
+    if (isTouchDevice.current && disableOnMobile) return;
+
     timeoutRef.current = setTimeout(() => {
       setIsVisible(true);
     }, delay);
   };
 
   const handleMouseLeave = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsVisible(false);
+  };
+
+  const handleTouchStart = () => {
+    isTouchDevice.current = true;
+    // Immediately hide any tooltip and prevent it from showing
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
@@ -50,6 +65,7 @@ export function Tooltip({
       className="relative inline-block"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onTouchStart={handleTouchStart}
     >
       {isVisible && (
         <div className={`absolute ${positionClasses[position]} z-50 overflow-hidden rounded-md bg-[--main-color] px-3 py-1.5 text-sm text-[--bg-color] text-center ${robotoMono.className} tooltip`}>
