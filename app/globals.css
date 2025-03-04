@@ -13,9 +13,9 @@
   --text-color: #000
 }
 
-/* * { */
-/*   scrollbar-gutter: stable both-edges; */
-/* } */
+body {
+  font-size: 16pt;
+}
 
 a {
   color: var(--main-color);
