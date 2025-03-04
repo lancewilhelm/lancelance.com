@@ -3,6 +3,7 @@ import { ReactNode } from 'react'
 import { geistSans } from '@/utils/fonts'
 import { ThemeProvider } from '@/context/ThemeProvider'
 import { generateFaviconSVG } from '@/utils/favicon'
+import { Analytics } from "@vercel/analytics/react"
 import './globals.css'
 
 interface LayoutProps {
@@ -29,6 +30,7 @@ export default async function DefaultLayout({ children }: LayoutProps) {
         <ThemeProvider>
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
