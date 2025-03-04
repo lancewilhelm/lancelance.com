@@ -1,7 +1,64 @@
-import { PropsWithChildren } from "react"
+import React, { useState, useRef, useEffect } from 'react';
+import { PropsWithChildren } from 'react';
+import { robotoMono } from '@/utils/fonts';
 
-export default function Tooltip({ children }: PropsWithChildren) {
-  return (
-    <div>{children}</div>
-  )
+interface TootipProps extends PropsWithChildren {
+  tooltipText: string;
+  delay?: number;
+  position?: 'top' | 'bottom' | 'left' | 'right';
 }
+
+export function Tooltip({
+  children,
+  tooltipText,
+  delay = 700,
+  position = 'top'
+}: TootipProps) {
+  const [isVisible, setIsVisible] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsVisible(true);
+    }, delay);
+  };
+
+  const handleMouseLeave = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsVisible(false);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
+  const positionClasses = {
+    top: 'bottom-full left-1/2 transform -translate-x-1/2 mb-2',
+    bottom: 'top-full left-1/2 transform -translate-x-1/2 mt-2',
+    left: 'right-full top-1/2 transform -translate-y-1/2 mr-2',
+    right: 'left-full top-1/2 transform -translate-y-1/2 ml-2'
+  };
+
+  return (
+    <div
+      className="relative inline-block"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {isVisible && (
+        <div className={`absolute ${positionClasses[position]} z-50 overflow-hidden rounded-md bg-[--main-color] px-3 py-1.5 text-sm text-[--bg-color] text-center ${robotoMono.className} tooltip`}>
+          {tooltipText}
+        </div>
+      )}
+      {children}
+    </div>
+  );
+}
+
+export default Tooltip;
