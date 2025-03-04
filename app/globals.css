@@ -13,10 +13,6 @@
   --text-color: #000
 }
 
-body {
-  font-size: 16pt;
-}
-
 a {
   color: var(--main-color);
 }

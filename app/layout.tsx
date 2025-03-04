@@ -23,10 +23,9 @@ export default async function DefaultLayout({ children }: LayoutProps) {
         {/*   src="//unpkg.com/react-scan/dist/auto.global.js" */}
         {/* /> */}
         <link id='currentTheme' rel='stylesheet' type='text/css' href={themeHref} />
-        {/* Inject dynamically generated favicon */}
         <link id="favicon" rel="icon" type="image/svg+xml" href={faviconHref} />
       </head>
-      <body className={`m-0 bg-[--bg-color] text-[--text-color] overflow-x-hidden ${geistSans.className}`}>
+      <body className={`m-0 bg-[--bg-color] text-[--text-color] overflow-x-hidden text-[14pt] ${geistSans.className}`}>
         <ThemeProvider>
           {children}
         </ThemeProvider>
