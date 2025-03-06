@@ -15,7 +15,7 @@ export default function Blog() {
           Shameless AI optimist.
         </div>
         <div>
-          Apiring amateur athlete.
+          Aspiring amateur athlete.
         </div>
         <div>
           Serial hobbyist.
