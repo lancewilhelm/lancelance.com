@@ -7,7 +7,7 @@ const showThemePicker = ref(false);
         class="flex row-start-[content-end] col-start-[content-start] justify-center items-center"
     >
         <div
-            class="cursor-pointer flex gap-1 items-center"
+            class="cursor-pointer flex gap-2 items-center"
             @click="showThemePicker = true"
         >
             <Icon name="fa6-solid:palette" class="text-(--sub-color)" />
