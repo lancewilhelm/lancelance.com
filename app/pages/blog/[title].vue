@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { BlogPost } from "~/types/blog";
+import { computed } from "vue";
 
 definePageMeta({
     layout: "blog",
@@ -8,9 +9,14 @@ definePageMeta({
 const route = useRoute();
 const slug = route.params.title as string;
 
-const { data: post } = await useAsyncData<BlogPost>(`blog-post-${slug}`, () => {
-    return $fetch(`/api/blog/${slug}`);
-});
+const { data: postData } = await useAsyncData<BlogPost>(
+    `blog-post-${slug}`,
+    () => {
+        return $fetch<BlogPost>(`/api/blog/${slug}`);
+    },
+);
+
+const post = computed<BlogPost | null>(() => postData.value);
 
 if (!post.value) {
     throw createError({
@@ -19,17 +25,28 @@ if (!post.value) {
     });
 }
 
-useHead({
-    title: post.value.title,
-    meta: [
-        { name: "description", content: post.value.description },
-        { property: "og:title", content: post.value.title },
-        { property: "og:description", content: post.value.description },
-        { property: "og:url", content: `https://lancelance.dev${route.path}` },
-        { name: "twitter:title", content: post.value.title },
-        { name: "twitter:description", content: post.value.description },
-        { name: "twitter:url", content: `https://lancelance.dev${route.path}` },
-    ],
+useHead(() => {
+    if (!post.value) {
+        return {};
+    }
+    return {
+        title: post.value.title,
+        meta: [
+            { name: "description", content: post.value.description },
+            { property: "og:title", content: post.value.title },
+            { property: "og:description", content: post.value.description },
+            {
+                property: "og:url",
+                content: `https://lancelance.dev${route.path}`,
+            },
+            { name: "twitter:title", content: post.value.title },
+            { name: "twitter:description", content: post.value.description },
+            {
+                name: "twitter:url",
+                content: `https://lancelance.dev${route.path}`,
+            },
+        ],
+    };
 });
 </script>
 

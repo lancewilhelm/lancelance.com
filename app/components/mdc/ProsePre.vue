@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import hljs from "highlight.js";
 import { useClipboard } from "@vueuse/core";
+import { ref, computed } from "vue";
 
 interface Props {
     code: string;
