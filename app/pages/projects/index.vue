@@ -1,13 +1,13 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Projects - LanceLance',
-  appleMobileWebAppTitle: 'Projects - LanceLance'
-})
+    title: "Projects - LanceLance",
+    appleMobileWebAppTitle: "Projects - LanceLance",
+});
 definePageMeta({
-  layout: 'blog'
-})
+    layout: "blog",
+});
 </script>
 
 <template>
-  <div class='flex justify-center items-center'>coming soon...</div>
+    <div class="flex justify-center items-center">Coming soon...</div>
 </template>

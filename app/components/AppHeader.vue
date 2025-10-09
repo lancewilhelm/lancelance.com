@@ -31,6 +31,12 @@ const route = useRoute();
                 :class="{ 'underline!': route?.name === 'projects' }"
                 >Projects</NuxtLink
             >
+            <span>|</span>
+            <NuxtLink
+                to="/about"
+                :class="{ 'underline!': route?.name === 'projects' }"
+                >About</NuxtLink
+            >
         </div>
     </header>
 </template>
