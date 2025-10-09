@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import githubLanguageColors from "~/assets/github_colors.json";
+type GithubLanguageColors = Record<
+    string,
+    { color: string | null; url: string }
+>;
 
 const props = defineProps({
     repo: {
@@ -8,7 +12,17 @@ const props = defineProps({
     },
 });
 
-const { data: repoData } = await useFetch(
+type GithubRepoData = {
+    html_url: string;
+    full_name: string;
+    description: string;
+    language: string;
+    stargazers_count: number;
+    watchers_count: number;
+    forks_count: number;
+};
+
+const { data: repoData } = await useFetch<GithubRepoData>(
     `https://api.github.com/repos/${props.repo}`,
     {
         key: `github-repo-${props.repo}`,
@@ -39,7 +53,9 @@ const { data: repoData } = await useFetch(
                     class="w-[15px] h-[15px] rounded-full"
                     :style="{
                         backgroundColor:
-                            githubLanguageColors[repoData.language].color,
+                            (githubLanguageColors as GithubLanguageColors)[
+                                repoData.language
+                            ]?.color || '#000000',
                     }"
                 ></div>
                 {{ repoData.language }}

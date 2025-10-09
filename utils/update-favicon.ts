@@ -1,4 +1,4 @@
-export default function () {
+export default function updateFavicon() {
   console.log("updateFavicon");
   setTimeout(async () => {
     const st = getComputedStyle(document.body);

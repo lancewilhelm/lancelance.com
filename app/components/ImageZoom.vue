@@ -27,11 +27,10 @@ document.addEventListener("keydown", (event) => {
 /**
  * Closes the window when clicking outside of the image
  */
-function handleClickOutsideZoom(event) {
-    if (
-        event.target.id === "zoomed-modal" ||
-        event.target.id === "zoomed-image"
-    ) {
+function handleClickOutsideZoom(event: MouseEvent) {
+    if (!event.target) return;
+    const target = event.target as HTMLElement;
+    if (target.id === "zoomed-modal" || target.id === "zoomed-image") {
         emit("close");
     }
 }

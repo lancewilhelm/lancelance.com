@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { BlogPostPreview } from "~/types/blog";
+import type { BlogPostPreview } from "#shared/types/blog";
 
 useSeoMeta({
     title: "Blog",

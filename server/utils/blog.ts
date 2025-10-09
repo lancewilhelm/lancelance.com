@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import type { BlogPost, BlogPostPreview } from "../../types/blog";
+import type { BlogPost, BlogPostPreview } from "#shared/types/blog";
 
 const CONTENT_DIR = path.join(process.cwd(), "content/blog");
 

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { BlogPost } from "~/types/blog";
-import { computed } from "vue";
+import type { BlogPost } from "#shared/types/blog";
 
 definePageMeta({
     layout: "blog",
@@ -16,7 +15,7 @@ const { data: postData } = await useAsyncData<BlogPost>(
     },
 );
 
-const post = computed<BlogPost | null>(() => postData.value);
+const post = computed<BlogPost | null>(() => postData.value ?? null);
 
 if (!post.value) {
     throw createError({
