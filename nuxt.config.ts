@@ -1,76 +1,59 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { defineNuxtConfig } from 'nuxt/config'
-import tailwindcss from '@tailwindcss/vite'
+import { defineNuxtConfig } from "nuxt/config";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
-  ssr: false,
-  compatibilityDate: '2024-11-01',
+  srcDir: "app/",
+  ssr: true,
+  compatibilityDate: "2024-11-01",
   devtools: { enabled: false },
-  css: ['~/assets/css/main.css'],
+  css: ["~/assets/css/main.css", "~/assets/css/hljs.css"],
   modules: [
-    '@nuxt/content',
-    '@nuxt/icon',
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-    '@nuxt/fonts',
-    '@nuxtjs/seo'
+    "@nuxtjs/mdc",
+    "@nuxt/icon",
+    "@pinia/nuxt",
+    "@vueuse/nuxt",
+    "@nuxt/fonts",
+    "@nuxtjs/seo",
   ],
   vite: {
     plugins: [tailwindcss()],
-    build: {
-      rollupOptions: {
-        external: ['shiki/onig.wasm'],
-      }
-    },
   },
   nitro: {
-    preset: 'cloudflare-pages-static',
-    experimental: {
-      wasm: true
-    }
+    preset: "cloudflare-pages-static",
   },
   app: {
     head: {
       script: [
         {
-          src: '/js/theme-loader.js',
-          type: 'text/javascript',
-          defer: false
-        }
+          src: "/js/theme-loader.js",
+          type: "text/javascript",
+          defer: false,
+        },
       ],
       link: [
         {
-          rel: 'icon',
-          type: 'image/svg+xml',
-          id: 'favicon',
-          href: '/favicon.svg',
+          rel: "icon",
+          type: "image/svg+xml",
+          id: "favicon",
+          href: "/favicon.svg",
         },
-      ]
+      ],
     },
-    // pageTransition: {
-    //   name: 'page',
-    //   mode: 'out-in',
-    // },
-    // layoutTransition: {
-    //   name: 'layout',
-    //   mode: 'out-in'
-    // }
   },
-  content: {
-    build: {
-      markdown: {
-        remarkPlugins: { 'remark-math': {} },
-        rehypePlugins: { 'rehype-katex': {} },
-        highlight: {
-          theme: 'one-dark-pro',
-          langs: [
-            'python'
-          ]
-        }
-      }
-    }
+  mdc: {
+    components: {
+      prose: true,
+      map: {
+        pre: "ProsePre",
+        table: "ProseTable",
+      },
+    },
+    remarkPlugins: {
+      "remark-math": {},
+    },
+    rehypePlugins: {
+      "rehype-katex": {},
+    },
   },
-  experimental: {
-    viewTransition: false
-  }
-})
+});
