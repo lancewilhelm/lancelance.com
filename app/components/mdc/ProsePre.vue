@@ -4,7 +4,7 @@ import { useClipboard } from "@vueuse/core";
 import { ref, computed } from "vue";
 
 interface Props {
-    code: string;
+    code?: string;
     language?: string | null;
     filename?: string | null;
     highlights?: Array<number> | null;
@@ -22,7 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const { copy, copied } = useClipboard();
-const copyBtnPressed = ref<Boolean>(false);
+const copyBtnPressed = ref<boolean>(false);
 
 // Compute highlighted code
 const parsedCode = computed(() => {

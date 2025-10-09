@@ -22,7 +22,7 @@ export function getAllBlogPosts(): BlogPostPreview[] {
     const { data } = matter(fileContent);
 
     // Extract slug from filename (remove date prefix and .md extension)
-    // e.g., "2023-10-25-vue_chatbot1.md" -> "vue_chatbot1"
+    // e.g., "2023-10-25-vue-chatbot1.md" -> "vue-chatbot1"
     const slug = filename
       .replace(/^\d{4}-\d{2}-\d{2}-/, "")
       .replace(/\.md$/, "");

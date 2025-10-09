@@ -24,7 +24,7 @@ repo: lancewilhelm/vue-chatbot
 
 ---
 
-If you missed the earlier parts, start with [Part 1](/blog/vue_chatbot1) and then [Part 2](/blog/vue_chatbot2) before jumping into this part
+If you missed the earlier parts, start with [Part 1](/blog/vue-chatbot1) and then [Part 2](/blog/vue-chatbot2) before jumping into this part
 
 ---
 

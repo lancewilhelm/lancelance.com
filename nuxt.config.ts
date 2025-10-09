@@ -15,6 +15,7 @@ export default defineNuxtConfig({
     "@vueuse/nuxt",
     "@nuxt/fonts",
     "@nuxtjs/seo",
+    "@nuxt/eslint",
   ],
   vite: {
     plugins: [tailwindcss()],
@@ -41,7 +42,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  // @ts-ignore - mdc configuration is provided by @nuxtjs/mdc and not in Nuxt base typed schema
   mdc: {
     components: {
       prose: true,

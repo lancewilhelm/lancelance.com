@@ -44,8 +44,8 @@ const zoomed = ref(false);
         </div>
         <ImageZoom
             v-if="zoomed"
-            @close="zoomed = false"
             :image-path="imagePath"
+            @close="zoomed = false"
         />
     </div>
 </template>

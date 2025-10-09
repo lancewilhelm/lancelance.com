@@ -20,7 +20,7 @@ In this part we will be working up to [this commit.](https://github.com/lancewil
 
 ---
 
-If you missed part 1, you can find it in the first post: [Vue.js Chatbot - Part 1](/blog/vue_chatbot1)
+If you missed part 1, you can find it in the first post: [Vue.js Chatbot - Part 1](/blog/vue-chatbot1)
 
 ---
 
@@ -30,7 +30,7 @@ If you missed part 1, you can find it in the first post: [Vue.js Chatbot - Part 
 
 ## Setting up the Back-End
 
-First, we need to install two dependencies to get FastAPI running. Run `pip install fastapi uvicorn` to install them. Next, we need to create a file to contain our server/API code. At the very root of your project, which is outside the `app/` folder from [part 1](/blog/vue_chatbot1), create a file `main.py` and add the following code:
+First, we need to install two dependencies to get FastAPI running. Run `pip install fastapi uvicorn` to install them. Next, we need to create a file to contain our server/API code. At the very root of your project, which is outside the `app/` folder from [part 1](/blog/vue-chatbot1), create a file `main.py` and add the following code:
 
 ```python[main.py]
 from fastapi import FastAPI
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
 ```
 
-You will need to install Jinja2 first with `pip install jinja2`. While we will not be taking advantage of Jinja templating in this project, serving the page with Jinja allows us to keep a simple GET route for the root, `/`. We also mounted our static files that we built, which are located at `app/dist/assets` so that the HTML file can access the actual page. Now, if you run `python main.py` and navigate to the URL provided, you should see all of your work from [part 1](/blog/vue_chatbot1)!
+You will need to install Jinja2 first with `pip install jinja2`. While we will not be taking advantage of Jinja templating in this project, serving the page with Jinja allows us to keep a simple GET route for the root, `/`. We also mounted our static files that we built, which are located at `app/dist/assets` so that the HTML file can access the actual page. Now, if you run `python main.py` and navigate to the URL provided, you should see all of your work from [part 1](/blog/vue-chatbot1)!
 
 ## Adding a Websocket Connection
 
@@ -520,4 +520,3 @@ Now, if you rebuild your webapp with `npm run build` in the `app/` directory and
 ## In the final part of this series
 
 We are going to integrate the GPT-3.5 model into our chatbot and store the messages in a MongoDB database. Stay tuned!
-

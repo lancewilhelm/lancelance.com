@@ -1,22 +1,21 @@
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
 interface Config {
   theme?: string;
-  [key: string]: any;
 }
 
-export const useConfigStore = defineStore('config', () => {
+export const useConfigStore = defineStore("config", () => {
   // Make the config state reactive
-  const config = ref<Config>({ theme: 'monochrome' });
+  const config = ref<Config>({ theme: "monochrome" });
 
   // Load from localStorage only on the client
   if (import.meta.client) {
-    const savedConfig = localStorage.getItem('config');
+    const savedConfig = localStorage.getItem("config");
     if (savedConfig) {
       try {
         config.value = JSON.parse(savedConfig) as Config;
       } catch (e) {
-        console.error('Error parsing config from localStorage:', e);
+        console.error("Error parsing config from localStorage:", e);
       }
     } else {
       saveToLocalStorage(config.value);
@@ -25,7 +24,7 @@ export const useConfigStore = defineStore('config', () => {
 
   // Function to persist config to localStorage
   function saveToLocalStorage(updatedConfig: Config) {
-    localStorage.setItem('config', JSON.stringify(updatedConfig));
+    localStorage.setItem("config", JSON.stringify(updatedConfig));
   }
 
   // Function to set a new config

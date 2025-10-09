@@ -1,43 +1,47 @@
 <script setup lang="ts">
 defineProps({
-  imagePath: {
-    type: String,
-    default: ''
-  },
-})
-
-const emit = defineEmits(['close']);
-
-const zoomed = ref(false)
-
-// Event handlers
-document.addEventListener('mousedown', handleClickOutsideZoom);
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    emit('close');
-  }
+    imagePath: {
+        type: String,
+        default: "",
+    },
 });
 
-/**
- * Zooms in on the image by opening it up in a model
- */
-function zoomImage() {
-  zoomed.value = true
-}
+const emit = defineEmits(["close"]);
+
+// Event handlers
+document.addEventListener("mousedown", handleClickOutsideZoom);
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        emit("close");
+    }
+});
+
+// /**
+//  * Zooms in on the image by opening it up in a model
+//  */
+// const zoomed = ref(false);
+// function zoomImage() {
+//     zoomed.value = true;
+// }
 
 /**
  * Closes the window when clicking outside of the image
  */
 function handleClickOutsideZoom(event) {
-  if (event.target.id === 'zoomed-modal' || event.target.id === 'zoomed-image') {
-    emit('close');
-  }
-};
+    if (
+        event.target.id === "zoomed-modal" ||
+        event.target.id === "zoomed-image"
+    ) {
+        emit("close");
+    }
+}
 </script>
 
 <template>
-  <div id="zoomed-modal"
-    class="fixed grid items-center justify-center z-10 left-0 top-0 w-full h-full overflow-auto bg-black/60 p-[20px]">
-    <img :src="imagePath" id="zoomed-image" class="cursor-pointer">
-  </div>
+    <div
+        id="zoomed-modal"
+        class="fixed grid items-center justify-center z-10 left-0 top-0 w-full h-full overflow-auto bg-black/60 p-[20px]"
+    >
+        <img id="zoomed-image" :src="imagePath" class="cursor-pointer" />
+    </div>
 </template>

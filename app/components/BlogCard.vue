@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { BlogPostPreview } from "~/types/blog";
 
-const props = defineProps<{
+defineProps<{
     post: BlogPostPreview;
 }>();
 </script>
