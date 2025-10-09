@@ -21,6 +21,9 @@ app/
     ├── mdc/
     │   ├── BlogImage.vue       ✓ Available in markdown
     │   ├── GithubRepoCard.vue  ✓ Available in markdown
+    │   ├── ProseH2.vue          ✓ Overrides default h2 rendering
+    │   ├── ProseH3.vue          ✓ Overrides default h3 rendering
+    │   ├── ProseH4.vue          ✓ Overrides default h4 rendering
     │   ├── ProsePre.vue         ✓ Available in markdown
     │   └── ProseTable.vue       ✓ Available in markdown
     └── Header.vue               ✗ NOT available in markdown
@@ -57,6 +60,87 @@ MDC automatically converts between these naming conventions.
      { key: `github-repo-${repo}` }
    );
    ```
+
+## Prose Components
+
+Prose components (prefixed with `Prose`) automatically override the default MDC rendering for HTML elements. These are especially useful for customizing how markdown headings, code blocks, and tables are rendered.
+
+### Prose Heading Components (H2, H3, H4)
+
+The heading components add a copy-link-to-clipboard feature that appears on hover. This allows users to easily share links to specific sections of your content.
+
+**Files:**
+- `app/components/mdc/ProseH2.vue`
+- `app/components/mdc/ProseH3.vue`
+- `app/components/mdc/ProseH4.vue`
+
+**Usage:**
+These components automatically replace all `## H2`, `### H3`, and `#### H4` headings in your markdown files. No special syntax is needed - just write normal markdown headings.
+
+**Features:**
+- Copy link button appears on hover
+- Uses Lucide icons (`lucide:link` and `lucide:check`)
+- Copies full URL with hash anchor to clipboard
+- Shows check icon for 2 seconds after copying
+- Fully accessible with ARIA labels
+
+**Component code example (ProseH2.vue):**
+```vue
+<script setup lang="ts">
+import { ref } from 'vue'
+
+defineProps({
+    id: {
+        type: String,
+        default: '',
+    },
+})
+
+const isHovered = ref(false)
+const copied = ref(false)
+
+function copyHeaderLink(id: string) {
+    if (!id) return
+
+    const baseUrl = window.location.origin + window.location.pathname
+    const fullUrl = `${baseUrl}#${id}`
+    navigator.clipboard.writeText(fullUrl)
+    copied.value = true
+    setTimeout(() => {
+        copied.value = false
+    }, 2000)
+}
+</script>
+
+<template>
+    <h2
+        :id="id"
+        class="flex items-center gap-2 group"
+        @mouseenter="isHovered = true"
+        @mouseleave="isHovered = false"
+    >
+        <slot />
+        <button
+            v-if="isHovered"
+            type="button"
+            class="cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity"
+            :aria-label="copied ? 'Link copied' : 'Copy link to heading'"
+            @click="copyHeaderLink(id)"
+        >
+            <Icon
+                v-if="copied"
+                name="lucide:check"
+                class="text-(--main-color)"
+            />
+            <Icon
+                v-else
+                name="lucide:link"
+                class="text-(--main-color)"
+            />
+        </button>
+    </h2>
+</template>
+```
 
 ## Example Components
 
