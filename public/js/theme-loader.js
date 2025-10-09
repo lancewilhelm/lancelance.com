@@ -1,12 +1,12 @@
 function setFavIcon() {
-  console.log('setting favicon')
+  console.log("setting favicon");
   setTimeout(async () => {
-    let mainColor, subColor, textColor, bgColor
-    const st = getComputedStyle(document.body)
-    mainColor = st.getPropertyValue('--main-color').trim()
-    subColor = st.getPropertyValue('--sub-color').trim()
-    textColor = st.getPropertyValue('--text-color').trim()
-    bgColor = st.getPropertyValue('--bg-color').trim()
+    let mainColor, subColor, textColor, bgColor;
+    const st = getComputedStyle(document.body);
+    mainColor = st.getPropertyValue("--main-color").trim();
+    subColor = st.getPropertyValue("--sub-color").trim();
+    textColor = st.getPropertyValue("--text-color").trim();
+    bgColor = st.getPropertyValue("--bg-color").trim();
 
     const svgPre = `
         <svg width="100%" height="100%" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
@@ -35,40 +35,67 @@ function setFavIcon() {
                 </g>
             </g>
         </svg>
-        `
+        `;
 
-    const faviconElement = document.getElementById('favicon')
+    const faviconElement = document.getElementById("favicon");
     if (faviconElement) {
       faviconElement.setAttribute(
-        'href',
-        'data:image/svg+xml;base64,' + btoa(svgPre)
-      )
+        "href",
+        "data:image/svg+xml;base64," + btoa(svgPre),
+      );
     }
-  }, 150)
+  }, 150);
 }
 
 function loadTheme() {
   try {
-    const config = JSON.parse(localStorage.getItem('config') || '{}');
-    const theme = config.theme || 'monochrome';
+    const config = JSON.parse(localStorage.getItem("config") || "{}");
+    const theme = config.theme || "monochrome";
 
     // Set background color before Nuxt loads
     const root = document.documentElement;
-    root.style.backgroundColor = '#111';
-    root.style.color = '#fff';
+    root.style.backgroundColor = "#111";
+    root.style.color = "#fff";
 
     // Inject theme CSS file
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.id = 'currentTheme';
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.id = "currentTheme";
     link.href = `/css/themes/${theme}.css`;
     document.head.appendChild(link);
     setFavIcon();
-
-
   } catch (e) {
-    console.error('Theme loading error:', e);
+    console.error("Theme loading error:", e);
   }
-};
+}
+
+function setTheme(themeName) {
+  try {
+    // Update localStorage
+    const config = JSON.parse(localStorage.getItem("config") || "{}");
+    config.theme = themeName;
+    localStorage.setItem("config", JSON.stringify(config));
+
+    // Update or create theme CSS link
+    const existingLink = document.getElementById("currentTheme");
+    if (existingLink) {
+      existingLink.href = `/css/themes/${themeName}.css`;
+    } else {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.id = "currentTheme";
+      link.href = `/css/themes/${themeName}.css`;
+      document.head.appendChild(link);
+    }
+
+    // Update favicon after theme change
+    setFavIcon();
+  } catch (e) {
+    console.error("Theme setting error:", e);
+  }
+}
+
+// Make setTheme globally available
+window.setTheme = setTheme;
 
 loadTheme();
