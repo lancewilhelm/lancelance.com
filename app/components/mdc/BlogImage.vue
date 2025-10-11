@@ -38,7 +38,7 @@ const zoomed = ref(false);
                 @click="zoomed = true"
             />
         </div>
-        <div class="italic max-w-[80vw]">
+        <div class="italic max-w-[80vw] text-center">
             <slot name="caption" />
             {{ caption }}
         </div>
