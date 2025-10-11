@@ -36,18 +36,9 @@ const zoomed = ref(false);
             ]"
             class="max-w-full"
         >
-            <!-- Internal route -->
-            <NuxtLink v-if="link && link.startsWith('/')" :to="link">
-                <img :src="imagePath" class="w-full cursor-pointer" />
-            </NuxtLink>
-
-            <!-- External link -->
-            <a v-else-if="link" :href="link" rel="noopener">
-                <!-- Remove target="_blank" if you want same-tab navigation -->
+            <a v-if="link" :href="link" target="_blank" rel="noopener">
                 <img :src="imagePath" class="w-full cursor-pointer" />
             </a>
-
-            <!-- No link: enable zoom -->
             <img
                 v-else
                 :src="imagePath"
@@ -55,12 +46,10 @@ const zoomed = ref(false);
                 @click="zoomed = true"
             />
         </div>
-
         <div class="italic max-w-[80vw] text-center">
             <slot name="caption" />
             {{ caption }}
         </div>
-
         <ImageZoom
             v-if="zoomed"
             :image-path="imagePath"
