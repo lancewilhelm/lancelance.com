@@ -11,6 +11,7 @@ export interface Project {
   tags: string[];
   category: ProjectCategory;
   slug: string;
+  image: string;
   path: string;
   content: string;
 }
@@ -56,6 +57,7 @@ function parseProjectPreviewFromFile(filePath: string): ProjectPreview {
     order: Number.isFinite(Number(data.order)) ? Number(data.order) : 1000,
     tags: (Array.isArray(data.tags) ? data.tags : []) as string[],
     category: normalizeCategory(data.category),
+    image: (data.image as string) || "",
     slug,
     path: buildPath(slug),
   };
@@ -77,6 +79,7 @@ function parseProjectFromFile(filePath: string): Project {
     order: Number.isFinite(Number(data.order)) ? Number(data.order) : 1000,
     tags: (Array.isArray(data.tags) ? data.tags : []) as string[],
     category: normalizeCategory(data.category),
+    image: (data.image as string) || "",
     slug,
     path: buildPath(slug),
     content,

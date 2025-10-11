@@ -50,7 +50,7 @@ function setFavIcon() {
 function loadTheme() {
   try {
     const config = JSON.parse(localStorage.getItem("config") || "{}");
-    const theme = config.theme || "monochrome";
+    const theme = config.theme || "paper";
 
     // Set background color before Nuxt loads
     const root = document.documentElement;

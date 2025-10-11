@@ -1,7 +1,7 @@
 ---
 title: Ping Pong Ball Clock (PPBC)
 description: Novel clock design driven by LED strips and a Raspberry Pi controlled via a web app
-img: assets/img/ppbc/ppbc.jpg
+image: /img/ppbc/ppbc.jpg
 order: 2
 category: personal
 tags:

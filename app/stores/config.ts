@@ -6,7 +6,7 @@ interface Config {
 
 export const useConfigStore = defineStore("config", () => {
   // Make the config state reactive
-  const config = ref<Config>({ theme: "monochrome" });
+  const config = ref<Config>({ theme: "paper" });
 
   // Load from localStorage only on the client
   if (import.meta.client) {

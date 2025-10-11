@@ -1,7 +1,7 @@
 ---
 title: Dashboard for US Political Discourse Analysis
 description: CS6242 (Georgia Tech) Data Visualization and Analytics final project, analyzes and displays US political sentiment from Reddit posts and comments
-img: assets/img/reddit politics/team009poster.jpg
+image: /img/reddit-politics/team009poster.jpg
 order: 3
 category: academic
 ---

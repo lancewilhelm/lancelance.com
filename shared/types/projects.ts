@@ -12,6 +12,7 @@ export interface Project {
   tags: string[];
   category: ProjectCategory;
   slug: string;
+  image: string;
   path: string;
   content: string;
 }

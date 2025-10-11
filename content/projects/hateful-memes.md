@@ -1,7 +1,7 @@
 ---
 title: Hateful Memes Challenge - Next Move
 description: CS7643 (Georgia Tech) Deep Learning final project, attempts improvement of multimodal classification for hateful memes
-img: /img/publication_preview/mean_meme.png
+image: /img/hateful-memes/mean-meme.png
 order: 2
 category: academic
 ---

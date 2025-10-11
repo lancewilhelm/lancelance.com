@@ -1,7 +1,7 @@
 ---
 title: Horizon Extended
 description: VSCode theme remixing the popular Horizon theme by jolaeye
-img: /img/horizon extended/thumbnail.png
+image: /img/horizon-extended/thumbnail.png
 order: 1
 category: personal
 ---

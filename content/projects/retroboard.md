@@ -1,7 +1,7 @@
 ---
 title: Retroboard
 description: Open source retro-style LED matrix display for general use, inspired by the Tidbyt
-img: assets/img/retroboard/IMG_0982_crop.jpg
+image: /img/retroboard/IMG_0982_crop.jpg
 order: 3
 category: personal
 tags:
