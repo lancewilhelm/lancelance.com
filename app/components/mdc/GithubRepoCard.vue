@@ -33,7 +33,7 @@ const { data: repoData } = await useFetch<GithubRepoData>(
 <template>
     <div
         v-if="repoData"
-        class="flex flex-col self-center gap-[5px] font-mono max-w-[300px] rounded-lg p-[10px] bg-(--sub-color) shadow-[4px_6px_0_rgba(0,0,0,1)] my-[10px]"
+        class="flex flex-col self-center gap-[5px] font-mono min-w-[300px] max-w-[500px] rounded-lg p-[10px] bg-(--sub-color) shadow-[4px_6px_0_rgba(0,0,0,1)] my-[10px]"
     >
         <a :href="repoData.html_url" class="no-underline!">
             <div class="flex items-center gap-[3px]">
