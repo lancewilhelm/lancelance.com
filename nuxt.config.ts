@@ -21,7 +21,9 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   nitro: {
-    preset: "cloudflare-pages-static",
+    prerender: {
+      autoSubfolderIndex: false,
+    },
   },
   app: {
     head: {
