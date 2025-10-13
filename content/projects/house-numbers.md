@@ -3,7 +3,7 @@ title: House Number Detection and Classification
 description: CS6476 (Georgia Tech) Computer Vision final project, finds and classifies numbers within images using MSER and CNN
 image: /img/house-numbers/house3_tiles.png
 order: 1
-category: work
+category: academic
 ---
 
 ## Introduction
