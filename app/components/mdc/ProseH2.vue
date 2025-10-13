@@ -36,7 +36,7 @@ function copyHeaderLink(id: string) {
         </h2>
         <div
             v-if="isHovered"
-            class="cursor-pointer translate-y-1"
+            class="cursor-pointer flex flex-shrink justify-center translate-y-0.25"
             :aria-label="copied ? 'Link copied' : 'Copy link to heading'"
         >
             <Icon
