@@ -114,6 +114,6 @@ Our exploration sought to improve performance in the Hateful Memes Challenge by 
 ---
 imagePath: /img/hateful-memes/paper.png
 caption: Click to view
-link: /pdf/cs7643_final_project.pdf
+link: /pdf/cs7643-final-project.pdf
 width: 400px
 ---

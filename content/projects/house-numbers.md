@@ -87,6 +87,6 @@ The CNN performs well classifying digits within the image squares, as indicated 
 ---
 imagePath: /img/house-numbers/paper.png
 caption: Click to view
-link: /pdf/CS6476___Final_Project.pdf
+link: /pdf/CS6476-Final-Project.pdf
 width: 400px
 ---

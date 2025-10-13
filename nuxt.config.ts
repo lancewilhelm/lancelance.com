@@ -48,6 +48,9 @@ export default defineNuxtConfig({
       map: {
         pre: "ProsePre",
         table: "ProseTable",
+        h2: "ProseH2",
+        h3: "ProseH3",
+        h4: "ProseH4",
       },
     },
     remarkPlugins: {

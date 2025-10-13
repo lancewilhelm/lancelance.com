@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import { useElementHover } from "@vueuse/core";
 
 defineProps({
     id: {
@@ -8,7 +9,8 @@ defineProps({
     },
 });
 
-const isHovered = ref(false);
+const containerRef = ref<HTMLElement | null>(null);
+const isHovered = useElementHover(containerRef);
 const copied = ref(false);
 
 function copyHeaderLink(id: string) {
@@ -27,9 +29,8 @@ function copyHeaderLink(id: string) {
 <template>
     <div
         :id="id"
+        ref="containerRef"
         class="flex items-center gap-2"
-        @mouseenter="isHovered = true"
-        @mouseleave="isHovered = false"
     >
         <h4>
             <slot />
