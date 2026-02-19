@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import type { BlogPost, BlogPostPreview } from "#shared/types/blog";
+import { normalizeTagList } from "#shared/utils/tags";
 
 const CONTENT_DIR = path.join(process.cwd(), "content/blog");
 
@@ -31,7 +32,7 @@ export function getAllBlogPosts(): BlogPostPreview[] {
       title: data.title || "",
       description: data.description || "",
       date: data.date || "",
-      tags: data.tags || [],
+      tags: normalizeTagList(data.tags),
       categories: data.categories || [],
       slug,
       path: `/blog/${slug}`,
@@ -72,7 +73,7 @@ export function getBlogPostBySlug(slug: string): BlogPost | null {
     title: data.title || "",
     description: data.description || "",
     date: data.date || "",
-    tags: data.tags || [],
+    tags: normalizeTagList(data.tags),
     categories: data.categories || [],
     slug,
     path: `/blog/${slug}`,

@@ -2,7 +2,9 @@
 title: Data Annotator Using Gradio
 date: 2023-09-23T12:00:00Z
 description: Creating a simple UI to aid in data annotation
-tags: Data-Science, ML, AI, Gradio, Python
+tags:
+  - Gradio
+  - Data Science
 categories: Academic
 ---
 
@@ -17,7 +19,7 @@ I decided to go with the last option, and I was able to create a simple UI in le
 
 ## But first, what is Gradio?
 
-Gradio is a Python library that allows you to quickly create customizable UI components around machine learning models. It's a great tool for quickly prototyping and sharing models with others. You can read more about it [here](https://gradio.app/).
+Gradio is a Python library that allows you to quickly create customizable UI components around machine learning models. It's a great tool for quickly prototyping and sharing models with others. You can read more about it [graido.app](https://gradio.app/).
 
 ## Installation
 
@@ -42,7 +44,7 @@ We will be comparing the hate speech (hs) and counter speech (cs) to determine i
 
 ## Creating the UI
 
-_The full code for the app without breaks for explanation can be found at the [end of this post](#end-result) or [here](https://huggingface.co/spaces/lancewilhelm/bad-actors-annotator/blob/main/app.py)._
+_The full code for the app without breaks for explanation can be found at the [end of this post](#end-result) or [at this huggingface space](https://huggingface.co/spaces/lancewilhelm/bad-actors-annotator/blob/main/app.py)._
 
 Now that we have Gradio installed, we can start creating our UI. We'll start by importing the necessary libraries:
 
@@ -292,7 +294,7 @@ annotator.launch()
 
 ## Hugging Face Space
 
-I also hosted this annotator in a Hugging Face Space, which allows us to perform the host the app and perform the annotation task using their infrastructure. **However, this is not the ideal way to use this app because the data is not persistent.** If you refresh the page, you will lose all of your progress. This is why I recommend downloading the app and running it locally. However, if you want to try it out, you can find it [here](https://huggingface.co/spaces/lancewilhelm/bad-actors-annotator) and below! Feel free to grab the sample data below and paste it into a blank CSV file to test it out.
+I also hosted this annotator in a Hugging Face Space, which allows us to perform the host the app and perform the annotation task using their infrastructure. **However, this is not the ideal way to use this app because the data is not persistent.** If you refresh the page, you will lose all of your progress. This is why I recommend downloading the app and running it locally. However, if you want to try it out, you can find it [at this huggingface space](https://huggingface.co/spaces/lancewilhelm/bad-actors-annotator) and below! Feel free to grab the sample data below and paste it into a blank CSV file to test it out.
 
 ### Sample CSV Data
 

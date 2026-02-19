@@ -3,7 +3,9 @@ layout: post
 title: "Vue.js Chatbot - Part 1: The Front-End"
 date: 2023-10-25 22:00:00
 description: In this first part we build our front-end chatbot using Vue.js
-tags: Vue.js, FastAPI, chatbot, backend-end, websocket, LLM, ChatGPT
+tags:
+  - Vue
+  - LLM
 categories: Academic
 disqus_comments: false
 giscus_comments: true
@@ -28,7 +30,7 @@ In this part we will be working up to [this commit.](https://github.com/lancewil
 
 ## What is Vue.js?
 
-Vue.js is a JavaScript framework for building user interfaces. It's a progressive framework, which means that you can start small and scale up as you need to. This is especially helpful when you are trying to learn the ropes of front-end development. Vue.js is very flexible, and can be used to build single-page applications, or to add interactivity to existing webpages. It's also very lightweight, and has a small footprint, which makes it a great choice for building webapps that need to be fast and responsive. Check out some more info on Vue.js [here](https://vuejs.org/v2/guide/).
+Vue.js is a JavaScript framework for building user interfaces. It's a progressive framework, which means that you can start small and scale up as you need to. This is especially helpful when you are trying to learn the ropes of front-end development. Vue.js is very flexible, and can be used to build single-page applications, or to add interactivity to existing webpages. It's also very lightweight, and has a small footprint, which makes it a great choice for building webapps that need to be fast and responsive. Check out some more info on Vue.js [at their guide here](https://vuejs.org/v2/guide/).
 
 ## Let's get started
 
@@ -511,4 +513,4 @@ width: 500px
 
 In the next part we will look into the FastAPI back-end and how to integrate it with our front-end. In a later part we will tackle the MongoDB database.
 
-You can take a look at all of this code at this point by navigating to specific GitHub commit [here](https://github.com/lancewilhelm/vue-chatbot/tree/62d4a06683ae7a49781eb8358a15a84406c34706).
+You can take a look at all of this code at this point by navigating to [this specific GitHub commit](https://github.com/lancewilhelm/vue-chatbot/tree/62d4a06683ae7a49781eb8358a15a84406c34706).

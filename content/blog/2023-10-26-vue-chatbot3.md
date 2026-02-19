@@ -3,7 +3,9 @@ layout: post
 title: "Vue.js Chatbot - Part 3: GPT-3.5 and MongoDB"
 date: 2023-10-26 22:00:00
 description: In the last part we will integrate GPT-3.5 and MonogoDB into our chatbot
-tags: Vue.js, FastAPI, chatbot, backend-end, websocket, LLM, ChatGPT
+tags:
+  - Vue
+  - LLM
 categories: Academic
 disqus_comments: false
 giscus_comments: true
@@ -335,7 +337,7 @@ width: 600px
 
 Now that we have our application working, we can Dockerize it so that we can easily deploy it to a server or if we don't want to go through the hassle of installing every application and package on our system. This also makes it really useful for working with other people who are on different systems (Windows, macOS, Linux) as we can all run the same Docker container. We will be using Docker Compose to run our application in a container. Docker Compose allows us to run multiple containers at once, which is useful for our application as we need to run MongoDB and our application at the same time.
 
-You will need to have Docker and Docker Compose installed on your system to follow along. Instructions for installing Docker can be found [here](https://docs.docker.com/get-docker/). You can also find instructions for installing Docker Compose [here](https://docs.docker.com/compose/install/).
+You will need to have Docker and Docker Compose installed on your system to follow along. Instructions for installing Docker can be found [at the docker docs](https://docs.docker.com/get-docker/). You can also find instructions for installing Docker Compose [these docker installation instructions](https://docs.docker.com/compose/install/).
 
 First, we need to create a new file in the root directory called `docker-compose.yml`. This file will contain the instructions for Docker Compose to run our application. Add the following to the file.
 

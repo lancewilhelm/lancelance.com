@@ -2,7 +2,9 @@
 title: "Vue.js Chatbot - Part 2: The Back-End"
 date: 2023-10-26 20:00:00
 description: In the second part we build the back-end for the chatbot using FastAPI
-tags: Vue.js, FastAPI, chatbot, backend-end, websocket, LLM, ChatGPT
+tags:
+  - Vue
+  - LLM
 categories: Academic
 ---
 

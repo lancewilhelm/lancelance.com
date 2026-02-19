@@ -2,13 +2,15 @@
 title: "Understanding Causal Attention"
 date: 2023-11-26 00:00:00
 description: Understanding how the causal attention mechanism works in transformer models
-tags: transformer, attention, deep learning, machine learning, AI, NLP
+tags:
+  - Transformer
+  - Deep Learning
 categories: Academic
 ---
 
 I have recently been creating and training "small" transformer models for fun based on Andrej Karpathy's [awesome video tutorials](https://youtu.be/kCc8FmEb1nY?si=FyQzfy1j7aeBeog3). For me, coding these models from scratch is a great exercise that allows me to understand how each component works and how their purposes. But there was one aspect of the attention mechanism that I was having trouble grasping intuitively. Specifically, in a decoder-only transformer model, how does the attention mechanism know to only attend to the previous tokens in the sequence? Further, how does the triangular mask that is applied to the attention matrix make this work? I decided to do some research and write this post to help me understand this concept better.
 
-If you want to follow along with the code, check out this Google Collab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ANxfs1t-ECoQ96yxtUfiUFYIdiMiNK_h?usp=sharing)
+If you want to follow along with the code, check out this Google Colab notebook [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ANxfs1t-ECoQ96yxtUfiUFYIdiMiNK_h?usp=sharing)
 
 _Note: some of the results may be different from below due to the random initialization of the parameters._
 
@@ -446,7 +448,7 @@ star
 '''
 ```
 
-### Visualizing the attention
+### Visualizing the attention (complicated)
 
 Now let's see if there are any more meaningful insights that we can gain from visualizing the parameters.
 
