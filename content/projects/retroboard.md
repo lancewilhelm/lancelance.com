@@ -20,7 +20,9 @@ As of the time of writing, the project is in its early stages with minimal funct
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/retroboard/IMG_0982_crop.jpg
+alt: Retroboard LED matrix displaying a clock
 caption: Retroboard snapshot. Currently the Retroboard has a couple baked in applications such as a stock chart and standard clock.
 width: 640px
 ---
@@ -29,6 +31,7 @@ width: 640px
 ::blog-image
 ---
 imagePath: /img/retroboard/IMG_0977.JPG
+alt: Retroboard internal components and Raspberry Pi
 caption: Retroboard internals. The board is powered with a raspberry pi which hosts both the local LED matrix drivers as well as the web application.
 width: 640px
 ---
@@ -36,7 +39,8 @@ width: 640px
 
 ::blog-image
 ---
-imagePath: /img/retroboard/sim.jpg
+imagePath: /img/retroboard/sim.JPG
+alt: Retroboard online display simulator
 caption: There also exists an online simulator for testing applications and display. This is useful for quick development away from the Retroboard.
 width: 640px
 ---

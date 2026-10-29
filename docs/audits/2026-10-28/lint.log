@@ -1,0 +1,9 @@
+✓ Lockfile passes supply-chain policies (verified 803ms ago)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Error:   × installing dependencies
+  ╰─▶ Failed to create directory at "/private/tmp/lancelance-audit.ZmqlOw/
+      site/node_modules": workspace hoist directory is not a real directory
+
+[WARN] The install that runs before scripts failed, so your node_modules may be out of sync with your lockfile. Set "verifyDepsBeforeRun: false" to skip this install.
+$ eslint .

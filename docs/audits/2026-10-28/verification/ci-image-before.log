@@ -1,0 +1,20 @@
+verify	Run pnpm images:check	﻿2026-10-29T04:22:00.8260248Z ##[group]Run pnpm images:check
+verify	Run pnpm images:check	2026-10-29T04:22:00.8260549Z ^[[36;1mpnpm images:check^[[0m
+verify	Run pnpm images:check	2026-10-29T04:22:00.8283800Z shell: /usr/bin/bash -e {0}
+verify	Run pnpm images:check	2026-10-29T04:22:00.8284068Z env:
+verify	Run pnpm images:check	2026-10-29T04:22:00.8284303Z   PNPM_HOME: /home/runner/setup-pnpm/node_modules/.bin
+verify	Run pnpm images:check	2026-10-29T04:22:00.8284588Z ##[endgroup]
+verify	Run pnpm images:check	2026-10-29T04:22:01.0142192Z 
+verify	Run pnpm images:check	2026-10-29T04:22:01.0142955Z > lancelance.com@ images:check /home/runner/work/lancelance.com/lancelance.com
+verify	Run pnpm images:check	2026-10-29T04:22:01.0143294Z > node scripts/generate-images.mjs --check
+verify	Run pnpm images:check	2026-10-29T04:22:01.0143413Z 
+verify	Run pnpm images:check	2026-10-29T04:22:06.6298320Z file:///home/runner/work/lancelance.com/lancelance.com/scripts/generate-images.mjs:131
+verify	Run pnpm images:check	2026-10-29T04:22:06.6299044Z   throw new Error("Generated images are out of date; run images:generate");
+verify	Run pnpm images:check	2026-10-29T04:22:06.6299419Z         ^
+verify	Run pnpm images:check	2026-10-29T04:22:06.6299540Z 
+verify	Run pnpm images:check	2026-10-29T04:22:06.6299783Z Error: Generated images are out of date; run images:generate
+verify	Run pnpm images:check	2026-10-29T04:22:06.6300410Z     at file:///home/runner/work/lancelance.com/lancelance.com/scripts/generate-images.mjs:131:9
+verify	Run pnpm images:check	2026-10-29T04:22:06.6300863Z 
+verify	Run pnpm images:check	2026-10-29T04:22:06.6300951Z Node.js v22.22.3
+verify	Run pnpm images:check	2026-10-29T04:22:06.6540286Z  ELIFECYCLE  Command failed with exit code 1.
+verify	Run pnpm images:check	2026-10-29T04:22:06.6727268Z ##[error]Process completed with exit code 1.

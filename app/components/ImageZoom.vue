@@ -1,46 +1,49 @@
 <script setup lang="ts">
-defineProps({
-    imagePath: {
-        type: String,
-        default: "",
-    },
-});
-
-const emit = defineEmits(["close"]);
-
-// Event handlers
-document.addEventListener("mousedown", handleClickOutsideZoom);
-document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        emit("close");
-    }
-});
-
-// /**
-//  * Zooms in on the image by opening it up in a model
-//  */
-// const zoomed = ref(false);
-// function zoomImage() {
-//     zoomed.value = true;
-// }
-
-/**
- * Closes the window when clicking outside of the image
- */
-function handleClickOutsideZoom(event: MouseEvent) {
-    if (!event.target) return;
-    const target = event.target as HTMLElement;
-    if (target.id === "zoomed-modal" || target.id === "zoomed-image") {
-        emit("close");
-    }
+defineProps<{ imagePath: string; alt: string }>();
+const emit = defineEmits<{ close: [] }>();
+const dialog = ref<HTMLDialogElement | null>(null);
+onMounted(() => dialog.value?.showModal());
+function backdrop(event: MouseEvent) {
+  const element = dialog.value;
+  if (!element || event.target !== element) return;
+  const bounds = element.getBoundingClientRect();
+  if (
+    event.clientX < bounds.left ||
+    event.clientX > bounds.right ||
+    event.clientY < bounds.top ||
+    event.clientY > bounds.bottom
+  )
+    element.close();
 }
 </script>
-
 <template>
-    <div
-        id="zoomed-modal"
-        class="fixed grid items-center justify-center z-10 left-0 top-0 w-full h-full overflow-auto bg-black/60 p-[20px]"
+  <dialog
+    ref="dialog"
+    aria-label="Enlarged image"
+    class="zoom-dialog bg-transparent p-5 max-w-full max-h-full"
+    @close="emit('close')"
+    @click="backdrop"
+  >
+    <button
+      type="button"
+      class="block ml-auto mb-2 px-3 py-1 bg-(--bg-color) text-(--text-color) rounded cursor-pointer"
+      @click="dialog?.close()"
     >
-        <img id="zoomed-image" :src="imagePath" class="cursor-pointer" />
-    </div>
+      Close
+    </button>
+    <img
+      :src="imagePath"
+      :alt="alt"
+      class="cursor-pointer max-h-[85dvh] max-w-full"
+      @click="dialog?.close()"
+    />
+  </dialog>
 </template>
+<style scoped>
+.zoom-dialog {
+  margin: auto;
+}
+.zoom-dialog::backdrop {
+  background: rgb(0 0 0 / 60%);
+}
+</style>

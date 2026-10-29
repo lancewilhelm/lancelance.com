@@ -2,21 +2,11 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-export type ProjectCategory = "work" | "academic" | "personal";
-
-export interface Project {
-  title: string;
-  description: string;
-  order: number;
-  tags: string[];
-  category: ProjectCategory;
-  slug: string;
-  image: string;
-  path: string;
-  content: string;
-}
-
-export type ProjectPreview = Omit<Project, "content">;
+import type {
+  Project,
+  ProjectCategory,
+  ProjectPreview,
+} from "../../shared/types/projects";
 
 const CONTENT_DIR = path.join(process.cwd(), "content/projects");
 export const CATEGORIES: ProjectCategory[] = ["work", "academic", "personal"];
@@ -30,6 +20,16 @@ function normalizeCategory(input: unknown): ProjectCategory {
   }
   // Default to "personal" if not specified or invalid
   return "personal";
+}
+
+function normalizeOrder(value: unknown): number {
+  if (
+    (typeof value !== "number" && typeof value !== "string") ||
+    (typeof value === "string" && !value.trim())
+  )
+    return 1000;
+  const order = Number(value);
+  return Number.isFinite(order) ? order : 1000;
 }
 
 function deriveSlug(filename: string): string {
@@ -54,7 +54,7 @@ function parseProjectPreviewFromFile(filePath: string): ProjectPreview {
   return {
     title: (data.title as string) || "",
     description: (data.description as string) || "",
-    order: Number.isFinite(Number(data.order)) ? Number(data.order) : 1000,
+    order: normalizeOrder(data.order),
     tags: (Array.isArray(data.tags) ? data.tags : []) as string[],
     category: normalizeCategory(data.category),
     image: (data.image as string) || "",
@@ -76,7 +76,7 @@ function parseProjectFromFile(filePath: string): Project {
   return {
     title: (data.title as string) || "",
     description: (data.description as string) || "",
-    order: Number.isFinite(Number(data.order)) ? Number(data.order) : 1000,
+    order: normalizeOrder(data.order),
     tags: (Array.isArray(data.tags) ? data.tags : []) as string[],
     category: normalizeCategory(data.category),
     image: (data.image as string) || "",

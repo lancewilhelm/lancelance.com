@@ -29,7 +29,9 @@ ROIs detected in the first step are passed through the trained CNN to receive di
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/house-numbers/fig_1a.jpg
+alt: Detected squares around house numbers
 caption: Figure 1a. Detected squares
 width: 640px
 ---
@@ -38,6 +40,7 @@ width: 640px
 ::blog-image
 ---
 imagePath: /img/house-numbers/fig_1b.jpg
+alt: Extracted house number image tiles
 caption: Figure 1b. Extracted tiles
 width: 640px
 ---
@@ -54,6 +57,7 @@ Additional models were trained using the original 32 square pixel images in colo
 ::blog-image
 ---
 imagePath: /img/house-numbers/fig_2.jpg
+alt: Validation loss for house number CNN models
 caption: Figure 2. Validation loss for CNN models
 width: 640px
 ---
@@ -66,6 +70,7 @@ The selected model yielded an accuracy of 98.421% when evaluated on the test dat
 ::blog-image
 ---
 imagePath: /img/house-numbers/fig_3.jpg
+alt: Confusion matrix for house number classification results
 caption: Figure 3. Confusion matrix for the results of the classification of the test SVHN dataset. The final ResNet18 model achieved an accuracy of 98.421% on the dataset. n = 25621
 width: 640px
 ---
@@ -86,6 +91,7 @@ The CNN performs well classifying digits within the image squares, as indicated 
 ::blog-image
 ---
 imagePath: /img/house-numbers/paper.png
+alt: Cover of the house number detection and classification project report
 caption: Click to view
 link: /pdf/CS6476-Final-Project.pdf
 width: 400px

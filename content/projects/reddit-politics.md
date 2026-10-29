@@ -28,7 +28,9 @@ Our project stands out for its application of academic social media analysis wor
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/reddit-politics/team009poster.jpg
+alt: Political discourse analysis application interface
 caption: Figure 1. Application user interface
 width: 640px
 ---
@@ -84,6 +86,7 @@ We made significant progress in the development of our Reddit sentiment analysis
 ::blog-image
 ---
 imagePath: /img/reddit-politics/team009posterposter.jpg
+alt: Poster presenting the political discourse analysis project
 width: 700px
 ---
 ::

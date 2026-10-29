@@ -19,7 +19,9 @@ At the time of writing, this theme has had over 14 thousand downloads. Thank you
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/horizon-extended/jsxshot.png
+alt: JavaScript code in the Horizon Extended dark theme
 caption: Dark mode
 width: 800px
 ---
@@ -28,6 +30,7 @@ width: 800px
 ::blog-image
 ---
 imagePath: /img/horizon-extended/lightjsx.png
+alt: JavaScript code in the Horizon Extended light theme
 caption: Light mode
 width: 800px
 ---

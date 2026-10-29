@@ -1,0 +1,48 @@
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +975
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 975, reused 975, downloaded 0, added 426
+Progress: resolved 975, reused 975, downloaded 0, added 974
+Progress: resolved 975, reused 975, downloaded 0, added 975, done
+.../node_modules/@parcel/watcher install$ node scripts/build-from-source.js
+.../esbuild@0.28.2/node_modules/esbuild postinstall$ node install.js
+.../node_modules/unrs-resolver postinstall$ node postinstall.js
+.../node_modules/@parcel/watcher install: Done
+.../node_modules/unrs-resolver postinstall: Done
+.../esbuild@0.28.2/node_modules/esbuild postinstall: Done
+
+dependencies:
++ @nuxt/fonts 1.2.0
++ @nuxt/icon 2.6.2
++ @nuxtjs/mdc 0.23.2
++ @nuxtjs/seo 6.0.1
++ @tailwindcss/vite 4.3.3
++ gray-matter 4.0.3
++ h3 1.15.11
++ highlight.js 11.12.0
++ nuxt 4.6.3
++ rehype-katex 7.0.1
++ remark-math 6.0.0
++ tailwindcss 4.3.3
+
+devDependencies:
++ @iconify-json/lucide 1.2.148
++ @nuxt/eslint 1.17.0
++ @playwright/test 1.64.1
++ eslint 10.13.0
++ eslint-config-prettier 10.1.8
++ eslint-plugin-prettier 5.5.7
++ prettier 3.9.10
++ sharp 0.35.5
++ tsx 4.23.15
++ typescript 5.9.3
++ vue-tsc 3.3.13
+
+. postinstall$ nuxt prepare
+. postinstall: [@nuxtjs/og-image] ℹ The module is disabled, skipping setup.
+. postinstall: ℹ Nuxt Icon server bundle mode is set to remote
+. postinstall: ℹ Nuxt Icon client bundle consist of 2 icons with 0.65KB(uncompressed) in size
+. postinstall: ◆ Types generated in .nuxt.
+. postinstall: Done
+Done in 5.1s using pnpm v10.27.0

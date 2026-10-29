@@ -1,17 +1,14 @@
-/**
- * Global type declarations for browser globals and custom functions
- * injected via public/js scripts.
- */
-
-/**
- * setTheme function injected by theme-loader.js
- * Allows runtime theme switching by updating the CSS link and localStorage
- */
-declare function setTheme(themeName: string): void;
-
-/**
- * Extend Window interface for any other globals if needed
- */
+interface ThemeOption {
+  readonly name: string;
+  readonly bgColor: string;
+  readonly mainColor: string;
+  readonly subColor: string;
+  readonly textColor: string;
+}
 interface Window {
-  setTheme: typeof setTheme;
+  readonly themeRuntime: {
+    readonly themes: readonly ThemeOption[];
+    current(): string;
+    select(name: string): void;
+  };
 }

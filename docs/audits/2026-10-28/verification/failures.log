@@ -1,0 +1,57 @@
+[WebServer] 
+[WebServer]  ERROR  (node:90338) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use node --trace-warnings ... to show where the warning was created)
+[WebServer] 
+
+Running 4 tests using 1 worker
+
+(node:90343) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 tests/failures.spec.ts:11:3 › repository link survives an upstream outage for retroboard (5.3s)
+  ✓  2 tests/failures.spec.ts:11:3 › repository link survives an upstream outage for horizon-extended (240ms)
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Numeric tagPriority (40) is brittle. Prefer an alias ('critical' | 'high' | 'low') or 'before:<key>' / 'after:<key>'.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Script "/js/theme-loader.js" is render-blocking. Add "async", "defer", or use type="module" to avoid blocking the critical rendering path.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] twitter:card is deprecated. Use Open Graph metadata instead.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Numeric tagPriority (40) is brittle. Prefer an alias ('critical' | 'high' | 'low') or 'before:<key>' / 'after:<key>'.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Script "/js/theme-loader.js" is render-blocking. Add "async", "defer", or use type="module" to avoid blocking the critical rendering path.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] twitter:card is deprecated. Use Open Graph metadata instead.
+[WebServer] 
+  ✓  3 tests/failures.spec.ts:25:1 › blog error is distinct from an empty tag and can be retried (439ms)
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Numeric tagPriority (40) is brittle. Prefer an alias ('critical' | 'high' | 'low') or 'before:<key>' / 'after:<key>'.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Script "/js/theme-loader.js" is render-blocking. Add "async", "defer", or use type="module" to avoid blocking the critical rendering path.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] twitter:card is deprecated. Use Open Graph metadata instead.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Numeric tagPriority (40) is brittle. Prefer an alias ('critical' | 'high' | 'low') or 'before:<key>' / 'after:<key>'.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Script "/js/theme-loader.js" is render-blocking. Add "async", "defer", or use type="module" to avoid blocking the critical rendering path.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] twitter:card is deprecated. Use Open Graph metadata instead.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Meta tag "og:description" has empty content.
+[WebServer] 
+[WebServer] 
+[WebServer]  WARN  [console.warn] [unhead] Page is missing a meta description and is indexable by search engines.
+[WebServer] 
+  ✓  4 tests/failures.spec.ts:47:1 › project error keeps its server status and real missing pages return 404 (390ms)
+
+  4 passed (6.8s)

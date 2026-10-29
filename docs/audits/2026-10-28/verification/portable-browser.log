@@ -1,0 +1,30 @@
+[WebServer] (node:985) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 21 tests using 1 worker
+
+(node:987) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/site.spec.ts:30:1 › all pages have current metadata, landmarks, image alternatives, and working images (4.3s)
+  ✓   2 [chromium] › tests/site.spec.ts:70:1 › tag filtering and reset preserve all six posts (238ms)
+  ✓   3 [chromium] › tests/site.spec.ts:81:1 › theme picker is keyboard operable, modal, persistent, and returns focus (194ms)
+  ✓   4 [chromium] › tests/site.spec.ts:119:3 › invalid saved preference recovers: {broken (213ms)
+  ✓   5 [chromium] › tests/site.spec.ts:119:3 › invalid saved preference recovers: null (216ms)
+  ✓   6 [chromium] › tests/site.spec.ts:119:3 › invalid saved preference recovers: [] (199ms)
+  ✓   7 [chromium] › tests/site.spec.ts:119:3 › invalid saved preference recovers: {"theme":"missing"} (216ms)
+  ✓   8 [chromium] › tests/site.spec.ts:119:3 › invalid saved preference recovers: {"theme":"../../invalid"} (199ms)
+  ✓   9 [chromium] › tests/site.spec.ts:143:1 › denied storage does not prevent theme selection (201ms)
+  ✓  10 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (280ms)
+  ✓  11 [chromium] › tests/site.spec.ts:184:1 › code and heading links can be copied by keyboard (218ms)
+  ✓  12 [chromium] › tests/site.spec.ts:212:1 › responsive images use generated assets and keep originals available for zoom (209ms)
+  ✓  13 [chromium] › tests/site.spec.ts:239:1 › publication dates agree across browser timezones (410ms)
+  ✓  14 [chromium] › tests/site.spec.ts:256:1 › sitemap and real not-found response are generated (8ms)
+  ✓  15 [chromium] › tests/site.spec.ts:267:3 › a failed static blog payload can recover without a deployed API (276ms)
+  ✓  16 [chromium] › tests/site.spec.ts:267:3 › a failed static projects payload can recover without a deployed API (307ms)
+  ✓  17 [chromium] › tests/site.spec.ts:290:1 › theme works before Nuxt starts and falls back without JavaScript (190ms)
+  ✓  18 [chromium] › tests/site.spec.ts:314:1 › clipboard denial is reported instead of success (223ms)
+  ✓  19 [chromium] › tests/site.spec.ts:332:3 › an interrupted blog detail payload is retryable rather than missing (364ms)
+  ✓  20 [chromium] › tests/site.spec.ts:332:3 › an interrupted projects detail payload is retryable rather than missing (296ms)
+  ✓  21 [chromium] › tests/site.spec.ts:348:1 › Paper secondary text meets normal-text contrast (185ms)
+
+  21 passed (9.6s)

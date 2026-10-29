@@ -1,0 +1,740 @@
+{
+  "/img/causal-attn/adv_loss.png": {
+    "width": 562,
+    "height": 432,
+    "renditions": [
+      {
+        "src": "/img/generated/84eb94b50ee85cc3035c-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/adv_trained_qkv.png": {
+    "width": 1476,
+    "height": 490,
+    "renditions": [
+      {
+        "src": "/img/generated/4e11c525d9c937bc5b89-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/4e11c525d9c937bc5b89-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/4e11c525d9c937bc5b89-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/causal-attn/adv_trained_rawattn.png": {
+    "width": 607,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/e50625f012c02916d695-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/adv_trained_scaledattn.png": {
+    "width": 600,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/21d540fb09ebb5b4d132-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/attn_diagram.png": {
+    "width": 2302,
+    "height": 1236,
+    "renditions": [
+      {
+        "src": "/img/generated/1886d1e1aff5ba4ac81e-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/1886d1e1aff5ba4ac81e-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/1886d1e1aff5ba4ac81e-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/causal-attn/basic_ec.png": {
+    "width": 607,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/b87fc3952099aa329b81-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/basic_ep.png": {
+    "width": 530,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/424d3339c28e20585980-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/basic_et.png": {
+    "width": 607,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/0b39c241b3e7e3488b14-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/basic_loss.png": {
+    "width": 578,
+    "height": 432,
+    "renditions": [
+      {
+        "src": "/img/generated/cc8c2a9b93df5a72828e-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/basic_maskedrawattn.png": {
+    "width": 625,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/05c178c9f558d93367d3-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/basic_qkv.png": {
+    "width": 1479,
+    "height": 490,
+    "renditions": [
+      {
+        "src": "/img/generated/9520bda903c67d852c41-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/9520bda903c67d852c41-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/9520bda903c67d852c41-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/causal-attn/basic_rawattn.png": {
+    "width": 596,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/0d18b3ebdea21de39393-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/basic_scaledattn.png": {
+    "width": 596,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/be03cdc220612fb730da-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/basic_scaledattnintuition.png": {
+    "width": 2062,
+    "height": 1674,
+    "renditions": [
+      {
+        "src": "/img/generated/1e2f4d6d8ecc0f63975a-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/1e2f4d6d8ecc0f63975a-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/1e2f4d6d8ecc0f63975a-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/causal-attn/basic_trained_qkv.png": {
+    "width": 1475,
+    "height": 490,
+    "renditions": [
+      {
+        "src": "/img/generated/e0522b236785af269c3e-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/e0522b236785af269c3e-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/e0522b236785af269c3e-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/causal-attn/basic_trained_scaledattn.png": {
+    "width": 596,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/4a38814d295c0e39ffa8-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/causal-attn/basic_weightedvalues.png": {
+    "width": 607,
+    "height": 435,
+    "renditions": [
+      {
+        "src": "/img/generated/07037b617c090598bc73-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/hateful-memes/fig_2.jpg": {
+    "width": 1615,
+    "height": 645,
+    "renditions": [
+      {
+        "src": "/img/generated/02bf5fd5156d971062ff-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/02bf5fd5156d971062ff-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/02bf5fd5156d971062ff-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/hateful-memes/fig_3.jpg": {
+    "width": 1795,
+    "height": 656,
+    "renditions": [
+      {
+        "src": "/img/generated/ee1351dc8d9d3dc280e2-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/ee1351dc8d9d3dc280e2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/ee1351dc8d9d3dc280e2-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/hateful-memes/fig_4.jpg": {
+    "width": 798,
+    "height": 532,
+    "renditions": [
+      {
+        "src": "/img/generated/79ed17167ac53e535ebd-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/79ed17167ac53e535ebd-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/img/hateful-memes/fig_6.jpg": {
+    "width": 526,
+    "height": 826,
+    "renditions": [
+      {
+        "src": "/img/generated/ea533abbff98f94b67a5-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/hateful-memes/mean-meme.png": {
+    "width": 499,
+    "height": 509,
+    "renditions": [
+      {
+        "src": "/img/generated/2261691a1ba7ffd471e8-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/hateful-memes/paper.png": {
+    "width": 1626,
+    "height": 2110,
+    "renditions": [
+      {
+        "src": "/img/generated/68aad55b3d1c7428e66e-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/68aad55b3d1c7428e66e-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/68aad55b3d1c7428e66e-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/horizon-extended/jsxshot.png": {
+    "width": 1782,
+    "height": 1068,
+    "renditions": [
+      {
+        "src": "/img/generated/8cc0fb43a370b5db83a0-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/8cc0fb43a370b5db83a0-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/8cc0fb43a370b5db83a0-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/horizon-extended/lightjsx.png": {
+    "width": 1782,
+    "height": 1068,
+    "renditions": [
+      {
+        "src": "/img/generated/980dccab0d8724ccc0f0-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/980dccab0d8724ccc0f0-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/980dccab0d8724ccc0f0-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/horizon-extended/thumbnail.png": {
+    "width": 471,
+    "height": 311,
+    "renditions": [
+      {
+        "src": "/img/generated/5eceddb8fb113c9693c8-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/house-numbers/fig_1a.jpg": {
+    "width": 533,
+    "height": 417,
+    "renditions": [
+      {
+        "src": "/img/generated/0b28347114f3b174e328-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/house-numbers/fig_1b.jpg": {
+    "width": 552,
+    "height": 235,
+    "renditions": [
+      {
+        "src": "/img/generated/ca533b667c83eaec0df5-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/house-numbers/fig_2.jpg": {
+    "width": 2527,
+    "height": 1328,
+    "renditions": [
+      {
+        "src": "/img/generated/13f70bc69aa640230bb6-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/13f70bc69aa640230bb6-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/13f70bc69aa640230bb6-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/house-numbers/fig_3.jpg": {
+    "width": 516,
+    "height": 437,
+    "renditions": [
+      {
+        "src": "/img/generated/45e7265634e374cdf538-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/house-numbers/house3_tiles.png": {
+    "width": 552,
+    "height": 148,
+    "renditions": [
+      {
+        "src": "/img/generated/e16320b031285957cc33-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/house-numbers/paper.png": {
+    "width": 1462,
+    "height": 1896,
+    "renditions": [
+      {
+        "src": "/img/generated/710a20eb631b0a803a87-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/710a20eb631b0a803a87-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/710a20eb631b0a803a87-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/ppbc/layout visualizer-01.jpg": {
+    "width": 1576,
+    "height": 453,
+    "renditions": [
+      {
+        "src": "/img/generated/7ac631dc3d3b9966c85d-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/7ac631dc3d3b9966c85d-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/7ac631dc3d3b9966c85d-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/ppbc/layout visualizer-02.jpg": {
+    "width": 1324,
+    "height": 516,
+    "renditions": [
+      {
+        "src": "/img/generated/9263c3d2a640599a5f74-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/9263c3d2a640599a5f74-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/9263c3d2a640599a5f74-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/ppbc/layout visualizer-03.jpg": {
+    "width": 1324,
+    "height": 516,
+    "renditions": [
+      {
+        "src": "/img/generated/e9ce5344580c28f857cd-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/e9ce5344580c28f857cd-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/e9ce5344580c28f857cd-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/ppbc/layout visualizer-04.jpg": {
+    "width": 1324,
+    "height": 1402,
+    "renditions": [
+      {
+        "src": "/img/generated/40177c2e497431cd027b-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/40177c2e497431cd027b-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/40177c2e497431cd027b-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/ppbc/ppbc.jpg": {
+    "width": 320,
+    "height": 180,
+    "renditions": [
+      {
+        "src": "/img/generated/5bfce77c3babd4a85319-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/rag-bot/rag_architecture.webp": {
+    "width": 1024,
+    "height": 561,
+    "renditions": [
+      {
+        "src": "/img/generated/d0cd767ba7f3f86222c1-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/d0cd767ba7f3f86222c1-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/img/rag-bot/rag_ingest.png": {
+    "width": 2583,
+    "height": 1299,
+    "renditions": [
+      {
+        "src": "/img/generated/7f0e6639c4e8e3e162f5-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/7f0e6639c4e8e3e162f5-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/7f0e6639c4e8e3e162f5-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/reddit-politics/team009poster.jpg": {
+    "width": 1903,
+    "height": 914,
+    "renditions": [
+      {
+        "src": "/img/generated/47f530fd81e61214c4a7-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/47f530fd81e61214c4a7-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/47f530fd81e61214c4a7-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/reddit-politics/team009posterposter.jpg": {
+    "width": 2160,
+    "height": 2880,
+    "renditions": [
+      {
+        "src": "/img/generated/c6f9f120405bc01fe132-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/c6f9f120405bc01fe132-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/c6f9f120405bc01fe132-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/retroboard/IMG_0977.JPG": {
+    "width": 4032,
+    "height": 3024,
+    "renditions": [
+      {
+        "src": "/img/generated/fe1ec9128c6e10fb0e5e-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/fe1ec9128c6e10fb0e5e-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/fe1ec9128c6e10fb0e5e-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/retroboard/IMG_0982_crop.jpg": {
+    "width": 2742,
+    "height": 1756,
+    "renditions": [
+      {
+        "src": "/img/generated/857f7cb274cc6109c835-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/857f7cb274cc6109c835-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/857f7cb274cc6109c835-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/retroboard/sim.JPG": {
+    "width": 2085,
+    "height": 1240,
+    "renditions": [
+      {
+        "src": "/img/generated/0c4cd40688cdd91126a8-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/0c4cd40688cdd91126a8-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/0c4cd40688cdd91126a8-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/vue-chatbot/chatbot1.png": {
+    "width": 286,
+    "height": 357,
+    "renditions": []
+  },
+  "/img/vue-chatbot/chatbot2.png": {
+    "width": 277,
+    "height": 453,
+    "renditions": []
+  },
+  "/img/vue-chatbot/chatbot3.png": {
+    "width": 972,
+    "height": 1027,
+    "renditions": [
+      {
+        "src": "/img/generated/29527803cd3f6d939f7d-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/29527803cd3f6d939f7d-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/img/vue-chatbot/chatbot4.png": {
+    "width": 405,
+    "height": 71,
+    "renditions": [
+      {
+        "src": "/img/generated/8ddb50a0443e53f257b0-320.webp",
+        "width": 320
+      }
+    ]
+  },
+  "/img/vue-chatbot/chatbot5.png": {
+    "width": 975,
+    "height": 642,
+    "renditions": [
+      {
+        "src": "/img/generated/27f7887107f945e97b22-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/27f7887107f945e97b22-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/img/vue-chatbot/chatbot6.png": {
+    "width": 973,
+    "height": 720,
+    "renditions": [
+      {
+        "src": "/img/generated/4a94d519587c06cb7968-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/4a94d519587c06cb7968-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/img/vue-chatbot/chatbot7.png": {
+    "width": 974,
+    "height": 753,
+    "renditions": [
+      {
+        "src": "/img/generated/920ee7ea0c9f61c07c23-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/920ee7ea0c9f61c07c23-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/img/vue-chatbot/chatbot8.png": {
+    "width": 1126,
+    "height": 785,
+    "renditions": [
+      {
+        "src": "/img/generated/79c6fdc90ddfd1f2fb53-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/79c6fdc90ddfd1f2fb53-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/img/vue-chatbot/chatbot9.png": {
+    "width": 1126,
+    "height": 785,
+    "renditions": [
+      {
+        "src": "/img/generated/ad8d25ac0856cf099ab2-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/ad8d25ac0856cf099ab2-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "/img/vue-chatbot/vuejsstructure.png": {
+    "width": 344,
+    "height": 793,
+    "renditions": [
+      {
+        "src": "/img/generated/d1db90c681c70337ff0c-320.webp",
+        "width": 320
+      }
+    ]
+  }
+}

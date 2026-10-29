@@ -1,0 +1,67 @@
+[WebServer] (node:86054) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 1 worker
+
+(node:86055) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (352ms)
+(node:86067) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (311ms)
+(node:86218) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   3 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (366ms)
+(node:86295) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   4 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (401ms)
+(node:86483) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   5 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (301ms)
+(node:86516) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   6 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (331ms)
+(node:86576) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   7 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (347ms)
+(node:86589) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   8 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (332ms)
+(node:86595) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   9 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (329ms)
+(node:86606) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  10 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (312ms)
+(node:86612) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  11 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (330ms)
+(node:86620) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  12 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (351ms)
+(node:86627) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (350ms)
+(node:86640) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  14 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (366ms)
+(node:86646) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  15 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (502ms)
+(node:86832) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  16 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (362ms)
+(node:86837) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  17 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (363ms)
+(node:86866) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  18 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (400ms)
+(node:86904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  19 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (344ms)
+(node:86909) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  20 [chromium] › tests/site.spec.ts:167:1 › image zoom closes and returns focus through repeated keyboard use (370ms)
+
+  20 passed (13.9s)

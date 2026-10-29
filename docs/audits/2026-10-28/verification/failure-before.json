@@ -1,0 +1,14 @@
+{
+  "github503": {
+    "cardLinkCount": 0,
+    "bodyEnd": "stock chart and standard clock.\nRetroboard internals. The board is powered with a raspberry pi which hosts both the local LED matrix drivers as well as the web application.\nThere also exists an online simulator for testing applications and display. This is useful for quick development away from the Retroboard.\nFuture Work\n\nI would like to develop an application store which allows anyone to create and deploy custom applications for the Retroboard. More work needs to be done with asynchronous task handling between the app and drivers. Lastly, a bluetooth application for setup and control would prove useful and potentially eliminate the need for a local network connection for some applications."
+  },
+  "blog503": {
+    "body": "Blog\n|\nProjects\n|\nAbout\nAll (0)\nNo blog posts match this tag.",
+    "url": "http://127.0.0.1:3128/blog"
+  },
+  "project503": {
+    "body": "Blog\n|\nProjects\n|\nAbout\nAcademic\nHouse Number Detection and Classification\nCS6476 (Georgia Tech) Computer Vision final project, finds and classifies numbers within images using MSER and CNN\nHateful Memes Challenge - Next Move\nCS7643 (Georgia Tech) Deep Learning final project, attempts improvement of multimodal classification for hateful memes\nDashboard for US Political Discourse Analysis\nCS6242 (Georgia Tech) Data Visualization and Analytics final project, analyzes and displays US political sentiment from Reddit posts and comments\nPersonal\nHorizon Extended\nVSCode theme remixing the popular Horizon theme by jolaeye\nPing Pong Ball Clock (PPBC)\nNovel clock design driven by LED strips and a Raspberry Pi controlled via a web app\nRetroboard\nOpen source retro-style LED matrix display for general use, inspired by the Tidbyt",
+    "url": "http://127.0.0.1:3128/projects/retroboard"
+  }
+}

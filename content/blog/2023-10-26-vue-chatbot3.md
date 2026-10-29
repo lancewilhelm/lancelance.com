@@ -129,7 +129,9 @@ Now, if you rebuild your webapp with `npm run build` in the `app/` directory and
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/vue-chatbot/chatbot6.png
+alt: Chatbot conversation with the language model
 caption: The chatbot is alive!
 width: 600px
 ---
@@ -213,6 +215,7 @@ We are now setting the flex-shrink to 0 for the avatar, which will prevent it fr
 ::blog-image
 ---
 imagePath: /img/vue-chatbot/chatbot7.png
+alt: Updated chatbot interface and conversation
 caption: Looking much better
 width: 600px
 ---
@@ -328,6 +331,7 @@ With that, we are now storing our messages in a MongoDB database! You can start 
 ::blog-image
 ---
 imagePath: /img/vue-chatbot/chatbot8.png
+alt: MongoDB running for the chatbot
 caption: MongoDB running!
 width: 600px
 ---
@@ -434,6 +438,7 @@ Now, we can build and run our application with Docker Compose. First, ensure tha
 ::blog-image
 ---
 imagePath: /img/vue-chatbot/chatbot9.png
+alt: Dockerized chatbot running
 caption: Dockerized and ready to go!
 width: 600px
 ---

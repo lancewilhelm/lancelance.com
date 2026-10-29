@@ -1,0 +1,241 @@
+
+> lancelance.com@ build /private/tmp/lancelance-audit.ZmqlOw/site
+> nuxt build
+
+┌  Building Nuxt for production...
+│
+●  Nuxt 4.3.1 (with Nitro 2.13.1, Vite 7.3.1 and Vue 3.5.28)
+[@nuxtjs/sitemap] ℹ No dynamic sources detected. Consider enabling zeroRuntime to reduce server bundle size. See https://nuxtseo.com/sitemap/guides/zero-runtime
+ℹ Nuxt Icon server bundle mode is set to remote
+│
+●  Nitro preset: cloudflare-pages-static
+
+ WARN  Duplicated imports "ProjectCategory", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "Project", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "ProjectPreview", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+ℹ Building client...
+ℹ vite v7.3.1 building client environment for production...
+ℹ transforming...
+ℹ ✓ 1045 modules transformed.
+ℹ rendering chunks...
+ℹ computing gzip size...
+ℹ ../.nuxt/dist/client/manifest.json                  34.73 kB │ gzip:   2.16 kB
+ℹ ../.nuxt/dist/client/_nuxt/AppHeader.BZ-8V_D8.css    0.13 kB │ gzip:   0.11 kB
+ℹ ../.nuxt/dist/client/_nuxt/ProsePre.77Zmy1jY.css     0.13 kB │ gzip:   0.10 kB
+ℹ ../.nuxt/dist/client/_nuxt/default.DRoBmEKQ.css      0.45 kB │ gzip:   0.23 kB
+ℹ ../.nuxt/dist/client/_nuxt/bloglist.Hf2rZMYP.css     0.48 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/blog.BUCDZDNM.css         0.48 kB │ gzip:   0.22 kB
+ℹ ../.nuxt/dist/client/_nuxt/entry.DmN9X2lA.css       23.59 kB │ gzip:   6.39 kB
+ℹ ../.nuxt/dist/client/_nuxt/bNaE6FFb.js               0.08 kB │ gzip:   0.10 kB
+ℹ ../.nuxt/dist/client/_nuxt/DlAUqK2U.js               0.09 kB │ gzip:   0.10 kB
+ℹ ../.nuxt/dist/client/_nuxt/BD5CAc6A.js               0.10 kB │ gzip:   0.11 kB
+ℹ ../.nuxt/dist/client/_nuxt/CqkleIqs.js               0.12 kB │ gzip:   0.13 kB
+ℹ ../.nuxt/dist/client/_nuxt/Ds9KQv15.js               0.21 kB │ gzip:   0.18 kB
+ℹ ../.nuxt/dist/client/_nuxt/DwswgSeF.js               0.21 kB │ gzip:   0.17 kB
+ℹ ../.nuxt/dist/client/_nuxt/CYXKnyTJ.js               0.24 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/DmUfEtKs.js               0.24 kB │ gzip:   0.20 kB
+ℹ ../.nuxt/dist/client/_nuxt/59c-pSsQ.js               0.24 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/BJcIhUtI.js               0.24 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/BcEt2v0X.js               0.24 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/bjjYVX84.js               0.24 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/W7iRmoNS.js               0.24 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/-RDWk24D.js               0.24 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/PYoeAadP.js               0.25 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/BuxTgY0x.js               0.25 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/CFcuDcWp.js               0.25 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/D04B48hb.js               0.25 kB │ gzip:   0.21 kB
+ℹ ../.nuxt/dist/client/_nuxt/Fi_ArP6r.js               0.26 kB │ gzip:   0.22 kB
+ℹ ../.nuxt/dist/client/_nuxt/BADavWVI.js               0.33 kB │ gzip:   0.27 kB
+ℹ ../.nuxt/dist/client/_nuxt/CwqYpyBz.js               0.34 kB │ gzip:   0.25 kB
+ℹ ../.nuxt/dist/client/_nuxt/Co-kLWvS.js               0.39 kB │ gzip:   0.28 kB
+ℹ ../.nuxt/dist/client/_nuxt/DfwGMHMa.js               0.49 kB │ gzip:   0.33 kB
+ℹ ../.nuxt/dist/client/_nuxt/B2s7MgNb.js               0.50 kB │ gzip:   0.34 kB
+ℹ ../.nuxt/dist/client/_nuxt/De18BG3O.js               0.50 kB │ gzip:   0.34 kB
+ℹ ../.nuxt/dist/client/_nuxt/DWv9blkV.js               0.51 kB │ gzip:   0.34 kB
+ℹ ../.nuxt/dist/client/_nuxt/C43LSZFu.js               0.59 kB │ gzip:   0.40 kB
+ℹ ../.nuxt/dist/client/_nuxt/D64gGiMk.js               0.60 kB │ gzip:   0.36 kB
+ℹ ../.nuxt/dist/client/_nuxt/CpbK-Tl1.js               0.61 kB │ gzip:   0.39 kB
+ℹ ../.nuxt/dist/client/_nuxt/vCTnjns8.js               0.61 kB │ gzip:   0.38 kB
+ℹ ../.nuxt/dist/client/_nuxt/CLc_cAfB.js               0.99 kB │ gzip:   0.62 kB
+ℹ ../.nuxt/dist/client/_nuxt/D-_U3qSx.js               0.99 kB │ gzip:   0.61 kB
+ℹ ../.nuxt/dist/client/_nuxt/BH314oz-.js               1.03 kB │ gzip:   0.63 kB
+ℹ ../.nuxt/dist/client/_nuxt/B0c6qFFy.js               1.49 kB │ gzip:   0.73 kB
+ℹ ../.nuxt/dist/client/_nuxt/BIW9d_e9.js               1.71 kB │ gzip:   0.89 kB
+ℹ ../.nuxt/dist/client/_nuxt/D_p6p8Mh.js               1.74 kB │ gzip:   0.94 kB
+ℹ ../.nuxt/dist/client/_nuxt/Cqur-XGl.js               1.75 kB │ gzip:   0.86 kB
+ℹ ../.nuxt/dist/client/_nuxt/DiZnYe30.js               2.88 kB │ gzip:   1.41 kB
+ℹ ../.nuxt/dist/client/_nuxt/CYPOxwxY.js               4.33 kB │ gzip:   2.02 kB
+ℹ ../.nuxt/dist/client/_nuxt/9YH7S8Fz.js               7.12 kB │ gzip:   2.69 kB
+ℹ ../.nuxt/dist/client/_nuxt/DFWQFm0P.js               7.70 kB │ gzip:   3.33 kB
+ℹ ../.nuxt/dist/client/_nuxt/BLdlvvqs.js              19.52 kB │ gzip:   4.81 kB
+ℹ ../.nuxt/dist/client/_nuxt/DFh0to-2.js              21.24 kB │ gzip:   5.91 kB
+ℹ ../.nuxt/dist/client/_nuxt/B01EDAZy.js              27.21 kB │ gzip:   9.80 kB
+ℹ ../.nuxt/dist/client/_nuxt/CtAGMHmA.js              60.00 kB │ gzip:  16.93 kB
+ℹ ../.nuxt/dist/client/_nuxt/DhQapdmV.js             222.35 kB │ gzip:  83.12 kB
+ℹ ../.nuxt/dist/client/_nuxt/CCosLm9c.js             453.49 kB │ gzip: 140.02 kB
+ℹ ../.nuxt/dist/client/_nuxt/SH7YKQ17.js             506.73 kB │ gzip: 131.54 kB
+ℹ ../.nuxt/dist/client/_nuxt/CevTVlMJ.js             970.86 kB │ gzip: 312.65 kB
+
+ WARN 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+
+ℹ ✓ built in 2.66s
+✔ Client built in 2671ms
+ℹ Building server...
+ℹ vite v7.3.1 building ssr environment for production...
+ℹ transforming...
+ℹ ✓ 994 modules transformed.
+ℹ rendering chunks...
+
+ WARN  [plugin @tailwindcss/vite:generate:build] Sourcemap is likely to be incorrect: a plugin (@tailwindcss/vite:generate:build) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help
+
+
+ WARN  [plugin @tailwindcss/vite:generate:build] Sourcemap is likely to be incorrect: a plugin (@tailwindcss/vite:generate:build) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help (x2)
+
+
+ WARN  [plugin @tailwindcss/vite:generate:build] Sourcemap is likely to be incorrect: a plugin (@tailwindcss/vite:generate:build) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help (x3)
+
+
+ WARN  [plugin @tailwindcss/vite:generate:build] Sourcemap is likely to be incorrect: a plugin (@tailwindcss/vite:generate:build) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help (x4)
+
+
+ WARN  [plugin @tailwindcss/vite:generate:build] Sourcemap is likely to be incorrect: a plugin (@tailwindcss/vite:generate:build) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help (x5)
+
+
+ WARN  [plugin @tailwindcss/vite:generate:build] Sourcemap is likely to be incorrect: a plugin (@tailwindcss/vite:generate:build) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help (x6)
+
+
+ WARN  [plugin @tailwindcss/vite:generate:build] Sourcemap is likely to be incorrect: a plugin (@tailwindcss/vite:generate:build) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help (x7)
+
+ℹ ✓ built in 2.54s
+✔ Server built in 2563ms
+[nitro] ℹ Initializing prerenderer
+
+ WARN  Duplicated imports "ProjectCategory", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "Project", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "ProjectPreview", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "ProjectCategory", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "Project", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "ProjectPreview", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+[nitro] ℹ Prerendering 3 initial routes with crawler
+[nitro]   ├─ /200.html (47ms)
+[nitro]   ├─ /404.html (48ms)
+[nitro]   ├─ / (167ms)
+[nitro]   ├─ /_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (8ms) (skipped)
+[nitro]   ├─ /_payload.json (7ms)
+[nitro]   ├─ /about (41ms)
+[nitro]   ├─ /about/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (1ms) (skipped)
+[nitro]   ├─ /blog (44ms)
+[nitro]   ├─ /blog/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (11ms) (skipped)
+[nitro]   ├─ /projects (45ms)
+[nitro]   ├─ /projects/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (8ms) (skipped)
+[nitro]   ├─ /about/_payload.json (1ms)
+[nitro]   ├─ /blog/_payload.json (11ms)
+[nitro]   ├─ /projects/_payload.json (9ms)
+[nitro]   ├─ /blog?tag=deep-learning (61ms) (skipped)
+[nitro]   ├─ /blog?tag=gradio (62ms) (skipped)
+[nitro]   ├─ /blog?tag=rag (68ms) (skipped)
+[nitro]   ├─ /blog?tag=llm (69ms) (skipped)
+[nitro]   ├─ /blog?tag=vue (83ms) (skipped)
+[nitro]   ├─ /blog?tag=transformer (85ms) (skipped)
+[nitro]   ├─ /blog?tag=data-science (86ms) (skipped)
+[nitro]   ├─ /projects/house-numbers (636ms)
+[nitro]   ├─ /projects/house-numbers/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (5ms) (skipped)
+[nitro]   ├─ /projects/reddit-politics (640ms)
+[nitro]   ├─ /projects/reddit-politics/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (1ms) (skipped)
+[nitro]   ├─ /projects/hateful-memes (641ms)
+[nitro]   ├─ /blog/causal-attn (673ms)
+[nitro]   ├─ /blog/gradio-annotator (672ms)
+[nitro]   ├─ /projects/hateful-memes/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (8ms) (skipped)
+[nitro]   ├─ /blog/causal-attn/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (7ms) (skipped)
+[nitro]   ├─ /blog/gradio-annotator/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (4ms) (skipped)
+[nitro]   ├─ /blog/rag-bot (674ms)
+[nitro]   ├─ /blog/rag-bot/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (2ms) (skipped)
+[nitro]   ├─ /projects/house-numbers/_payload.json (5ms)
+[nitro]   ├─ /projects/reddit-politics/_payload.json (1ms)
+[nitro]   ├─ /blog/causal-attn/_payload.json (7ms)
+[nitro]   ├─ /blog/gradio-annotator/_payload.json (4ms)
+[nitro]   ├─ /projects/hateful-memes/_payload.json (9ms)
+[nitro]   ├─ /blog/rag-bot/_payload.json (2ms)
+[nitro]   ├─ /projects/horizon-extended (798ms)
+[nitro]   ├─ /projects/horizon-extended/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (1ms) (skipped)
+[nitro]   ├─ /projects/retroboard (800ms)
+[nitro]   ├─ /projects/retroboard/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (5ms) (skipped)
+[nitro]   ├─ /projects/ppbc (802ms)
+[nitro]   ├─ /projects/ppbc/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (1ms) (skipped)
+[nitro]   ├─ /projects/horizon-extended/_payload.json (2ms)
+[nitro]   ├─ /projects/retroboard/_payload.json (4ms)
+[nitro]   ├─ /projects/ppbc/_payload.json (1ms)
+[nitro]   ├─ /blog/vue-chatbot3 (850ms)
+[nitro]   ├─ /blog/vue-chatbot2 (854ms)
+[nitro]   ├─ /blog/vue-chatbot3/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (5ms) (skipped)
+[nitro]   ├─ /blog/vue-chatbot2/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (2ms) (skipped)
+[nitro]   ├─ /blog/vue-chatbot1 (856ms)
+[nitro]   ├─ /blog/vue-chatbot1/_payload.json?60e172b5-aa6d-4f07-975a-b6a3b2a309b7 (1ms) (skipped)
+[nitro]   ├─ /blog/vue-chatbot2/_payload.json (2ms)
+[nitro]   ├─ /blog/vue-chatbot3/_payload.json (6ms)
+[nitro]   ├─ /blog/vue-chatbot1/_payload.json (1ms)
+[nitro] ℹ Running link inspections...
+[nitro] 
+[nitro] /projects/house-numbers [1 warning]
+[nitro]   └─ /pdf/CS6476-Final-Project.pdf
+[nitro]       ├─ Links should not contain uppercase characters. (no-uppercase-chars)
+[nitro]       │   Fix: Convert to lowercase.
+[nitro]       └─ Missing link textContent, title or aria-label. (link-text)
+[nitro] 
+[nitro] /projects/hateful-memes [1 warning]
+[nitro]   └─ /pdf/cs7643-final-project.pdf
+[nitro]       └─ Missing link textContent, title or aria-label. (link-text)
+[nitro] ℹ Nuxt Link Checker Summary
+[nitro]   Failing Pages: 2 of 23
+[nitro]   Total errors: 0
+[nitro]   ⚠️ Total warnings: 2
+[nitro] ℹ Prerendered 34 routes in 5.652 seconds
+[@nuxt/fonts] ℹ Downloading fonts...
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnANW3CpmeTIwsa4YaDA.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnANW-CpmeTIwsa4YaDA.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnANW5CpmeTIwsa4YaDA.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnANW1CpmeTIwsa4YaDA.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnANW0CpmeTIwsa4YaDA.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xoDF4xlVMF-BfR8bXMIjhOsXG-q2oeuFoqFrlnANW6CpmeTIwsa4Y.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_SeW4AJi8SJQtQ4Y.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_QOW4AJi8SJQtQ4Y.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_R-W4AJi8SJQtQ4Y.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_S-W4AJi8SJQtQ4Y.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_SuW4AJi8SJQtQ4Y.woff2
+[@nuxt/fonts]   ├─ https://fonts.gstatic.com/s/robotomono/v31/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_3vq_ROW4AJi8SJQt.woff2
+[@nuxt/fonts] ✔ Fonts downloaded and cached.
+[nitro] ✔ Generated public dist
+Duplicated imports "ProjectCategory", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+Duplicated imports "Project", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+Duplicated imports "ProjectPreview", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+ℹ Generated dist/_headers
+ℹ Generated dist/_redirects
+[nitro] ✔ You can preview this build using npx wrangler pages dev dist
+[nitro] ✔ You can deploy this build using npx wrangler pages deploy dist
+│
+└  ✨ Build complete!

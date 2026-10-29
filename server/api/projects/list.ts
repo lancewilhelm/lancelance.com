@@ -1,24 +1,30 @@
-import { getQuery } from "h3";
+import { createError, defineEventHandler, getQuery } from "h3";
 import {
   CATEGORIES,
   getAllProjects,
   getProjectsByCategory,
   getProjectsGroupedByCategory,
-  type ProjectCategory,
 } from "../../utils/projects";
 
 export default defineEventHandler((event) => {
   const q = getQuery(event);
   const grouped = String(q.grouped ?? "").toLowerCase() === "true";
-  const category = (q.category as string | undefined)?.toLowerCase().trim();
 
   if (grouped) {
     return getProjectsGroupedByCategory();
   }
 
+  if (q.category !== undefined && typeof q.category !== "string") {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "Category must appear at most once",
+    });
+  }
+  const category = q.category?.toLowerCase().trim();
   if (category) {
-    if (CATEGORIES.includes(category as ProjectCategory)) {
-      return getProjectsByCategory(category as ProjectCategory);
+    const matchingCategory = CATEGORIES.find((value) => value === category);
+    if (matchingCategory) {
+      return getProjectsByCategory(matchingCategory);
     }
     return [];
   }

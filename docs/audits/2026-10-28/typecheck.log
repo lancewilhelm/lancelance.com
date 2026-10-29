@@ -1,0 +1,49 @@
+? Verifying lockfile against supply-chain policies (1169 entries)...
+✓ Lockfile passes supply-chain policies (1169 entries in 1.4s)
+Lockfile is up to date, resolution step is skipped
+Already up to date
+Error:   × installing dependencies
+  ╰─▶ Failed to create directory at "/private/tmp/lancelance-audit.ZmqlOw/
+      site/node_modules": workspace hoist directory is not a real directory
+
+[WARN] The install that runs before scripts failed, so your node_modules may be out of sync with your lockfile. Set "verifyDepsBeforeRun: false" to skip this install.
+$ nuxt typecheck
+ℹ Nuxt Icon server bundle mode is set to remote
+
+ WARN  Duplicated imports "ProjectCategory", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "Project", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+
+ WARN  Duplicated imports "ProjectPreview", the one from "/private/tmp/lancelance-audit.ZmqlOw/site/shared/types/projects.ts" has been ignored and "/private/tmp/lancelance-audit.ZmqlOw/site/server/utils/projects.ts" is used
+
+app/components/mdc/ProseH2.vue(3,33): error TS2307: Cannot find module '@vueuse/core' or its corresponding type declarations.
+app/components/mdc/ProseH3.vue(3,33): error TS2307: Cannot find module '@vueuse/core' or its corresponding type declarations.
+app/components/mdc/ProseH4.vue(3,33): error TS2307: Cannot find module '@vueuse/core' or its corresponding type declarations.
+app/components/mdc/ProsePre.vue(3,30): error TS2307: Cannot find module '@vueuse/core' or its corresponding type declarations.
+nuxt.config.ts(21,15): error TS2322: Type 'Plugin<any>[]' is not assignable to type 'PluginOption'.
+  Type 'Plugin<any>[]' is not assignable to type 'PluginOption[]'.
+    Type 'Plugin<any>' is not assignable to type 'PluginOption'.
+      Type 'import("/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.0_jiti@2.6.1_lightningcss@1.31.1_terser@5.46.0_yaml@2.8.2/node_modules/vite/dist/node/index").Plugin<any>' is not assignable to type 'Plugin<any>'.
+        Types of property 'hotUpdate' are incompatible.
+          Type 'ObjectHook<(this: MinimalPluginContext & { environment: DevEnvironment; }, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<...>> | undefined' is not assignable to type 'ObjectHook<(this: MinimalPluginContext & { environment: DevEnvironment; }, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<...>, {}> | undefined'.
+            Type '(this: MinimalPluginContext & { environment: DevEnvironment; }, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<...>' is not assignable to type 'ObjectHook<(this: MinimalPluginContext & { environment: DevEnvironment; }, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<...>, {}> | undefined'.
+              Type '(this: import("/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/rollup@4.57.1/node_modules/rollup/dist/rollup").MinimalPluginContext & { ...; }, options: import("/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.0_jiti@2.6.1_lightningcss@1.31.1_terser@5.46.0_yam...' is not assignable to type '(this: MinimalPluginContext & { environment: DevEnvironment; }, options: HotUpdateOptions) => void | EnvironmentModuleNode[] | Promise<...>'.
+                The 'this' types of each signature are incompatible.
+                  Type 'MinimalPluginContext & { environment: DevEnvironment; }' is not assignable to type 'import("/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/rollup@4.57.1/node_modules/rollup/dist/rollup").MinimalPluginContext & { environment: import("/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/vite@7.3.1_@types+node@25.3.0_jiti@2.6.1_lightningcss@1.31.1_terser@5.46.0_yaml@2.8.2/nod...'.
+                    Type 'MinimalPluginContext & { environment: DevEnvironment; }' is not assignable to type 'MinimalPluginContext'.
+                      Types of property 'meta' are incompatible.
+                        Property 'viteVersion' is missing in type 'PluginContextMeta' but required in type 'import("/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/rollup@4.57.1/node_modules/rollup/dist/rollup").PluginContextMeta'.
+
+ ERROR  Process exited with non-zero status (2)
+
+    at G._waitForOutput (/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/tinyexec@1.0.2/node_modules/tinyexec/dist/main.js:574:92)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Object.run (/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/@nuxt+cli@3.33.1_@nuxt+schema@4.3.1_cac@6.7.14_magicast@0.5.2/node_modules/@nuxt/cli/dist/typecheck-C8wVgBzd.mjs:66:3)
+    at async runCommand (/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/citty@0.2.1/node_modules/citty/dist/index.mjs:188:47)
+    at async runCommand (/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/citty@0.2.1/node_modules/citty/dist/index.mjs:185:21)
+    at async runMain (/Users/lancewilhelm/projects/lancelance.com/node_modules/.pnpm/citty@0.2.1/node_modules/citty/dist/index.mjs:285:10) 
+
+
+[ELIFECYCLE] Command failed with exit code 1.

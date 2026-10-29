@@ -28,7 +28,9 @@ The layout of the LED strips called for a font libraries and character writing f
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/ppbc/layout visualizer-01.jpg
+alt: Ping pong ball clock LED wiring and coordinate layout
 caption: PPBC wiring design concept. This aided driver programming as it was essential to map the correct LEDs in sequence with their coordinates on the LED array. The code utilized a 2-dimensional array to store the LED indices, so "999" was used for spots in the array where there existed no ball.
 width: 640px
 ---
@@ -39,6 +41,7 @@ I designed novel font libraries to give the user something more to look at than 
 ::blog-image
 ---
 imagePath: /img/ppbc/layout visualizer-02.jpg
+alt: Ping pong ball clock layout visualization
 width: 640px
 ---
 ::
@@ -46,6 +49,7 @@ width: 640px
 ::blog-image
 ---
 imagePath: /img/ppbc/layout visualizer-03.jpg
+alt: Ping pong ball clock layout visualization with LED coordinates
 width: 640px
 ---
 ::
@@ -53,6 +57,7 @@ width: 640px
 ::blog-image
 ---
 imagePath: /img/ppbc/layout visualizer-04.jpg
+alt: Ping pong ball clock font designs
 caption: PPBC font designs.
 width: 640px
 ---

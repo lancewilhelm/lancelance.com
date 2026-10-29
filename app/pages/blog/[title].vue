@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { contentLoadError } from "~/utils/content-error";
+import { formatPublicationDate } from "#shared/utils/date";
 import type { BlogPost } from "#shared/types/blog";
 import { tagToSlug } from "#shared/utils/tags";
 
@@ -7,9 +9,10 @@ definePageMeta({
 });
 
 const route = useRoute();
+const site = useSiteConfig();
 const slug = route.params.title as string;
 
-const { data: postData } = await useAsyncData<BlogPost>(
+const { data: postData, error: postError } = await useAsyncData<BlogPost>(
   `blog-post-${slug}`,
   () => {
     return $fetch<BlogPost>(`/api/blog/${slug}`);
@@ -25,9 +28,14 @@ const getTagLink = (tag: string) => ({
   },
 });
 
+if (postError.value) {
+  throw contentLoadError(postError.value, "Unable to load blog post");
+}
+
 if (!post.value) {
   throw createError({
     statusCode: 404,
+    fatal: true,
     statusMessage: "Blog post not found",
   });
 }
@@ -44,13 +52,13 @@ useHead(() => {
       { property: "og:description", content: post.value.description },
       {
         property: "og:url",
-        content: `https://lancelance.dev${route.path}`,
+        content: new URL(route.path, site.url).href,
       },
       { name: "twitter:title", content: post.value.title },
       { name: "twitter:description", content: post.value.description },
       {
         name: "twitter:url",
-        content: `https://lancelance.dev${route.path}`,
+        content: new URL(route.path, site.url).href,
       },
     ],
   };
@@ -60,14 +68,8 @@ useHead(() => {
 <template>
   <div v-if="post" class="w-full text-wrap sm:px-4">
     <h1>{{ post.title }}</h1>
-    <div class="italic pb-2 text-(--sub-color)">
-      {{
-        new Date(post.date).toLocaleDateString("en-GB", {
-          day: "numeric",
-          month: "long",
-          year: "numeric",
-        })
-      }}
+    <div class="italic pb-2 text-[var(--sub-text-color,var(--sub-color))]">
+      {{ formatPublicationDate(post.date) }}
     </div>
     <div v-if="post.tags.length > 0" class="pb-4 flex flex-wrap gap-2">
       <NuxtLink
