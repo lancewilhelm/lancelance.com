@@ -13,7 +13,7 @@
 - [x] Update setup, deployment, recovery, and contributor documentation.
 - [x] Phase D: Keep the audit trail
 - [x] Phase E: Verify and hand back
-- [ ] Independently review the diff and evidence, then create a pull request.
+- [x] Independently review the diff and evidence, then create a pull request.
 
 ## Done predicate
 

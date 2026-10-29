@@ -1,6 +1,6 @@
 # Audit fix results
 
-Implemented and verified on October 29, 2026. The [original audit](report.md) and [319-file coverage map](coverage.tsv) remain the historical baseline at `ac02d9d54e53066c7ba787e5029ed7fa1827e5a0`.
+Implemented and verified on October 29, 2026. [Pull request #1](https://github.com/lancewilhelm/lancelance.com/pull/1) is open for review. The [original audit](report.md) and [319-file coverage map](coverage.tsv) remain the historical baseline at `ac02d9d54e53066c7ba787e5029ed7fa1827e5a0`.
 
 The source retains static Cloudflare Pages publishing, the current visual layout, all 176 themes, original images for zoom, current content ordering, and existing routes. No production deployment, merge, hosting-permission change, or rollback was performed.
 
