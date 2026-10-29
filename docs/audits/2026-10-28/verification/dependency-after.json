@@ -1,0 +1,124 @@
+{
+  "actions": [
+    {
+      "action": "review",
+      "module": "katex",
+      "resolves": [
+        {
+          "id": 1241206,
+          "path": ".>rehype-katex>katex",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "deepmerge",
+      "resolves": [
+        {
+          "id": 1243505,
+          "path": ".>@nuxtjs/seo>nuxt-og-image>nitropack>@rollup/plugin-node-resolve>deepmerge",
+          "dev": false,
+          "bundled": false,
+          "optional": false
+        }
+      ]
+    }
+  ],
+  "advisories": {
+    "1241206": {
+      "findings": [
+        {
+          "version": "0.16.47",
+          "paths": [
+            ".>rehype-katex>katex"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/KaTeX/KaTeX/security/advisories/GHSA-238p-pmpm-9mq7\n- https://nvd.nist.gov/vuln/detail/CVE-2026-103923\n- https://github.com/KaTeX/KaTeX/pull/4260\n- https://github.com/KaTeX/KaTeX/commit/0adf7e77db6915d991803b29699f82b1ccf8d4f4\n- https://github.com/KaTeX/KaTeX/releases/tag/v0.18.2\n- https://github.com/advisories/GHSA-238p-pmpm-9mq7",
+      "created": "2026-10-05T23:41:05.000Z",
+      "id": 1241206,
+      "npm_advisory_id": null,
+      "overview": "### Impact\n\nKaTeX can act as a read-side prototype pollution gadget in applications where `Object.prototype` has already been polluted, or where an attacker can influence the prototype of the renderer options object. (KaTeX does not enable said prototype pollution. This advisory applies when combining KaTeX with other vulnerable software that allows for prototype pollution.)\n\nAffected versions may treat inherited properties from `Object.prototype` as renderer options, internal setting metadata, or namespace entries. In particular, an inherited `trust` value will be treated as though the application explicitly enabled trusted rendering, rather than using the documented default of `false`.\n\nWith attacker-controlled mathematical expressions, this can produce links capable of user-interaction cross-site scripting or load attacker-selected external resources. Exploitation requires the consuming application to insert KaTeX output into a web page without a separate sanitizer. (KaTeX does not execute scripts merely by rendering an expression.)\n\nOther inherited settings can alter rendering behavior or resource limits. Inherited setting metadata can affect how defaults and supplied options are processed, while inherited namespace properties can be mistaken for defined macros or other internal values.\n\n### Patches\n\nUpgrade to KaTeX v0.18.2 to remove this vulnerability.\n\n### Workarounds\n\n- Address any prototype-pollution vulnerability in the application or its dependencies.\n- `delete Object.prototype.trust`, `delete Object.prototype.default`, and `delete Object.prototype.processor` before calling KaTeX\n- Do not allow untrusted input to control the renderer options object or its prototype.\n- Sanitize KaTeX-generated HTML before inserting it into a document.\n\n### Details\n\nKaTeX previously used ordinary JavaScript property access in the following contexts:\n\n- Renderer settings could be inherited from the prototype of the options object.\n- Internal `default` and `processor` setting metadata could be inherited from `Object.prototype`.\n- Namespace lookup could treat inherited properties as built-in definitions.\n- Namespace group restoration could preserve an inherited property as though it had been an explicitly defined value.\n\nThe fix adds own-property checks to each of these paths. Inherited properties are no longer accepted as renderer settings, setting metadata, namespace definitions, or values to be restored after a group ends.\n\n### For more information\n\nIf you have any questions or comments about this advisory:\n\n- Open an issue or security advisory in the [KaTeX repository](https://github.com/KaTeX/KaTeX/)\n- Email us at [katex-security@mit.edu](mailto:katex-security@mit.edu)",
+      "reported_by": null,
+      "title": "KaTeX: Existing prototype pollution can bypass trust restrictions",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-103923"
+      ],
+      "access": "public",
+      "severity": "low",
+      "module_name": "katex",
+      "vulnerable_versions": ">=0.11.0 <0.18.2",
+      "github_advisory_id": "GHSA-238p-pmpm-9mq7",
+      "recommendation": "Upgrade to version 0.18.2 or later",
+      "patched_versions": ">=0.18.2",
+      "updated": "2026-10-05T23:41:06.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-807"
+      ],
+      "url": "https://github.com/advisories/GHSA-238p-pmpm-9mq7"
+    },
+    "1243505": {
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image>nitropack>@rollup/plugin-node-resolve>deepmerge"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://nvd.nist.gov/vuln/detail/CVE-2026-93753\n- https://github.com/TehShrike/deepmerge/issues/273\n- https://github.com/TehShrike/deepmerge/blob/5b87756a5671635679001cbac72aa42f23472c81/index.js#L39-L60\n- https://www.vulncheck.com/advisories/deepmerge-through-4.3.1-prototype-poisoning-via-mergeobject\n- https://github.com/advisories/GHSA-gcqx-w48m-w2h4",
+      "created": "2026-09-18T18:31:44.000Z",
+      "id": 1243505,
+      "npm_advisory_id": null,
+      "overview": "deepmerge through 4.3.1 contains a prototype poisoning vulnerability in the mergeObject() function that fails to properly validate keys being written to target objects. Attackers can supply malicious source objects in merge operations to inject attacker-controlled properties into the returned object's prototype, causing applications to inherit unintended values when accessing properties without own-property checks.",
+      "reported_by": null,
+      "title": "deepmerge mergeObject() allows prototype poisoning of returned objects",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-93753"
+      ],
+      "access": "public",
+      "severity": "low",
+      "module_name": "deepmerge",
+      "vulnerable_versions": ">=4.2.0 <=4.3.1",
+      "github_advisory_id": "GHSA-gcqx-w48m-w2h4",
+      "recommendation": "None",
+      "patched_versions": "<0.0.0",
+      "updated": "2026-10-27T21:34:58.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+      },
+      "cwe": [
+        "CWE-1321"
+      ],
+      "url": "https://github.com/advisories/GHSA-gcqx-w48m-w2h4"
+    }
+  },
+  "muted": [],
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 2,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0
+    },
+    "dependencies": 1169,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 1169
+  }
+}

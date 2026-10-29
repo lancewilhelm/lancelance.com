@@ -26,7 +26,9 @@ In my research to understand this concept, I came across [this post](https://med
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/causal-attn/attn_diagram.png
+alt: Multi-head attention and scaled dot-product attention diagrams
 width: 600px
 ---
 #caption
@@ -75,6 +77,7 @@ Visualizing the embeddings, we can see that they are 2 vectors of size 3.
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_et.png
+alt: Token embeddings for Hello World as three-element vectors
 caption: Token embeding of Hello World. Each word is represented by a vector of size 3.
 width: 600px
 ---
@@ -95,6 +98,7 @@ This will similarly be a vector of size 3 for each token in the sequence. The y 
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_ep.png
+alt: Position embeddings for Hello World as three-element vectors
 caption: Position embeding of Hello World. Each word is represented by a vector of size 3.
 width: 600px
 ---
@@ -111,6 +115,7 @@ ec = et + ep
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_ec.png
+alt: Combined token and position embeddings for Hello World
 caption: Combined embedding of Hello World. Each word is represented by a vector of size 3.
 width: 600px
 ---
@@ -134,6 +139,7 @@ Here is what they look like visualized. Right now, these are random values, but 
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_qkv.png
+alt: Query, key, and value vectors for the example sequence
 caption: Queries, keys, and values for our sequence.
 width: 800px
 ---
@@ -150,6 +156,7 @@ attn = q @ k.transpose(-1, -2)
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_rawattn.png
+alt: Raw attention matrix after the query and key dot product
 caption: Raw attention values after the dot product.
 width: 600px
 ---
@@ -167,6 +174,7 @@ attn_masked = attn.masked_fill(mask == 0, float('-inf'))
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_maskedrawattn.png
+alt: Raw attention matrix masked to prevent attending to future words
 caption: Masked raw attention values. Notice that we cannot attend to the target word of 'World' from the input word of 'Hello' because we haven't made it that far in the sentence yet.
 width: 600px
 ---
@@ -181,6 +189,7 @@ attn_scaled_softmax = F.softmax(attn_masked / np.sqrt(3), dim=-1)
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_scaledattn.png
+alt: Scaled attention probabilities for Hello World
 caption: Scaled attention values. Now we can see a little intuition here as the softmax turns the logits into probabilities.
 width: 600px
 ---
@@ -192,6 +201,7 @@ Finally, intuition takes hold here. Each cell represents with what probability t
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_scaledattnintuition.png
+alt: Diagram illustrating scaled attention probabilities
 caption: Intuition to the scaled attention attention probabilities. Credit to Jinoo Baek's blog post for this thought.
 width: 600px
 ---
@@ -210,6 +220,7 @@ weighted_values = attn_scaled_softmax @ v
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_weightedvalues.png
+alt: Weighted value vectors for Hello and World
 caption: Weighted values. We see that the value vector for 'Hello' did not change, but the value vector for 'World' did as it is a weighted combination of both value vectors.
 width: 600px
 ---
@@ -327,6 +338,7 @@ print(f'{max_iters}/{max_iters}: Loss: {loss.item()}')
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_loss.png
+alt: Loss curve during basic model training
 caption: Loss curve for training the basic model.
 width: 600px
 ---
@@ -348,6 +360,7 @@ The combined embeddings did not change too drastically during training, however 
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_trained_qkv.png
+alt: Trained query, key, and value vectors for the basic model
 caption: Trained queries, keys, and values.
 width: 800px
 ---
@@ -358,6 +371,7 @@ Compared to the untrained values, we can see that some learning happened. Howeve
 ::blog-image
 ---
 imagePath: /img/causal-attn/basic_trained_scaledattn.png
+alt: Trained attention probabilities for the basic model
 caption: Trained attention probabilities.
 width: 600px
 ---
@@ -425,6 +439,7 @@ This training takes a bit longer because we increased our sequence length and we
 ::blog-image
 ---
 imagePath: /img/causal-attn/adv_loss.png
+alt: Training loss curve for the expanded dataset
 caption: Training loss for the expanded dataset.
 width: 600px
 ---
@@ -455,6 +470,7 @@ Now let's see if there are any more meaningful insights that we can gain from vi
 ::blog-image
 ---
 imagePath: /img/causal-attn/adv_trained_qkv.png
+alt: Trained query, key, and value vectors for the expanded dataset
 caption: Trained queries, keys, and values for the more complicated dataset.
 width: 800px
 ---
@@ -465,6 +481,7 @@ Let's pay attention to the query vector for "a" as it is this vector that will b
 ::blog-image
 ---
 imagePath: /img/causal-attn/adv_trained_rawattn.png
+alt: Trained raw attention matrix for the expanded dataset
 caption: Trained raw attention matrix for the more complicated dataset.
 width: 600px
 ---
@@ -475,6 +492,7 @@ Again, let's focus on the row for "a". We can see that the logits are heavily po
 ::blog-image
 ---
 imagePath: /img/causal-attn/adv_trained_scaledattn.png
+alt: Trained attention probabilities for the expanded dataset
 caption: Trained attention probabilities/weights for the more complicated dataset.
 width: 600px
 ---

@@ -1,0 +1,3 @@
+public/img/generated/** linguist-generated=true
+app/assets/generated-images.json linguist-generated=true
+docs/audits/**/*.log -whitespace linguist-generated=true

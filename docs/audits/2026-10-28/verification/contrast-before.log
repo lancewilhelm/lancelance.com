@@ -1,0 +1,41 @@
+[WebServer] (node:89589) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:89590) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › tests/site.spec.ts:348:1 › Paper secondary text meets normal-text contrast (261ms)
+
+
+  1) [chromium] › tests/site.spec.ts:348:1 › Paper secondary text meets normal-text contrast ───────
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 4.5
+    Received:    1.8275250911063325
+
+      376 |     (Math.max(foreground, background) + 0.05) /
+      377 |       (Math.min(foreground, background) + 0.05),
+    > 378 |   ).toBeGreaterThanOrEqual(4.5);
+          |     ^
+      379 | });
+      380 |
+        at /Users/lancewilhelm/projects/lancelance.com/tests/site.spec.ts:378:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/site-Paper-secondary-text-meets-normal-text-contrast-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/site-Paper-secondary-text-meets-normal-text-contrast-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/site-Paper-secondary-text-meets-normal-text-contrast-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/site-Paper-secondary-text-meets-normal-text-contrast-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/site.spec.ts:348:1 › Paper secondary text meets normal-text contrast ────────

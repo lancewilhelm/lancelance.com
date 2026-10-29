@@ -1,0 +1,7 @@
+
+> lancelance.com@ typecheck /private/tmp/lancelance-clean.54jF54
+> nuxt typecheck
+
+[@nuxtjs/og-image] ℹ The module is disabled, skipping setup.
+ℹ Nuxt Icon server bundle mode is set to remote
+ℹ Nuxt Icon client bundle consist of 2 icons with 0.65KB(uncompressed) in size

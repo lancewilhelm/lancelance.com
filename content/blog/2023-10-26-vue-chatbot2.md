@@ -247,7 +247,9 @@ If you open up the console on your browser (right click, inspect, then find the 
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/vue-chatbot/chatbot4.png
+alt: Browser console showing an empty message list
 caption: Console screenshot of the empty message list
 width: 600px
 ---
@@ -380,6 +382,7 @@ Now, if you rebuild your webapp with `npm run build` in the `app/` directory and
 ::blog-image
 ---
 imagePath: /img/vue-chatbot/chatbot5.png
+alt: Chatbot conversation with a bot that repeats messages
 caption: Mimic bot, engage!
 width: 600px
 ---

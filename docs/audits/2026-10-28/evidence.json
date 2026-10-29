@@ -1,0 +1,1393 @@
+{
+  "date": "2026-10-28",
+  "timezone": "America/New_York",
+  "commit": "ac02d9d54e53066c7ba787e5029ed7fa1827e5a0",
+  "trackedFiles": 319,
+  "toolchain": {
+    "node": "v22.22.3",
+    "checkoutPnpm": "10.27.0",
+    "browser": "Existing Chromium headless shell 1228 through bundled Playwright 1.62.1",
+    "note": "Desktop escalated package runner supplied an additional wrapper; isolated node_modules was symlinked, not clean-installed."
+  },
+  "checks": {
+    "lint": {
+      "exitCode": 0,
+      "location": "original checkout"
+    },
+    "typecheck": {
+      "exitCode": 1,
+      "diagnostics": [
+        "ProseH2.vue:3 TS2307 @vueuse/core",
+        "ProseH3.vue:3 TS2307 @vueuse/core",
+        "ProseH4.vue:3 TS2307 @vueuse/core",
+        "ProsePre.vue:3 TS2307 @vueuse/core",
+        "nuxt.config.ts:21 TS2322 Vite PluginOption incompatibility"
+      ],
+      "note": "Repeated after isolated build with same diagnostics."
+    },
+    "build": {
+      "exitCode": 0,
+      "preset": "cloudflare-pages-static",
+      "generatedRoutes": 34,
+      "realPageRoutes": 16,
+      "location": "/tmp/lancelance-audit.ZmqlOw/site"
+    },
+    "secretScan": {
+      "method": "Current tracked files under 2MB, narrow private-key/GitHub/AWS/OpenAI token patterns",
+      "suspectedLocations": [],
+      "limit": "No Git history, credential stores, or exhaustive secret detection"
+    }
+  },
+  "localBrowser": {
+    "method": "Fresh static build, exact-case file map, Chromium, America/New_York timezone. Local host does not emulate all Cloudflare headers/redirects.",
+    "routes": [
+      {
+        "route": "/",
+        "status": 200,
+        "title": "Home | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [],
+          "brokenImages": [],
+          "imagesWithoutAlt": 0,
+          "canonical": "http://127.0.0.1:60549/",
+          "ogUrl": "/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/about/",
+        "status": 200,
+        "title": "About - LanceLance | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [],
+          "brokenImages": [],
+          "imagesWithoutAlt": 0,
+          "canonical": "http://127.0.0.1:60549/about",
+          "ogUrl": "/about",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/blog/",
+        "status": 200,
+        "title": "Blog | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [],
+          "brokenImages": [],
+          "imagesWithoutAlt": 0,
+          "canonical": "http://127.0.0.1:60549/blog",
+          "ogUrl": "/blog",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/blog/causal-attn/",
+        "status": 200,
+        "title": "Understanding Causal Attention | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Understanding Causal Attention"
+            },
+            {
+              "tag": "H2",
+              "text": "Helpful starting notes"
+            },
+            {
+              "tag": "H2",
+              "text": "What we are focusing on"
+            },
+            {
+              "tag": "H2",
+              "text": "Simple Example"
+            },
+            {
+              "tag": "H3",
+              "text": "Tokenization"
+            },
+            {
+              "tag": "H3",
+              "text": "Token Embedding"
+            },
+            {
+              "tag": "H3",
+              "text": "Position Embedding"
+            },
+            {
+              "tag": "H3",
+              "text": "Combined Embedding"
+            },
+            {
+              "tag": "H3",
+              "text": "Queries, Keys, and Values"
+            },
+            {
+              "tag": "H3",
+              "text": "Scaled Masked Causal Attention"
+            },
+            {
+              "tag": "H3",
+              "text": "Weighted Values"
+            },
+            {
+              "tag": "H2",
+              "text": "Let's train it"
+            },
+            {
+              "tag": "H3",
+              "text": "Visualizing the attention"
+            },
+            {
+              "tag": "H2",
+              "text": "Training with more complicated data"
+            },
+            {
+              "tag": "H3",
+              "text": "Visualizing the attention (complicated)"
+            },
+            {
+              "tag": "H2",
+              "text": "Conclusion"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 17,
+          "canonical": "http://127.0.0.1:60549/blog/causal-attn",
+          "ogUrl": "https://lancelance.dev/blog/causal-attn/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/blog/gradio-annotator/",
+        "status": 200,
+        "title": "Data Annotator Using Gradio | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Data Annotator Using Gradio"
+            },
+            {
+              "tag": "H2",
+              "text": "But first, what is Gradio?"
+            },
+            {
+              "tag": "H2",
+              "text": "Installation"
+            },
+            {
+              "tag": "H2",
+              "text": "The data"
+            },
+            {
+              "tag": "H2",
+              "text": "Creating the UI"
+            },
+            {
+              "tag": "H2",
+              "text": "End result"
+            },
+            {
+              "tag": "H2",
+              "text": "Hugging Face Space"
+            },
+            {
+              "tag": "H3",
+              "text": "Sample CSV Data"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 0,
+          "canonical": "http://127.0.0.1:60549/blog/gradio-annotator",
+          "ogUrl": "https://lancelance.dev/blog/gradio-annotator/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/blog/rag-bot/",
+        "status": 200,
+        "title": "Simple RAG-Based AI Chatbot | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Simple RAG-Based AI Chatbot"
+            },
+            {
+              "tag": "H2",
+              "text": "Brief overview of RAG"
+            },
+            {
+              "tag": "H2",
+              "text": "Ingesting the knowledge"
+            },
+            {
+              "tag": "H3",
+              "text": "Loading"
+            },
+            {
+              "tag": "H3",
+              "text": "Splitting"
+            },
+            {
+              "tag": "H3",
+              "text": "Embedding & Storage"
+            },
+            {
+              "tag": "H2",
+              "text": "Now we do the thing"
+            },
+            {
+              "tag": "H2",
+              "text": "Reranking"
+            },
+            {
+              "tag": "H2",
+              "text": "Sample Response"
+            },
+            {
+              "tag": "H2",
+              "text": "Moving forward"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 2,
+          "canonical": "http://127.0.0.1:60549/blog/rag-bot",
+          "ogUrl": "https://lancelance.dev/blog/rag-bot/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/blog/vue-chatbot1/",
+        "status": 200,
+        "title": "Vue.js Chatbot - Part 1: The Front-End | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Vue.js Chatbot - Part 1: The Front-End"
+            },
+            {
+              "tag": "H2",
+              "text": "What is Vue.js?"
+            },
+            {
+              "tag": "H2",
+              "text": "Let's get started"
+            },
+            {
+              "tag": "H2",
+              "text": "Chatbot Bones"
+            },
+            {
+              "tag": "H2",
+              "text": "The ChatBubble Component"
+            },
+            {
+              "tag": "H2",
+              "text": "Updating the InputRow Component"
+            },
+            {
+              "tag": "H2",
+              "text": "Props and List Rendering"
+            },
+            {
+              "tag": "H2",
+              "text": "Make it look nice"
+            },
+            {
+              "tag": "H2",
+              "text": "Now we are looking good"
+            },
+            {
+              "tag": "H2",
+              "text": "That's it for the front-end for now"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 4,
+          "canonical": "http://127.0.0.1:60549/blog/vue-chatbot1",
+          "ogUrl": "https://lancelance.dev/blog/vue-chatbot1/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/blog/vue-chatbot2/",
+        "status": 200,
+        "title": "Vue.js Chatbot - Part 2: The Back-End | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Vue.js Chatbot - Part 2: The Back-End"
+            },
+            {
+              "tag": "H2",
+              "text": "What is FastAPI?"
+            },
+            {
+              "tag": "H2",
+              "text": "Setting up the Back-End"
+            },
+            {
+              "tag": "H2",
+              "text": "Serving up our Front-End"
+            },
+            {
+              "tag": "H2",
+              "text": "Adding a Websocket Connection"
+            },
+            {
+              "tag": "H2",
+              "text": "Getting Messages from the Back-End"
+            },
+            {
+              "tag": "H2",
+              "text": "Mimic Bot"
+            },
+            {
+              "tag": "H2",
+              "text": "One last thing before stop for now"
+            },
+            {
+              "tag": "H2",
+              "text": "In the final part of this series"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 2,
+          "canonical": "http://127.0.0.1:60549/blog/vue-chatbot2",
+          "ogUrl": "https://lancelance.dev/blog/vue-chatbot2/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/blog/vue-chatbot3/",
+        "status": 200,
+        "title": "Vue.js Chatbot - Part 3: GPT-3.5 and MongoDB | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H1",
+              "text": "Vue.js Chatbot - Part 3: GPT-3.5 and MongoDB"
+            },
+            {
+              "tag": "H2",
+              "text": "What is GPT-3.5?"
+            },
+            {
+              "tag": "H2",
+              "text": "Talking to GPT-3.5"
+            },
+            {
+              "tag": "H2",
+              "text": "Fixing some bugs"
+            },
+            {
+              "tag": "H2",
+              "text": "What is MongoDB?"
+            },
+            {
+              "tag": "H2",
+              "text": "Setting up MongoDB"
+            },
+            {
+              "tag": "H2",
+              "text": "Connecting to MongoDB"
+            },
+            {
+              "tag": "H2",
+              "text": "Dockerizing our application"
+            },
+            {
+              "tag": "H2",
+              "text": "Conclusion"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 4,
+          "canonical": "http://127.0.0.1:60549/blog/vue-chatbot3",
+          "ogUrl": "https://lancelance.dev/blog/vue-chatbot3/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/projects/",
+        "status": 200,
+        "title": "Projects - LanceLance | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [],
+          "brokenImages": [],
+          "imagesWithoutAlt": 6,
+          "canonical": "http://127.0.0.1:60549/projects",
+          "ogUrl": "/projects",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/projects/hateful-memes/",
+        "status": 200,
+        "title": "Hateful Memes Challenge - Next Move | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Introduction - Background - Motivation"
+            },
+            {
+              "tag": "H2",
+              "text": "Approach"
+            },
+            {
+              "tag": "H2",
+              "text": "Experiments and Results"
+            },
+            {
+              "tag": "H2",
+              "text": "Future Work"
+            },
+            {
+              "tag": "H2",
+              "text": "Conclusion"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 5,
+          "canonical": "http://127.0.0.1:60549/projects/hateful-memes",
+          "ogUrl": "https://lancelance.dev/projects/hateful-memes/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/projects/horizon-extended/",
+        "status": 200,
+        "title": "Horizon Extended | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [],
+          "brokenImages": [],
+          "imagesWithoutAlt": 2,
+          "canonical": "http://127.0.0.1:60549/projects/horizon-extended",
+          "ogUrl": "https://lancelance.dev/projects/horizon-extended/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/projects/house-numbers/",
+        "status": 200,
+        "title": "House Number Detection and Classification | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Introduction"
+            },
+            {
+              "tag": "H4",
+              "text": "CNN"
+            },
+            {
+              "tag": "H4",
+              "text": "Text Detection"
+            },
+            {
+              "tag": "H4",
+              "text": "SVHN"
+            },
+            {
+              "tag": "H2",
+              "text": "Approach"
+            },
+            {
+              "tag": "H2",
+              "text": "Results and Analysis"
+            },
+            {
+              "tag": "H2",
+              "text": "Future Work"
+            },
+            {
+              "tag": "H2",
+              "text": "Conclusion"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 5,
+          "canonical": "http://127.0.0.1:60549/projects/house-numbers",
+          "ogUrl": "https://lancelance.dev/projects/house-numbers/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/projects/ppbc/",
+        "status": 200,
+        "title": "Ping Pong Ball Clock (PPBC) | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Inspiration"
+            },
+            {
+              "tag": "H2",
+              "text": "Design Concept"
+            },
+            {
+              "tag": "H2",
+              "text": "Implementation"
+            },
+            {
+              "tag": "H2",
+              "text": "Video"
+            },
+            {
+              "tag": "H2",
+              "text": "Github Repo"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 4,
+          "canonical": "http://127.0.0.1:60549/projects/ppbc",
+          "ogUrl": "https://lancelance.dev/projects/ppbc/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/projects/reddit-politics/",
+        "status": 200,
+        "title": "Dashboard for US Political Discourse Analysis | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "Introduction"
+            },
+            {
+              "tag": "H2",
+              "text": "Problem Definition"
+            },
+            {
+              "tag": "H2",
+              "text": "Literature Survey"
+            },
+            {
+              "tag": "H2",
+              "text": "Proposed Method"
+            },
+            {
+              "tag": "H2",
+              "text": "Innovations"
+            },
+            {
+              "tag": "H2",
+              "text": "Experiments/Evaluation"
+            },
+            {
+              "tag": "H3",
+              "text": "Experiment 1: Backend Sanity"
+            },
+            {
+              "tag": "H4",
+              "text": "1a:"
+            },
+            {
+              "tag": "H4",
+              "text": "1b:"
+            },
+            {
+              "tag": "H3",
+              "text": "Experiment 2: Frontend Sanity"
+            },
+            {
+              "tag": "H4",
+              "text": "2a:"
+            },
+            {
+              "tag": "H4",
+              "text": "2b:"
+            },
+            {
+              "tag": "H4",
+              "text": "2c:"
+            },
+            {
+              "tag": "H3",
+              "text": "Experiment 3: User Surveys"
+            },
+            {
+              "tag": "H4",
+              "text": "3a:"
+            },
+            {
+              "tag": "H4",
+              "text": "3b:"
+            },
+            {
+              "tag": "H4",
+              "text": "3c:"
+            },
+            {
+              "tag": "H3",
+              "text": "Experiment 4: Controversy Check"
+            },
+            {
+              "tag": "H3",
+              "text": "Experiment 5: Divergence Check"
+            },
+            {
+              "tag": "H3",
+              "text": "Experiment 6: Relevance Check"
+            },
+            {
+              "tag": "H2",
+              "text": "Conclusion"
+            },
+            {
+              "tag": "H2",
+              "text": "Poster"
+            }
+          ],
+          "brokenImages": [],
+          "imagesWithoutAlt": 2,
+          "canonical": "http://127.0.0.1:60549/projects/reddit-politics",
+          "ogUrl": "https://lancelance.dev/projects/reddit-politics/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      },
+      {
+        "route": "/projects/retroboard/",
+        "status": 200,
+        "title": "Retroboard | lancelance.com",
+        "pageErrors": [],
+        "details": {
+          "headings": [
+            {
+              "tag": "H2",
+              "text": "About"
+            },
+            {
+              "tag": "H2",
+              "text": "Future Work"
+            }
+          ],
+          "brokenImages": [
+            "/img/retroboard/sim.jpg"
+          ],
+          "imagesWithoutAlt": 3,
+          "canonical": "http://127.0.0.1:60549/projects/retroboard",
+          "ogUrl": "https://lancelance.dev/projects/retroboard/",
+          "lang": "en",
+          "mainCount": 0
+        }
+      }
+    ],
+    "flows": {
+      "blogAll": 6,
+      "tagFilter": {
+        "selected": {
+          "href": "/blog?tag=data-science",
+          "text": "Data Science (1)"
+        },
+        "url": "http://127.0.0.1:60549/blog?tag=data-science",
+        "cards": 1
+      },
+      "tagReset": 6,
+      "themeKeyboard": {
+        "buttons": 0,
+        "focusable": 0,
+        "role": null
+      },
+      "themeListeners": {
+        "before": {
+          "visibilitychange": 1
+        },
+        "after": {
+          "visibilitychange": 1,
+          "mousedown": 3,
+          "keydown": 3
+        }
+      },
+      "theme": {
+        "saved": "{\"theme\":\"dracula\"}",
+        "css": "/css/themes/dracula.css"
+      },
+      "themePersisted": "/css/themes/dracula.css",
+      "zoomListeners": {
+        "before": {
+          "visibilitychange": 1
+        },
+        "after": {
+          "visibilitychange": 1,
+          "mousedown": 3,
+          "keydown": 3
+        }
+      },
+      "malformedStorage": {
+        "themeLink": null,
+        "bg": "",
+        "pickerOpens": true
+      },
+      "mobile": {
+        "width": 375,
+        "scrollWidth": 375,
+        "bodyScrollWidth": 375,
+        "tables": []
+      },
+      "notFound": {
+        "title": "404 - Page not found: /definitely-not-a-page | lancelance.com",
+        "body": "404\nhome"
+      }
+    },
+    "consoleMessages": [
+      "Unrecognized feature: 'web-share'.",
+      "[.WebGL-0x10c004e9800]GL Driver Message (OpenGL, Performance, GL_CLOSE_PATH_NV, High): GPU stall due to ReadPixels",
+      "No available adapters.",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Theme loading error: SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)\n    at JSON.parse (<anonymous>)\n    at loadTheme (http://127.0.0.1:60549/js/theme-loader.js:52:25)\n    at http://127.0.0.1:60549/js/theme-loader.js:101:1",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "[nuxt] error caught during app initialization ba: Page not found: /definitely-not-a-page\n    at lg (http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:71790)\n    at on (http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:74556)\n    at http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:151166\n    at r (http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:70214)\n    at Object.runWithContext (http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:14403)\n    at va (http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:70251)\n    at http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:68221\n    at wl.run (http://127.0.0.1:60549/_nuxt/DhQapdmV.js:2:4760)\n    at Object.runWithContext (http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:68213)\n    at http://127.0.0.1:60549/_nuxt/DhQapdmV.js:4:151144"
+    ]
+  },
+  "additional": {
+    "logic": {
+      "dates": [
+        {
+          "timeZone": "UTC",
+          "rag": "14 November 2024"
+        },
+        {
+          "timeZone": "America/New_York",
+          "rag": "13 November 2024"
+        }
+      ],
+      "order": [
+        {
+          "input": null,
+          "actual": 0
+        },
+        {
+          "input": "",
+          "actual": 0
+        },
+        {
+          "input": "undefined",
+          "actual": 1000
+        },
+        {
+          "input": "bad",
+          "actual": 1000
+        },
+        {
+          "input": 2,
+          "actual": 2
+        }
+      ],
+      "actualProjects": [
+        {
+          "slug": "horizon-extended",
+          "order": 1
+        },
+        {
+          "slug": "house-numbers",
+          "order": 1
+        },
+        {
+          "slug": "hateful-memes",
+          "order": 2
+        },
+        {
+          "slug": "ppbc",
+          "order": 2
+        },
+        {
+          "slug": "reddit-politics",
+          "order": 3
+        },
+        {
+          "slug": "retroboard",
+          "order": 3
+        }
+      ],
+      "queries": [
+        {
+          "query": "category=academic",
+          "status": 200,
+          "body": "[{\"title\":\"House Number Detection and Classification\",\"description\":\"CS6476 (Georgia Tech) Computer Vision final project, finds and classifies numbers"
+        },
+        {
+          "query": "category=work&category=academic",
+          "status": 500,
+          "body": "{\n  \"statusCode\": 500,\n  \"stack\": []\n}"
+        },
+        {
+          "query": "grouped=true&category=work&category=academic",
+          "status": 500,
+          "body": "{\n  \"statusCode\": 500,\n  \"stack\": []\n}"
+        }
+      ]
+    },
+    "browser": {
+      "/": {
+        "pageWidth": 375,
+        "documentWidth": 375,
+        "clips": [],
+        "resources": [
+          {
+            "file": "Co-kLWvS.js",
+            "bytes": 392
+          },
+          {
+            "file": "DhQapdmV.js",
+            "bytes": 222346
+          },
+          {
+            "file": "DFWQFm0P.js",
+            "bytes": 7702
+          },
+          {
+            "file": "DFh0to-2.js",
+            "bytes": 21241
+          },
+          {
+            "file": "DlAUqK2U.js",
+            "bytes": 91
+          },
+          {
+            "file": "DwswgSeF.js",
+            "bytes": 212
+          },
+          {
+            "file": "BLdlvvqs.js",
+            "bytes": 19520
+          },
+          {
+            "file": "DiZnYe30.js",
+            "bytes": 2881
+          },
+          {
+            "file": "BD5CAc6A.js",
+            "bytes": 103
+          },
+          {
+            "file": "9YH7S8Fz.js",
+            "bytes": 7119
+          },
+          {
+            "file": "D_p6p8Mh.js",
+            "bytes": 1738
+          },
+          {
+            "file": "CpbK-Tl1.js",
+            "bytes": 610
+          },
+          {
+            "file": "C43LSZFu.js",
+            "bytes": 588
+          }
+        ]
+      },
+      "/blog/": {
+        "pageWidth": 375,
+        "documentWidth": 375,
+        "clips": [],
+        "resources": [
+          {
+            "file": "CpbK-Tl1.js",
+            "bytes": 610
+          },
+          {
+            "file": "BLdlvvqs.js",
+            "bytes": 19520
+          },
+          {
+            "file": "DhQapdmV.js",
+            "bytes": 222346
+          },
+          {
+            "file": "DlAUqK2U.js",
+            "bytes": 91
+          },
+          {
+            "file": "DFWQFm0P.js",
+            "bytes": 7702
+          },
+          {
+            "file": "DFh0to-2.js",
+            "bytes": 21241
+          },
+          {
+            "file": "DiZnYe30.js",
+            "bytes": 2881
+          },
+          {
+            "file": "BD5CAc6A.js",
+            "bytes": 103
+          },
+          {
+            "file": "9YH7S8Fz.js",
+            "bytes": 7119
+          },
+          {
+            "file": "DwswgSeF.js",
+            "bytes": 212
+          },
+          {
+            "file": "D_p6p8Mh.js",
+            "bytes": 1738
+          },
+          {
+            "file": "BIW9d_e9.js",
+            "bytes": 1709
+          },
+          {
+            "file": "B01EDAZy.js",
+            "bytes": 27207
+          },
+          {
+            "file": "C43LSZFu.js",
+            "bytes": 588
+          }
+        ]
+      },
+      "/projects/": {
+        "pageWidth": 375,
+        "documentWidth": 375,
+        "clips": [],
+        "resources": [
+          {
+            "file": "DhQapdmV.js",
+            "bytes": 222346
+          },
+          {
+            "file": "CpbK-Tl1.js",
+            "bytes": 610
+          },
+          {
+            "file": "BLdlvvqs.js",
+            "bytes": 19520
+          },
+          {
+            "file": "DlAUqK2U.js",
+            "bytes": 91
+          },
+          {
+            "file": "DFh0to-2.js",
+            "bytes": 21241
+          },
+          {
+            "file": "9YH7S8Fz.js",
+            "bytes": 7119
+          },
+          {
+            "file": "DFWQFm0P.js",
+            "bytes": 7702
+          },
+          {
+            "file": "D_p6p8Mh.js",
+            "bytes": 1738
+          },
+          {
+            "file": "DwswgSeF.js",
+            "bytes": 212
+          },
+          {
+            "file": "DiZnYe30.js",
+            "bytes": 2881
+          },
+          {
+            "file": "BD5CAc6A.js",
+            "bytes": 103
+          },
+          {
+            "file": "B0c6qFFy.js",
+            "bytes": 1488
+          },
+          {
+            "file": "B01EDAZy.js",
+            "bytes": 27207
+          },
+          {
+            "file": "C43LSZFu.js",
+            "bytes": 588
+          }
+        ]
+      },
+      "/blog/vue-chatbot1/": {
+        "pageWidth": 375,
+        "documentWidth": 375,
+        "clips": [],
+        "resources": [
+          {
+            "file": "CpbK-Tl1.js",
+            "bytes": 610
+          },
+          {
+            "file": "DhQapdmV.js",
+            "bytes": 222346
+          },
+          {
+            "file": "BLdlvvqs.js",
+            "bytes": 19520
+          },
+          {
+            "file": "DlAUqK2U.js",
+            "bytes": 91
+          },
+          {
+            "file": "DFh0to-2.js",
+            "bytes": 21241
+          },
+          {
+            "file": "DFWQFm0P.js",
+            "bytes": 7702
+          },
+          {
+            "file": "BIW9d_e9.js",
+            "bytes": 1709
+          },
+          {
+            "file": "B01EDAZy.js",
+            "bytes": 27207
+          },
+          {
+            "file": "9YH7S8Fz.js",
+            "bytes": 7119
+          },
+          {
+            "file": "BD5CAc6A.js",
+            "bytes": 103
+          },
+          {
+            "file": "CwqYpyBz.js",
+            "bytes": 342
+          },
+          {
+            "file": "DmUfEtKs.js",
+            "bytes": 239
+          },
+          {
+            "file": "CtAGMHmA.js",
+            "bytes": 59999
+          },
+          {
+            "file": "Ds9KQv15.js",
+            "bytes": 205
+          },
+          {
+            "file": "CYPOxwxY.js",
+            "bytes": 4326
+          },
+          {
+            "file": "BH314oz-.js",
+            "bytes": 1025
+          },
+          {
+            "file": "PYoeAadP.js",
+            "bytes": 245
+          },
+          {
+            "file": "CevTVlMJ.js",
+            "bytes": 970857
+          },
+          {
+            "file": "CqkleIqs.js",
+            "bytes": 116
+          },
+          {
+            "file": "Cqur-XGl.js",
+            "bytes": 1746
+          },
+          {
+            "file": "DwswgSeF.js",
+            "bytes": 212
+          },
+          {
+            "file": "DiZnYe30.js",
+            "bytes": 2881
+          },
+          {
+            "file": "D_p6p8Mh.js",
+            "bytes": 1738
+          },
+          {
+            "file": "C43LSZFu.js",
+            "bytes": 588
+          }
+        ],
+        "date": "25 October 2023"
+      },
+      "/projects/retroboard/": {
+        "pageWidth": 375,
+        "documentWidth": 375,
+        "clips": [],
+        "resources": [
+          {
+            "file": "DhQapdmV.js",
+            "bytes": 222346
+          },
+          {
+            "file": "BLdlvvqs.js",
+            "bytes": 19520
+          },
+          {
+            "file": "CpbK-Tl1.js",
+            "bytes": 610
+          },
+          {
+            "file": "DlAUqK2U.js",
+            "bytes": 91
+          },
+          {
+            "file": "DFh0to-2.js",
+            "bytes": 21241
+          },
+          {
+            "file": "DFWQFm0P.js",
+            "bytes": 7702
+          },
+          {
+            "file": "B0c6qFFy.js",
+            "bytes": 1488
+          },
+          {
+            "file": "B01EDAZy.js",
+            "bytes": 27207
+          },
+          {
+            "file": "9YH7S8Fz.js",
+            "bytes": 7119
+          },
+          {
+            "file": "BH314oz-.js",
+            "bytes": 1025
+          },
+          {
+            "file": "CYPOxwxY.js",
+            "bytes": 4326
+          },
+          {
+            "file": "DmUfEtKs.js",
+            "bytes": 239
+          },
+          {
+            "file": "Cqur-XGl.js",
+            "bytes": 1746
+          },
+          {
+            "file": "CtAGMHmA.js",
+            "bytes": 59999
+          },
+          {
+            "file": "DwswgSeF.js",
+            "bytes": 212
+          },
+          {
+            "file": "DiZnYe30.js",
+            "bytes": 2881
+          },
+          {
+            "file": "BD5CAc6A.js",
+            "bytes": 103
+          },
+          {
+            "file": "D_p6p8Mh.js",
+            "bytes": 1738
+          },
+          {
+            "file": "C43LSZFu.js",
+            "bytes": 588
+          }
+        ]
+      },
+      "copyCode": {
+        "label": "copied!",
+        "clipboardStart": "npm create vue@latest\n"
+      },
+      "headingControl": {
+        "html": "<div id=\"what-is-vuejs\" class=\"flex items-center gap-2\"><h2><!--[-->What is Vue.js?<!--]--></h2><div class=\"cursor-pointer flex flex-shrink justify-center translate-y-0.25\" aria-label=\"Copy link to heading\"><span class=\"iconify i-lucide:link text-(--main-color)\" aria-hidden=\"true\"></span></div></div>",
+        "buttons": 0
+      },
+      "spaNavigation": {
+        "url": "http://127.0.0.1:60974/projects/retroboard",
+        "hasRetroboard": true
+      },
+      "footerGithubAlsoOpensPicker": 1
+    },
+    "largestJavascript": [
+      {
+        "file": "CevTVlMJ.js",
+        "bytes": 970857,
+        "gzip": 312648
+      },
+      {
+        "file": "SH7YKQ17.js",
+        "bytes": 506727,
+        "gzip": 131543
+      },
+      {
+        "file": "CCosLm9c.js",
+        "bytes": 453487,
+        "gzip": 140024
+      },
+      {
+        "file": "DhQapdmV.js",
+        "bytes": 222346,
+        "gzip": 83115
+      },
+      {
+        "file": "CtAGMHmA.js",
+        "bytes": 59999,
+        "gzip": 16932
+      }
+    ]
+  },
+  "themeDates": {
+    "UTC": {
+      "date": "14 November 2024",
+      "color": "rgb(178, 178, 178)",
+      "fontSize": "18.6667px",
+      "fontWeight": "400",
+      "background": "rgb(238, 238, 238)"
+    },
+    "America/New_York": {
+      "date": "13 November 2024",
+      "color": "rgb(178, 178, 178)",
+      "fontSize": "18.6667px",
+      "fontWeight": "400",
+      "background": "rgb(238, 238, 238)"
+    },
+    "nullStorage": {
+      "themeLink": 0,
+      "errors": []
+    }
+  },
+  "contrast": {
+    "method": "WCAG relative luminance formula on computed colors; deterministic calculation, not a latency benchmark",
+    "foreground": "#b2b2b2",
+    "background": "#eeeeee",
+    "ratio": 1.8275250911063325
+  },
+  "liveHttp": [
+    {
+      "url": "https://lancelance.com/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "finalUrl": "https://lancelance.com/",
+      "canonical": "https://44d0a955.lancelance-com.pages.dev/",
+      "ogUrl": "https://44d0a955.lancelance-com.pages.dev/"
+    },
+    {
+      "url": "https://lancelance.com/blog/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "finalUrl": "https://lancelance.com/blog/",
+      "canonical": "https://44d0a955.lancelance-com.pages.dev/blog",
+      "ogUrl": "https://44d0a955.lancelance-com.pages.dev/blog"
+    },
+    {
+      "url": "https://lancelance.com/projects/retroboard/",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "finalUrl": "https://lancelance.com/projects/retroboard/",
+      "canonical": "https://44d0a955.lancelance-com.pages.dev/projects/retroboard",
+      "ogUrl": "https://lancelance.dev/projects/retroboard"
+    },
+    {
+      "url": "https://lancelance.com/img/retroboard/sim.jpg",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "finalUrl": "https://lancelance.com/img/retroboard/sim.jpg"
+    },
+    {
+      "url": "https://lancelance.com/img/retroboard/sim.JPG",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "finalUrl": "https://lancelance.com/img/retroboard/sim.JPG"
+    },
+    {
+      "url": "https://lancelance.com/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "finalUrl": "https://lancelance.com/robots.txt"
+    },
+    {
+      "url": "https://lancelance.com/sitemap.xml",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "finalUrl": "https://lancelance.com/sitemap.xml"
+    },
+    {
+      "url": "https://lancelance.com/robots.txt",
+      "status": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "body": "# As a condition of accessing this website, you agree to abide by the following\n# content signals:\n\n# (a)  If a content-signal = yes, you may collect content for the corresponding\n#      use.\n# (b)  If a content-signal = no, you may not collect content for the\n#      corresponding use.\n# (c)  If the website operator does not include a content signal for a\n#      corresponding use, the website operator neither grants nor restricts\n#      permission via content signal with respect to the corresponding use.\n\n# The content signals and their meanings are:\n\n# search:   building a search index and providing search results (e.g., returning\n#           hyperlinks and short excerpts from your website's contents). Search does not\n#           include providing AI-generated search summaries.\n# ai-input: inputting content into one or more AI models (e.g., retrieval\n#           augmented generation, gr"
+    },
+    {
+      "url": "https://lancelance.com/api/projects/list?grouped=true",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><script src=\"/js/theme-loader.js\" type=\"text/javascript\"></script><link rel=\"stylesheet\" href=\"/_nuxt/entry.D8QgXkAj.css\" crossorigin><link rel=\"modulepreload\" as=\"script\" crossorigin href=\"/_nuxt/DyIljb5w.js\"><script type=\"module\" src=\"/_nuxt/DyIljb5w.js\" crossorigin></script><link rel=\"icon\" type=\"image/svg+xml\" id=\"favicon\" href=\"/favicon.svg\"><meta property=\"og:type\" content=\"website\"><meta name=\"robots\" content=\"noindex, nofollow\" /></head><body><div id=\"__nuxt\"></div><div id=\"teleports\"></div><script>window.__NUXT_SITE_CONFIG__={_priority:{name:-10,env:-15,url:-5},env:\"production\",name:\"lancelance.com\",url:\"https:\\u002F\\u002F44d0a955.lancelance-com.pages.dev\"}</script><script>window.__NUXT__={};window.__NUXT__.config={public:{mdc:{components:{prose:true,map:{pre:\"Pro"
+    },
+    {
+      "url": "https://lancelance.com/sitemap_index.xml",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><script src=\"/js/theme-loader.js\" type=\"text/javascript\"></script><link rel=\"stylesheet\" href=\"/_nuxt/entry.D8QgXkAj.css\" crossorigin><link rel=\"modulepreload\" as=\"script\" crossorigin href=\"/_nuxt/DyIljb5w.js\"><script type=\"module\" src=\"/_nuxt/DyIljb5w.js\" crossorigin></script><link rel=\"icon\" type=\"image/svg+xml\" id=\"favicon\" href=\"/favicon.svg\"><meta property=\"og:type\" content=\"website\"><meta name=\"robots\" content=\"noindex, nofollow\" /></head><body><div id=\"__nuxt\"></div><div id=\"teleports\"></div><script>window.__NUXT_SITE_CONFIG__={_priority:{name:-10,env:-15,url:-5},env:\"production\",name:\"lancelance.com\",url:\"https:\\u002F\\u002F44d0a955.lancelance-com.pages.dev\"}</script><script>window.__NUXT__={};window.__NUXT__.config={public:{mdc:{components:{prose:true,map:{pre:\"Pro"
+    },
+    {
+      "url": "https://lancelance.com/definitely-not-an-audit-page",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "body": "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><script src=\"/js/theme-loader.js\" type=\"text/javascript\"></script><link rel=\"stylesheet\" href=\"/_nuxt/entry.D8QgXkAj.css\" crossorigin><link rel=\"modulepreload\" as=\"script\" crossorigin href=\"/_nuxt/DyIljb5w.js\"><script type=\"module\" src=\"/_nuxt/DyIljb5w.js\" crossorigin></script><link rel=\"icon\" type=\"image/svg+xml\" id=\"favicon\" href=\"/favicon.svg\"><meta property=\"og:type\" content=\"website\"><meta name=\"robots\" content=\"noindex, nofollow\" /></head><body><div id=\"__nuxt\"></div><div id=\"teleports\"></div><script>window.__NUXT_SITE_CONFIG__={_priority:{name:-10,env:-15,url:-5},env:\"production\",name:\"lancelance.com\",url:\"https:\\u002F\\u002F44d0a955.lancelance-com.pages.dev\"}</script><script>window.__NUXT__={};window.__NUXT__.config={public:{mdc:{components:{prose:true,map:{pre:\"Pro"
+    }
+  ],
+  "sourceBoundary": "Public responses are live; deployed source commit was not established. Local browser used freshly generated audited source.",
+  "largestImageFiles": [
+    {
+      "file": "public/img/retroboard/IMG_0982_crop.jpg",
+      "bytes": 4366800
+    },
+    {
+      "file": "public/img/retroboard/IMG_0977.JPG",
+      "bytes": 3507788
+    },
+    {
+      "file": "public/img/retroboard/sim.JPG",
+      "bytes": 2651573
+    }
+  ]
+}

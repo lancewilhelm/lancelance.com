@@ -22,7 +22,9 @@ Our approach is aimed at improving upon the success of the winners of the Hatefu
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/hateful-memes/fig_2.jpg
+alt: FixMatch algorithm diagram
 caption: Figure 1. FixMatch algorithm
 width: 640px
 ---
@@ -34,6 +36,7 @@ The key aspect of our improved model's performance lies in the extraction of fea
 ::blog-image
 ---
 imagePath: /img/hateful-memes/fig_3.jpg
+alt: Visual BERT process diagram
 caption: Figure 2. Visual BERT process
 width: 640px
 ---
@@ -50,6 +53,7 @@ To enhance the training data, we applied image transformations, such as cutout (
 ::blog-image
 ---
 imagePath: /img/hateful-memes/fig_4.jpg
+alt: Example image with cutout augmentation
 caption: Figure 3. Example of an image with a cutout augmentation
 width: 640px
 ---
@@ -99,6 +103,7 @@ We identified a gap in the data assumption between testing and pseudo-labeled tr
 ::blog-image
 ---
 imagePath: /img/hateful-memes/fig_6.jpg
+alt: Training and validation loss plots for the hateful memes model
 caption: Figure 4. Training and validation losses
 width: 640px
 ---
@@ -113,6 +118,7 @@ Our exploration sought to improve performance in the Hateful Memes Challenge by 
 ::blog-image
 ---
 imagePath: /img/hateful-memes/paper.png
+alt: Cover of the hateful memes classification project report
 caption: Click to view
 link: /pdf/cs7643-final-project.pdf
 width: 400px

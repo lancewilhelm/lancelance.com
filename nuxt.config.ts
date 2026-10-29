@@ -11,17 +11,31 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/mdc",
     "@nuxt/icon",
-    "@pinia/nuxt",
-    "@vueuse/nuxt",
     "@nuxt/fonts",
     "@nuxtjs/seo",
     "@nuxt/eslint",
   ],
+  icon: {
+    clientBundle: { icons: ["lucide:link", "lucide:thumbs-up"] },
+  },
   vite: {
     plugins: [tailwindcss()],
   },
+  site: {
+    url: "https://lancelance.com",
+    name: "lancelance.com",
+  },
+  aiReady: false,
+  skewProtection: false,
+  ogImage: { enabled: false },
+  sitemap: {
+    zeroRuntime: true,
+  },
   nitro: {
     preset: "cloudflare-pages-static",
+    prerender: {
+      routes: ["/robots.txt", "/sitemap.xml"],
+    },
   },
   app: {
     head: {
@@ -33,6 +47,12 @@ export default defineNuxtConfig({
         },
       ],
       link: [
+        {
+          rel: "stylesheet",
+          id: "currentTheme",
+          tagPriority: 40,
+          href: "/css/themes/paper.css",
+        },
         {
           rel: "icon",
           type: "image/svg+xml",

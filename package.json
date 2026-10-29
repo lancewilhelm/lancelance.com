@@ -9,29 +9,45 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "typecheck": "nuxt typecheck"
+    "typecheck": "nuxt typecheck",
+    "test": "tsx --test tests/*.test.ts",
+    "test:e2e": "playwright test",
+    "check:content": "tsx scripts/check-content.ts",
+    "images:generate": "node scripts/generate-images.mjs",
+    "images:check": "node scripts/generate-images.mjs --check",
+    "prebuild": "pnpm check:content && pnpm images:check",
+    "pregenerate": "pnpm check:content && pnpm images:check",
+    "test:failures": "playwright test --config playwright.failures.config.ts"
   },
   "dependencies": {
-    "@nuxt/fonts": "^0.14.0",
-    "@nuxt/icon": "^2.2.1",
-    "@nuxtjs/mdc": "^0.20.1",
-    "@nuxtjs/seo": "^3.4.0",
-    "@pinia/nuxt": "^0.11.3",
-    "@tailwindcss/vite": "^4.2.0",
-    "@vueuse/nuxt": "^14.2.1",
+    "@nuxt/fonts": "^1.2.0",
+    "@nuxt/icon": "^2.6.2",
+    "@nuxtjs/mdc": "^0.23.2",
+    "@nuxtjs/seo": "^6.0.1",
+    "@tailwindcss/vite": "^4.3.3",
     "gray-matter": "^4.0.3",
-    "highlight.js": "^11.11.1",
-    "nuxt": "^4.3.1",
-    "pinia": "^3.0.4",
+    "h3": "^1.15.11",
+    "highlight.js": "^11.12.0",
+    "nuxt": "^4.6.3",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "tailwindcss": "^4.2.0"
+    "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.15.1",
-    "eslint": "^9.39.2",
+    "@iconify-json/lucide": "^1.2.148",
+    "@nuxt/eslint": "^1.17.0",
+    "@playwright/test": "^1.64.1",
+    "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
-    "typescript": "^5.9.3"
+    "eslint-plugin-prettier": "^5.5.7",
+    "prettier": "^3.9.10",
+    "sharp": "^0.35.5",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.3.13"
+  },
+  "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": ">=22.22.3 <23"
   }
 }

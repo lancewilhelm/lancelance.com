@@ -1,0 +1,3049 @@
+{
+  "date": "2026-10-28",
+  "source": "pnpm audit --json, registry.npmjs.org",
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 16,
+      "moderate": 65,
+      "high": 90,
+      "critical": 7
+    },
+    "dependencies": 1163,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 1163
+  },
+  "advisoryVersionEntries": 178,
+  "uniqueAdvisoryUrls": 141,
+  "packageNames": 47,
+  "applicability": "Version matches only. Exploitability and production reachability not established. Nuxt build tooling is not all deployed runtime.",
+  "advisories": [
+    {
+      "id": 1113459,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+      "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26",
+      "vulnerableVersions": "<3.1.3",
+      "patchedVersions": ">=3.1.3",
+      "findings": [
+        {
+          "version": "3.1.2",
+          "paths": [
+            ".>eslint>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113461,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+      "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26",
+      "vulnerableVersions": ">=5.0.0 <5.1.7",
+      "patchedVersions": ">=5.1.7",
+      "findings": [
+        {
+          "version": "5.1.6",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>archiver>readdir-glob>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113465,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern",
+      "url": "https://github.com/advisories/GHSA-3ppc-4f35-3m26",
+      "vulnerableVersions": ">=9.0.0 <9.0.6",
+      "patchedVersions": ">=9.0.6",
+      "findings": [
+        {
+          "version": "9.0.5",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113515,
+      "module": "rollup",
+      "severity": "high",
+      "title": "Rollup 4 has Arbitrary File Write via Path Traversal",
+      "url": "https://github.com/advisories/GHSA-mw96-cpmx-2vgc",
+      "vulnerableVersions": ">=4.0.0 <4.59.0",
+      "patchedVersions": ">=4.59.0",
+      "findings": [
+        {
+          "version": "4.57.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>rollup"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113538,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+      "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj",
+      "vulnerableVersions": "<3.1.3",
+      "patchedVersions": ">=3.1.3",
+      "findings": [
+        {
+          "version": "3.1.2",
+          "paths": [
+            ".>eslint>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113540,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+      "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj",
+      "vulnerableVersions": ">=5.0.0 <5.1.8",
+      "patchedVersions": ">=5.1.8",
+      "findings": [
+        {
+          "version": "5.1.6",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>archiver>readdir-glob>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113544,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+      "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj",
+      "vulnerableVersions": ">=9.0.0 <9.0.7",
+      "patchedVersions": ">=9.0.7",
+      "findings": [
+        {
+          "version": "9.0.5",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113545,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch has ReDoS: matchOne() combinatorial backtracking via multiple non-adjacent GLOBSTAR segments",
+      "url": "https://github.com/advisories/GHSA-7r86-cg39-jmmj",
+      "vulnerableVersions": ">=10.0.0 <10.2.3",
+      "patchedVersions": ">=10.2.3",
+      "findings": [
+        {
+          "version": "10.2.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113546,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+      "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74",
+      "vulnerableVersions": "<3.1.4",
+      "patchedVersions": ">=3.1.4",
+      "findings": [
+        {
+          "version": "3.1.2",
+          "paths": [
+            ".>eslint>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113548,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+      "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74",
+      "vulnerableVersions": ">=5.0.0 <5.1.8",
+      "patchedVersions": ">=5.1.8",
+      "findings": [
+        {
+          "version": "5.1.6",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>archiver>readdir-glob>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113552,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+      "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74",
+      "vulnerableVersions": ">=9.0.0 <9.0.7",
+      "patchedVersions": ">=9.0.7",
+      "findings": [
+        {
+          "version": "9.0.5",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113553,
+      "module": "minimatch",
+      "severity": "high",
+      "title": "minimatch ReDoS: nested *() extglobs generate catastrophically backtracking regular expressions",
+      "url": "https://github.com/advisories/GHSA-23c5-xmqv-rm74",
+      "vulnerableVersions": ">=10.0.0 <10.2.3",
+      "patchedVersions": ">=10.2.3",
+      "findings": [
+        {
+          "version": "10.2.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113686,
+      "module": "serialize-javascript",
+      "severity": "high",
+      "title": "Serialize JavaScript is Vulnerable to RCE via RegExp.flags and Date.prototype.toISOString()",
+      "url": "https://github.com/advisories/GHSA-5c6j-r48x-rmvq",
+      "vulnerableVersions": "<=7.0.2",
+      "patchedVersions": ">=7.0.3",
+      "findings": [
+        {
+          "version": "6.0.2",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@rollup/plugin-terser>serialize-javascript"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1113714,
+      "module": "ajv",
+      "severity": "moderate",
+      "title": "ajv has ReDoS when using `$data` option",
+      "url": "https://github.com/advisories/GHSA-2g4f-4pwh-qvx6",
+      "vulnerableVersions": "<6.14.0",
+      "patchedVersions": ">=6.14.0",
+      "findings": [
+        {
+          "version": "6.12.6",
+          "paths": [
+            ".>eslint>ajv"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114150,
+      "module": "svgo",
+      "severity": "high",
+      "title": "SVGO DoS through entity expansion in DOCTYPE (Billion Laughs)",
+      "url": "https://github.com/advisories/GHSA-xpqw-6gx7-v673",
+      "vulnerableVersions": "=4.0.0",
+      "patchedVersions": ">=4.0.1",
+      "findings": [
+        {
+          "version": "4.0.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>cssnano>cssnano-preset-default>postcss-svgo>svgo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114153,
+      "module": "fast-xml-parser",
+      "severity": "low",
+      "title": "fast-xml-parser has stack overflow in XMLBuilder with preserveOrder",
+      "url": "https://github.com/advisories/GHSA-fj3w-jwp8-x2g3",
+      "vulnerableVersions": ">=5.0.0 <5.3.8",
+      "patchedVersions": ">=5.3.8",
+      "findings": [
+        {
+          "version": "5.3.6",
+          "paths": [
+            ".>@nuxtjs/seo>@nuxtjs/sitemap>fast-xml-parser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114200,
+      "module": "tar",
+      "severity": "high",
+      "title": "tar has Hardlink Path Traversal via Drive-Relative Linkpath",
+      "url": "https://github.com/advisories/GHSA-qffp-2rhf-9h96",
+      "vulnerableVersions": "<=7.5.9",
+      "patchedVersions": ">=7.5.10",
+      "findings": [
+        {
+          "version": "7.5.9",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@vercel/nft>@mapbox/node-pre-gyp>tar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114302,
+      "module": "tar",
+      "severity": "high",
+      "title": "node-tar Symlink Path Traversal via Drive-Relative Linkpath",
+      "url": "https://github.com/advisories/GHSA-9ppj-qmqm-q256",
+      "vulnerableVersions": "<=7.5.10",
+      "patchedVersions": ">=7.5.11",
+      "findings": [
+        {
+          "version": "7.5.9",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@vercel/nft>@mapbox/node-pre-gyp>tar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114438,
+      "module": "devalue",
+      "severity": "moderate",
+      "title": "devalue has prototype pollution in devalue.parse and devalue.unflatten",
+      "url": "https://github.com/advisories/GHSA-cfw5-2vxh-hr84",
+      "vulnerableVersions": "<5.6.4",
+      "patchedVersions": ">=5.6.4",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114467,
+      "module": "unhead",
+      "severity": "low",
+      "title": "Unhead Vulnerable to Bypass of URI Scheme Sanitization in makeTagSafe via Case-Sensitivity",
+      "url": "https://github.com/advisories/GHSA-5339-hvwr-7582",
+      "vulnerableVersions": "<=2.1.10",
+      "patchedVersions": ">=2.1.11",
+      "findings": [
+        {
+          "version": "2.1.4",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image>@unhead/vue>unhead"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114468,
+      "module": "unhead",
+      "severity": "moderate",
+      "title": "Unhead has XSS bypass in `useHeadSafe` via attribute name injection and case-sensitive protocol check",
+      "url": "https://github.com/advisories/GHSA-g5xx-pwrp-g3fv",
+      "vulnerableVersions": "<=2.1.10",
+      "patchedVersions": ">=2.1.11",
+      "findings": [
+        {
+          "version": "2.1.4",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image>@unhead/vue>unhead"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114526,
+      "module": "flatted",
+      "severity": "high",
+      "title": "flatted vulnerable to unbounded recursion DoS in parse() revive phase",
+      "url": "https://github.com/advisories/GHSA-25h7-pfq9-p65f",
+      "vulnerableVersions": "<3.4.0",
+      "patchedVersions": ">=3.4.0",
+      "findings": [
+        {
+          "version": "3.3.3",
+          "paths": [
+            ".>eslint>file-entry-cache>flat-cache>flatted"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1114875,
+      "module": "h3",
+      "severity": "moderate",
+      "title": "h3 has a Path Traversal via Percent-Encoded Dot Segments in serveStatic Allows Arbitrary File Read",
+      "url": "https://github.com/advisories/GHSA-wr4h-v87w-p3r7",
+      "vulnerableVersions": "<1.15.6",
+      "patchedVersions": ">=1.15.6",
+      "findings": [
+        {
+          "version": "1.15.5",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>h3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115114,
+      "module": "h3",
+      "severity": "moderate",
+      "title": "h3: SSE Event Injection via Unsanitized Carriage Return (`\\r`) in EventStream Data and Comment Fields (Bypass of CVE Fix)",
+      "url": "https://github.com/advisories/GHSA-4hxc-9384-m385",
+      "vulnerableVersions": "<1.15.9",
+      "patchedVersions": ">=1.15.9",
+      "findings": [
+        {
+          "version": "1.15.5",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>h3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115117,
+      "module": "h3",
+      "severity": "moderate",
+      "title": "h3: Double Decoding in `serveStatic` Bypasses `resolveDotSegments` Path Traversal Protection via `%252e%252e`",
+      "url": "https://github.com/advisories/GHSA-72gr-qfp7-vwhw",
+      "vulnerableVersions": "<=1.15.8",
+      "patchedVersions": ">=1.15.9",
+      "findings": [
+        {
+          "version": "1.15.5",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>h3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115161,
+      "module": "h3",
+      "severity": "high",
+      "title": "h3 has a Server-Sent Events Injection via Unsanitized Newlines in Event Stream Fields",
+      "url": "https://github.com/advisories/GHSA-22cc-p3c6-wpvm",
+      "vulnerableVersions": "<1.15.6",
+      "patchedVersions": ">=1.15.6",
+      "findings": [
+        {
+          "version": "1.15.5",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>h3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115339,
+      "module": "fast-xml-parser",
+      "severity": "high",
+      "title": "fast-xml-parser affected by numeric entity expansion bypassing all entity expansion limits (incomplete fix for CVE-2026-26278)",
+      "url": "https://github.com/advisories/GHSA-8gc5-j5rx-235r",
+      "vulnerableVersions": ">=5.0.0 <5.5.6",
+      "patchedVersions": ">=5.5.6",
+      "findings": [
+        {
+          "version": "5.3.6",
+          "paths": [
+            ".>@nuxtjs/seo>@nuxtjs/sitemap>fast-xml-parser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115537,
+      "module": "srvx",
+      "severity": "moderate",
+      "title": "srvx is vulnerable to middleware bypass via absolute URI in request line ",
+      "url": "https://github.com/advisories/GHSA-p36q-q72m-gchr",
+      "vulnerableVersions": "<0.11.13",
+      "patchedVersions": ">=0.11.13",
+      "findings": [
+        {
+          "version": "0.11.7",
+          "paths": [
+            ".>nuxt>@nuxt/cli>srvx"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115540,
+      "module": "brace-expansion",
+      "severity": "moderate",
+      "title": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion",
+      "url": "https://github.com/advisories/GHSA-f886-m6hf-6m8v",
+      "vulnerableVersions": "<1.1.13",
+      "patchedVersions": ">=1.1.13",
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": [
+            ".>eslint>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115541,
+      "module": "brace-expansion",
+      "severity": "moderate",
+      "title": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion",
+      "url": "https://github.com/advisories/GHSA-f886-m6hf-6m8v",
+      "vulnerableVersions": ">=2.0.0 <2.0.3",
+      "patchedVersions": ">=2.0.3",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115543,
+      "module": "brace-expansion",
+      "severity": "moderate",
+      "title": "brace-expansion: Zero-step sequence causes process hang and memory exhaustion",
+      "url": "https://github.com/advisories/GHSA-f886-m6hf-6m8v",
+      "vulnerableVersions": ">=4.0.0 <5.0.5",
+      "patchedVersions": ">=5.0.5",
+      "findings": [
+        {
+          "version": "5.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115545,
+      "module": "node-forge",
+      "severity": "high",
+      "title": "Forge has a basicConstraints bypass in its certificate chain verification (RFC 5280 violation)",
+      "url": "https://github.com/advisories/GHSA-2328-f5f3-gj25",
+      "vulnerableVersions": "<=1.3.3",
+      "patchedVersions": ">=1.4.0",
+      "findings": [
+        {
+          "version": "1.3.3",
+          "paths": [
+            ".>nuxt>@nuxt/cli>listhen>node-forge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115546,
+      "module": "node-forge",
+      "severity": "high",
+      "title": "Forge has signature forgery in Ed25519 due to missing S > L check",
+      "url": "https://github.com/advisories/GHSA-q67f-28xg-22rw",
+      "vulnerableVersions": "<1.4.0",
+      "patchedVersions": ">=1.4.0",
+      "findings": [
+        {
+          "version": "1.3.3",
+          "paths": [
+            ".>nuxt>@nuxt/cli>listhen>node-forge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115548,
+      "module": "node-forge",
+      "severity": "high",
+      "title": "Forge has Denial of Service via Infinite Loop in BigInteger.modInverse() with Zero Input",
+      "url": "https://github.com/advisories/GHSA-5m6q-g25r-mvwx",
+      "vulnerableVersions": "<1.4.0",
+      "patchedVersions": ">=1.4.0",
+      "findings": [
+        {
+          "version": "1.3.3",
+          "paths": [
+            ".>nuxt>@nuxt/cli>listhen>node-forge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115549,
+      "module": "picomatch",
+      "severity": "moderate",
+      "title": "Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching",
+      "url": "https://github.com/advisories/GHSA-3v7f-55p6-f55p",
+      "vulnerableVersions": "<2.3.2",
+      "patchedVersions": ">=2.3.2",
+      "findings": [
+        {
+          "version": "2.3.1",
+          "paths": [
+            ".>@nuxt/fonts>unstorage>anymatch>picomatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115551,
+      "module": "picomatch",
+      "severity": "moderate",
+      "title": "Picomatch: Method Injection in POSIX Character Classes causes incorrect Glob Matching",
+      "url": "https://github.com/advisories/GHSA-3v7f-55p6-f55p",
+      "vulnerableVersions": ">=4.0.0 <4.0.4",
+      "patchedVersions": ">=4.0.4",
+      "findings": [
+        {
+          "version": "4.0.3",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>tinyglobby>picomatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115552,
+      "module": "picomatch",
+      "severity": "high",
+      "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+      "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj",
+      "vulnerableVersions": "<2.3.2",
+      "patchedVersions": ">=2.3.2",
+      "findings": [
+        {
+          "version": "2.3.1",
+          "paths": [
+            ".>@nuxt/fonts>unstorage>anymatch>picomatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115554,
+      "module": "picomatch",
+      "severity": "high",
+      "title": "Picomatch has a ReDoS vulnerability via extglob quantifiers",
+      "url": "https://github.com/advisories/GHSA-c2c7-rcm5-vvqj",
+      "vulnerableVersions": ">=4.0.0 <4.0.4",
+      "patchedVersions": ">=4.0.4",
+      "findings": [
+        {
+          "version": "4.0.3",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>tinyglobby>picomatch"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115556,
+      "module": "yaml",
+      "severity": "moderate",
+      "title": "yaml is vulnerable to Stack Overflow via deeply nested YAML collections",
+      "url": "https://github.com/advisories/GHSA-48c2-rrv3-qjmp",
+      "vulnerableVersions": ">=2.0.0 <2.8.3",
+      "patchedVersions": ">=2.8.3",
+      "findings": [
+        {
+          "version": "2.8.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115612,
+      "module": "node-forge",
+      "severity": "high",
+      "title": "Forge has signature forgery in RSA-PKCS due to ASN.1 extra field  ",
+      "url": "https://github.com/advisories/GHSA-ppp5-5v6c-4jwp",
+      "vulnerableVersions": "<1.4.0",
+      "patchedVersions": ">=1.4.0",
+      "findings": [
+        {
+          "version": "1.3.3",
+          "paths": [
+            ".>nuxt>@nuxt/cli>listhen>node-forge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115748,
+      "module": "nuxt-og-image",
+      "severity": "moderate",
+      "title": "Nuxt OG Image vulnerable to Server-Side Request Forgery via user-controlled parameters",
+      "url": "https://github.com/advisories/GHSA-pqhr-mp3f-hrpp",
+      "vulnerableVersions": "<6.2.5",
+      "patchedVersions": ">=6.2.5",
+      "findings": [
+        {
+          "version": "5.1.13",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115806,
+      "module": "lodash",
+      "severity": "high",
+      "title": "lodash vulnerable to Code Injection via `_.template` imports key names",
+      "url": "https://github.com/advisories/GHSA-r5fr-rjxr-66jc",
+      "vulnerableVersions": ">=4.0.0 <=4.17.23",
+      "patchedVersions": ">=4.18.0",
+      "findings": [
+        {
+          "version": "4.17.23",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>archiver>archiver-utils>lodash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115810,
+      "module": "lodash",
+      "severity": "moderate",
+      "title": "lodash vulnerable to Prototype Pollution via array path bypass in `_.unset` and `_.omit`",
+      "url": "https://github.com/advisories/GHSA-f23m-r3pf-42rh",
+      "vulnerableVersions": "<=4.17.23",
+      "patchedVersions": ">=4.18.0",
+      "findings": [
+        {
+          "version": "4.17.23",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>archiver>archiver-utils>lodash"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115981,
+      "module": "nuxt-og-image",
+      "severity": "moderate",
+      "title": "Nuxt OG Image is vulnerable to reflected XSS via query parameter injection into HTML attributes",
+      "url": "https://github.com/advisories/GHSA-mg36-wvcr-m75h",
+      "vulnerableVersions": "<6.2.5",
+      "patchedVersions": ">=6.2.5",
+      "findings": [
+        {
+          "version": "5.1.13",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1115982,
+      "module": "nuxt-og-image",
+      "severity": "moderate",
+      "title": "Nuxt OG Image is vulnerable to Denial of Service via unbounded image dimensions",
+      "url": "https://github.com/advisories/GHSA-c7xp-q6q8-hg76",
+      "vulnerableVersions": "<6.2.5",
+      "patchedVersions": ">=6.2.5",
+      "findings": [
+        {
+          "version": "5.1.13",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1116102,
+      "module": "defu",
+      "severity": "high",
+      "title": "defu: Prototype pollution via `__proto__` key in defaults argument",
+      "url": "https://github.com/advisories/GHSA-737v-mqg7-c878",
+      "vulnerableVersions": "<=6.1.4",
+      "patchedVersions": ">=6.1.5",
+      "findings": [
+        {
+          "version": "6.1.4",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>h3>defu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1116230,
+      "module": "vite",
+      "severity": "moderate",
+      "title": "Vite Vulnerable to Path Traversal in Optimized Deps `.map` Handling",
+      "url": "https://github.com/advisories/GHSA-4w7w-66w2-5vf9",
+      "vulnerableVersions": ">=7.0.0 <=7.3.1",
+      "patchedVersions": ">=7.3.2",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1116232,
+      "module": "vite",
+      "severity": "high",
+      "title": "Vite: `server.fs.deny` bypassed with queries",
+      "url": "https://github.com/advisories/GHSA-v2wj-q39q-566r",
+      "vulnerableVersions": ">=7.1.0 <=7.3.1",
+      "patchedVersions": ">=7.3.2",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1116235,
+      "module": "vite",
+      "severity": "high",
+      "title": "Vite Vulnerable to Arbitrary File Read via Vite Dev Server WebSocket",
+      "url": "https://github.com/advisories/GHSA-p9ff-h696-f583",
+      "vulnerableVersions": ">=7.0.0 <=7.3.1",
+      "patchedVersions": ">=7.3.2",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1116307,
+      "module": "fast-xml-parser",
+      "severity": "moderate",
+      "title": "Entity Expansion Limits Bypassed When Set to Zero Due to JavaScript Falsy Evaluation in fast-xml-parser",
+      "url": "https://github.com/advisories/GHSA-jp2q-39xq-3w4g",
+      "vulnerableVersions": ">=5.0.0 <5.5.7",
+      "patchedVersions": ">=5.5.7",
+      "findings": [
+        {
+          "version": "5.3.6",
+          "paths": [
+            ".>@nuxtjs/seo>@nuxtjs/sitemap>fast-xml-parser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1116373,
+      "module": "unhead",
+      "severity": "moderate",
+      "title": "Unhead has a hasDangerousProtocol() bypass via leading-zero padded HTML entities in useHeadSafe()",
+      "url": "https://github.com/advisories/GHSA-95h2-gj7x-gx9w",
+      "vulnerableVersions": "<2.1.13",
+      "patchedVersions": ">=2.1.13",
+      "findings": [
+        {
+          "version": "2.1.4",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image>@unhead/vue>unhead"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1116607,
+      "module": "simple-git",
+      "severity": "high",
+      "title": "simple-git Affected by Command Execution via Option-Parsing Bypass",
+      "url": "https://github.com/advisories/GHSA-jcxm-m3jx-f287",
+      "vulnerableVersions": "<3.32.0",
+      "patchedVersions": ">=3.32.0",
+      "findings": [
+        {
+          "version": "3.31.1",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>simple-git"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1116612,
+      "module": "simple-git",
+      "severity": "critical",
+      "title": "simple-git has blockUnsafeOperationsPlugin bypass via case-insensitive protocol.allow config key enables RCE",
+      "url": "https://github.com/advisories/GHSA-r275-fr43-pm7q",
+      "vulnerableVersions": ">=3.15.0 <3.32.3",
+      "patchedVersions": ">=3.32.3",
+      "findings": [
+        {
+          "version": "3.31.1",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>simple-git"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1117015,
+      "module": "postcss",
+      "severity": "moderate",
+      "title": "PostCSS has XSS via Unescaped </style> in its CSS Stringify Output",
+      "url": "https://github.com/advisories/GHSA-qx2v-qp2m-jg93",
+      "vulnerableVersions": "<8.5.10",
+      "patchedVersions": ">=8.5.10",
+      "findings": [
+        {
+          "version": "8.5.6",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>postcss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1117673,
+      "module": "simple-git",
+      "severity": "high",
+      "title": "simple-git is vulnerable to Remote Code Execution",
+      "url": "https://github.com/advisories/GHSA-hffm-xvc3-vprc",
+      "vulnerableVersions": "<3.36.0",
+      "patchedVersions": ">=3.36.0",
+      "findings": [
+        {
+          "version": "3.31.1",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>simple-git"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1117911,
+      "module": "fast-xml-parser",
+      "severity": "moderate",
+      "title": "fast-xml-parser XMLBuilder: XML Comment and CDATA Injection via Unescaped Delimiters",
+      "url": "https://github.com/advisories/GHSA-gh4j-gqv2-49f6",
+      "vulnerableVersions": "<5.7.0",
+      "patchedVersions": ">=5.7.0",
+      "findings": [
+        {
+          "version": "5.3.6",
+          "paths": [
+            ".>@nuxtjs/seo>@nuxtjs/sitemap>fast-xml-parser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1118993,
+      "module": "nitropack",
+      "severity": "moderate",
+      "title": "Nitro has a proxy scope bypass via percent-encoded path traversal in `routeRules`",
+      "url": "https://github.com/advisories/GHSA-5w89-w975-hf9q",
+      "vulnerableVersions": "<2.13.4",
+      "patchedVersions": ">=2.13.4",
+      "findings": [
+        {
+          "version": "2.13.1",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1119108,
+      "module": "ws",
+      "severity": "moderate",
+      "title": "ws: Uninitialized memory disclosure",
+      "url": "https://github.com/advisories/GHSA-58qx-3vcg-4xpx",
+      "vulnerableVersions": ">=8.0.0 <8.20.1",
+      "patchedVersions": ">=8.20.1",
+      "findings": [
+        {
+          "version": "8.19.0",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>ws"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1119440,
+      "module": "serialize-javascript",
+      "severity": "moderate",
+      "title": "Serialize JavaScript has CPU Exhaustion Denial of Service via crafted array-like objects",
+      "url": "https://github.com/advisories/GHSA-qj8w-gfj5-8c6v",
+      "vulnerableVersions": ">=5.0.0 <7.0.5",
+      "patchedVersions": ">=7.0.5",
+      "findings": [
+        {
+          "version": "6.0.2",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@rollup/plugin-terser>serialize-javascript"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120263,
+      "module": "nitropack",
+      "severity": "moderate",
+      "title": "Nitro has an Open Redirect via Protocol-Relative URL Bypass in Wildcard Route Rules",
+      "url": "https://github.com/advisories/GHSA-9phm-9p8f-hw5m",
+      "vulnerableVersions": "<2.13.4",
+      "patchedVersions": ">=2.13.4",
+      "findings": [
+        {
+          "version": "2.13.1",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120311,
+      "module": "brace-expansion",
+      "severity": "moderate",
+      "title": "brace-expansion: Large numeric range defeats documented `max` DoS protection",
+      "url": "https://github.com/advisories/GHSA-jxxr-4gwj-5jf2",
+      "vulnerableVersions": ">=5.0.0 <5.0.6",
+      "patchedVersions": ">=5.0.6",
+      "findings": [
+        {
+          "version": "5.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120422,
+      "module": "shell-quote",
+      "severity": "critical",
+      "title": "shell-quote quote() does not escape newlines in object .op values",
+      "url": "https://github.com/advisories/GHSA-w7jw-789q-3m8p",
+      "vulnerableVersions": ">=1.1.0 <=1.8.3",
+      "patchedVersions": ">=1.8.4",
+      "findings": [
+        {
+          "version": "1.8.3",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>launch-editor>shell-quote"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120448,
+      "module": "devalue",
+      "severity": "high",
+      "title": "Svelte devalue: DoS via sparse array deserialization",
+      "url": "https://github.com/advisories/GHSA-77vg-94rm-hx3p",
+      "vulnerableVersions": ">=5.6.3 <=5.8.0",
+      "patchedVersions": ">=5.8.1",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120680,
+      "module": "esbuild",
+      "severity": "low",
+      "title": "esbuild allows arbitrary file read when running the development server on Windows",
+      "url": "https://github.com/advisories/GHSA-g7r4-m6w7-qqqr",
+      "vulnerableVersions": ">=0.27.3 <0.28.1",
+      "patchedVersions": ">=0.28.1",
+      "findings": [
+        {
+          "version": "0.27.3",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>esbuild"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120782,
+      "module": "tar",
+      "severity": "moderate",
+      "title": "node-tar applies PAX size override to intermediary GNU long-name/long-link headers, causing tar parser interpretation differential (file smuggling)",
+      "url": "https://github.com/advisories/GHSA-vmf3-w455-68vh",
+      "vulnerableVersions": "<=7.5.15",
+      "patchedVersions": ">=7.5.16",
+      "findings": [
+        {
+          "version": "7.5.9",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@vercel/nft>@mapbox/node-pre-gyp>tar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120785,
+      "module": "vite",
+      "severity": "moderate",
+      "title": "launch-editor: NTLMv2 hash disclosure via UNC path handling on Windows",
+      "url": "https://github.com/advisories/GHSA-v6wh-96g9-6wx3",
+      "vulnerableVersions": ">=7.0.0 <=7.3.4",
+      "patchedVersions": ">=7.3.5",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120787,
+      "module": "launch-editor",
+      "severity": "moderate",
+      "title": "launch-editor: NTLMv2 hash disclosure via UNC path handling on Windows",
+      "url": "https://github.com/advisories/GHSA-v6wh-96g9-6wx3",
+      "vulnerableVersions": "<=2.14.0",
+      "patchedVersions": ">=2.14.1",
+      "findings": [
+        {
+          "version": "2.13.0",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>launch-editor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120818,
+      "module": "nuxt",
+      "severity": "low",
+      "title": "Nuxt: Dev server discloses project absolute path and persistent workspace UUID via `/.well-known/appspecific/com.chrome.devtools.json`",
+      "url": "https://github.com/advisories/GHSA-rq7w-g337-39qq",
+      "vulnerableVersions": ">=4.0.0-alpha.1 <4.4.7",
+      "patchedVersions": ">=4.4.7",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1120907,
+      "module": "nuxt",
+      "severity": "high",
+      "title": "Nuxt: Route-rule middleware bypass via case-sensitivity mismatch between vue-router and the routeRules matcher",
+      "url": "https://github.com/advisories/GHSA-mm7m-92g8-7m47",
+      "vulnerableVersions": ">=4.0.0 <4.4.7",
+      "patchedVersions": ">=4.4.7",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1121800,
+      "module": "devalue",
+      "severity": "low",
+      "title": "Sveltejs devalue's `devalue.parse` and `devalue.unflatten` emit objects with `__proto__` own properties",
+      "url": "https://github.com/advisories/GHSA-mwv9-gp5h-frr4",
+      "vulnerableVersions": ">=4.0.0 <5.6.4",
+      "patchedVersions": ">=5.6.4",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1121859,
+      "module": "js-yaml",
+      "severity": "moderate",
+      "title": "JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases",
+      "url": "https://github.com/advisories/GHSA-h67p-54hq-rp68",
+      "vulnerableVersions": "<3.15.0",
+      "patchedVersions": ">=3.15.0",
+      "findings": [
+        {
+          "version": "3.14.2",
+          "paths": [
+            ".>gray-matter>js-yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1121860,
+      "module": "js-yaml",
+      "severity": "moderate",
+      "title": "JS-YAML: Quadratic-complexity DoS in merge key handling via repeated aliases",
+      "url": "https://github.com/advisories/GHSA-h67p-54hq-rp68",
+      "vulnerableVersions": ">=4.0.0 <=4.1.1",
+      "patchedVersions": ">=4.2.0",
+      "findings": [
+        {
+          "version": "4.1.1",
+          "paths": [
+            ".>@nuxt/eslint>eslint-typegen>json-schema-to-typescript-lite>@apidevtools/json-schema-ref-parser>js-yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1122794,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt's route middleware is not enforced when rendering `.server.vue` pages via `/__nuxt_island/page_*`",
+      "url": "https://github.com/advisories/GHSA-hg3f-28rg-4jxj",
+      "vulnerableVersions": ">=4.0.0-alpha.1 <=4.4.5",
+      "patchedVersions": ">=4.4.6",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1122795,
+      "module": "@nuxt/nitro-server",
+      "severity": "moderate",
+      "title": "Nuxt's route middleware is not enforced when rendering `.server.vue` pages via `/__nuxt_island/page_*`",
+      "url": "https://github.com/advisories/GHSA-hg3f-28rg-4jxj",
+      "vulnerableVersions": ">=4.2.0 <=4.4.5",
+      "patchedVersions": ">=4.4.6",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1122799,
+      "module": "@nuxt/nitro-server",
+      "severity": "low",
+      "title": "Nuxt: `__nuxt_island` endpoint does not bind responses to request props, enabling shared-cache poisoning",
+      "url": "https://github.com/advisories/GHSA-g8wj-3cr3-6w7v",
+      "vulnerableVersions": ">=4.2.0 <=4.4.5",
+      "patchedVersions": ">=4.4.6",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1122801,
+      "module": "nuxt",
+      "severity": "low",
+      "title": "Nuxt: `__nuxt_island` endpoint does not bind responses to request props, enabling shared-cache poisoning",
+      "url": "https://github.com/advisories/GHSA-g8wj-3cr3-6w7v",
+      "vulnerableVersions": ">=4.0.0-alpha.1 <=4.4.5",
+      "patchedVersions": ">=4.4.6",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1122807,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt: Reflected XSS in `navigateTo()` external redirect",
+      "url": "https://github.com/advisories/GHSA-fx6j-w5w5-h468",
+      "vulnerableVersions": ">=4.0.0-alpha.1 <=4.4.5",
+      "patchedVersions": ">=4.4.6",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123259,
+      "module": "ws",
+      "severity": "high",
+      "title": "ws: Memory exhaustion DoS from tiny fragments and data chunks",
+      "url": "https://github.com/advisories/GHSA-96hv-2xvq-fx4p",
+      "vulnerableVersions": ">=8.0.0 <8.21.0",
+      "patchedVersions": ">=8.21.0",
+      "findings": [
+        {
+          "version": "8.19.0",
+          "paths": [
+            ".>@nuxt/eslint>@eslint/config-inspector>ws"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123528,
+      "module": "@babel/core",
+      "severity": "low",
+      "title": "@babel/core: Arbitrary File Read via sourceMappingURL Comment",
+      "url": "https://github.com/advisories/GHSA-4x5r-pxfx-6jf8",
+      "vulnerableVersions": "<=7.29.0",
+      "patchedVersions": ">=7.29.6",
+      "findings": [
+        {
+          "version": "7.29.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>@vitejs/plugin-vue-jsx>@babel/core"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123896,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+      "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp",
+      "vulnerableVersions": ">=2.0.0 <2.1.2",
+      "patchedVersions": ">=2.1.2",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123897,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+      "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp",
+      "vulnerableVersions": "<1.1.16",
+      "patchedVersions": ">=1.1.16",
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": [
+            ".>eslint>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123898,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via exponential-time expansion of consecutive non-expanding {} groups",
+      "url": "https://github.com/advisories/GHSA-3jxr-9vmj-r5cp",
+      "vulnerableVersions": ">=3.0.0 <5.0.7",
+      "patchedVersions": ">=5.0.7",
+      "findings": [
+        {
+          "version": "5.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123911,
+      "module": "js-yaml",
+      "severity": "high",
+      "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+      "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m",
+      "vulnerableVersions": ">=4.0.0 <4.3.0",
+      "patchedVersions": ">=4.3.0",
+      "findings": [
+        {
+          "version": "4.1.1",
+          "paths": [
+            ".>@nuxt/eslint>eslint-typegen>json-schema-to-typescript-lite>@apidevtools/json-schema-ref-parser>js-yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123912,
+      "module": "js-yaml",
+      "severity": "high",
+      "title": "js-yaml: YAML merge-key chains can force quadratic CPU consumption",
+      "url": "https://github.com/advisories/GHSA-52cp-r559-cp3m",
+      "vulnerableVersions": ">=3.0.0 <3.15.0",
+      "patchedVersions": ">=3.15.0",
+      "findings": [
+        {
+          "version": "3.14.2",
+          "paths": [
+            ".>gray-matter>js-yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123939,
+      "module": "tar",
+      "severity": "moderate",
+      "title": "node-tar: Process crash via PAX numeric path type confusion",
+      "url": "https://github.com/advisories/GHSA-w8wr-v893-vjvp",
+      "vulnerableVersions": "<=7.5.17",
+      "patchedVersions": ">=7.5.18",
+      "findings": [
+        {
+          "version": "7.5.9",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@vercel/nft>@mapbox/node-pre-gyp>tar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123940,
+      "module": "tar",
+      "severity": "critical",
+      "title": "node-tar: Decompression/parse DoS via unlimited input",
+      "url": "https://github.com/advisories/GHSA-23hp-3jrh-7fpw",
+      "vulnerableVersions": "<=7.5.18",
+      "patchedVersions": ">=7.5.19",
+      "findings": [
+        {
+          "version": "7.5.9",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@vercel/nft>@mapbox/node-pre-gyp>tar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123941,
+      "module": "tar",
+      "severity": "high",
+      "title": "node-tar: Negative tar entry size causes infinite loop in archive replace",
+      "url": "https://github.com/advisories/GHSA-8x88-c5mf-7j5w",
+      "vulnerableVersions": "<=7.5.17",
+      "patchedVersions": ">=7.5.18",
+      "findings": [
+        {
+          "version": "7.5.9",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@vercel/nft>@mapbox/node-pre-gyp>tar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123942,
+      "module": "tar",
+      "severity": "moderate",
+      "title": "node-tar: Uncaught Exception DoS via NUL byte in PAX path/linkpath records",
+      "url": "https://github.com/advisories/GHSA-gvwx-54wh-qm9j",
+      "vulnerableVersions": "<=7.5.16",
+      "patchedVersions": ">=7.5.17",
+      "findings": [
+        {
+          "version": "7.5.9",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@vercel/nft>@mapbox/node-pre-gyp>tar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1123944,
+      "module": "shell-quote",
+      "severity": "high",
+      "title": "shell-quote: Quadratic-complexity Denial of Service in `parse()` (CWE-407)",
+      "url": "https://github.com/advisories/GHSA-395f-4hp3-45gv",
+      "vulnerableVersions": "<=1.8.4",
+      "patchedVersions": ">=1.9.0",
+      "findings": [
+        {
+          "version": "1.8.3",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>launch-editor>shell-quote"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1124252,
+      "module": "postcss",
+      "severity": "high",
+      "title": "PostCSS: Arbitrary file read and information disclosure via attacker-controlled sourceMappingURL in CSS comments",
+      "url": "https://github.com/advisories/GHSA-6g55-p6wh-862q",
+      "vulnerableVersions": "<=8.5.11",
+      "patchedVersions": ">=8.5.12",
+      "findings": [
+        {
+          "version": "8.5.6",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>postcss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1124299,
+      "module": "seroval",
+      "severity": "critical",
+      "title": "seroval: `seroval.fromJSON()` Promise resolver type confusion invokes attacker-controlled methods during deserialization",
+      "url": "https://github.com/advisories/GHSA-mv8w-475r-vwqw",
+      "vulnerableVersions": "<=1.5.2",
+      "patchedVersions": ">=1.5.3",
+      "findings": [
+        {
+          "version": "1.5.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>seroval"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1130588,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+      "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg",
+      "vulnerableVersions": "<1.1.17",
+      "patchedVersions": ">=1.1.17",
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": [
+            ".>eslint>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1130589,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+      "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg",
+      "vulnerableVersions": ">=2.0.0 <2.1.3",
+      "patchedVersions": ">=2.1.3",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1130591,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via unbounded expansion length causing an out-of-memory process crash",
+      "url": "https://github.com/advisories/GHSA-mh99-v99m-4gvg",
+      "vulnerableVersions": ">=4.0.0 <5.0.8",
+      "patchedVersions": ">=5.0.8",
+      "findings": [
+        {
+          "version": "5.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1130709,
+      "module": "postcss",
+      "severity": "moderate",
+      "title": "PostCSS: incomplete fix of GHSA-6g55-p6wh-862q — attacker-controlled sourceMappingURL reads arbitrary .map files when `from` is unset",
+      "url": "https://github.com/advisories/GHSA-fxqj-rqcc-2cmp",
+      "vulnerableVersions": "<=8.5.22",
+      "patchedVersions": ">=8.5.23",
+      "findings": [
+        {
+          "version": "8.5.6",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>postcss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1130734,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+      "url": "https://github.com/advisories/GHSA-rgw5-rvv9-x895",
+      "vulnerableVersions": ">=4.0.0 <5.0.9",
+      "patchedVersions": ">=5.0.9",
+      "findings": [
+        {
+          "version": "5.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1130736,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+      "url": "https://github.com/advisories/GHSA-rgw5-rvv9-x895",
+      "vulnerableVersions": ">=2.0.0 <2.1.4",
+      "patchedVersions": ">=2.1.4",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1130737,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via unbounded intermediate arrays, bypassing the CVE-2026-14257 mitigation",
+      "url": "https://github.com/advisories/GHSA-rgw5-rvv9-x895",
+      "vulnerableVersions": "<1.1.18",
+      "patchedVersions": ">=1.1.18",
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": [
+            ".>eslint>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1137044,
+      "module": "nuxt",
+      "severity": "high",
+      "title": "Nuxt: Unauthenticated out-of-memory crash via unbounded v-for expansion in island rendering",
+      "url": "https://github.com/advisories/GHSA-hxcr-hm88-mpq6",
+      "vulnerableVersions": ">=4.0.0 <4.5.1",
+      "patchedVersions": ">=4.5.1",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1137074,
+      "module": "@nuxt/devtools",
+      "severity": "critical",
+      "title": "Unauthenticated Nuxt DevTools RPC allows arbitrary command execution on the developer's host",
+      "url": "https://github.com/advisories/GHSA-279x-mwfv-vcqv",
+      "vulnerableVersions": "<3.3.1",
+      "patchedVersions": ">=3.3.1",
+      "findings": [
+        {
+          "version": "3.2.1",
+          "paths": [
+            ".>nuxt>@nuxt/devtools"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1137076,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt: Unauthorized Component Instantiation via Server Island Props",
+      "url": "https://github.com/advisories/GHSA-48hr-524c-v5w3",
+      "vulnerableVersions": ">=4.0.0 <4.5.1",
+      "patchedVersions": ">=4.5.1",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1137079,
+      "module": "nuxt",
+      "severity": "high",
+      "title": "Nuxt: Unauthenticated CPU exhaustion parsing and hashing the Nuxt island endpoint body before hash validation",
+      "url": "https://github.com/advisories/GHSA-9pgf-384g-p7mv",
+      "vulnerableVersions": ">=4.0.0 <4.5.1",
+      "patchedVersions": ">=4.5.1",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1137213,
+      "module": "nuxt",
+      "severity": "high",
+      "title": "Nuxt: Server-Side Remote Code Execution via Runtime Template Injection in Nuxt Server Island Props",
+      "url": "https://github.com/advisories/GHSA-9473-5f9j-94wq",
+      "vulnerableVersions": ">=4.0.0 <4.5.1",
+      "patchedVersions": ">=4.5.1",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1138114,
+      "module": "js-yaml",
+      "severity": "high",
+      "title": "JS-YAML: Quadratic CPU consumption in !!omap resolution (3.x and 4.x) — CVE-2026-59870 fix not backported",
+      "url": "https://github.com/advisories/GHSA-5p4m-2wfm-xmqj",
+      "vulnerableVersions": ">=3.0.0 <3.15.1",
+      "patchedVersions": ">=3.15.1",
+      "findings": [
+        {
+          "version": "3.14.2",
+          "paths": [
+            ".>gray-matter>js-yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1138115,
+      "module": "js-yaml",
+      "severity": "high",
+      "title": "JS-YAML: Quadratic CPU consumption in !!omap resolution (3.x and 4.x) — CVE-2026-59870 fix not backported",
+      "url": "https://github.com/advisories/GHSA-5p4m-2wfm-xmqj",
+      "vulnerableVersions": ">=4.0.0 <4.3.1",
+      "patchedVersions": ">=4.3.1",
+      "findings": [
+        {
+          "version": "4.1.1",
+          "paths": [
+            ".>@nuxt/eslint>eslint-typegen>json-schema-to-typescript-lite>@apidevtools/json-schema-ref-parser>js-yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1138810,
+      "module": "nanoid",
+      "severity": "high",
+      "title": "nanoid: non-secure generators can loop indefinitely with negative size",
+      "url": "https://github.com/advisories/GHSA-28wg-ghj8-5hjv",
+      "vulnerableVersions": ">=4.0.0 <5.1.16",
+      "patchedVersions": ">=5.1.16",
+      "findings": [
+        {
+          "version": "5.1.6",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>@vue/devtools-core>nanoid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1138811,
+      "module": "nanoid",
+      "severity": "high",
+      "title": "nanoid: non-secure generators can loop indefinitely with negative size",
+      "url": "https://github.com/advisories/GHSA-28wg-ghj8-5hjv",
+      "vulnerableVersions": "<3.3.16",
+      "patchedVersions": ">=3.3.16",
+      "findings": [
+        {
+          "version": "3.3.11",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>postcss>nanoid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1139427,
+      "module": "nanoid",
+      "severity": "high",
+      "title": "nanoid: custom generators can loop indefinitely when size is zero",
+      "url": "https://github.com/advisories/GHSA-2v37-7h3g-55p8",
+      "vulnerableVersions": "<3.3.18",
+      "patchedVersions": ">=3.3.18",
+      "findings": [
+        {
+          "version": "3.3.11",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>postcss>nanoid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1139510,
+      "module": "postcss",
+      "severity": "high",
+      "title": "PostCSS: Path Traversal in Previous Source Map Auto-Loading (sourceMappingURL) leads to Arbitrary .map File Disclosure",
+      "url": "https://github.com/advisories/GHSA-r28c-9q8g-f849",
+      "vulnerableVersions": "<=8.5.17",
+      "patchedVersions": ">=8.5.18",
+      "findings": [
+        {
+          "version": "8.5.6",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>postcss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1139518,
+      "module": "svgo",
+      "severity": "high",
+      "title": "SVGO removeScripts plugin leaves some executable scripts intact",
+      "url": "https://github.com/advisories/GHSA-2p49-hgcm-8545",
+      "vulnerableVersions": ">=4.0.0 <4.0.2",
+      "patchedVersions": ">=4.0.2",
+      "findings": [
+        {
+          "version": "4.0.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>cssnano>cssnano-preset-default>postcss-svgo>svgo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1144960,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt: Reflected XSS in `<NuxtLink>` via unsanitised `javascript:` or `data:` URL",
+      "url": "https://github.com/advisories/GHSA-934w-87qh-qr26",
+      "vulnerableVersions": ">=4.0.0 <4.4.7",
+      "patchedVersions": ">=4.4.7",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1145647,
+      "module": "tar",
+      "severity": "high",
+      "title": "node-tar: Uncontrolled recursion in mapHas/filesFilter allows uncatchable stack-overflow DoS via crafted long-path tar with member selection",
+      "url": "https://github.com/advisories/GHSA-r292-9mhp-454m",
+      "vulnerableVersions": "<=7.5.20",
+      "patchedVersions": ">=7.5.21",
+      "findings": [
+        {
+          "version": "7.5.9",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@vercel/nft>@mapbox/node-pre-gyp>tar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1153169,
+      "module": "postcss-selector-parser",
+      "severity": "low",
+      "title": "postcss-selector-parser allows denial of service through uncontrolled AST recursion",
+      "url": "https://github.com/advisories/GHSA-w9m9-85wc-3x92",
+      "vulnerableVersions": ">=7.1.0 <7.1.3",
+      "patchedVersions": ">=7.1.3",
+      "findings": [
+        {
+          "version": "7.1.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-vue>postcss-selector-parser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1153171,
+      "module": "browserslist",
+      "severity": "high",
+      "title": "Browserslist: Unbounded memory growth (no cache eviction) via distinct query results, leading to eventual OOM",
+      "url": "https://github.com/advisories/GHSA-c83g-rgw3-j3cx",
+      "vulnerableVersions": "<=4.28.6",
+      "patchedVersions": ">=4.28.7",
+      "findings": [
+        {
+          "version": "4.28.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-unicorn>core-js-compat>browserslist"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1153172,
+      "module": "browserslist",
+      "severity": "high",
+      "title": "Browserslist: Uncaught crash / prototype write via untrusted browserslist-stats.json custom stats (normalizeStats)",
+      "url": "https://github.com/advisories/GHSA-73wf-gq98-2v4g",
+      "vulnerableVersions": "<=4.28.6",
+      "patchedVersions": ">=4.28.7",
+      "findings": [
+        {
+          "version": "4.28.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-unicorn>core-js-compat>browserslist"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1153188,
+      "module": "nanoid",
+      "severity": "high",
+      "title": "nanoid: Integer Overflow or Wraparound",
+      "url": "https://github.com/advisories/GHSA-xwg4-73v4-xw9w",
+      "vulnerableVersions": ">=4.0.0 <5.1.11",
+      "patchedVersions": ">=5.1.11",
+      "findings": [
+        {
+          "version": "5.1.6",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>@vue/devtools-core>nanoid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1153189,
+      "module": "nanoid",
+      "severity": "high",
+      "title": "nanoid: Integer Overflow or Wraparound",
+      "url": "https://github.com/advisories/GHSA-xwg4-73v4-xw9w",
+      "vulnerableVersions": "<3.3.12",
+      "patchedVersions": ">=3.3.12",
+      "findings": [
+        {
+          "version": "3.3.11",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>postcss>nanoid"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1158499,
+      "module": "@humanfs/node",
+      "severity": "moderate",
+      "title": "humanfs: Recursive copy follows symlinked files and copies data from outside the source tree",
+      "url": "https://github.com/advisories/GHSA-p498-v437-472g",
+      "vulnerableVersions": "<0.16.8",
+      "patchedVersions": ">=0.16.8",
+      "findings": [
+        {
+          "version": "0.16.7",
+          "paths": [
+            ".>eslint>@humanfs/node"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1164783,
+      "module": "fflate",
+      "severity": "moderate",
+      "title": "fflate unzipSync can enter an infinite loop when parsing malformed ZIP64 archives",
+      "url": "https://github.com/advisories/GHSA-px8p-9vwx-vf98",
+      "vulnerableVersions": ">=0.7.0 <0.7.5",
+      "patchedVersions": ">=0.7.5",
+      "findings": [
+        {
+          "version": "0.7.4",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image>satori>@shuding/opentype.js>fflate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1193675,
+      "module": "colord",
+      "severity": "moderate",
+      "title": "Colord: Slow rejection of oversized malformed color strings",
+      "url": "https://github.com/advisories/GHSA-2wm5-q62r-hmrv",
+      "vulnerableVersions": "<2.9.4",
+      "patchedVersions": ">=2.9.4",
+      "findings": [
+        {
+          "version": "2.9.3",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>cssnano>cssnano-preset-default>postcss-colormin>colord"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1193686,
+      "module": "baseline-browser-mapping",
+      "severity": "moderate",
+      "title": "baseline-browser-mapping process termination on invalid input causes denial of service",
+      "url": "https://github.com/advisories/GHSA-w5vr-8v7q-w6rv",
+      "vulnerableVersions": ">=2.0.0 <2.11.0",
+      "patchedVersions": ">=2.11.0",
+      "findings": [
+        {
+          "version": "2.10.0",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-unicorn>core-js-compat>browserslist>baseline-browser-mapping"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1193726,
+      "module": "js-yaml",
+      "severity": "high",
+      "title": "js-yaml: maxTotalMergeKeys does not limit CPU use for empty merge sources",
+      "url": "https://github.com/advisories/GHSA-2883-xcg3-v3hh",
+      "vulnerableVersions": ">=3.0.0 <3.15.2",
+      "patchedVersions": ">=3.15.2",
+      "findings": [
+        {
+          "version": "3.14.2",
+          "paths": [
+            ".>gray-matter>js-yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1193727,
+      "module": "js-yaml",
+      "severity": "high",
+      "title": "js-yaml: maxTotalMergeKeys does not limit CPU use for empty merge sources",
+      "url": "https://github.com/advisories/GHSA-2883-xcg3-v3hh",
+      "vulnerableVersions": ">=4.0.0 <4.3.2",
+      "patchedVersions": ">=4.3.2",
+      "findings": [
+        {
+          "version": "4.1.1",
+          "paths": [
+            ".>@nuxt/eslint>eslint-typegen>json-schema-to-typescript-lite>@apidevtools/json-schema-ref-parser>js-yaml"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1193738,
+      "module": "svgo",
+      "severity": "moderate",
+      "title": "SVGO: removeScripts incompletely sanitizes executable HTML in SVG foreignObject elements",
+      "url": "https://github.com/advisories/GHSA-4vpr-x523-8j87",
+      "vulnerableVersions": ">=4.0.0 <4.1.0",
+      "patchedVersions": ">=4.1.0",
+      "findings": [
+        {
+          "version": "4.0.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>cssnano>cssnano-preset-default>postcss-svgo>svgo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1193967,
+      "module": "nuxt",
+      "severity": "low",
+      "title": "Cross-site scripting via <NoScript> slot content in Nuxt's head components",
+      "url": "https://github.com/advisories/GHSA-m3q2-p4fw-w38m",
+      "vulnerableVersions": ">=4.0.0 <4.4.7",
+      "patchedVersions": ">=4.4.7",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1224672,
+      "module": "@nuxtjs/mdc",
+      "severity": "high",
+      "title": "@nuxtjs/mdc's URL sanitizer misses SVG xlink:href and data:text/html, allowing XSS from untrusted markdown at the default configuration",
+      "url": "https://github.com/advisories/GHSA-mxm6-v9r6-r94c",
+      "vulnerableVersions": "<0.22.1",
+      "patchedVersions": ">=0.22.1",
+      "findings": [
+        {
+          "version": "0.20.1",
+          "paths": [
+            ".>@nuxtjs/mdc"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1237790,
+      "module": "devalue",
+      "severity": "moderate",
+      "title": "Svelte devalue: DoS via malformed input",
+      "url": "https://github.com/advisories/GHSA-9rgm-9g3h-6x36",
+      "vulnerableVersions": "<5.9.1",
+      "patchedVersions": ">=5.9.2",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1239039,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt: URL-handling weaknesses in `navigateTo` and `reloadNuxtApp`: SSR open redirect, client-side script execution via the `open` option, and protocol-relative bypass in `reloadNuxtApp`",
+      "url": "https://github.com/advisories/GHSA-c9cv-mq2m-ppp3",
+      "vulnerableVersions": ">=4.0.0 <4.4.7",
+      "patchedVersions": ">=4.4.7",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1239535,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt dev server vite-node IPC socket is world-connectable on Linux",
+      "url": "https://github.com/advisories/GHSA-534h-c3cw-v3h9",
+      "vulnerableVersions": ">=4.0.0 <4.4.7",
+      "patchedVersions": ">=4.4.7",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1239765,
+      "module": "image-size",
+      "severity": "high",
+      "title": "image-size: JXL and HEIF parsers allow denial of service through infinite loops",
+      "url": "https://github.com/advisories/GHSA-5p2g-fcmc-qvqq",
+      "vulnerableVersions": ">=1.2.0 <=2.0.2",
+      "patchedVersions": ">=2.0.3",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image>image-size"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1239766,
+      "module": "image-size",
+      "severity": "high",
+      "title": "image-size: ICNS parser allows denial of service through an infinite loop",
+      "url": "https://github.com/advisories/GHSA-w3rx-r6r6-pgpr",
+      "vulnerableVersions": ">=0.6.3 <=2.0.2",
+      "patchedVersions": ">=2.0.3",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image>image-size"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240100,
+      "module": "brace-expansion",
+      "severity": "moderate",
+      "title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+      "url": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr",
+      "vulnerableVersions": "<1.1.21",
+      "patchedVersions": ">=1.1.21",
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": [
+            ".>eslint>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240101,
+      "module": "brace-expansion",
+      "severity": "moderate",
+      "title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+      "url": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr",
+      "vulnerableVersions": ">=2.0.0 <2.1.7",
+      "patchedVersions": ">=2.1.7",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240103,
+      "module": "brace-expansion",
+      "severity": "moderate",
+      "title": "brace-expansion: Quadratic-time expansion of the `{a},b}` rewrite causes CPU denial of service",
+      "url": "https://github.com/advisories/GHSA-q2hr-2g5m-vwhr",
+      "vulnerableVersions": ">=4.0.0 <5.0.12",
+      "patchedVersions": ">=5.0.12",
+      "findings": [
+        {
+          "version": "5.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240104,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+      "url": "https://github.com/advisories/GHSA-qhr7-859c-m2p7",
+      "vulnerableVersions": "<1.1.20",
+      "patchedVersions": ">=1.1.20",
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": [
+            ".>eslint>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240105,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+      "url": "https://github.com/advisories/GHSA-qhr7-859c-m2p7",
+      "vulnerableVersions": ">=2.0.0 <2.1.6",
+      "patchedVersions": ">=2.1.6",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240107,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via uncontrolled recursion on nested brace groups causing stack exhaustion",
+      "url": "https://github.com/advisories/GHSA-qhr7-859c-m2p7",
+      "vulnerableVersions": ">=4.0.0 <5.0.11",
+      "patchedVersions": ">=5.0.11",
+      "findings": [
+        {
+          "version": "5.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240108,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+      "url": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p",
+      "vulnerableVersions": "<1.1.19",
+      "patchedVersions": ">=1.1.19",
+      "findings": [
+        {
+          "version": "1.1.12",
+          "paths": [
+            ".>eslint>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240109,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+      "url": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p",
+      "vulnerableVersions": ">=2.0.0 <2.1.5",
+      "patchedVersions": ">=2.1.5",
+      "findings": [
+        {
+          "version": "2.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>@typescript-eslint/eslint-plugin>@typescript-eslint/type-utils>@typescript-eslint/typescript-estree>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240111,
+      "module": "brace-expansion",
+      "severity": "high",
+      "title": "brace-expansion: DoS via uncontrolled recursion in parseCommaParts causing stack exhaustion",
+      "url": "https://github.com/advisories/GHSA-6j4f-fj2g-mc7p",
+      "vulnerableVersions": ">=4.0.0 <5.0.10",
+      "patchedVersions": ">=5.0.10",
+      "findings": [
+        {
+          "version": "5.0.2",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-import-x>minimatch>brace-expansion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240870,
+      "module": "devalue",
+      "severity": "high",
+      "title": "devalue: `stringify`/`uneval` serialize shared memory",
+      "url": "https://github.com/advisories/GHSA-j22f-vq7h-c4qm",
+      "vulnerableVersions": ">=5.1.0 <=5.9.2",
+      "patchedVersions": ">=5.9.3",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240871,
+      "module": "devalue",
+      "severity": "moderate",
+      "title": "devalue: Residual sparse-array CPU amplification in uneval",
+      "url": "https://github.com/advisories/GHSA-hx4r-w6wj-j8fg",
+      "vulnerableVersions": "<=5.9.2",
+      "patchedVersions": ">=5.9.3",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240872,
+      "module": "devalue",
+      "severity": "high",
+      "title": "devalue: Repeated primitive strings cause quadratic expansion in uneval",
+      "url": "https://github.com/advisories/GHSA-mcm9-63f2-9j32",
+      "vulnerableVersions": "<=5.9.2",
+      "patchedVersions": ">=5.9.3",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240873,
+      "module": "devalue",
+      "severity": "low",
+      "title": "devalue: Sparse arrays emitted by uneval cause eager allocation when evaluated",
+      "url": "https://github.com/advisories/GHSA-wf3x-273g-mvxv",
+      "vulnerableVersions": ">=1.0.0 <=5.9.2",
+      "patchedVersions": ">=5.9.3",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240875,
+      "module": "devalue",
+      "severity": "moderate",
+      "title": "devalue: Malformed null-prototype object keys bypass __proto__ rejection via property-key coercion",
+      "url": "https://github.com/advisories/GHSA-4q55-j62x-fr9h",
+      "vulnerableVersions": "<=5.9.2",
+      "patchedVersions": ">=5.9.3",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1240912,
+      "module": "node-forge",
+      "severity": "high",
+      "title": "node-forge RSA PKCS#1 v1.5 signature verification accepts extra nested DigestAlgorithm elements",
+      "url": "https://github.com/advisories/GHSA-86w9-cpqp-85rv",
+      "vulnerableVersions": "<=1.4.0",
+      "patchedVersions": "<0.0.0",
+      "findings": [
+        {
+          "version": "1.3.3",
+          "paths": [
+            ".>nuxt>@nuxt/cli>listhen>node-forge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1241196,
+      "module": "flatted",
+      "severity": "high",
+      "title": "Prototype Pollution via parse() in NodeJS flatted",
+      "url": "https://github.com/advisories/GHSA-rf6f-7fwh-wjgh",
+      "vulnerableVersions": "<=3.4.1",
+      "patchedVersions": ">=3.4.2",
+      "findings": [
+        {
+          "version": "3.3.3",
+          "paths": [
+            ".>eslint>file-entry-cache>flat-cache>flatted"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1241199,
+      "module": "simple-git",
+      "severity": "critical",
+      "title": "simple-git unsafe-operation guard does not block trailer command configuration",
+      "url": "https://github.com/advisories/GHSA-x6jw-m9v5-85vh",
+      "vulnerableVersions": ">=3.15.0 <4.0.1",
+      "patchedVersions": ">=4.0.1",
+      "findings": [
+        {
+          "version": "3.31.1",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>simple-git"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1241200,
+      "module": "simple-git",
+      "severity": "high",
+      "title": "simple-git allows command execution through unblocked Git configuration includes",
+      "url": "https://github.com/advisories/GHSA-g4wm-2vf7-vfgr",
+      "vulnerableVersions": "<=3.36.0",
+      "patchedVersions": ">=4.0.0",
+      "findings": [
+        {
+          "version": "3.31.1",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>simple-git"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1241206,
+      "module": "katex",
+      "severity": "low",
+      "title": "KaTeX: Existing prototype pollution can bypass trust restrictions",
+      "url": "https://github.com/advisories/GHSA-238p-pmpm-9mq7",
+      "vulnerableVersions": ">=0.11.0 <0.18.2",
+      "patchedVersions": ">=0.18.2",
+      "findings": [
+        {
+          "version": "0.16.28",
+          "paths": [
+            ".>rehype-katex>katex"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1241207,
+      "module": "seroval",
+      "severity": "critical",
+      "title": "Seroval: `fromJSON()` Promise thenable assimilation invokes plugin-produced callables (bypass of GHSA-mv8w-475r-vwqw)",
+      "url": "https://github.com/advisories/GHSA-p6vx-979v-rg4c",
+      "vulnerableVersions": ">=0.12.0 <=1.6.0",
+      "patchedVersions": ">=1.6.2",
+      "findings": [
+        {
+          "version": "1.5.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>seroval"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1241208,
+      "module": "seroval",
+      "severity": "high",
+      "title": "Seroval: Memory exhaustion via unchecked TypedArray length in JSON deserialization",
+      "url": "https://github.com/advisories/GHSA-jp82-f5mq-hwhp",
+      "vulnerableVersions": "<=1.6.2",
+      "patchedVersions": ">=1.6.3",
+      "findings": [
+        {
+          "version": "1.5.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>seroval"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1241209,
+      "module": "source-map-js",
+      "severity": "high",
+      "title": "source-map-js allows event-loop denial of service through indexed source-map section offsets",
+      "url": "https://github.com/advisories/GHSA-68fv-2mgg-jv7q",
+      "vulnerableVersions": ">=1.0.0 <1.2.2",
+      "patchedVersions": ">=1.2.2",
+      "findings": [
+        {
+          "version": "1.2.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite>postcss>source-map-js"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1241259,
+      "module": "@vue/server-renderer",
+      "severity": "high",
+      "title": "@vue/server-renderer: XSS via missing CR in attribute-name blacklist",
+      "url": "https://github.com/advisories/GHSA-g2v6-rqmx-r4w6",
+      "vulnerableVersions": "<3.5.42",
+      "patchedVersions": ">=3.5.42",
+      "findings": [
+        {
+          "version": "3.5.28",
+          "paths": [
+            ".>@nuxt/icon>@iconify/vue>vue>@vue/server-renderer"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242216,
+      "module": "simple-git",
+      "severity": "high",
+      "title": "simple-git: unsafe-operations plugin bypass via git long-option abbreviation (--receive-p/--exe) -> command execution (residual of CVE-2026-28291)",
+      "url": "https://github.com/advisories/GHSA-858h-whjf-mvg5",
+      "vulnerableVersions": "<=3.36.0",
+      "patchedVersions": ">=4.0.0",
+      "findings": [
+        {
+          "version": "3.31.1",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>simple-git"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242362,
+      "module": "devalue",
+      "severity": "high",
+      "title": "devalue: Custom ArrayBuffer revivers can bypass typed-array allocation validation",
+      "url": "https://github.com/advisories/GHSA-r9w8-h9r3-54w4",
+      "vulnerableVersions": "<=5.9.2",
+      "patchedVersions": ">=5.9.3",
+      "findings": [
+        {
+          "version": "5.6.3",
+          "paths": [
+            ".>nuxt>devalue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242623,
+      "module": "vite",
+      "severity": "moderate",
+      "title": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
+      "url": "https://github.com/advisories/GHSA-698v-4r3x-3vcv",
+      "vulnerableVersions": ">=7.0.0 <=7.3.6",
+      "patchedVersions": ">=7.3.7",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242627,
+      "module": "launch-editor",
+      "severity": "moderate",
+      "title": "launch-editor: escapeCmdArgs() omits % escaping on Windows",
+      "url": "https://github.com/advisories/GHSA-698v-4r3x-3vcv",
+      "vulnerableVersions": "<=2.14.1",
+      "patchedVersions": ">=2.14.2",
+      "findings": [
+        {
+          "version": "2.13.0",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>launch-editor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242652,
+      "module": "vite",
+      "severity": "moderate",
+      "title": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
+      "url": "https://github.com/advisories/GHSA-r825-w8mm-5pxw",
+      "vulnerableVersions": ">=7.0.0 <=7.3.6",
+      "patchedVersions": ">=7.3.7",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242656,
+      "module": "launch-editor",
+      "severity": "moderate",
+      "title": "launch-editor: Editor CLI flag misinterpretation causing arbitrary command execution for some editors",
+      "url": "https://github.com/advisories/GHSA-r825-w8mm-5pxw",
+      "vulnerableVersions": "<=2.14.1",
+      "patchedVersions": ">=2.14.2",
+      "findings": [
+        {
+          "version": "2.13.0",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>launch-editor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242659,
+      "module": "vite",
+      "severity": "high",
+      "title": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
+      "url": "https://github.com/advisories/GHSA-587h-7wmj-h5pm",
+      "vulnerableVersions": ">=7.0.0 <=7.3.6",
+      "patchedVersions": ">=7.3.7",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242663,
+      "module": "launch-editor",
+      "severity": "high",
+      "title": "launch-editor: `fs.existsSync()` existence check can be bypassed on Windows",
+      "url": "https://github.com/advisories/GHSA-587h-7wmj-h5pm",
+      "vulnerableVersions": "<=2.14.1",
+      "patchedVersions": ">=2.14.2",
+      "findings": [
+        {
+          "version": "2.13.0",
+          "paths": [
+            ".>nuxt>@nuxt/devtools>launch-editor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242725,
+      "module": "vite",
+      "severity": "low",
+      "title": "Vite: Cross origin script execution through Vite custom middleware",
+      "url": "https://github.com/advisories/GHSA-9jrq-w75r-8gcw",
+      "vulnerableVersions": ">=7.0.0 <=7.3.6",
+      "patchedVersions": ">=7.3.7",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242731,
+      "module": "vite",
+      "severity": "moderate",
+      "title": "Vite: Files outside `server.fs.allow` could be served when project paths match system paths on non-Windows machine",
+      "url": "https://github.com/advisories/GHSA-rq7h-c2jc-7f22",
+      "vulnerableVersions": ">=7.0.0 <=7.3.6",
+      "patchedVersions": ">=7.3.7",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242828,
+      "module": "@nuxt/nitro-server",
+      "severity": "moderate",
+      "title": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
+      "url": "https://github.com/advisories/GHSA-vjh5-4x84-xrqp",
+      "vulnerableVersions": ">=4.2.0 <4.6.2",
+      "patchedVersions": ">=4.6.2",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242830,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
+      "url": "https://github.com/advisories/GHSA-vjh5-4x84-xrqp",
+      "vulnerableVersions": ">=4.0.0 <4.6.2",
+      "patchedVersions": ">=4.6.2",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242831,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt server islands render `useHeadSafe` input without sanitisation",
+      "url": "https://github.com/advisories/GHSA-xfq5-w38q-pc2x",
+      "vulnerableVersions": ">=3.13.0 <4.6.2",
+      "patchedVersions": ">=4.6.2",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242832,
+      "module": "nuxt",
+      "severity": "low",
+      "title": "Nuxt: Incomplete fix for GHSA-934w-87qh-qr26: a `javascript:` URL prefixed with an ASCII control character executes from `<NuxtLink>` when `pages` is disabled",
+      "url": "https://github.com/advisories/GHSA-jjm6-p2m9-9w4x",
+      "vulnerableVersions": "<4.6.0",
+      "patchedVersions": ">=4.6.0",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1242834,
+      "module": "nuxt",
+      "severity": "moderate",
+      "title": "Nuxt: Route rules are matched against the raw request path, so a percent-encoded segment can bypass `appMiddleware` on dynamic and catch-all routes",
+      "url": "https://github.com/advisories/GHSA-6gq8-jgmh-3ffp",
+      "vulnerableVersions": ">=4.0.0 <4.4.4",
+      "patchedVersions": ">=4.4.4",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243082,
+      "module": "serialize-javascript",
+      "severity": "low",
+      "title": "Serialize JavaScript: Cross-site scripting (XSS) via unescaped </script at the end of a serialized function body",
+      "url": "https://github.com/advisories/GHSA-m5mm-p8h7-m29v",
+      "vulnerableVersions": "<7.1.3",
+      "patchedVersions": ">=7.1.3",
+      "findings": [
+        {
+          "version": "6.0.2",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@rollup/plugin-terser>serialize-javascript"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243380,
+      "module": "postcss-selector-parser",
+      "severity": "moderate",
+      "title": "PostCSS: Quadratic complexity in flat selector parsing allows CPU exhaustion",
+      "url": "https://github.com/advisories/GHSA-rj75-hqrm-r3gf",
+      "vulnerableVersions": ">=7.0.0 <7.1.6",
+      "patchedVersions": ">=7.1.6",
+      "findings": [
+        {
+          "version": "7.1.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/eslint-config>eslint-plugin-vue>postcss-selector-parser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243424,
+      "module": "svgo",
+      "severity": "high",
+      "title": "SVGO: removeScripts allows executable links through namespace and control-character bypasses",
+      "url": "https://github.com/advisories/GHSA-w27v-7q3p-w38r",
+      "vulnerableVersions": ">=4.0.0 <4.1.0",
+      "patchedVersions": ">=4.1.0",
+      "findings": [
+        {
+          "version": "4.0.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>cssnano>cssnano-preset-default>postcss-svgo>svgo"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243433,
+      "module": "vite",
+      "severity": "moderate",
+      "title": "vite: `server.fs.deny` bypass on Windows alternate paths",
+      "url": "https://github.com/advisories/GHSA-fx2h-pf6j-xcff",
+      "vulnerableVersions": ">=7.0.0 <=7.3.4",
+      "patchedVersions": ">=7.3.5",
+      "findings": [
+        {
+          "version": "7.3.1",
+          "paths": [
+            ".>@nuxt/eslint>@nuxt/devtools-kit>vite"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243436,
+      "module": "satori",
+      "severity": "moderate",
+      "title": "Satori-generated SVG has improper escaping",
+      "url": "https://github.com/advisories/GHSA-wx4j-mvgx-mqwp",
+      "vulnerableVersions": ">=0.0.27 <0.33.5",
+      "patchedVersions": ">=0.33.5",
+      "findings": [
+        {
+          "version": "0.18.4",
+          "paths": [
+            ".>@nuxtjs/seo>nuxt-og-image>satori"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243505,
+      "module": "deepmerge",
+      "severity": "low",
+      "title": "deepmerge mergeObject() allows prototype poisoning of returned objects",
+      "url": "https://github.com/advisories/GHSA-gcqx-w48m-w2h4",
+      "vulnerableVersions": ">=4.2.0 <=4.3.1",
+      "patchedVersions": "<0.0.0",
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            ".>nuxt>@nuxt/nitro-server>nitropack>@rollup/plugin-node-resolve>deepmerge"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243612,
+      "module": "seroval",
+      "severity": "high",
+      "title": "Seroval: fromJSON deserializer trusts node-supplied array length and sequence doneAt (unauthenticated event-loop DoS)",
+      "url": "https://github.com/advisories/GHSA-97r2-qh9m-474h",
+      "vulnerableVersions": "<=1.6.7",
+      "patchedVersions": ">=1.6.8",
+      "findings": [
+        {
+          "version": "1.5.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>seroval"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243613,
+      "module": "seroval",
+      "severity": "high",
+      "title": "Seroval `fromJSON`/`fromCrossJSON` denial of service via unvalidated array node length",
+      "url": "https://github.com/advisories/GHSA-wp97-x4hv-qvhp",
+      "vulnerableVersions": ">=1.4.1 <=1.6.7",
+      "patchedVersions": ">=1.6.8",
+      "findings": [
+        {
+          "version": "1.5.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>seroval"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 1243614,
+      "module": "seroval",
+      "severity": "high",
+      "title": "Seroval: Deserialization invokes attacker-chosen callables: AsyncIteratorFactoryInstance calls source.on(listener) without type check",
+      "url": "https://github.com/advisories/GHSA-7rv5-mrxv-xcr9",
+      "vulnerableVersions": "<=1.6.7",
+      "patchedVersions": ">=1.6.8",
+      "findings": [
+        {
+          "version": "1.5.0",
+          "paths": [
+            ".>nuxt>@nuxt/vite-builder>seroval"
+          ]
+        }
+      ]
+    }
+  ]
+}

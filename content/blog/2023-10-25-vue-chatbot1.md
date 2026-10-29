@@ -54,7 +54,9 @@ OK, maybe not a web developer, but you are on your way! Now that we have the Vue
 
 ::blog-image
 ---
+eager: true
 imagePath: /img/vue-chatbot/vuejsstructure.png
+alt: Vue project directory structure inside the app folder
 caption: The basic Vue.js web app structure. All of the project files are located in the `app/` directory.
 width: 300px
 ---
@@ -247,6 +249,7 @@ The chatbot is starting to look a little more familiar now! We have a chat conte
 ::blog-image
 ---
 imagePath: /img/vue-chatbot/chatbot1.png
+alt: Initial chatbot interface
 caption: Our app is starting to look like an actual chatbot app! But is has no real functionality...
 width: 300px
 ---
@@ -369,6 +372,7 @@ Within the `data()` function, we created a fake array of messages which will eve
 ::blog-image
 ---
 imagePath: /img/vue-chatbot/chatbot2.png
+alt: Chatbot interface with a message area and input
 caption: Our chatbot is starting to look like a real chatbot! But it still has no real functionality...
 width: 300px
 ---
@@ -504,6 +508,7 @@ Here is what our chatbot looks like now!
 ::blog-image
 ---
 imagePath: /img/vue-chatbot/chatbot3.png
+alt: Styled chatbot interface showing multiple messages
 caption: Some style makes it feel so much nicer. I added a ton of messages to test the scrolling ability.
 width: 500px
 ---
