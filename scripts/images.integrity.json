@@ -1,0 +1,390 @@
+{
+  "recipe": {
+    "version": 1,
+    "generator": "d131275aee4bbcf1a880853069dffb6173cf1abed0b933e602832cd601067bd3",
+    "sharp": "0.35.5",
+    "widths": [
+      320,
+      640,
+      1280
+    ],
+    "format": "webp",
+    "quality": 85,
+    "autoOrient": true,
+    "withoutEnlargement": true
+  },
+  "sources": {
+    "/img/causal-attn/adv_loss.png": {
+      "sha256": "8dfb1099b9b1eb0b6349fbc644b7427098ec9947a1f8e48bfb2a0b2e39d26ace",
+      "outputs": {
+        "84eb94b50ee85cc3035c-320.webp": "03db3098b48241e66c0112ff008d1d2d4c63dd08bdd0d940377f524ac0318cce"
+      }
+    },
+    "/img/causal-attn/adv_trained_qkv.png": {
+      "sha256": "910b540c19a95493f6e7059ee0c5320f3af550a8eebd68a442ccfa340f5bbb6a",
+      "outputs": {
+        "4e11c525d9c937bc5b89-320.webp": "c053d31d9d2e4812dfeb5aa72a779f8d3e6683179c6c9dd2c0721ea3645e2515",
+        "4e11c525d9c937bc5b89-640.webp": "b7e28248d5d60276d1adbd001e4722ff11d7f7ce76ce9d9fdae18c6d208bd0f6",
+        "4e11c525d9c937bc5b89-1280.webp": "d94e92ac0796f63f4e044e83970a0b3b939abc9f3ce1536f74ad38667ed2700e"
+      }
+    },
+    "/img/causal-attn/adv_trained_rawattn.png": {
+      "sha256": "2bb4414bd7043d5a6f472cb6560b636271fe17174d8cb964468a711d6b9ac090",
+      "outputs": {
+        "e50625f012c02916d695-320.webp": "5d53bbf6ec7b2d8fe741a9ef28ccca4b8bb2c167e309071c3cfb48f0ef55b53d"
+      }
+    },
+    "/img/causal-attn/adv_trained_scaledattn.png": {
+      "sha256": "5c51f9f4707ba6093d7dd616b39b103508160cb7e47c380bba371b98f6e80175",
+      "outputs": {
+        "21d540fb09ebb5b4d132-320.webp": "93a8243f1032dca1751d509833e2dc2da328f90906105fce03c3323953a98bc4"
+      }
+    },
+    "/img/causal-attn/attn_diagram.png": {
+      "sha256": "6a1df0396a45e6a45145f74e4144d5e1af87d6dd5a23b7bc4096d80f1b0166c2",
+      "outputs": {
+        "1886d1e1aff5ba4ac81e-320.webp": "bc2c13cd775a026fd6b1a599bc2ec8c362a24c4b378e03e468a4e4a20371c7ee",
+        "1886d1e1aff5ba4ac81e-640.webp": "88ee326f5959737446564c1736a94a2fdebc9788cb21e7c4f206ff2fed15ac52",
+        "1886d1e1aff5ba4ac81e-1280.webp": "d2564e3f3b34eee828f91521fb05acff1f3cb65dd04b90a2d3c8e223b1fd237e"
+      }
+    },
+    "/img/causal-attn/basic_ec.png": {
+      "sha256": "6a873ee2b1760871cbd622050c3626a548155796998cbd0de0cedd38db9b47a7",
+      "outputs": {
+        "b87fc3952099aa329b81-320.webp": "e1f5b5d47c4cdab9312c542e37decc61c7b24953884f845358107f951e3bab8d"
+      }
+    },
+    "/img/causal-attn/basic_ep.png": {
+      "sha256": "ffeee9991fb70b34ebea81702a5ac1be4638e3615a61a0d7d0fc975102593529",
+      "outputs": {
+        "424d3339c28e20585980-320.webp": "6652793903d01b9c3835fc2edd80ab2566386194289d21b9d94d457461347f27"
+      }
+    },
+    "/img/causal-attn/basic_et.png": {
+      "sha256": "98241af69ccfabe494c602b4362c05add50c7a8e936556886b8bafac8df0ea62",
+      "outputs": {
+        "0b39c241b3e7e3488b14-320.webp": "aeb24db613ce4cda7d7bb85a30cd8baccad4e148ed2774ac44b00edbdc499eb6"
+      }
+    },
+    "/img/causal-attn/basic_loss.png": {
+      "sha256": "edef50caf6712b5175addc14278b93ec6484688bca2e341b208bdc80b481fff8",
+      "outputs": {
+        "cc8c2a9b93df5a72828e-320.webp": "3cc6be7ac3edb11270bcbd066d65d7a5bf5e5b3ece3c50f42734d31adecb6688"
+      }
+    },
+    "/img/causal-attn/basic_maskedrawattn.png": {
+      "sha256": "e034133d6be6f908472488564ead527d37bc9579b11a23d04d902840c34b6cee",
+      "outputs": {
+        "05c178c9f558d93367d3-320.webp": "9030f17c9f983147a149c424d6dec35d15fc437f107b923f99671e1fda8a58d3"
+      }
+    },
+    "/img/causal-attn/basic_qkv.png": {
+      "sha256": "7cee5409ffb983ffa8612b98915d31a08e01604a68cb4d56f4f7eba9532a5563",
+      "outputs": {
+        "9520bda903c67d852c41-320.webp": "fe30b193d16d845b153dbbc970ec09bd69fe2ba4af9475d81ebb49afbd1a012f",
+        "9520bda903c67d852c41-640.webp": "b910c38d6da76439b1414d9fed5106b4178047269043e9b43102ea47c5c14636",
+        "9520bda903c67d852c41-1280.webp": "e700adcfb995fa16d5db7473a16da4c704603d46c60cbd30495fe4715b8bb8e7"
+      }
+    },
+    "/img/causal-attn/basic_rawattn.png": {
+      "sha256": "0f37e53d0b572333bda5e5004a381f719c4017776c6fc7839f8b98d35c2b4c41",
+      "outputs": {
+        "0d18b3ebdea21de39393-320.webp": "bb85d9091b6959343326e960d495f513a4d46bc6728b088c7ff1819cbaffe0ad"
+      }
+    },
+    "/img/causal-attn/basic_scaledattn.png": {
+      "sha256": "ba79357ffa355571eca17d24b54782bc1b0d8546a244640df17d7b69dca264d1",
+      "outputs": {
+        "be03cdc220612fb730da-320.webp": "ebd42502a1e5d237a6dee91f4424f79086d0a3ceaa8d93f49c7e337ad31ded1a"
+      }
+    },
+    "/img/causal-attn/basic_scaledattnintuition.png": {
+      "sha256": "97e61e90b94acebc90cc454b4b1dd4fdb189627f8942e46b8a1aac3e1db6ec52",
+      "outputs": {
+        "1e2f4d6d8ecc0f63975a-320.webp": "43a663745ae6d89ed80cfa903f39845a6fe8eac2cc4bd12fdb30d1cb92ef9350",
+        "1e2f4d6d8ecc0f63975a-640.webp": "e1d6863528ee1929f755dba7202cb7c2b8e5930017ea24596ff3ed12a80d0e58",
+        "1e2f4d6d8ecc0f63975a-1280.webp": "e201af085c6a06ab372c094ee891afbb06e16e84c41b8f37afed6bfb5671a053"
+      }
+    },
+    "/img/causal-attn/basic_trained_qkv.png": {
+      "sha256": "52fc6a0af414a587551e805acbcb31bf08c4b531e74ac1bd534dc910acc13308",
+      "outputs": {
+        "e0522b236785af269c3e-320.webp": "b78cbd0cead9779281a1cf8f04c35599a3a6801c4fff6421c4549faad6bf7481",
+        "e0522b236785af269c3e-640.webp": "61a305453795b593ca621c48e355baffbd137ab16966e6a0073cb65f4cbfcc8b",
+        "e0522b236785af269c3e-1280.webp": "1380e33fce0468d317044437b73f20d2888a09f64d8709715a4bc2cc1b6ffed8"
+      }
+    },
+    "/img/causal-attn/basic_trained_scaledattn.png": {
+      "sha256": "d4955e0102f9ecf33aac62ec374b8320a2c7a085627f7c3d4fbf31cbf81c0c3f",
+      "outputs": {
+        "4a38814d295c0e39ffa8-320.webp": "e18496e84f22e52e07a4fca8fbd32b1cffe50db5903b4b5c15518120e8455c27"
+      }
+    },
+    "/img/causal-attn/basic_weightedvalues.png": {
+      "sha256": "9658c8a0cb4c4770818339ee8a39729d24c88e2861e1527ddf275668a5a0c40b",
+      "outputs": {
+        "07037b617c090598bc73-320.webp": "1376ff8ce814884e894fd29f530febc3625db157323ed49faede2227c6924135"
+      }
+    },
+    "/img/hateful-memes/fig_2.jpg": {
+      "sha256": "3d1adb16cf9af8492ead9e8cdd1018955c07f3970e0c149da236ee6e8300cb7c",
+      "outputs": {
+        "02bf5fd5156d971062ff-320.webp": "9a3565c832739a9a62d4a2c1a3f70a6eb9f8953404c91dea1c07c4a2352e8e08",
+        "02bf5fd5156d971062ff-640.webp": "3ff57be7a6d2c9b92616924d7bee7a5a9460e53cf78c5fcecfd7f24a4c882941",
+        "02bf5fd5156d971062ff-1280.webp": "6aeb14e556547bc6de4ad34ac57f2528a9e1597368f09f858e04ce24e2b46ddf"
+      }
+    },
+    "/img/hateful-memes/fig_3.jpg": {
+      "sha256": "6958668ca1929b20de59c10b68e61bbe65c781e37175498ae44062072a1f7c17",
+      "outputs": {
+        "ee1351dc8d9d3dc280e2-320.webp": "9896bb7c82c3a1609e96898c36cf601318be35868dac0a9abee18c81550c737d",
+        "ee1351dc8d9d3dc280e2-640.webp": "4f56b9da82efaff799c40aebd75a215948420825c5844f2e367ab054e5bc6056",
+        "ee1351dc8d9d3dc280e2-1280.webp": "59a54d61a40c0c80b9f1348d703373cdd86eb3b2709685a09a4e52fc1f481f10"
+      }
+    },
+    "/img/hateful-memes/fig_4.jpg": {
+      "sha256": "866a5bd41722c513cf829115d7f17e7b3f516980410bab46eef427c14fe24cf9",
+      "outputs": {
+        "79ed17167ac53e535ebd-320.webp": "fc87a73644919911133cb61c3cd9ca1532d4d7a67733165e4647485851a96f9b",
+        "79ed17167ac53e535ebd-640.webp": "319b3b5e5efeca739f141bb7e16d7f56bc66ebe1445c64990a1d5b447b768ab9"
+      }
+    },
+    "/img/hateful-memes/fig_6.jpg": {
+      "sha256": "1fd47734804a1719a2e6a93059a602e69bdc9b95fb3778f18979ab644cf51d9a",
+      "outputs": {
+        "ea533abbff98f94b67a5-320.webp": "476ef6f6dd7fc7ccad4bd164687a5c62c315c0e8e9e9a7f0e3e19d86adf14a9d"
+      }
+    },
+    "/img/hateful-memes/mean-meme.png": {
+      "sha256": "6a38ce80b679bab3bbe9b28f12a593c24474e817f9f07619a4e5e6c602e3e681",
+      "outputs": {
+        "2261691a1ba7ffd471e8-320.webp": "d6ab1f7df3181ef58fb10c569deb5f5d10beb084ce5167cbab0ab46eb2e488ea"
+      }
+    },
+    "/img/hateful-memes/paper.png": {
+      "sha256": "9260cbe1fe0d298685f3097d384379d83dbec9ef98bc3337b77d099ad73cf486",
+      "outputs": {
+        "68aad55b3d1c7428e66e-320.webp": "c8dbca922b66d181710e8c651a210ad583796cd2bda0c6cb1d05cdd577548ab3",
+        "68aad55b3d1c7428e66e-640.webp": "6cbb875733149f5570be66b546f628262f09adf6ec900bf86793d14875f16eb3",
+        "68aad55b3d1c7428e66e-1280.webp": "ab57d207c6ff733cbe1ccfe380ac57ff56d0ad8b97efc53fa8b2cdb5dcda46e5"
+      }
+    },
+    "/img/horizon-extended/jsxshot.png": {
+      "sha256": "093b9a4dfb53aff404ab48c64dc04d1a935ab5f8872ed93b39ece92e9436d4de",
+      "outputs": {
+        "8cc0fb43a370b5db83a0-320.webp": "b68cdf88b341994f84eb214ad9b44fd3e4eac9b5ccea7c83cd7fd0e1e405b34d",
+        "8cc0fb43a370b5db83a0-640.webp": "d73a82306a742ee3c240b5d8a956a65d49233d04a966706a76863b086458a10d",
+        "8cc0fb43a370b5db83a0-1280.webp": "e6247921f070a0b166da30c9bcbdaadfc0bc9d42ae4417072639bfb2a2218c51"
+      }
+    },
+    "/img/horizon-extended/lightjsx.png": {
+      "sha256": "893dc8aca72ccb00ee14eed0c43e5a53b959d2482781400f93bd306bfc0276d1",
+      "outputs": {
+        "980dccab0d8724ccc0f0-320.webp": "03555fe7ba225ba0b5eebe144dea1d7ce8ad3574c27220e680309955eb7787f8",
+        "980dccab0d8724ccc0f0-640.webp": "f4cf7974dff7f0e9713a76a9dc9a5e58330ab9cda81a5830b57838cb7d4b2e92",
+        "980dccab0d8724ccc0f0-1280.webp": "cb215e9838f21896afc7ea805ed94abccca57f701fc50b854052d1d3210575e2"
+      }
+    },
+    "/img/horizon-extended/thumbnail.png": {
+      "sha256": "92da66756bf323573000725e785007e3b377a7ded67c9c44c7f2b8ef4b34709c",
+      "outputs": {
+        "5eceddb8fb113c9693c8-320.webp": "5d3bb0db52978ce546febdbd0de00567deeb4fb586650b0fd4b5c645e9595864"
+      }
+    },
+    "/img/house-numbers/fig_1a.jpg": {
+      "sha256": "e0084ed28453685dc3c273bc2177d46acb6a46d6914cdf961d963564058641a0",
+      "outputs": {
+        "0b28347114f3b174e328-320.webp": "d53b0212fd017762bfd873077ced97b32ac05613897890c52fcfe808c4cf8a87"
+      }
+    },
+    "/img/house-numbers/fig_1b.jpg": {
+      "sha256": "5ff13f9bee9381c6a8024b6894924c1c36b8f2edda567c6d972340359ab7eaac",
+      "outputs": {
+        "ca533b667c83eaec0df5-320.webp": "a096c18ed54690698c559b50698aa27e5571bb1f545392f14161e697a1201f4d"
+      }
+    },
+    "/img/house-numbers/fig_2.jpg": {
+      "sha256": "039678766ae0b435e0e7e7897f7d2c089ac1308f0367ef5b8fa37489aad1738c",
+      "outputs": {
+        "13f70bc69aa640230bb6-320.webp": "b389f1c5b5d04d496e8980b2f0a0f60bacbb630a701c0ef37ef92e55967d16eb",
+        "13f70bc69aa640230bb6-640.webp": "e86f1d20e534df3de85fb63a339e026a724b8202570faba35e0f024b095a8e58",
+        "13f70bc69aa640230bb6-1280.webp": "306305983fff0608ae4febf55e9e0b60993967dc7ae7e65ffe17e98c59fbe734"
+      }
+    },
+    "/img/house-numbers/fig_3.jpg": {
+      "sha256": "dd437425689da3696b0dd2093a9d72f27700d2f33bea2b7dc8c4c28d27421cee",
+      "outputs": {
+        "45e7265634e374cdf538-320.webp": "8659fe1dfa9677958a45437d6fe45eb4047ecab4438848e88095232a44c82169"
+      }
+    },
+    "/img/house-numbers/house3_tiles.png": {
+      "sha256": "bda2485fe9f4397f776207f2d87490770880cd9c87d650fc1af0677d01b974cd",
+      "outputs": {
+        "e16320b031285957cc33-320.webp": "a3f8074a476f0182014a4d3a29903fcda092680440672db25466e9f97a11fab2"
+      }
+    },
+    "/img/house-numbers/paper.png": {
+      "sha256": "5edf3300e2f782f71bcc36e6badb41570a9e32726f8bd5a8acc63678fbaae72f",
+      "outputs": {
+        "710a20eb631b0a803a87-320.webp": "8be2f768148ec2eef9a43a11c3589bfabe0feee9861df9d399415f89e58ac943",
+        "710a20eb631b0a803a87-640.webp": "52aaf5bfd49072e1a95cdc528e641b0e3716fc8387da7dd84112fd79fed5d444",
+        "710a20eb631b0a803a87-1280.webp": "6b4c21e52fcca2354b51b521c054cd4915e17e60a97bbfe13a821bf013e5eae4"
+      }
+    },
+    "/img/ppbc/layout visualizer-01.jpg": {
+      "sha256": "b25de34bf67510989a07819aed5429135415d84fda7c22bf4ddeb7fcd4c6e6c0",
+      "outputs": {
+        "7ac631dc3d3b9966c85d-320.webp": "992f3471e1170d2c3b2664293c2416bb8f4e779ae01a4250137700bd4b13604c",
+        "7ac631dc3d3b9966c85d-640.webp": "89da66deedf1769d5a7f2d8ede1264ceb28679ce5ea7832554d2769e395dc980",
+        "7ac631dc3d3b9966c85d-1280.webp": "41ceb58bfad5b59b1883770ff1ee13be135bb5dedeb35c475a612cdf61e8e12b"
+      }
+    },
+    "/img/ppbc/layout visualizer-02.jpg": {
+      "sha256": "ca60359f331d5cf9f651427313eef7cc068982945373006f71981caa54d5e8fd",
+      "outputs": {
+        "9263c3d2a640599a5f74-320.webp": "759e689d4679fc574784cd738f86d33f8836580038d4743e90437e3c6edc0bb9",
+        "9263c3d2a640599a5f74-640.webp": "c9db2d44d08aca889dec6689b5952288e78dc4d7ebfc5a05c79212c1151c4f63",
+        "9263c3d2a640599a5f74-1280.webp": "550227527a865b4c7f70123f23e327c66696b6766f383bbb208571450732d852"
+      }
+    },
+    "/img/ppbc/layout visualizer-03.jpg": {
+      "sha256": "3597755cd32cd65e9a177ac34a3c7998b7549d32cbc48892f13a7d83fe919295",
+      "outputs": {
+        "e9ce5344580c28f857cd-320.webp": "2fc12d17020dd09e40317d525ccd216ad2ba70fb8e4859822ed1912ea5725990",
+        "e9ce5344580c28f857cd-640.webp": "c3dbe6e37bb5771b3b024004a84bdcb59eb720d70964aac0f4b7bec28bab8f82",
+        "e9ce5344580c28f857cd-1280.webp": "9c959f458ab4c8f3c15b0e9748b4002961d03740cf5c90627993fd8a298a1d90"
+      }
+    },
+    "/img/ppbc/layout visualizer-04.jpg": {
+      "sha256": "3910c304374fbd9d2ce944eec4def6a85d78e048f478549c2ab4318b84916b4d",
+      "outputs": {
+        "40177c2e497431cd027b-320.webp": "42697e845dde50df9be4bdcfc66e87e5e1dfb997feb8cb76d6bd6a3365fe7252",
+        "40177c2e497431cd027b-640.webp": "60bd310bb04d6bc7621ac7bb1433bab49a831e225775bb197f8e3c691b4ba7ae",
+        "40177c2e497431cd027b-1280.webp": "a61541e68463cb2125096e05e476d9cfb724b93750be1ac08c9ab009d24a5910"
+      }
+    },
+    "/img/ppbc/ppbc.jpg": {
+      "sha256": "7822e6f34a4e17a378e00a9b4437cba2ac4c14a7c7ce9fb5ee71265c50dfd2d1",
+      "outputs": {
+        "5bfce77c3babd4a85319-320.webp": "195c484b18fc06a157a1ee16e5af7c5bedc619959a0f5ec911aa110271960f49"
+      }
+    },
+    "/img/rag-bot/rag_architecture.webp": {
+      "sha256": "3daa0d3678e0ab73546f62a0ab6606d7eeb5b5093cc342778c9274340d82f04c",
+      "outputs": {
+        "d0cd767ba7f3f86222c1-320.webp": "256d2f0177a4972ab404d737e774ed94ef54008ac65703d49194b4abc3f6ddc8",
+        "d0cd767ba7f3f86222c1-640.webp": "26472ea543e75afdd49b8fcd25bbc78418bf6bb9d324a68f65a237439ded7e20"
+      }
+    },
+    "/img/rag-bot/rag_ingest.png": {
+      "sha256": "d24e6b3c8631685e5efd85e0cf7714dce7a7f1e3186655b1e00cbeccb894431b",
+      "outputs": {
+        "7f0e6639c4e8e3e162f5-320.webp": "8383d2cc285c5db586173610b35b3a64b35b3539cf7c716b34b5456299ef8e47",
+        "7f0e6639c4e8e3e162f5-640.webp": "dd5a038f204cc04c0a56c0257505b1016a1b37f05ec56a42d41161d108b2a884",
+        "7f0e6639c4e8e3e162f5-1280.webp": "947810cc5cbf69d89c853cb3e56d651c837849b730f2186d56d31ca6e375a09f"
+      }
+    },
+    "/img/reddit-politics/team009poster.jpg": {
+      "sha256": "c2803442870474a8c07a8f02d0f403ea4266cf49bfc35b7c77248dc4ff4a4a2f",
+      "outputs": {
+        "47f530fd81e61214c4a7-320.webp": "e49a6090c2a2f69d56a4f11d5cabc248cbdea2ba57780856d6ab09d0632b99fb",
+        "47f530fd81e61214c4a7-640.webp": "145e190d21a8552cd3327edd5549303b3bbd26f59db3d53109b393db9ccc1ec9",
+        "47f530fd81e61214c4a7-1280.webp": "3258faf7c7f81eeea8b37591a0579457057ece8ae19bb75a126a5c158afa3929"
+      }
+    },
+    "/img/reddit-politics/team009posterposter.jpg": {
+      "sha256": "551998389b4e232bebbfb99b63fc2fa58f5b4b15d23ec111a3f184c51808e1f3",
+      "outputs": {
+        "c6f9f120405bc01fe132-320.webp": "9b2158d487601a0a0249898aa6ce601d5bda46ec681e34c8dc360704db88b84e",
+        "c6f9f120405bc01fe132-640.webp": "6e18b17dcfc9df3fbbc24c17e74077e088dba2cb3d54a618e0a03f27f59e6276",
+        "c6f9f120405bc01fe132-1280.webp": "27bf2e1aedce87f97aacfab983d71dd1c194af39fafae55a4840760f36ecda26"
+      }
+    },
+    "/img/retroboard/IMG_0977.JPG": {
+      "sha256": "9b8f33fb0b54532311270a252eef67a29c73da0c2f25f8673803ed899389a74c",
+      "outputs": {
+        "fe1ec9128c6e10fb0e5e-320.webp": "6260690993af32ec4c4a07dc6940bff571ba9c43a8c1deb2d073c72f350e976e",
+        "fe1ec9128c6e10fb0e5e-640.webp": "d8efaa7c31daa915aa9a2e9f458110cb6d2ed42ffde90773b71f38c4491d076d",
+        "fe1ec9128c6e10fb0e5e-1280.webp": "9aae079e3684189fc3b73d33440def99748e8bfc087067d5dfe892b2eae2b230"
+      }
+    },
+    "/img/retroboard/IMG_0982_crop.jpg": {
+      "sha256": "d524b6f2b42527f2a415dced2ac698955c1c7087e9586ce86ffa02be1c3b6d90",
+      "outputs": {
+        "857f7cb274cc6109c835-320.webp": "e6d2bd0b5037bc00f52db1ecf0a16a3d0b472101f7ece54e309f0aa6af2c818a",
+        "857f7cb274cc6109c835-640.webp": "2948b6973db56083e4a06cca6c084503ffac411479fbcfc30e1f80db904372ba",
+        "857f7cb274cc6109c835-1280.webp": "e6478de8e597de8d409accbc77971e9a84d5f51ab75a7565e98e0b6c3ba15957"
+      }
+    },
+    "/img/retroboard/sim.JPG": {
+      "sha256": "5dcca1453b8b7b5774a55f1dfec44e936a975a4cde91bb5e1513e520323ed376",
+      "outputs": {
+        "0c4cd40688cdd91126a8-320.webp": "17d5cb0b4a2c5a9938b817a10fb3e96edcc462129d40c126655fbc5ef06a453d",
+        "0c4cd40688cdd91126a8-640.webp": "3aa78db8abfcf534bb0166d0b3ec0e64de24c239d61df50c14716d3fb694cb50",
+        "0c4cd40688cdd91126a8-1280.webp": "87b5edecbfd0cf9013854fd622a87041f0381313566caf1f893416b0dd458ca6"
+      }
+    },
+    "/img/vue-chatbot/chatbot1.png": {
+      "sha256": "ab6fedecadeba23be614cf7b2588be9912ce5309c0783e549a069e2ac92e971d",
+      "outputs": {}
+    },
+    "/img/vue-chatbot/chatbot2.png": {
+      "sha256": "28646037e9a7751586b33da7daad56fffa92e18e000487e93a6660cfc2d92629",
+      "outputs": {}
+    },
+    "/img/vue-chatbot/chatbot3.png": {
+      "sha256": "90dd2f85aa7504e6f5d5b36638ac3c362f1921bf82e18b8d01f401bcb842750e",
+      "outputs": {
+        "29527803cd3f6d939f7d-320.webp": "503ebdd75e3c5012977d588071ec448ad415e93f22be38c6b96e89a6545ecf0c",
+        "29527803cd3f6d939f7d-640.webp": "269ae55ce0d0c0dd091cd5216486493e29451ce676cb975bd857bd193289e45a"
+      }
+    },
+    "/img/vue-chatbot/chatbot4.png": {
+      "sha256": "7d84218a91c0c9c591a93b8b07bc66f4fb525d791604b920b2ddc0653d3c5af2",
+      "outputs": {
+        "8ddb50a0443e53f257b0-320.webp": "55814d9ec084be8b9494d702f445ceba992c31f72ad9c179c3ce2cd8b5ed9ff5"
+      }
+    },
+    "/img/vue-chatbot/chatbot5.png": {
+      "sha256": "41a6ccce950572d9dbda5d238ca5024cf73749ce7bed2085da2153a01d378751",
+      "outputs": {
+        "27f7887107f945e97b22-320.webp": "70ba681d58eeb8a95471618aa14a660b12706dff696a8113527aa3888a03be02",
+        "27f7887107f945e97b22-640.webp": "a25b42e5aab76edb3943dcb0ade60b15dc645f80204c5dd18d1a6c3bed63c744"
+      }
+    },
+    "/img/vue-chatbot/chatbot6.png": {
+      "sha256": "6388a67bed9c12b1f1e2b91a7fcdb42b9516091830f732d78ff60ebd227d2ee3",
+      "outputs": {
+        "4a94d519587c06cb7968-320.webp": "842cf3e27a21e2b62c72c8facf1395f33ff5275aa640ac403909a338015a2e24",
+        "4a94d519587c06cb7968-640.webp": "9c51d90e497a12a4578de10ce4aa2a0ca9b41b95a4e8282c1c43750c02fb2aee"
+      }
+    },
+    "/img/vue-chatbot/chatbot7.png": {
+      "sha256": "a45eef185ec779689d9ea67c509d0eda6372441d7872bf2adae95bca91a6afce",
+      "outputs": {
+        "920ee7ea0c9f61c07c23-320.webp": "0ca7615580b72b4335b5930aea5a14987edb37084e7fadae3cb503bdfe705402",
+        "920ee7ea0c9f61c07c23-640.webp": "7aaebb8e22121288f091516459c3ecd4149fc7d81e4c17985816f4cb6d0077fc"
+      }
+    },
+    "/img/vue-chatbot/chatbot8.png": {
+      "sha256": "afef174de730558691a74a1df7de4d8cb203c072394e7a09488935d6c6aa3b59",
+      "outputs": {
+        "79c6fdc90ddfd1f2fb53-320.webp": "8d144ab051c54583ce298f3f448a1dc5fa7a02faf0d34098fdf2f336fd91a933",
+        "79c6fdc90ddfd1f2fb53-640.webp": "8db8c647bf97a68ee65e95107d47196ad8c04594d044bcc04471422880e2a0ef"
+      }
+    },
+    "/img/vue-chatbot/chatbot9.png": {
+      "sha256": "f6aaf07c89266a5f8ec19d3cacc2454a2e8578a76740e3ecf8988339899d1f23",
+      "outputs": {
+        "ad8d25ac0856cf099ab2-320.webp": "b346d29432cff647f89a81d5da9e14af7e1b2da5ea7f05381e5e58ca4a8b96f2",
+        "ad8d25ac0856cf099ab2-640.webp": "48299079a7d21b40aae4d5ee707283dd17376199426d5fb70fc45a6612dbc4b5"
+      }
+    },
+    "/img/vue-chatbot/vuejsstructure.png": {
+      "sha256": "f914f7b96a8fd0132c62a32f98bc2a1a608d0a4ae89f34f0e861483555ffecdf",
+      "outputs": {
+        "d1db90c681c70337ff0c-320.webp": "4ddf996aa1df24308c9ba16d6f4536c255aa9a32ba870913e12665846215684c"
+      }
+    }
+  }
+}
