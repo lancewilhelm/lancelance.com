@@ -8,12 +8,17 @@ test("theme catalog has exactly the available stylesheets and rejects unknown na
   const links = new Map();
   const document = {
     body: null,
-    readyState: "loading",
+    readyState: "complete",
     getElementById: (id: string) => links.get(id),
     createElement: () => ({
-      replaceWith(next: { id: string }) {
-        links.set(next.id, next);
+      removeAttribute() {
+        links.delete(this.id);
+        this.id = "";
       },
+      remove() {
+        if (links.get(this.id) === this) links.delete(this.id);
+      },
+      id: "",
     }),
     head: {
       appendChild(link: { id: string }) {
@@ -22,15 +27,17 @@ test("theme catalog has exactly the available stylesheets and rejects unknown na
     },
   };
   const window: {
+    dispatchEvent(event: Event): void;
     themeRuntime?: {
       themes: readonly { name: string }[];
       current(): string;
       select(name: string): void;
     };
-  } = {};
+  } = { dispatchEvent() {} };
   vm.runInNewContext(fs.readFileSync("public/js/theme-loader.js", "utf8"), {
     document,
     window,
+    Event,
     localStorage: {
       getItem: () => stored,
       setItem: (_key: string, value: string) => {
@@ -40,6 +47,8 @@ test("theme catalog has exactly the available stylesheets and rejects unknown na
   });
   const runtime = window.themeRuntime;
   assert.ok(runtime);
+  assert.equal(runtime.current(), "paper");
+  links.get("currentTheme").onload();
   assert.deepEqual(
     [...runtime.themes.map((theme) => theme.name)].sort(),
     fs
@@ -52,6 +61,10 @@ test("theme catalog has exactly the available stylesheets and rejects unknown na
   runtime.select("../../invalid");
   assert.equal(runtime.current(), "dracula");
   runtime.select("paper");
+  assert.equal(runtime.current(), "dracula");
+  assert.equal(JSON.parse(stored).theme, "dracula");
+  links.get("currentTheme").onload();
   assert.equal(runtime.current(), "paper");
+  assert.equal(JSON.parse(stored).theme, "paper");
   assert.equal(JSON.parse(stored).other, "preserved");
 });

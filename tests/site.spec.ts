@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { test, expect, type Page } from "@playwright/test";
+import { test, expect, type Page, type Route } from "@playwright/test";
 
 async function openPage(page: Page, url: string) {
   const response = await page.goto(url);
@@ -130,10 +130,11 @@ for (const saved of [
     await page
       .getByRole("button", { name: "Choose theme", exact: true })
       .click();
-    await page
+    const dracula = page
       .getByRole("dialog")
-      .getByRole("button", { name: "dracula", exact: true })
-      .click();
+      .getByRole("button", { name: "dracula", exact: true });
+    await dracula.click();
+    await expect(dracula).toHaveAttribute("aria-pressed", "true");
     expect(await page.evaluate(() => localStorage.getItem("config"))).toContain(
       '"theme":"dracula"',
     );
@@ -162,6 +163,136 @@ test("denied storage does not prevent theme selection", async ({ page }) => {
     "href",
     "/css/themes/dracula.css",
   );
+});
+
+test("a failed theme stylesheet keeps the previous theme and selection", async ({
+  page,
+}) => {
+  await openPage(page, "/");
+  await page.route("**/css/themes/dracula.css", (route) => route.abort());
+  await page.getByRole("button", { name: "Choose theme", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Choose theme" });
+  await dialog.getByRole("button", { name: "dracula", exact: true }).click();
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/paper.css",
+  );
+  await expect(
+    dialog.getByRole("button", { name: "paper", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  expect(
+    await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
+  ).toBe("rgb(238, 238, 238)");
+  expect(
+    await page.evaluate(
+      () => JSON.parse(localStorage.getItem("config") || "{}").theme,
+    ),
+  ).toBe("paper");
+  await page.unroute("**/css/themes/dracula.css");
+  await dialog.getByRole("button", { name: "dracula", exact: true }).click();
+  await expect(
+    dialog.getByRole("button", { name: "dracula", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  expect(
+    await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
+  ).toBe("rgb(40, 42, 54)");
+  await page.route("**/css/themes/nord.css", (route) => route.abort());
+  await dialog.getByRole("button", { name: "nord", exact: true }).click();
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/dracula.css",
+  );
+  await expect(
+    dialog.getByRole("button", { name: "dracula", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+});
+
+test("an unavailable saved theme restores the static Paper fallback", async ({
+  page,
+}) => {
+  await page.addInitScript(() =>
+    localStorage.setItem("config", '{"theme":"dracula","other":"preserved"}'),
+  );
+  await page.route("**/css/themes/dracula.css", (route) => route.abort());
+  await openPage(page, "/");
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/paper.css",
+  );
+  expect(
+    await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
+  ).toBe("rgb(238, 238, 238)");
+  expect(
+    await page.evaluate(() =>
+      JSON.parse(localStorage.getItem("config") || "{}"),
+    ),
+  ).toEqual({ theme: "paper", other: "preserved" });
+});
+
+test("a delayed theme keeps the current style and cannot replace a newer choice", async ({
+  page,
+}) => {
+  await openPage(page, "/");
+  let delayed: Route | undefined;
+  await page.route("**/css/themes/dracula.css", (route) => {
+    delayed = route;
+  });
+  await page.getByRole("button", { name: "Choose theme", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Choose theme" });
+  await dialog.getByRole("button", { name: "dracula", exact: true }).click();
+  await expect.poll(() => Boolean(delayed)).toBe(true);
+  expect(
+    await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
+  ).toBe("rgb(238, 238, 238)");
+  expect(
+    await page.evaluate(
+      () => JSON.parse(localStorage.getItem("config") || "{}").theme,
+    ),
+  ).toBe("paper");
+  await dialog.getByRole("button", { name: "nord", exact: true }).click();
+  await expect(
+    dialog.getByRole("button", { name: "nord", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await delayed?.abort();
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/nord.css",
+  );
+  await expect(
+    page.locator('link[rel="stylesheet"][href^="/css/themes/"]'),
+  ).toHaveCount(1);
+  expect(
+    await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
+  ).toBe("rgb(36, 41, 51)");
+});
+
+test("a reopened picker reflects a pending theme failure", async ({ page }) => {
+  await openPage(page, "/");
+  let delayed: Route | undefined;
+  await page.route("**/css/themes/dracula.css", (route) => {
+    delayed = route;
+  });
+  const opener = page.getByRole("button", {
+    name: "Choose theme",
+    exact: true,
+  });
+  await opener.click();
+  await page.getByRole("button", { name: "dracula", exact: true }).click();
+  await expect.poll(() => Boolean(delayed)).toBe(true);
+  await page.keyboard.press("Escape");
+  await expect(page.locator("dialog")).toHaveCount(0);
+  await opener.click();
+  await expect(
+    page
+      .getByRole("dialog")
+      .getByRole("button", { name: "paper", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await delayed?.abort();
+  await expect(
+    page
+      .getByRole("dialog")
+      .getByRole("button", { name: "paper", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
 });
 
 test("image zoom closes and returns focus through repeated keyboard use", async ({
