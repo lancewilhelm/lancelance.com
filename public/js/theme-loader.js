@@ -1237,6 +1237,7 @@
   );
   const names = new Set(themes.map((theme) => theme.name));
   let current = "paper";
+  let preferred = "paper";
   try {
     const saved = JSON.parse(localStorage.getItem("config") || "{}");
     if (
@@ -1245,8 +1246,10 @@
       !Array.isArray(saved) &&
       names.has(saved.theme)
     )
-      current = saved.theme;
+      preferred = saved.theme;
   } catch {}
+  let active = document.getElementById("currentTheme");
+  let pending = null;
 
   function updateFavicon(link, name) {
     if (
@@ -1294,12 +1297,23 @@
   }
 
   function apply(name) {
-    current = name;
-    const previous = document.getElementById("currentTheme");
+    if (pending) {
+      pending.remove();
+    }
+    // Keep the working stylesheet until its replacement has loaded.
+    if (active) active.removeAttribute("id");
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.id = "currentTheme";
+    pending = link;
     link.onload = () => {
+      if (pending !== link) return;
+      if (active) active.remove();
+      active = link;
+      current = name;
+      pending = null;
+      persist(name);
+      window.dispatchEvent(new Event("themechange"));
       if (document.readyState === "loading") {
         document.addEventListener(
           "DOMContentLoaded",
@@ -1308,14 +1322,19 @@
         );
       } else updateFavicon(link, name);
     };
+    link.onerror = () => {
+      if (pending !== link) return;
+      link.remove();
+      if (active) active.id = "currentTheme";
+      pending = null;
+      persist(current);
+      window.dispatchEvent(new Event("themechange"));
+    };
     link.href = `/css/themes/${name}.css`;
-    if (previous) previous.replaceWith(link);
-    else document.head.appendChild(link);
+    document.head.appendChild(link);
   }
 
-  function select(name) {
-    if (!names.has(name)) return;
-    apply(name);
+  function persist(name) {
     try {
       let saved = JSON.parse(localStorage.getItem("config") || "{}");
       if (!saved || typeof saved !== "object" || Array.isArray(saved))
@@ -1327,10 +1346,14 @@
       } catch {}
     }
   }
+  function select(name) {
+    if (!names.has(name)) return;
+    apply(name);
+  }
   window.themeRuntime = Object.freeze({
     themes,
     current: () => current,
     select,
   });
-  select(current);
+  select(preferred);
 })();

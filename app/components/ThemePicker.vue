@@ -3,16 +3,20 @@ const emit = defineEmits<{ close: [] }>();
 const dialog = ref<HTMLDialogElement | null>(null);
 const themes = ref<readonly ThemeOption[]>([]);
 const selected = ref("paper");
+function syncSelection() {
+  selected.value = window.themeRuntime.current();
+}
 onMounted(() => {
   themes.value = [...window.themeRuntime.themes].sort((a, b) =>
     a.name.localeCompare(b.name),
   );
-  selected.value = window.themeRuntime.current();
+  syncSelection();
+  window.addEventListener("themechange", syncSelection);
   dialog.value?.showModal();
 });
+onBeforeUnmount(() => window.removeEventListener("themechange", syncSelection));
 function select(name: string) {
   window.themeRuntime.select(name);
-  selected.value = window.themeRuntime.current();
 }
 function backdrop(event: MouseEvent) {
   const element = dialog.value;
