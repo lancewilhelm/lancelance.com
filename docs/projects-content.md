@@ -1,27 +1,27 @@
-# Projects content guide
+# Projects & Blog Content Guide
 
-Project entries are Markdown files in `content/projects/`. Their filenames determine their URLs. For example, `retroboard.md` produces `/projects/retroboard`. An optional `YYYY-MM-DD-` prefix is removed when deriving the slug. Slugs must be unique.
+All project pages and blog posts are plain Vue 3 single-file components (no Markdown parser or Nuxt layer).
 
 ## Add a project
 
-1. Add a Markdown file in `content/projects/` with YAML front matter and a body.
-2. Set `title`, `description`, and `image` to nonempty strings. The image is a path under `public/` and its case must match the file.
-3. Set `category` to `work`, `academic`, or `personal`. Missing or unrecognized categories default to `personal`.
-4. Optionally set `order` to a number or numeric string and `tags` to an array of strings. Missing or invalid order defaults to `1000` in the parser. The content check rejects invalid order values.
-5. Run `pnpm check:content`, `pnpm images:generate` if image references changed, and the checks in the [README](../README.md). Review the index and detail page with `pnpm dev`.
+1. Create a Vue component under `src/content/projects/` (for example, `MyProject.vue`).
+   - Use the shared article components in `src/components/`:
+     - `<ProseHeading :level="2" id="section-id">Section</ProseHeading>`
+     - `<BlogImage eager image-path="/img/my-project/shot.png" alt="..." caption="..." width="700px" />`
+     - `<CodeBlock language="ts" filename="example.ts" :code="snippet" />`
+     - `<ProseTable>...</ProseTable>`
+     - `<GithubRepoCard repo="lancewilhelm/my-repo" />`
+     - `<MathExpr :expr="formula" :display="true" />`
+2. Register the project in `src/content/projects/index.ts` with `slug`, `path`, `title`, `description`, `image`, `category` (`work`, `personal`, or `academic`), `order`, `tags`, and `component`.
+3. Put source images under `public/img/<slug>/` with exact matching case, then run:
+   - `pnpm images:generate`
+   - `pnpm check:content`
+   - `pnpm repos:refresh` (if you added a new `<GithubRepoCard>` repo)
 
-Projects are grouped in the order work, academic, personal. Empty categories are hidden. Within a category, lower `order` values come first, followed by a case-insensitive title sort.
+Projects are grouped in the order **work**, **personal**, **academic**. Empty categories are hidden. Within a category, lower `order` values come first, followed by a case-insensitive title sort.
 
-Use these existing entries as examples:
+## Add a blog post
 
-- [Retroboard](../content/projects/retroboard.md) uses the personal category and image and repository components.
-- [Hateful Memes](../content/projects/hateful-memes.md) is an academic project.
-- [Horizon Extended](../content/projects/horizon-extended.md) is another personal project.
-
-The [MDC component guide](mdc-components-setup.md) describes images and repository cards. Write descriptive image `alt` text and mark an above-the-fold image with `eager: true` when appropriate.
-
-## Data and static output
-
-During development and prerendering, `/api/projects/list` returns previews. The endpoint accepts `category=work`, `category=academic`, `category=personal`, or `grouped=true`. `/api/projects/:slug` returns a project with its Markdown body. Previews include the title, description, image, order, tags, category, slug, and path.
-
-The production build is static. The generated project pages contain the data they need, but the API handlers are not deployed as public runtime endpoints. A public API request returning 404 is expected.
+1. Create a Vue component under `src/content/blog/`.
+2. Register it in `src/content/blog/index.ts` with `slug`, `path`, `title`, `description`, `date`, `tags`, and `component`.
+3. Run `pnpm images:generate` if you added images, then verify with `pnpm check:content && pnpm build`.
