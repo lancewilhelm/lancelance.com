@@ -9,7 +9,7 @@ import { generateImages } from "../scripts/generate-images.mjs";
 test("image checks reject source, output, recipe, and manifest changes", async () => {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "lancelance-images-"));
   try {
-    for (const dir of ["content/blog", "content/projects", "public/img"])
+    for (const dir of ["src/content/blog", "src/content/projects", "public/img"])
       await fs.mkdir(path.join(root, dir), { recursive: true });
     const source = path.join(root, "public/img/example.png");
     await sharp({
@@ -18,12 +18,12 @@ test("image checks reject source, output, recipe, and manifest changes", async (
       .png()
       .toFile(source);
     await fs.writeFile(
-      path.join(root, "content/blog/example.md"),
-      "imagePath: /img/example.png\n",
+      path.join(root, "src/content/blog/ExamplePost.vue"),
+      '<template><BlogImage image-path="/img/example.png" /></template>\n',
     );
     await generateImages({ root });
     await generateImages({ root, check: true });
-    const manifestPath = path.join(root, "app/assets/generated-images.json");
+    const manifestPath = path.join(root, "src/assets/generated-images.json");
     const readManifest = async () =>
       JSON.parse(await fs.readFile(manifestPath, "utf8"));
     const original = await readManifest();

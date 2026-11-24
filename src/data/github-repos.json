@@ -1,0 +1,106 @@
+{
+  "lancewilhelm/vue-chatbot": {
+    "html_url": "https://github.com/lancewilhelm/vue-chatbot",
+    "full_name": "lancewilhelm/vue-chatbot",
+    "description": "A simple LLM-powered chatbot webapp in Vue.js with FastAPI backend",
+    "language": "Vue",
+    "stargazers_count": 8,
+    "forks_count": 2
+  },
+  "lancewilhelm/delb": {
+    "html_url": "https://github.com/lancewilhelm/delb",
+    "full_name": "lancewilhelm/delb",
+    "description": "A modern, self-hosted digital library manager built with Nuxt. Manage your ebook collection with a clean web interface.",
+    "language": "Go",
+    "stargazers_count": 1,
+    "forks_count": 0
+  },
+  "lancewilhelm/Staf": {
+    "html_url": "https://github.com/lancewilhelm/Staf",
+    "full_name": "lancewilhelm/Staf",
+    "description": "CLI-first agent runtime in TypeScript with persistent conversations and provider adapters.",
+    "language": "JavaScript",
+    "stargazers_count": 0,
+    "forks_count": 0
+  },
+  "lancewilhelm/guage": {
+    "html_url": "https://github.com/lancewilhelm/guage",
+    "full_name": "lancewilhelm/guage",
+    "description": "Self-hosted front-end web application for LLMs (local and remote). Built in Vue/Nuxt.",
+    "language": "Vue",
+    "stargazers_count": 2,
+    "forks_count": 0
+  },
+  "lancewilhelm/shpacer": {
+    "html_url": "https://github.com/lancewilhelm/shpacer",
+    "full_name": "lancewilhelm/shpacer",
+    "description": "",
+    "language": "Vue",
+    "stargazers_count": 0,
+    "forks_count": 0
+  },
+  "lancewilhelm/horizon-extended": {
+    "html_url": "https://github.com/lancewilhelm/horizon-extended",
+    "full_name": "lancewilhelm/horizon-extended",
+    "description": "A necessary update to the Horizon theme for VS Code",
+    "language": "",
+    "stargazers_count": 30,
+    "forks_count": 5
+  },
+  "lancewilhelm/horizon-extended.nvim": {
+    "html_url": "https://github.com/lancewilhelm/horizon-extended.nvim",
+    "full_name": "lancewilhelm/horizon-extended.nvim",
+    "description": "🌅 Vibrant dark theme with logical highlighting and support for popular plugins. A Neovim port of the Horizon Extended VSCode theme. ",
+    "language": "Lua",
+    "stargazers_count": 8,
+    "forks_count": 2
+  },
+  "lancewilhelm/lance-skills": {
+    "html_url": "https://github.com/lancewilhelm/lance-skills",
+    "full_name": "lancewilhelm/lance-skills",
+    "description": "My llm skills",
+    "language": "Python",
+    "stargazers_count": 0,
+    "forks_count": 0
+  },
+  "lancewilhelm/hfget": {
+    "html_url": "https://github.com/lancewilhelm/hfget",
+    "full_name": "lancewilhelm/hfget",
+    "description": "A CLI tool for downloading models from HuggingFace with an interactive interface",
+    "language": "JavaScript",
+    "stargazers_count": 1,
+    "forks_count": 0
+  },
+  "lancewilhelm/nvim-dashboard-vscode": {
+    "html_url": "https://github.com/lancewilhelm/nvim-dashboard-vscode",
+    "full_name": "lancewilhelm/nvim-dashboard-vscode",
+    "description": "Bringing the nvimdev/dashboard-nvim to VS Code",
+    "language": "TypeScript",
+    "stargazers_count": 5,
+    "forks_count": 1
+  },
+  "lancewilhelm/pingPongBallClock": {
+    "html_url": "https://github.com/lancewilhelm/pingPongBallClock",
+    "full_name": "lancewilhelm/pingPongBallClock",
+    "description": "Raspberry Pi code for the Ping Pong Ball Clock Project",
+    "language": "Python",
+    "stargazers_count": 25,
+    "forks_count": 12
+  },
+  "lancewilhelm/retroboard": {
+    "html_url": "https://github.com/lancewilhelm/retroboard",
+    "full_name": "lancewilhelm/retroboard",
+    "description": "Open source RGB LED matrix inspired by Tidbyt",
+    "language": "Python",
+    "stargazers_count": 1,
+    "forks_count": 0
+  },
+  "lancewilhelm/DroneSpacePiGates": {
+    "html_url": "https://github.com/lancewilhelm/DroneSpacePiGates",
+    "full_name": "lancewilhelm/DroneSpacePiGates",
+    "description": "",
+    "language": "Python",
+    "stargazers_count": 0,
+    "forks_count": 0
+  }
+}

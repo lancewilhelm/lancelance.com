@@ -1,12 +1,12 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import matter from "gray-matter";
 
 export function checkContent(root: string): string[] {
   const errors: string[] = [];
   const fail = (file: string, message: string) =>
     errors.push(`${file}: ${message}`);
+
   const exactAsset = (url: string): boolean => {
     const clean = decodeURIComponent(url.split(/[?#]/)[0] || "");
     if (!clean.startsWith("/") || clean.startsWith("//")) return true;
@@ -19,92 +19,63 @@ export function checkContent(root: string): string[] {
         !fs.existsSync(dir) ||
         !fs.statSync(dir).isDirectory() ||
         !fs.readdirSync(dir).includes(part)
-      )
+      ) {
         return false;
+      }
       dir = path.join(dir, part);
     }
     return fs.statSync(dir).isFile();
   };
-  for (const collection of ["blog", "projects"]) {
-    const dir = path.join(root, "content", collection);
-    const files = fs.existsSync(dir)
-      ? fs.readdirSync(dir).filter((f) => f.endsWith(".md"))
-      : [];
-    if (!files.length) {
-      fail(collection, "collection must contain Markdown files");
+
+  for (const collection of ["blog", "projects"] as const) {
+    const dir = path.join(root, "src/content", collection);
+    const indexPath = path.join(dir, "index.ts");
+    if (!fs.existsSync(indexPath)) {
+      fail(collection, "missing src/content/" + collection + "/index.ts");
       continue;
     }
+
+    const indexSrc = fs.readFileSync(indexPath, "utf8");
     const slugs = new Set<string>();
-    for (const file of files) {
-      const label = `${collection}/${file}`;
-      const slug = file.replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/\.md$/, "");
-      if (!slug || slugs.has(slug))
-        fail(label, `duplicate or empty slug: ${slug}`);
+    for (const match of indexSrc.matchAll(/\bslug:\s*["']([^"']*)["']/g)) {
+      const slug = match[1];
+      if (!slug || slugs.has(slug)) {
+        fail(`${collection}/index.ts`, `duplicate or empty slug: ${slug}`);
+      }
       slugs.add(slug);
-      let parsed: matter.GrayMatterFile<string>;
-      try {
-        parsed = matter(fs.readFileSync(path.join(dir, file), "utf8"));
-      } catch (error) {
-        fail(label, `invalid frontmatter: ${String(error)}`);
-        continue;
+    }
+    if (!slugs.size) {
+      fail(`${collection}/index.ts`, "must declare at least one entry");
+    }
+
+    if (collection === "blog") {
+      for (const match of indexSrc.matchAll(/\bdate:\s*["']([^"']*)["']/g)) {
+        const rawDate = match[1];
+        if (!Number.isFinite(new Date(rawDate).getTime())) {
+          fail(`${collection}/index.ts`, `date must be valid: ${rawDate}`);
+        }
       }
-      const { data, content } = parsed;
-      for (const field of ["title", "description"]) {
-        if (typeof data[field] !== "string" || !data[field].trim())
-          fail(label, `${field} must be a nonempty string`);
-      }
-      for (const field of ["tags", "categories"]) {
-        const value = data[field];
-        if (
-          value != null &&
-          !(
-            typeof value === "string" ||
-            (Array.isArray(value) &&
-              value.every((v: unknown) => typeof v === "string"))
-          )
-        )
-          fail(label, `${field} must be a string or array of strings`);
-      }
-      if (collection === "blog") {
-        const date = data.date;
-        if (
-          !(date instanceof Date || typeof date === "string") ||
-          !Number.isFinite(new Date(date).getTime())
-        )
-          fail(label, "date must be valid");
-      } else {
-        if (typeof data.image !== "string" || !data.image.trim())
-          fail(label, "image must be a nonempty string");
-        else if (!exactAsset(data.image))
-          fail(label, `asset does not exist with exact case: ${data.image}`);
-        if (data.category != null && typeof data.category !== "string")
-          fail(label, "category must be a string");
-        if (
-          data.order != null &&
-          !(typeof data.order === "number" || typeof data.order === "string")
-        )
-          fail(label, "order must be a number or numeric string");
-        else if (
-          data.order != null &&
-          (String(data.order).trim() === "" ||
-            !Number.isFinite(Number(data.order)))
-        )
-          fail(label, "order must be a number or numeric string");
-      }
+    }
+
+    const files = fs
+      .readdirSync(dir)
+      .filter((file) => file.endsWith(".vue") || file.endsWith(".ts"));
+    for (const file of files) {
+      const content = fs.readFileSync(path.join(dir, file), "utf8");
       for (const match of content.matchAll(
-        /^(?:imagePath|link):\s*["']?([^\n"']+)["']?\s*$/gm,
+        /["'](\/(?:img|pdf)\/(?!generated\/)[^"'\r\n]+?)["']/g,
       )) {
-        const asset = match[1]?.trim();
-        if (asset?.startsWith("/") && !exactAsset(asset))
-          fail(label, `asset does not exist with exact case: ${asset}`);
-      }
-      for (const match of content.matchAll(/!\[[^\]]*\]\((\/[^)]+)\)/g)) {
         const asset = match[1];
-        if (asset && !exactAsset(asset))
-          fail(label, `asset does not exist with exact case: ${asset}`);
+        if (asset && !exactAsset(asset)) {
+          fail(
+            `${collection}/${file}`,
+            `asset does not exist with exact case: ${asset}`,
+          );
+        }
       }
     }
   }
+
   return errors;
 }
 
@@ -116,5 +87,7 @@ if (
   if (errors.length) {
     console.error(errors.join("\n"));
     process.exitCode = 1;
-  } else console.log("Content validation passed.");
+  } else {
+    console.log("Content validation passed.");
+  }
 }

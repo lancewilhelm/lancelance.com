@@ -49,20 +49,24 @@ export async function generateImages({
   check = false,
 } = {}) {
   const generated = path.join(root, "public/img/generated");
-  const manifestPath = path.join(root, "app/assets/generated-images.json");
+  const manifestPath = path.join(root, "src/assets/generated-images.json");
   const integrityPath = path.join(root, "scripts/images.integrity.json");
   const references = new Set();
-  for (const directory of ["content/blog", "content/projects"]) {
-    for (const entry of (await readdir(path.join(root, directory)))
-      .filter((name) => name.endsWith(".md"))
+
+  for (const directory of ["src/content/blog", "src/content/projects"]) {
+    const fullDir = path.join(root, directory);
+    for (const entry of (await readdir(fullDir))
+      .filter((name) => name.endsWith(".vue") || name.endsWith(".ts"))
       .sort()) {
-      const content = await readFile(path.join(root, directory, entry), "utf8");
+      const content = await readFile(path.join(fullDir, entry), "utf8");
       for (const match of content.matchAll(
-        /^\s*(?:image|imagePath):\s*["']?(\/img\/[^\r\n"']+?)["']?\s*$/gm,
-      ))
+        /["'](\/img\/(?!generated\/)[^"'\r\n]+?)["']/g,
+      )) {
         references.add(match[1].trim());
+      }
     }
   }
+
   for (const source of references) {
     let directory = path.join(root, "public/img");
     for (const part of source.slice("/img/".length).split("/")) {
@@ -71,10 +75,11 @@ export async function generateImages({
         part === "." ||
         part === ".." ||
         !(await readdir(directory)).includes(part)
-      )
+      ) {
         throw new Error(
           `Image path is missing or has incorrect case: ${source}`,
         );
+      }
       directory = path.join(directory, part);
     }
   }
@@ -83,13 +88,15 @@ export async function generateImages({
     await mkdir(path.dirname(manifestPath), { recursive: true });
     await mkdir(path.dirname(integrityPath), { recursive: true });
   }
-  if ((await lstat(generated)).isSymbolicLink())
+  if ((await lstat(generated)).isSymbolicLink()) {
     throw new Error("Generated image directory must not be a symlink");
+  }
   for (const entry of await readdir(generated, { withFileTypes: true })) {
-    if (entry.isSymbolicLink())
+    if (entry.isSymbolicLink()) {
       throw new Error(
         `Unexpected symlink in generated image directory: ${entry.name}`,
       );
+    }
     if (
       entry.isFile() &&
       owned.test(entry.name) &&
@@ -104,10 +111,12 @@ export async function generateImages({
     check && previous
       ? JSON.parse(previous.toString())
       : { recipe, sources: {} };
-  if (check && !previous)
+  if (check && !previous) {
     throw new Error("Image integrity receipt is missing; run images:generate");
-  if (!isDeepStrictEqual(integrity.recipe, recipe))
+  }
+  if (!isDeepStrictEqual(integrity.recipe, recipe)) {
     throw new Error("Image recipe changed; run images:generate");
+  }
   const manifest = {};
   const expected = new Set();
   for (const source of [...references].sort()) {
@@ -121,8 +130,9 @@ export async function generateImages({
     const width = rotated ? metadata.height : metadata.width;
     const height = rotated ? metadata.width : metadata.height;
     if (!width || !height) throw new Error(`Missing dimensions for ${source}`);
-    if (check && integrity.sources[source]?.sha256 !== sourceHash)
+    if (check && integrity.sources[source]?.sha256 !== sourceHash) {
       throw new Error(`Image source changed: ${source}; run images:generate`);
+    }
     const record = { sha256: sourceHash, outputs: {} };
     const renditions = [];
     const id = digest(
@@ -133,19 +143,21 @@ export async function generateImages({
       const output = path.join(generated, name);
       if (check) {
         const bytes = await readOptional(output);
-        if (!bytes || digest(bytes) !== integrity.sources[source].outputs[name])
+        if (!bytes || digest(bytes) !== integrity.sources[source].outputs[name]) {
           throw new Error(
             `Image output integrity failed: ${name}; run images:generate`,
           );
+        }
         const actual = await sharp(bytes).metadata();
         if (
           actual.format !== recipe.format ||
           actual.width !== target ||
           actual.height !== Math.round((height * target) / width)
-        )
+        ) {
           throw new Error(
             `Image dimensions or format differ from recipe: ${name}`,
           );
+        }
       } else {
         let image = sharp(input);
         if (recipe.autoOrient) image = image.rotate();
@@ -167,26 +179,29 @@ export async function generateImages({
   }
   for (const entry of await readdir(generated, { withFileTypes: true })) {
     if (entry.isFile() && owned.test(entry.name) && !expected.has(entry.name)) {
-      if (check)
+      if (check) {
         throw new Error(
           `Stale generated image: ${entry.name}; run images:generate`,
         );
+      }
       await unlink(path.join(generated, entry.name));
     }
   }
   if (check) {
     const saved = await readOptional(manifestPath);
-    if (!saved || !isDeepStrictEqual(JSON.parse(saved.toString()), manifest))
+    if (!saved || !isDeepStrictEqual(JSON.parse(saved.toString()), manifest)) {
       throw new Error("Image manifest is out of date; run images:generate");
+    }
     if (
       !isDeepStrictEqual(
         Object.keys(integrity.sources).sort(),
         [...references].sort(),
       )
-    )
+    ) {
       throw new Error(
         "Image receipt sources are out of date; run images:generate",
       );
+    }
   } else {
     await save(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
     await save(integrityPath, `${JSON.stringify(integrity, null, 2)}\n`);

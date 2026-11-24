@@ -2,29 +2,34 @@ import fs from "node:fs";
 import path from "node:path";
 import { test, expect, type Page, type Route } from "@playwright/test";
 
+function extractVisibleSlugs(indexFile: string): string[] {
+  const src = fs.readFileSync(indexFile, "utf8");
+  const blocks = src.match(/\{[^{}]*\bslug:\s*["'][^"']+["'][^{}]*\}/g) || [];
+  return blocks
+    .filter((block) => !/\bhidden:\s*true\b/.test(block))
+    .map((block) => block.match(/\bslug:\s*["']([^"']+)["']/)?.[1])
+    .filter((slug): slug is string => Boolean(slug));
+}
+
 async function openPage(page: Page, url: string) {
   const response = await page.goto(url);
   await page.waitForFunction(() => {
-    const root = document.querySelector("#__nuxt");
+    const root = document.querySelector("#app");
     return root && "__vue_app__" in root;
   });
   return response;
 }
+
+const blogSlugs = extractVisibleSlugs("src/content/blog/index.ts");
+const projectSlugs = extractVisibleSlugs("src/content/projects/index.ts");
 
 const documents = [
   "/",
   "/blog",
   "/projects",
   "/about",
-  ...["blog", "projects"].flatMap((collection) =>
-    fs
-      .readdirSync(`content/${collection}`)
-      .filter((file) => file.endsWith(".md"))
-      .map(
-        (file) =>
-          `/${collection}/${file.replace(/^\d{4}-\d{2}-\d{2}-/, "").replace(/\.md$/, "")}`,
-      ),
-  ),
+  ...blogSlugs.map((slug) => `/blog/${slug}`),
+  ...projectSlugs.map((slug) => `/projects/${slug}`),
 ];
 
 test("all pages have current metadata, landmarks, image alternatives, and working images", async ({
@@ -67,15 +72,31 @@ test("all pages have current metadata, landmarks, image alternatives, and workin
   expect(pageErrors).toEqual([]);
 });
 
+test("projects page lists Personal projects above Academic projects", async ({
+  page,
+  request,
+}) => {
+  await openPage(page, "/projects");
+  const headings = await page.locator("main section > h2").allTextContents();
+  expect(headings.map((h) => h.trim())).toEqual(["Personal", "Academic"]);
+  await expect(page.locator("a.blog-card")).toHaveCount(projectSlugs.length);
+  await expect(page.locator('a[href="/projects/guage"]')).toHaveCount(0);
+  await expect(page.locator('a[href="/projects/staf"]')).toHaveCount(0);
+  expect((await request.get("/projects/guage")).status()).toBe(404);
+  expect((await request.get("/projects/staf")).status()).toBe(404);
+});
+
 test("tag filtering and reset preserve all six posts", async ({ page }) => {
   await openPage(page, "/blog");
-  await expect(page.locator("a.blog-card")).toHaveCount(6);
+  await expect(page.locator("a.blog-card")).toHaveCount(blogSlugs.length);
   await page
     .getByRole("link", { name: "Data Science (1)", exact: true })
     .click();
   await expect(page.locator("a.blog-card")).toHaveCount(1);
-  await page.getByRole("link", { name: "All (6)", exact: true }).click();
-  await expect(page.locator("a.blog-card")).toHaveCount(6);
+  await page
+    .getByRole("link", { name: `All (${blogSlugs.length})`, exact: true })
+    .click();
+  await expect(page.locator("a.blog-card")).toHaveCount(blogSlugs.length);
 });
 
 test("theme picker is keyboard operable, modal, persistent, and returns focus", async ({
@@ -394,38 +415,14 @@ test("sitemap and real not-found response are generated", async ({
   expect(fs.existsSync(path.join("dist", "robots.txt"))).toBe(true);
 });
 
-for (const collection of ["blog", "projects"]) {
-  test(`a failed static ${collection} payload can recover without a deployed API`, async ({
-    page,
-  }) => {
-    const payload = `**/${collection}/_payload.json*`;
-    await page.route(payload, (route) => route.abort());
-    await openPage(page, "/");
-    await page
-      .getByRole("link", {
-        name: collection === "blog" ? "Blog" : "Projects",
-        exact: true,
-      })
-      .click();
-    await expect(page.getByRole("alert")).toContainText(
-      collection === "blog"
-        ? "Unable to load blog posts."
-        : "Unable to load projects.",
-    );
-    await page.unroute(payload);
-    await page.getByRole("button", { name: "Try again", exact: true }).click();
-    await expect(page.locator("a.blog-card")).toHaveCount(6);
-  });
-}
-
-test("theme works before Nuxt starts and falls back without JavaScript", async ({
+test("theme works before Vue starts and falls back without JavaScript", async ({
   page,
   browser,
 }) => {
   await page.addInitScript(() =>
     localStorage.setItem("config", '{"theme":"dracula"}'),
   );
-  await page.route("**/_nuxt/*.js", (route) => route.abort());
+  await page.route("**/assets/*.js", (route) => route.abort());
   await page.goto("/");
   await expect(page.locator("#currentTheme")).toHaveCount(1);
   await expect
@@ -455,26 +452,6 @@ test("clipboard denial is reported instead of success", async ({ page }) => {
     page.getByRole("button", { name: "copy failed", exact: true }).first(),
   ).toBeVisible();
 });
-
-for (const [collection, slug, title] of [
-  ["blog", "rag-bot", "Simple RAG-Based AI Chatbot"],
-  ["projects", "retroboard", "Retroboard"],
-]) {
-  test(`an interrupted ${collection} detail payload is retryable rather than missing`, async ({
-    page,
-  }) => {
-    const payload = `**/${collection}/${slug}/_payload.json*`;
-    await page.route(payload, (route) => route.abort());
-    await openPage(page, `/${collection}`);
-    await page.locator(`a[href="/${collection}/${slug}"]`).click();
-    await expect(page.getByText("503", { exact: true })).toBeVisible();
-    await page.unroute(payload);
-    await page.getByRole("button", { name: "Try again", exact: true }).click();
-    await expect(
-      page.getByRole("heading", { name: title, exact: true, level: 1 }),
-    ).toBeVisible();
-  });
-}
 
 test("Paper secondary text meets normal-text contrast", async ({ page }) => {
   await openPage(page, "/blog/rag-bot");

@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import sharp from "sharp";
-import images from "../app/assets/generated-images.json";
+import images from "../src/assets/generated-images.json";
 
 test("responsive renditions retain the original dimensions and do not upscale", async () => {
   assert.ok(Object.keys(images).length > 0);
