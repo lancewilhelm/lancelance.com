@@ -2,6 +2,20 @@
   const themes = Object.freeze(
     [
       {
+        name: "sage_light",
+        bgColor: "#f2f4f2",
+        mainColor: "#3b5c47",
+        subColor: "#9eb0a3",
+        textColor: "#262e29",
+      },
+      {
+        name: "sage_nord",
+        bgColor: "#242933",
+        mainColor: "#98be9b",
+        subColor: "#5b6c61",
+        textColor: "#dfe7e1",
+      },
+      {
         name: "monochrome",
         bgColor: "#ffffff",
         mainColor: "#000000",
@@ -1236,20 +1250,40 @@
     ].map((theme) => Object.freeze(theme)),
   );
   const names = new Set(themes.map((theme) => theme.name));
-  let current = "paper";
-  let preferred = "paper";
+  const SYSTEM = "system";
+  // The static stylesheet in index.html is the light system theme, so the
+  // committed state before any script-applied theme is "system" -> sage_light.
+  const systemThemes = Object.freeze({
+    light: "sage_light",
+    dark: "sage_nord",
+  });
+  const darkQuery =
+    typeof window.matchMedia === "function"
+      ? window.matchMedia("(prefers-color-scheme: dark)")
+      : null;
+  let current = systemThemes.light;
+  let preference = SYSTEM;
+  let requested = SYSTEM;
+  let preferred = SYSTEM;
   try {
     const saved = JSON.parse(localStorage.getItem("config") || "{}");
     if (
       saved &&
       typeof saved === "object" &&
       !Array.isArray(saved) &&
-      names.has(saved.theme)
+      (saved.theme === SYSTEM || names.has(saved.theme))
     )
       preferred = saved.theme;
   } catch {}
   let active = document.getElementById("currentTheme");
   let pending = null;
+
+  function resolve(pref) {
+    if (pref !== SYSTEM) return pref;
+    return darkQuery && darkQuery.matches
+      ? systemThemes.dark
+      : systemThemes.light;
+  }
 
   function updateFavicon(link, name) {
     if (
@@ -1296,23 +1330,30 @@
       favicon.setAttribute("href", "data:image/svg+xml;base64," + btoa(svgPre));
   }
 
-  function apply(name) {
+  function apply(pref) {
+    const name = resolve(pref);
+    requested = pref;
     if (pending) {
       pending.remove();
+      pending = null;
     }
     // Keep the working stylesheet until its replacement has loaded.
     if (active) active.removeAttribute("id");
     const link = document.createElement("link");
     link.rel = "stylesheet";
     link.id = "currentTheme";
+    // Avoid a flash of the static theme while the first theme loads.
+    if (document.readyState === "loading")
+      link.setAttribute("blocking", "render");
     pending = link;
     link.onload = () => {
       if (pending !== link) return;
       if (active) active.remove();
       active = link;
       current = name;
+      preference = pref;
       pending = null;
-      persist(name);
+      persist(pref);
       window.dispatchEvent(new Event("themechange"));
       if (document.readyState === "loading") {
         document.addEventListener(
@@ -1327,32 +1368,44 @@
       link.remove();
       if (active) active.id = "currentTheme";
       pending = null;
-      persist(current);
+      requested = preference;
+      persist(preference);
       window.dispatchEvent(new Event("themechange"));
     };
     link.href = `/css/themes/${name}.css`;
     document.head.appendChild(link);
   }
 
-  function persist(name) {
+  function persist(pref) {
     try {
       let saved = JSON.parse(localStorage.getItem("config") || "{}");
       if (!saved || typeof saved !== "object" || Array.isArray(saved))
         saved = {};
-      localStorage.setItem("config", JSON.stringify({ ...saved, theme: name }));
+      localStorage.setItem("config", JSON.stringify({ ...saved, theme: pref }));
     } catch {
       try {
-        localStorage.setItem("config", JSON.stringify({ theme: name }));
+        localStorage.setItem("config", JSON.stringify({ theme: pref }));
       } catch {}
     }
   }
-  function select(name) {
-    if (!names.has(name)) return;
-    apply(name);
+  function select(pref) {
+    if (pref !== SYSTEM && !names.has(pref)) return;
+    apply(pref);
+  }
+  if (darkQuery) {
+    const onSchemeChange = () => {
+      if (requested === SYSTEM) apply(SYSTEM);
+    };
+    if (typeof darkQuery.addEventListener === "function")
+      darkQuery.addEventListener("change", onSchemeChange);
+    else if (typeof darkQuery.addListener === "function")
+      darkQuery.addListener(onSchemeChange);
   }
   window.themeRuntime = Object.freeze({
     themes,
+    systemThemes,
     current: () => current,
+    preference: () => preference,
     select,
   });
   select(preferred);

@@ -111,7 +111,7 @@ test("theme picker is keyboard operable, modal, persistent, and returns focus", 
   await page.keyboard.press("Enter");
   const dialog = page.getByRole("dialog", { name: "Choose theme" });
   await expect(dialog).toBeVisible();
-  await expect(dialog.getByRole("button")).toHaveCount(177);
+  await expect(dialog.getByRole("button")).toHaveCount(179);
   const dracula = dialog.getByRole("button", { name: "dracula", exact: true });
   await dracula.focus();
   await page.keyboard.press("Enter");
@@ -130,6 +130,82 @@ test("theme picker is keyboard operable, modal, persistent, and returns focus", 
   ).toBe("rgb(40, 42, 54)");
 });
 
+test("theme picker has no header and closes on an outside click", async ({
+  page,
+}) => {
+  await openPage(page, "/");
+  await page.getByRole("button", { name: "Choose theme", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Choose theme" });
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole("heading")).toHaveCount(0);
+  await expect(
+    dialog.getByRole("button", { name: "Close", exact: true }),
+  ).toHaveCount(0);
+  await expect(
+    dialog.getByRole("button", { name: "system", exact: true }),
+  ).toHaveAttribute("aria-pressed", "true");
+  await page.mouse.click(5, 5);
+  await expect(dialog).toHaveCount(0);
+});
+
+test("system theme follows the color scheme until a theme is chosen", async ({
+  page,
+}) => {
+  await page.emulateMedia({ colorScheme: "dark" });
+  await openPage(page, "/");
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/sage_nord.css",
+  );
+  await expect(page.locator('link[href^="/css/themes/"]')).toHaveCount(1);
+  await expect
+    .poll(() =>
+      page.evaluate(() => getComputedStyle(document.body).backgroundColor),
+    )
+    .toBe("rgb(36, 41, 51)");
+  await page.emulateMedia({ colorScheme: "light" });
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/sage_light.css",
+  );
+  await page.getByRole("button", { name: "Choose theme", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "Choose theme" });
+  await dialog.getByRole("button", { name: "dracula", exact: true }).click();
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/dracula.css",
+  );
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () => JSON.parse(localStorage.getItem("config") || "{}").theme,
+      ),
+    )
+    .toBe("dracula");
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.reload();
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/dracula.css",
+  );
+  await page.getByRole("button", { name: "Choose theme", exact: true }).click();
+  await page
+    .getByRole("dialog")
+    .getByRole("button", { name: "system", exact: true })
+    .click();
+  await expect(page.locator("#currentTheme")).toHaveAttribute(
+    "href",
+    "/css/themes/sage_nord.css",
+  );
+  await expect
+    .poll(() =>
+      page.evaluate(
+        () => JSON.parse(localStorage.getItem("config") || "{}").theme,
+      ),
+    )
+    .toBe("system");
+});
+
 for (const saved of [
   "{broken",
   "null",
@@ -146,7 +222,7 @@ for (const saved of [
     await expect(page.locator("#currentTheme")).toHaveCount(1);
     await expect(page.locator("#currentTheme")).toHaveAttribute(
       "href",
-      "/css/themes/paper.css",
+      "/css/themes/sage_light.css",
     );
     await page
       .getByRole("button", { name: "Choose theme", exact: true })
@@ -173,7 +249,7 @@ test("denied storage does not prevent theme selection", async ({ page }) => {
   await openPage(page, "/");
   await expect(page.locator("#currentTheme")).toHaveAttribute(
     "href",
-    "/css/themes/paper.css",
+    "/css/themes/sage_light.css",
   );
   await page.getByRole("button", { name: "Choose theme", exact: true }).click();
   await page
@@ -196,19 +272,19 @@ test("a failed theme stylesheet keeps the previous theme and selection", async (
   await dialog.getByRole("button", { name: "dracula", exact: true }).click();
   await expect(page.locator("#currentTheme")).toHaveAttribute(
     "href",
-    "/css/themes/paper.css",
+    "/css/themes/sage_light.css",
   );
   await expect(
-    dialog.getByRole("button", { name: "paper", exact: true }),
+    dialog.getByRole("button", { name: "system", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
   expect(
     await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
-  ).toBe("rgb(238, 238, 238)");
+  ).toBe("rgb(242, 244, 242)");
   expect(
     await page.evaluate(
       () => JSON.parse(localStorage.getItem("config") || "{}").theme,
     ),
-  ).toBe("paper");
+  ).toBe("system");
   await page.unroute("**/css/themes/dracula.css");
   await dialog.getByRole("button", { name: "dracula", exact: true }).click();
   await expect(
@@ -228,7 +304,7 @@ test("a failed theme stylesheet keeps the previous theme and selection", async (
   ).toHaveAttribute("aria-pressed", "true");
 });
 
-test("an unavailable saved theme restores the static Paper fallback", async ({
+test("an unavailable saved theme restores the static system fallback", async ({
   page,
 }) => {
   await page.addInitScript(() =>
@@ -238,16 +314,16 @@ test("an unavailable saved theme restores the static Paper fallback", async ({
   await openPage(page, "/");
   await expect(page.locator("#currentTheme")).toHaveAttribute(
     "href",
-    "/css/themes/paper.css",
+    "/css/themes/sage_light.css",
   );
   expect(
     await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
-  ).toBe("rgb(238, 238, 238)");
+  ).toBe("rgb(242, 244, 242)");
   expect(
     await page.evaluate(() =>
       JSON.parse(localStorage.getItem("config") || "{}"),
     ),
-  ).toEqual({ theme: "paper", other: "preserved" });
+  ).toEqual({ theme: "system", other: "preserved" });
 });
 
 test("a delayed theme keeps the current style and cannot replace a newer choice", async ({
@@ -264,12 +340,12 @@ test("a delayed theme keeps the current style and cannot replace a newer choice"
   await expect.poll(() => Boolean(delayed)).toBe(true);
   expect(
     await page.evaluate(() => getComputedStyle(document.body).backgroundColor),
-  ).toBe("rgb(238, 238, 238)");
+  ).toBe("rgb(242, 244, 242)");
   expect(
     await page.evaluate(
       () => JSON.parse(localStorage.getItem("config") || "{}").theme,
     ),
-  ).toBe("paper");
+  ).toBe("system");
   await dialog.getByRole("button", { name: "nord", exact: true }).click();
   await expect(
     dialog.getByRole("button", { name: "nord", exact: true }),
@@ -306,13 +382,13 @@ test("a reopened picker reflects a pending theme failure", async ({ page }) => {
   await expect(
     page
       .getByRole("dialog")
-      .getByRole("button", { name: "paper", exact: true }),
+      .getByRole("button", { name: "system", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
   await delayed?.abort();
   await expect(
     page
       .getByRole("dialog")
-      .getByRole("button", { name: "paper", exact: true }),
+      .getByRole("button", { name: "system", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
 });
 
@@ -434,7 +510,7 @@ test("theme works before Vue starts and falls back without JavaScript", async ({
   const fallback = await context.newPage();
   await fallback.goto("http://127.0.0.1:3130/");
   expect(
-    await fallback.locator('link[href="/css/themes/paper.css"]').count(),
+    await fallback.locator('link[href="/css/themes/sage_light.css"]').count(),
   ).toBe(1);
   await context.close();
 });
