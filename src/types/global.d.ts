@@ -8,7 +8,11 @@ interface ThemeOption {
 interface Window {
   readonly themeRuntime: {
     readonly themes: readonly ThemeOption[];
+    readonly systemThemes: { readonly light: string; readonly dark: string };
+    /** The resolved theme currently applied. */
     current(): string;
+    /** The committed choice: a theme name or "system". */
+    preference(): string;
     select(name: string): void;
   };
 }

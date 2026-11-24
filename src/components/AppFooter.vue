@@ -13,7 +13,7 @@ const showThemePicker = ref(false);
       <button
         type="button"
         aria-label="Choose theme"
-        class="cursor-pointer flex items-center text-(--sub-text-color)"
+        class="cursor-pointer flex items-center text-(--main-color)"
         @click="showThemePicker = true"
       >
         <svg
@@ -28,7 +28,7 @@ const showThemePicker = ref(false);
         </svg>
       </button>
       <a
-        class="flex items-center text-(--sub-text-color)"
+        class="flex items-center text-(--main-color)"
         href="https://github.com/lancewilhelm"
         aria-label="GitHub profile"
         target="_blank"
