@@ -142,7 +142,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/lance-skills",
     title: "lance-skills",
     description:
-      "Repository of reusable AI agent skills, starting with The Morning Intel PDF newspaper briefing",
+      "Repository of reusable AI agent skills, including The Morning Intel PDF briefing and the Plain English editing skill",
     image: "/img/lance-skills/sample-page-1.png",
     category: "personal",
     order: 8,
