@@ -3,6 +3,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 
 const REPOS = [
+  "lancewilhelm/ai-ledger",
   "lancewilhelm/vue-chatbot",
   "lancewilhelm/delb",
   "lancewilhelm/Staf",

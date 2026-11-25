@@ -14,6 +14,30 @@
     "withoutEnlargement": true
   },
   "sources": {
+    "/img/ai-ledger/dashboard-overview.png": {
+      "sha256": "fed6d7f7c56107dd2d5454e53f80d78a9af23751577678c06376230cd3e2b163",
+      "outputs": {
+        "8419560b6aec1249d903-320.webp": "8cc90a1078ce9c39d1ecac135bf26d775502306183da29af1466d1ea18299368",
+        "8419560b6aec1249d903-640.webp": "30011de89b966ce616eed61612cef125dec3bc746ae724758e175217bdcfbb00",
+        "8419560b6aec1249d903-1280.webp": "5ec65fc5073ab18c69ea113060e1fb252fa7823d1e3c942b34bb1923aac54036"
+      }
+    },
+    "/img/ai-ledger/pricing-settings.png": {
+      "sha256": "2e08b7169c71690576644b5e241d2bdb9111ed18a0e71ad5ec75cf4f545ffd0e",
+      "outputs": {
+        "240cc2214fabbb77b371-320.webp": "615f5d14d37ac4da970ccb482dd98cfab82ed8b2330457862ef774ffd4ff516e",
+        "240cc2214fabbb77b371-640.webp": "870d702bc72075e523cd4abbc0cb7996f0682e59fa58f67d326c43a27c4940d3",
+        "240cc2214fabbb77b371-1280.webp": "00c9a9d4a0e1a00cd63deb998a38280a9a23066340543cdf692d2088ebfc4e3f"
+      }
+    },
+    "/img/ai-ledger/session-inspector.png": {
+      "sha256": "1425981d6fae9c207e062ea784e69256c3224669ec98be45d66a941e0a04dfc1",
+      "outputs": {
+        "aa3a074ff27080cac422-320.webp": "9e34d650b71acfdd227d44960fe73cb4f1b5e7e236127ab472c0176a652f7e3f",
+        "aa3a074ff27080cac422-640.webp": "be4eebe8d448983d571bf3392de9b8afdbc6d96603a1a184fc1272e8a6f46c37",
+        "aa3a074ff27080cac422-1280.webp": "25c8dc89bee668a4a4356987b27cb95f6ff54492c0402506c8039471ff4514e1"
+      }
+    },
     "/img/causal-attn/adv_loss.png": {
       "sha256": "8dfb1099b9b1eb0b6349fbc644b7427098ec9947a1f8e48bfb2a0b2e39d26ace",
       "outputs": {

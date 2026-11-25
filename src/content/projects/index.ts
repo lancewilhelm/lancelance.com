@@ -1,4 +1,5 @@
 import type { Component } from "vue";
+import AiLedgerProject from "./AiLedgerProject.vue";
 import CommcoachProject from "./CommcoachProject.vue";
 import DelbProject from "./DelbProject.vue";
 import DronespacePiGatesProject from "./DronespacePiGatesProject.vue";
@@ -50,6 +51,18 @@ const rawProjects: ProjectEntry[] = [
     order: 1,
     tags: ["hci", "ai", "leadership", "phd-research"],
     component: CommcoachProject,
+  },
+  {
+    slug: "ai-ledger",
+    path: "/projects/ai-ledger",
+    title: "AI Ledger",
+    description:
+      "Self-hosted AI usage logger, lossless transcript archive, and local monitoring dashboard for Claude Code, Codex, Antigravity, T3 Code, and Hermes",
+    image: "/img/ai-ledger/dashboard-overview.png",
+    category: "personal",
+    order: 1,
+    tags: ["ai", "self-hosted", "go", "sqlite", "open-source"],
+    component: AiLedgerProject,
   },
   {
     slug: "delb",

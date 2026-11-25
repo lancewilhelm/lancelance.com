@@ -102,5 +102,13 @@
     "language": "Python",
     "stargazers_count": 0,
     "forks_count": 0
+  },
+  "lancewilhelm/ai-ledger": {
+    "html_url": "https://github.com/lancewilhelm/ai-ledger",
+    "full_name": "lancewilhelm/ai-ledger",
+    "description": "Personal, lossless AI usage logger, raw transcript archive, and local monitoring dashboard",
+    "language": "Go",
+    "stargazers_count": 0,
+    "forks_count": 0
   }
 }

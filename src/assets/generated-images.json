@@ -1,4 +1,58 @@
 {
+  "/img/ai-ledger/dashboard-overview.png": {
+    "width": 2880,
+    "height": 1800,
+    "renditions": [
+      {
+        "src": "/img/generated/8419560b6aec1249d903-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/8419560b6aec1249d903-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/8419560b6aec1249d903-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/ai-ledger/pricing-settings.png": {
+    "width": 2880,
+    "height": 1800,
+    "renditions": [
+      {
+        "src": "/img/generated/240cc2214fabbb77b371-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/240cc2214fabbb77b371-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/240cc2214fabbb77b371-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
+  "/img/ai-ledger/session-inspector.png": {
+    "width": 2880,
+    "height": 1800,
+    "renditions": [
+      {
+        "src": "/img/generated/aa3a074ff27080cac422-320.webp",
+        "width": 320
+      },
+      {
+        "src": "/img/generated/aa3a074ff27080cac422-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/img/generated/aa3a074ff27080cac422-1280.webp",
+        "width": 1280
+      }
+    ]
+  },
   "/img/causal-attn/adv_loss.png": {
     "width": 562,
     "height": 432,
