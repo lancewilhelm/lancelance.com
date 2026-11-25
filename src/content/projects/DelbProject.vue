@@ -27,11 +27,11 @@ import ProseHeading from "@/components/ProseHeading.vue";
       albums—without duplicating files.
     </li>
     <li>
-      Existing Calibre libraries can be imported directly, copying books,
-      covers, authors, series, and metadata into Delb's own library.
+      You can import existing Calibre libraries directly, which copies books,
+      covers, authors, series, and metadata into Delb.
     </li>
     <li>
-      Runs offline with everything bundled together, including library browsing,
+      Delb runs offline with everything bundled together, including browsing,
       search, and built-in reading views.
     </li>
   </ul>

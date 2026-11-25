@@ -8,9 +8,8 @@ import ProseHeading from "@/components/ProseHeading.vue";
   <p>
     Retroboard Flight is a spin-off of my
     <RouterLink to="/projects/retroboard">Retroboard</RouterLink> LED display
-    project. It watches for nearby aircraft using public flight data and shows
-    live flight cards on a small tabletop LED panel alongside a map in the
-    browser.
+    project. It tracks nearby aircraft using public flight data and shows live
+    flight cards on a small tabletop LED panel alongside a map in the browser.
   </p>
   <BlogImage
     eager
@@ -34,8 +33,8 @@ import ProseHeading from "@/components/ProseHeading.vue";
       aircraft type, altitude, speed, distance, and bearing.
     </li>
     <li>
-      Runs locally using free public flight data with no accounts or paid
-      subscriptions required.
+      The app runs locally using free public flight data and requires no
+      accounts or paid subscriptions.
     </li>
   </ul>
 </template>

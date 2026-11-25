@@ -7,8 +7,8 @@ import ProseHeading from "@/components/ProseHeading.vue";
 <template>
   <ProseHeading id="overview" :level="2">Overview</ProseHeading>
   <p>
-    Shpacer is a self-hosted web app I built for planning race courses. I wanted
-    one place to upload a route file, look at the map and elevation profile
+    Shpacer is a self-hosted web app that I built for planning race courses. I
+    wanted one place to upload a route file, view the map and elevation profile
     together, mark aid stations and splits, and keep notes for a race.
   </p>
   <BlogImage
@@ -21,20 +21,21 @@ import ProseHeading from "@/components/ProseHeading.vue";
   <ProseHeading id="what-it-does" :level="2">What It Does</ProseHeading>
   <ul>
     <li>
-      Uploading a GPS route file calculates total distance, elevation gain, and
-      elevation loss, and stores the course alongside race date and notes.
+      When you upload a GPS route file, the app calculates total distance,
+      elevation gain, and elevation loss, and saves the course alongside the
+      race date and notes.
     </li>
     <li>
-      Displays an interactive route map paired with an elevation chart; hovering
-      along the elevation profile highlights that spot on the map.
+      The course view pairs an interactive route map with an elevation chart,
+      and hovering along the elevation profile highlights that spot on the map.
     </li>
     <li>
-      Waypoints can be imported from the route file or placed directly on the
-      map or elevation chart and dragged along the course to track distance and
-      elevation between aid stations, climbs, or cutoffs.
+      You can import waypoints from the route file or place them directly on the
+      map or elevation chart, then drag them along the course to track distance
+      and elevation between aid stations, climbs, and cutoffs.
     </li>
     <li>
-      Supports multiple pacing plans per race, light and dark themes, and
+      It supports multiple pacing plans per race, light and dark themes, and
       switching between miles and kilometers.
     </li>
   </ul>

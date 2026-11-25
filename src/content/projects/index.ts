@@ -45,7 +45,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/commcoach",
     title: "CommCoach",
     description:
-      "PhD research platform at Virginia Tech exploring AI role-play and reflective coaching for workplace leadership communication",
+      "PhD research platform at Virginia Tech that explores AI role-play and reflective coaching for leadership communication at work",
     image: "/img/commcoach/roleplay.png",
     category: "academic",
     order: 1,
@@ -57,7 +57,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/ai-ledger",
     title: "AI Ledger",
     description:
-      "Self-hosted AI usage logger, lossless transcript archive, and local monitoring dashboard for Claude Code, Codex, Antigravity, T3 Code, and Hermes",
+      "Self-hosted logger for AI usage, lossless transcript archive, and local dashboard for Claude Code, Codex, Antigravity, T3 Code, and Hermes",
     image: "/img/ai-ledger/dashboard-overview.png",
     category: "personal",
     order: 1,
@@ -69,7 +69,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/delb",
     title: "Delb",
     description:
-      "Self-hosted digital library app for organizing and reading personal ebooks and PDFs",
+      "Self-hosted web app for organizing and reading personal ebooks and PDFs",
     image: "/img/delb/library.png",
     category: "personal",
     order: 1,
@@ -81,7 +81,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/streamdeck-llm-usage",
     title: "LLM Usage (Stream Deck Plugin)",
     description:
-      "Stream Deck plugin showing Claude, Codex, and Google AI subscription usage with a linear burn-rate marker",
+      "Stream Deck plugin that tracks subscription usage for Claude, Codex, and Google AI with a linear burn-rate marker",
     image: "/img/streamdeck-llm-usage/hero.png",
     category: "personal",
     order: 2,
@@ -93,7 +93,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/staf",
     title: "Staf",
     description:
-      "Self-hosted terminal and web AI assistant workspace with persistent background conversations",
+      "Self-hosted terminal and web workspace for AI assistants with persistent background conversations",
     image: "/img/staf/cover.png",
     category: "personal",
     order: 3,
@@ -119,7 +119,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/shpacer",
     title: "Shpacer",
     description:
-      "Self-hosted race course planner with route maps, elevation profiles, waypoints, and race notes",
+      "Self-hosted planner for race courses with route maps, elevation profiles, waypoints, and race notes",
     image: "/img/shpacer/course.png",
     category: "personal",
     order: 5,
@@ -143,7 +143,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/horizon-extended",
     title: "Horizon Extended",
     description:
-      "Warm dark and light editor theme family extending the original Horizon theme by jolaleye across VS Code, Neovim, Zed, Kitty, and tmux",
+      "Family of warm dark and light themes that extends jolaleye's original Horizon theme across VS Code, Neovim, Zed, Kitty, and tmux",
     image: "/img/horizon-extended/thumbnail.png",
     category: "personal",
     order: 7,
@@ -155,7 +155,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/lance-skills",
     title: "lance-skills",
     description:
-      "Repository of reusable AI agent skills, including The Morning Intel PDF briefing and the Plain English editing skill",
+      "Repository of reusable skills for AI agents, including The Morning Intel PDF briefing and the Plain English editing skill",
     image: "/img/lance-skills/sample-page-1.png",
     category: "personal",
     order: 8,
@@ -179,7 +179,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/nvim-dashboard-vscode",
     title: "Nvim Dashboard for VS Code",
     description:
-      "Text-based start screen extension for VS Code modeled after dashboard-nvim",
+      "VS Code extension that adds a text-based start screen modeled after dashboard-nvim",
     image: "/img/nvim-dashboard-vscode/dash.png",
     category: "personal",
     order: 10,
@@ -191,7 +191,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/ppbc",
     title: "Ping Pong Ball Clock (PPBC)",
     description:
-      "Novel clock design driven by LED strips and a Raspberry Pi controlled via a web app",
+      "Clock built with ping pong balls, LED strips, and a Raspberry Pi, controlled through a web app",
     image: "/img/ppbc/ppbc.jpg",
     category: "personal",
     order: 11,
@@ -203,7 +203,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/retroboard",
     title: "Retroboard",
     description:
-      "Open source retro-style LED matrix display for general use, inspired by the Tidbyt",
+      "Open-source retro LED matrix display for general use, inspired by the Tidbyt",
     image: "/img/retroboard/IMG_0982_crop.jpg",
     category: "personal",
     order: 12,
@@ -215,7 +215,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/dronespace-pi-gates",
     title: "DroneSpace Pi Gates",
     description:
-      "Networked LED lighting controller and web panel built for illuminated indoor FPV racing drone gates",
+      "Networked LED controller and web panel built for illuminated indoor FPV drone gates",
     image: "/img/dronespace-pi-gates/gates.jpg",
     category: "personal",
     order: 13,
@@ -227,7 +227,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/hateful-memes",
     title: "Hateful Memes Challenge - Next Move",
     description:
-      "CS7643 (Georgia Tech) Deep Learning final project exploring semi-supervised learning for multimodal hateful meme classification",
+      "Final project for Georgia Tech CS7643 (Deep Learning) that explores semi-supervised learning for classifying multimodal hateful memes",
     image: "/img/hateful-memes/mean-meme.png",
     category: "academic",
     order: 2,
@@ -239,7 +239,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/house-numbers",
     title: "House Number Detection and Classification",
     description:
-      "CS6476 (Georgia Tech) Computer Vision final project that detects and classifies house numbers in photos using MSER and a fine-tuned ResNet18",
+      "Final project for Georgia Tech CS6476 (Computer Vision) that detects and classifies house numbers in photos using MSER and a fine-tuned ResNet18",
     image: "/img/house-numbers/house3_tiles.png",
     category: "academic",
     order: 3,
@@ -251,7 +251,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/reddit-politics",
     title: "Dashboard for US Political Discourse Analysis",
     description:
-      "CS6242 (Georgia Tech) Data Visualization and Analytics final project comparing political sentiment across opposing subreddits",
+      "Final project for Georgia Tech CS6242 (Data Visualization and Analytics) that compares political sentiment across opposing subreddits",
     image: "/img/reddit-politics/team009poster.jpg",
     category: "academic",
     order: 4,

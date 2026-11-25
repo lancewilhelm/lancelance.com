@@ -7,9 +7,9 @@ import ProseHeading from "@/components/ProseHeading.vue";
 <template>
   <ProseHeading id="overview" :level="2">Overview</ProseHeading>
   <p>
-    Before DroneSpace (an indoor FPV drone racing venue) closed, I wrote the
+    Before DroneSpace, an indoor venue for FPV drone racing, closed, I wrote the
     software that controlled its illuminated race gates and course pillars. Each
-    gate and pillar ran on a Raspberry Pi connected over the local network so
+    gate and pillar ran on a Raspberry Pi connected to the local network so that
     they could all be controlled together from a single web page.
   </p>
   <BlogImage
@@ -36,7 +36,7 @@ import ProseHeading from "@/components/ProseHeading.vue";
     </li>
   </ul>
   <p>
-    Parts of this local web-controlled LED setup later carried over into my
+    Parts of this web-controlled LED setup later carried over into my
     <RouterLink to="/projects/ppbc">Ping Pong Ball Clock</RouterLink>.
   </p>
   <ProseHeading id="github-repo" :level="2">GitHub Repo</ProseHeading>

@@ -7,11 +7,11 @@ import ProseHeading from "@/components/ProseHeading.vue";
 <template>
   <ProseHeading id="overview" :level="2">Overview</ProseHeading>
   <p>
-    AI Ledger is a self-hosted usage logger, raw transcript archive, and
-    monitoring dashboard for personal AI coding sessions. I built it so that
-    every conversation, thinking block, tool call, and token count from my
-    macOS and Linux machines lands in one local database without proxying or
-    modifying provider API traffic.
+    AI Ledger is a self-hosted logger for AI usage, raw transcript archive, and
+    monitoring dashboard for my coding sessions. I built it so that every
+    conversation, thinking block, tool call, and token count from my macOS and
+    Linux machines is saved in one local database without proxying or modifying
+    API traffic to providers.
   </p>
   <BlogImage
     eager
@@ -23,23 +23,24 @@ import ProseHeading from "@/components/ProseHeading.vue";
   <ProseHeading id="how-it-works" :level="2">How It Works</ProseHeading>
   <p>
     Instead of intercepting requests, a lightweight background collector
-    (<code>ai-ledger-collector</code>) watches the local session logs that AI
-    harnesses already write to disk—including Claude Code, Codex, Antigravity,
-    T3 Code, and Hermes Agent—and uploads incremental chunks over LAN or
-    Tailscale to a single self-hosted server (<code>ai-ledger-server</code>).
+    (<code>ai-ledger-collector</code>) monitors the local session logs that AI
+    harnesses already write to disk. It supports Claude Code, Codex,
+    Antigravity, T3 Code, and Hermes Agent, and it uploads incremental chunks
+    over LAN or Tailscale to a single self-hosted server
+    (<code>ai-ledger-server</code>).
   </p>
   <ul>
     <li>
-      <strong>Lossless raw archive first:</strong> Every byte from every
-      device is written untouched to disk, and overwritten snapshots are
-      versioned automatically. The SQLite index can be rebuilt completely from
-      the archive at any time with <code>ai-ledger-server reparse</code>.
+      <strong>Lossless archive first:</strong> Every byte from every device is
+      written untouched to disk, and overwritten snapshots are versioned
+      automatically. The SQLite index can be rebuilt completely from the archive
+      at any time with <code>ai-ledger-server reparse</code>.
     </li>
     <li>
       <strong>Fast, compact SQLite snapshots:</strong> For tools that store
       state in SQLite, the collector creates WAL-safe online snapshots and
       compresses them with deterministic Zstd. For T3 Code, it extracts only the
-      24 unique metadata and orchestration tables rather than redundant UI
+      24 tables for metadata and orchestration rather than redundant UI
       projections, shrinking a ~990 MB local database to ~1.5 MB in under 100
       ms.
     </li>
@@ -56,13 +57,13 @@ import ProseHeading from "@/components/ProseHeading.vue";
     >Sessions, Inspector, and Full-Text Search</ProseHeading
   >
   <p>
-    Sessions can be filtered by preset or custom calendar date ranges, harness,
-    model, device, and project, and date filters match sessions based on when
-    they were last active so that resumed multi-day threads still appear.
-    Opening any session reveals the full conversation, collapsible reasoning and
-    thinking blocks, paired tool inputs and outputs, per-call token and rate
-    limit telemetry, raw file download, and redacted JSONL export for training
-    or analysis.
+    You can filter sessions by preset or custom date ranges, harness, model,
+    device, and project. Date filters match sessions by their last activity so
+    that resumed multi-day threads still appear. Opening a session displays the
+    full conversation, collapsible reasoning and thinking blocks, paired tool
+    inputs and outputs, and telemetry for token counts and rate limits on each
+    call. You can also download the raw log file or export redacted JSONL for
+    training and analysis.
   </p>
   <BlogImage
     image-path="/img/ai-ledger/session-inspector.png"
@@ -74,18 +75,18 @@ import ProseHeading from "@/components/ProseHeading.vue";
     >Transparent Model Pricing &amp; Overrides</ProseHeading
   >
   <p>
-    Token costs are calculated separately across uncached input, discounted
-    cache reads, 5-minute and 1-hour cache writes, and output tokens so that
-    cache hits are priced accurately and never double-counted. A dedicated
-    <strong>Settings</strong> view surfaces where every model's rate comes from
-    in priority order—manual overrides, a custom rates file, synced T3 /
-    LiteLLM rates, or built-in defaults—and lets you override any model's
-    per-million-token pricing and recalculate historical costs immediately.
+    Token costs are calculated separately for uncached input, discounted cache
+    reads, 5-minute and 1-hour cache writes, and output tokens so that cache
+    hits are priced accurately and never double-counted. A dedicated
+    <strong>Settings</strong> view shows where each model's rate comes from in
+    priority order: manual overrides, a custom rates file, synced T3 or LiteLLM
+    rates, or built-in defaults. From that view, you can override the rate per
+    million tokens for any model and recalculate historical costs right away.
   </p>
   <BlogImage
     image-path="/img/ai-ledger/pricing-settings.png"
     alt="AI Ledger settings page displaying the cost calculation precedence stack and observed model rates per million tokens with override buttons"
-    caption="Settings page showing pricing source precedence, per-million-token rates, and manual overrides"
+    caption="Settings page showing pricing sources in priority order, rates per million tokens, and manual overrides"
     width="780px"
   />
   <ProseHeading id="github-repo" :level="2">GitHub Repo</ProseHeading>

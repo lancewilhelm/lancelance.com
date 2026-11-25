@@ -7,8 +7,8 @@ import ProseHeading from "@/components/ProseHeading.vue";
   <ProseHeading id="overview" :level="2">Overview</ProseHeading>
   <p>
     CommCoach is the system behind my PhD research in Human-Computer Interaction
-    at Virginia Tech. The project looks at whether AI can give managers and
-    emerging leaders a low-stakes place to practice difficult workplace
+    at Virginia Tech. In this project, I studied whether AI can give managers
+    and emerging leaders a low-stakes space to practice difficult workplace
     conversations and reflect on how they communicate.
   </p>
   <p>
@@ -31,22 +31,25 @@ import ProseHeading from "@/components/ProseHeading.vue";
     think about and react to AI-assisted conversational training.
   </p>
   <p>
-    That exploratory study (<em
+    We published the results of that exploratory study in
+    <em
       >"How Managers Perceive AI-Assisted Conversational Training for Workplace
       Communication"</em
-    >, accepted at <strong>ACM CUI 2025</strong>) surfaced four design tensions:
+    >
+    at <strong>ACM CUI 2025</strong>. The study identified four design
+    tensions:
   </p>
   <ol>
     <li>
-      Managers use very different communication styles—humor, storytelling,
-      asking questions, directness—so rigid AI feedback risks penalizing valid
-      personal styles.
+      Managers use very different communication styles, such as humor,
+      storytelling, asking questions, and directness. Rigid feedback from AI can
+      unfairly mark valid personal styles as mistakes.
     </li>
     <li>
       Participants wanted practice partners that could push back, get defensive,
-      or stay reserved, which creates tension with AI stereotyping. Even early
-      on, changing a user's name alone altered how the AI coach responded, so I
-      masked names before sending messages to the model.
+      or stay reserved, which creates a risk of stereotyping by the AI. Even
+      early on, changing a user's name alone altered how the AI coach responded,
+      so I masked names before sending messages to the model.
     </li>
     <li>
       Real workplace conversations have clear objectives and wrap-ups, while
@@ -74,31 +77,30 @@ import ProseHeading from "@/components/ProseHeading.vue";
   </p>
   <ul>
     <li>
-      New users go through a short onboarding covering their role, goals, and
-      communication challenges so scenarios and coaching are tailored to their
-      context.
+      New users go through a short onboarding that covers their role, goals, and
+      communication challenges so that scenarios and coaching fit their context.
     </li>
     <li>
       Each role-play tracks conversation phases and 2–4 learning goals as the
       conversation progresses, followed by a brief self-reflection.
     </li>
     <li>
-      Weekly check-in questionnaires and researcher dashboards were built into
-      the app to run and monitor the study.
+      The app includes weekly questionnaires and dashboards for researchers to
+      run and monitor the study.
     </li>
   </ul>
   <ProseHeading id="status" :level="3">Status</ProseHeading>
   <p>
-    Across campus outreach and online recruitment trials,
+    Across campus outreach and online recruitment,
     <strong>122 learner accounts</strong> submitted
     <strong>347 weekly questionnaires</strong> and completed
-    <strong>491 AI role-play sessions</strong> (with
-    <strong>484 self-reflections</strong>, about 99% of finished sessions).
+    <strong>491 AI role-plays</strong>, including
+    <strong>484 self-reflections</strong> (about 99% of finished sessions).
   </p>
   <p>
-    The hardest part of the study was multi-week retention rather than the
-    software itself. Drop-off during the larger recruitment trial led me to
-    pause data collection as I transitioned into my next role, with data
-    cleaning and final analysis still remaining.
+    The hardest part of the study was keeping participants active across
+    multiple weeks, not building the software. Participant drop-off during the
+    larger recruitment trial led me to pause data collection as I moved into my
+    next role. Data cleaning and final analysis still remain.
   </p>
 </template>

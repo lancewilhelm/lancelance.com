@@ -11,7 +11,8 @@ import ProseHeading from "@/components/ProseHeading.vue";
     the open Agent Skills layout (<code>SKILL.md</code> plus optional templates,
     references, and helper scripts). I use them across Hermes Agent, Claude
     Code, Codex, and Antigravity. Right now the repository includes two skills:
-    a full PDF briefing workflow and a prompt-only writing and editing skill.
+    a workflow that generates a PDF briefing and a prompt-only skill for writing
+    and editing.
   </p>
   <ProseHeading id="the-morning-intel" :level="2"
     >The Morning Intel</ProseHeading
@@ -31,12 +32,12 @@ import ProseHeading from "@/components/ProseHeading.vue";
   />
   <ul>
     <li>
-      Guides the agent to verify numbers and announcements against original
+      Instructs the agent to verify numbers and announcements against original
       sources and highlights unverified or vendor-only claims in the text.
     </li>
     <li>
-      Outputs a two-column PDF newspaper layout rather than a plain text or
-      markdown email.
+      Generates a two-column PDF newspaper instead of a plain-text or Markdown
+      email.
     </li>
     <li>
       Includes an automated check on the generated PDF to catch page overflow or

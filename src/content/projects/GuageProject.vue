@@ -13,7 +13,7 @@ import ProseHeading from "@/components/ProseHeading.vue";
     own.
   </p>
   <p>
-    It is a follow-up to the small chatbot I wrote a
+    It is a follow-up to the small chatbot that I wrote a
     <RouterLink to="/blog/vue-chatbot1">three-part blog series</RouterLink>
     about in 2023.
   </p>
@@ -30,7 +30,7 @@ import ProseHeading from "@/components/ProseHeading.vue";
       Gemini, and Cerebras from the same interface.
     </li>
     <li>
-      Runs as a self-hosted app so chat history stays on local hardware.
+      Runs as a self-hosted app so that chat history stays on local hardware.
     </li>
     <li>Includes custom themes and basic configuration options.</li>
   </ul>

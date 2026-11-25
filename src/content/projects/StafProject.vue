@@ -7,8 +7,9 @@ import ProseHeading from "@/components/ProseHeading.vue";
 <template>
   <ProseHeading id="overview" :level="2">Overview</ProseHeading>
   <p>
-    Staf is a self-hosted AI assistant workspace built around the terminal that
-    keeps conversations running in the background when you disconnect.
+    Staf is a self-hosted workspace for AI assistants, built around the
+    terminal, that keeps conversations running in the background when you
+    disconnect.
   </p>
   <BlogImage
     eager
@@ -19,7 +20,7 @@ import ProseHeading from "@/components/ProseHeading.vue";
   <ProseHeading id="what-it-does" :level="2">What It Does</ProseHeading>
   <ul>
     <li>
-      Keeps a persistent local instance running so you can detach from the
+      Keeps a persistent local instance running so that you can detach from the
       terminal or browser and pick up the same conversation later.
     </li>
     <li>

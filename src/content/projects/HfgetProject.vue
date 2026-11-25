@@ -8,8 +8,8 @@ import ProseHeading from "@/components/ProseHeading.vue";
   <ProseHeading id="overview" :level="2">Overview</ProseHeading>
   <p>
     <code>hfget</code> is a terminal tool for searching and downloading models
-    from Hugging Face. I made it so I wouldn't have to open a browser just to
-    find specific model files when working in the terminal.
+    from Hugging Face. I made it so that I would not have to open a browser just
+    to find specific model files while working in the terminal.
   </p>
   <BlogImage
     eager
@@ -26,7 +26,7 @@ import ProseHeading from "@/components/ProseHeading.vue";
     </li>
     <li>
       Shows download progress, speed, and estimated time remaining, prompts on
-      existing file conflicts, and removes partial files if canceled.
+      conflicts with existing files, and removes partial files if canceled.
     </li>
     <li>
       Saves downloaded models either into nested folders by repository or into a
