@@ -81,7 +81,7 @@ const rawProjects: ProjectEntry[] = [
     path: "/projects/streamdeck-llm-usage",
     title: "LLM Usage (Stream Deck Plugin)",
     description:
-      "Stream Deck plugin that tracks subscription usage for Claude, Codex, and Google AI with a linear burn-rate marker",
+      "Stream Deck plugin that tracks subscription usage for Claude and Codex with a linear burn-rate marker",
     image: "/img/streamdeck-llm-usage/hero.png",
     category: "personal",
     order: 2,

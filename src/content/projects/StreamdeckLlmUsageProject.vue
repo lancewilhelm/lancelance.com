@@ -15,13 +15,13 @@ import ProseHeading from "@/components/ProseHeading.vue";
   <BlogImage
     eager
     image-path="/img/streamdeck-llm-usage/hero.png"
-    alt="A Stream Deck filled with LLM Usage keys showing ring and bar gauges for Claude, Codex, and Gemini"
-    caption="Ring and bar layouts across Claude, Codex, and Gemini limit windows"
+    alt="A Stream Deck filled with LLM Usage keys showing ring and bar gauges for Claude and Codex"
+    caption="Ring and bar layouts across Claude and Codex limit windows"
     width="720px"
   />
   <ProseHeading id="how-it-works" :level="2">How It Works</ProseHeading>
   <p>
-    The plugin tracks subscription limits for Claude, Codex, and Google AI on
+    The plugin tracks subscription limits for Claude and Codex on
     Stream Deck keys, displayed as either a ring or a bar. Every limit window
     resets on a schedule, and the white tick on the gauge marks where an even,
     linear burn rate would put usage at the current time. That shows whether
